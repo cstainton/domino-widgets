@@ -89,5 +89,22 @@
       "check-artifacts.py",
       "Browser requests and rendered fixture"
     ]
+  },
+  {
+    "id": "promise-values",
+    "scope": "elemental2.promise.Promise and IThenable then/catch",
+    "mechanism": "Generated forwarding methods normalize erased native callback values through Js.cast before application bridge methods cast to Java strings, numbers or objects; preserve null callbacks and native promise return values.",
+    "tests": [
+      "Native promise string operations and rejection",
+      "Original dynamic country suggestion fetch/JSON/selection"
+    ]
+  },
+  {
+    "id": "explicit-locale-labels",
+    "scope": "BrowserDateTimeFormatInfo in corrected source fork",
+    "mechanism": "Optional explicit locale constructor feeds native Intl label formatting on both backends.",
+    "tests": [
+      "Spanish January and Arabic January labels"
+    ]
   }
 ]

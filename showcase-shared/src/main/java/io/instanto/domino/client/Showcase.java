@@ -22,17 +22,25 @@ public final class Showcase {
       link.textContent = labels[i];
       nav.appendChild(link);
     }
+    HTMLSelectElement selector=(HTMLSelectElement)DomGlobal.document.createElement("select");
+    selector.setAttribute("aria-label","All examples");
+    HTMLOptionElement prompt=(HTMLOptionElement)DomGlobal.document.createElement("option");
+    prompt.textContent="Browse all examples";prompt.value="";selector.appendChild(prompt);
+    java.util.List<String> allRoutes=new java.util.ArrayList<>(GalleryCatalog.ROUTES);
+    allRoutes.add("browser-apis");allRoutes.add("richtext");
+    for(String route:allRoutes){
+      HTMLOptionElement option=(HTMLOptionElement)DomGlobal.document.createElement("option");
+      option.value=route;option.textContent=route;selector.appendChild(option);
+    }
+    selector.addEventListener("change",e->{if(!selector.value.isEmpty())DomGlobal.location.href="?page="+selector.value;});
+    nav.appendChild(selector);
     header.appendChild(nav);
     DomGlobal.document.body.appendChild(header);
     String query = DomGlobal.location.search;
-    HTMLElement examples;
-    if (query.equals("?page=buttons")) examples = new ButtonsExamples().render();
-    else if (query.equals("?page=forms")) examples = new FormsExamples().render();
-    else if (query.equals("?page=dialogs")) examples = new DialogsExamples().render();
-    else {
-      SharedScreen.mount();
-      return;
-    }
+    if(query.equals("?page=richtext")){DomGlobal.document.body.appendChild(RichTextExamples.render());return;}
+    if(query.equals("?page=browser-apis")){DomGlobal.document.body.appendChild(BrowserApis.render());return;}
+    HTMLElement examples=GalleryCatalog.render(query.startsWith("?page=")?query.substring(6):"");
+    if(examples==null){SharedScreen.mount();return;}
     examples.id = "gallery-examples";
     DomGlobal.document.body.appendChild(examples);
     examples.setAttribute("data-ready", "true");

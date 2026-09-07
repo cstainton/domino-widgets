@@ -2140,6 +2140,15 @@
   {
     "kind": "field",
     "owner": "org.gwtproject.i18n.shared.cldr.impl.BrowserDateTimeFormatInfo",
+    "member": "locale",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.cldr.impl.BrowserDateTimeFormatInfo",
     "member": "monthsFull",
     "descriptor": "[Ljava/lang/String;",
     "callers": [
@@ -2252,7 +2261,8 @@
     "descriptor": "([Ljava/lang/Object;)V",
     "callers": [
       "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlDateTimeFormat.class",
-      "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlNumberFormat.class"
+      "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlNumberFormat.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
     ]
   },
   {
@@ -2282,6 +2292,15 @@
     "descriptor": "(I)Ljava/lang/Object;",
     "callers": [
       "gwt-modular-services/org/gwtproject/i18n/shared/cldr/LocaleInfo.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsArray",
+    "member": "push",
+    "descriptor": "([Ljava/lang/Object;)I",
+    "callers": [
       "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
     ]
   },
@@ -4683,7 +4702,8 @@
     "member": "<init>",
     "descriptor": "(Lelemental2/core/JsArray;Lorg/gwtproject/i18n/shared/browser/JsIntlDateTimeFormatOptions;)V",
     "callers": [
-      "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlDateTimeFormat.class"
+      "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlDateTimeFormat.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
     ]
   },
   {
@@ -4692,8 +4712,7 @@
     "member": "create",
     "descriptor": "(Lorg/gwtproject/i18n/shared/browser/JsIntlDateTimeFormatOptions;)Lorg/gwtproject/i18n/shared/browser/JsIntlDateTimeFormat;",
     "callers": [
-      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class",
-      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class"
     ]
   },
   {
@@ -5097,6 +5116,15 @@
   {
     "kind": "method",
     "owner": "org.gwtproject.i18n.shared.cldr.impl.BrowserDateTimeFormatInfo",
+    "member": "<init>",
+    "descriptor": "(Ljava/lang/String;)V",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.impl.BrowserDateTimeFormatInfo",
     "member": "buildAmpms",
     "descriptor": "()[Ljava/lang/String;",
     "callers": [
@@ -5126,6 +5154,15 @@
     "owner": "org.gwtproject.i18n.shared.cldr.impl.BrowserDateTimeFormatInfo",
     "member": "extractPart",
     "descriptor": "(Lorg/gwtproject/i18n/shared/browser/JsIntlDateTimeFormat;Lelemental2/core/JsDate;Ljava/lang/String;)Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.impl.BrowserDateTimeFormatInfo",
+    "member": "formatter",
+    "descriptor": "(Lorg/gwtproject/i18n/shared/browser/JsIntlDateTimeFormatOptions;)Lorg/gwtproject/i18n/shared/browser/JsIntlDateTimeFormat;",
     "callers": [
       "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
     ]

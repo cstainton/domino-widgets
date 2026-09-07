@@ -1,31 +1,32 @@
 # Coverage and limitations
 
-Coverage states are `unassessed`, `compiles`, `browser-tested`, and `unsupported`. A successful Java or TeaVM compile is not proof of browser behavior.
+A compiled declaration is not evidence of browser behavior. `browser-tested` below refers only to the named scenarios. The shared suite runs against GWT and TeaVM in Chromium, Firefox and WebKit, for development and optimized production builds. Exact outcomes and compiler/source metadata are recorded under [reports](../reports).
 
-| Area | Status / evidence |
+| Area | Coverage |
 |---|---|
-| Original Button | Browser contracts: clicks, exact handler removal, repeated detach/reattach |
-| Original TextBox | Browser contracts: required validation, clearing invalid state, value-change event |
-| Original Dialog | Browser contracts: repeated open/close and Escape; original implementation retained |
-| Original DataTable | Browser contracts: real rendering, selection, local store search, replacing records |
-| Elemental2 properties/globals | Browser contracts: inherited field access, document, native event/Date constructors |
-| Callbacks | Browser contracts: registration/removal with capture, timer callback through a union overload |
-| JsInterop maps/arrays | Browser contracts: generic string arrays, Java object identity, primitive conversion, missing values, null/undefined, custom-event detail |
-| Original showcase samples | Browser-tested basic button, form and message-dialog interactions; see SHOWCASE.md |
-| Other original widget sources | `compiles`; not advertised as browser-tested |
-| Other Elemental2 APIs (SVG, uploads, media, storage, promises, rich text) | `compiles` declarations; runtime coverage remains unassessed |
-| Fork i18n services | Basic Intl operations execute through core widgets; broad locale/time/calendar behavior remains unassessed |
-| Native constructor varargs with supplied arguments | `unsupported`; TeaVM 0.15 does not spread them. The zero-argument Array case is explicitly adapted |
-| `Js.asConstructorFn(Class)` | `unsupported`; fails explicitly rather than inventing a constructor mapping |
-| Java reflection/Class conversion and arbitrary JsInterop base APIs | Outside the implemented surface; this is not a complete JsInterop replacement |
-| WebAssembly GC | Outside the initial supported targets |
-| Optional Domino history and REST | Existing ports inventoried, not included in the widget artifacts or declared validated here |
-| Full Verrai/Sarto migration | Blocked on the wider consumer widget coverage in MIGRATION.md |
+| Original gallery | 51 pages, 167 extracted sample methods: render, nonempty content and uncaught browser errors; [page inventory](SHOWCASE.md) |
+| Button and lifecycle | Clicks, exact handler removal, repeated detach/reattach, mutation observers, original sample interactions |
+| Text inputs | Required validation, invalid-state clearing, value-change events, clearing and changed numeric input |
+| Dialogs | Repeated open/close, Escape, original message/alert/custom content interactions |
+| Tables | Original contact tables and 11 plugin pages render; contracts cover selection, record replacement, store search and pagination |
+| Tree, chips, tabs | Nested branch expansion/collapse; removing chips; repeated visible tab switching |
+| Calendar | Day selection, next/previous month navigation; strict leap-date parsing and invalid-date rejection |
+| Locale labels | Explicit Spanish and Arabic month labels through native Intl; full CLDR/week-start/time-zone parity remains unassessed |
+| Advanced forms | Original dynamic country suggestions fetch JSON and select a result; original file upload sends multipart bytes through XHR and handles a controlled successful response |
+| Rich text | Original editor renders, accepts content editing, returns HTML and resets its value; toolbar commands, clipboard and browser permission cases remain unassessed |
+| Browser APIs | Local/session storage roundtrip/deletion, SVG namespace, Blob URL/fetch/text, FileReader, promise fulfillment/rejection conversion, pushState/popstate |
+| Elemental2 and JsInterop foundations | Inherited fields, globals/native constructors, generic arrays/maps, native and Java identity, primitive conversion, missing values, null/undefined, custom events, union timer callbacks |
+| Independent reuse | Published Elemental2 console logger uses compatibility artifacts without Domino or Verrai |
+| Remaining widget behaviors | `compiles`; a gallery render test does not establish all interactions, accessibility or edge cases |
+| Native constructor varargs with supplied arguments | `unsupported`; TeaVM 0.15 does not spread them. Zero-argument Array is explicitly adapted |
+| `Js.asConstructorFn(Class)` | `unsupported`; explicit failure rather than an invented reflection mapping |
+| Arbitrary JsInterop reflection/base surface | Outside the implemented subset |
+| Optional Domino history/REST packages | Not included; native API contracts above do not certify those optional libraries |
+| WebAssembly GC | Outside the supported browser-JavaScript targets |
+| Verrai/Sarto application retirement | In progress; [consumer inventory and concrete blocker](MIGRATION.md) |
 
-Compiler baselines: GWT 2.13.1, TeaVM 0.15.0, JDK 21, Java source/release level 17, Elemental2 1.2.3, native JsInterop base 1.0.1 and annotations 2.0.2. The native GWT fixture runs the strict compiler, so unreferenced source errors are not silently ignored.
+Baselines: GWT 2.13.1, TeaVM 0.15.0, JDK 21, Java release 17, Elemental2 1.2.3, native JsInterop base 1.0.1 and annotations 2.0.2. GWT builds both Safari/Chromium and Gecko permutations with its strict compiler.
 
-The full archive is retained, but demo applications, history/REST modules, annotation processor build machinery and webjar build machinery are not compiled into the widget libraries. Checked-in generated icon classes and their resource inputs are retained. No widget class is replaced by a reimplementation.
+The complete widget archive is retained. Original widget implementations are shared; general fixes live in the source fork. The framework demo shell, optional history/REST modules and annotation/webjar processor build machinery are excluded from the runtime libraries. Checked-in generated icons and their inputs are retained.
 
-Known upstream behavior: `DataTable.filterRows` adds `table-row-filtered`, but the pinned stylesheet has no corresponding hiding rule. The fixture tests actual data-store search filtering. This finding does not disappear merely because both backends behave alike.
-
-Do not infer full accessibility certification, all-browser support or all-widget parity from this tranche. The reports identify the exact browser scenarios run.
+Known upstream behavior: rapid tree collapse during the expansion animation can leave height inconsistent with the collapsed flag (also reproduced on GWT); the normal expand/collapse contract waits for the animation to finish.  `DataTable.filterRows` adds `table-row-filtered`, but the pinned stylesheet has no corresponding hiding rule. Tests use actual data-store search filtering. GitHub Pages has no upload backend, and gallery media rendering does not certify playback or device APIs. Remaining advanced table combinations, full application layout, locale/time-zone edge cases, upload cancellation/error/retry, rich-text toolbar/clipboard and optional integrations need further targeted contracts.

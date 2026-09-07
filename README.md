@@ -2,13 +2,13 @@
 
 Standalone, shared-source Domino UI libraries for **GWT 2.13.1** and **TeaVM 0.15.0**. Both backends compile the same pinned original `org.dominokit.domino.ui` widget sources. There is no Verrai, Sarto or CDI dependency.
 
-This is the first implementation tranche of [PLAN.md](PLAN.md), not a claim of complete Domino or Verrai migration parity. The shared browser fixture exercises original buttons, validated inputs, dialogs and datatables. See [coverage and limitations](docs/COMPATIBILITY.md) before adopting other components.
+The gallery now contains 51 original pages and 167 original sample methods. Shared contracts cover core widgets, calendar navigation, table selection/pagination, trees, rich text, uploads, dynamic suggestions and browser APIs. See [coverage and limitations](docs/COMPATIBILITY.md) for the exact tested behaviors and remaining work.
 
 [Hosted showcases](https://cstainton.github.io/domino-widgets/) offer both compiler builds. Pages deploys only after the development and production CI contracts pass.
 
 ## Build and test
 
-Prerequisites: JDK 21, Maven 3.9+, Python 3, Node.js and Chrome.
+Prerequisites: JDK 21, Maven 3.9+, Python 3 and Node.js.
 
 ```sh
 mvn clean verify
@@ -17,27 +17,27 @@ python3 scripts/check-artifacts.py
 python3 scripts/member-inventory.py
 python3 scripts/prepare-sites.py
 npm --prefix browser-tests ci
-npm --prefix browser-tests test
+BROWSERS=chromium,firefox,webkit npm --prefix browser-tests test
 python3 scripts/spotbugs-index.py
 ```
 
-On CI or a machine without Chrome, install Playwright Chromium and select it:
+Install the matching Playwright browsers before running the suite:
 
 ```sh
 cd browser-tests
-npx playwright install --with-deps chromium
-PLAYWRIGHT_CHANNEL=chromium npm test
+npx playwright install --with-deps chromium firefox webkit
+BROWSERS=chromium,firefox,webkit npm test
 ```
 
-`mvn -Pproduction clean verify` enables GWT obfuscation and TeaVM advanced optimization/minification. Run the same browser commands afterward. CI runs both build modes. SpotBugs runs on normal builds; `-Dspotbugs.skip=true` is an explicit fast-development option. Analyzer errors fail the build; findings and missing-class diagnostics are reported separately in `target/spotbugs/index.html` (the full reactor generates the index automatically).
+`mvn -Pproduction clean verify` enables GWT obfuscation and TeaVM advanced optimization/minification. Run the same browser commands afterward. CI runs both build modes and all three browser engines. SpotBugs runs on normal builds; `-Dspotbugs.skip=true` is an explicit fast-development option. Analyzer errors fail the build; findings and missing-class diagnostics are reported separately in `target/spotbugs/index.html` (the full reactor generates the index automatically).
 
 Serve the two launchers after preparing the sites:
 
 ```sh
-python3 -m http.server 8080
+python3 -m http.server 8080 --bind 127.0.0.1
 ```
 
-Open `/showcase-gwt/target/site/` or `/showcase-teavm/target/site/`. The screen and gallery live once in `showcase-shared/`; launchers only invoke them. Navigation opens original Domino showcase button, form and dialog examples on either backend. See [showcase provenance and included pages](docs/SHOWCASE.md). CSS and fonts come from the same pinned archive as the Java sources.
+Open `/showcase-gwt/target/site/` or `/showcase-teavm/target/site/`. The screen and gallery live once in `showcase-shared/`; launchers only invoke them. The All examples selector opens the complete included gallery on either backend. See [showcase provenance and included pages](docs/SHOWCASE.md). CSS and fonts come from the same pinned archive as the Java sources.
 
 ## Consumption
 
@@ -70,7 +70,7 @@ The GWT backend supplies `org.dominokit.domino.ui.DominoUI`; inherit that module
 
 The assets JAR exposes `META-INF/resources/domino-widgets/`; serve that directory and load `domino-widgets/css/domino-ui/domino-ui.css`. Browser assets are packaged once, outside the Java libraries.
 
-Maven publication is a separate manual GitHub Actions workflow. Repository creation does not itself publish Maven binaries. A release profile attaches Javadocs; source JARs are attached by default. Builds require no sibling checkouts or locally modified dependency binaries.
+Maven publication uses the manual GitHub Actions workflow. After deployment it builds the [external sample applications](examples/) outside the checkout with an empty Maven repository, then tests them in all three browser engines. A release profile attaches Javadocs; source JARs are attached by default. Builds require no sibling checkouts or locally modified dependency binaries.
 
 ## Compatibility architecture
 

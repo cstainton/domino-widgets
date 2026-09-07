@@ -1,6 +1,6 @@
 # Domino Widgets: shared-source GWT and TeaVM plan
 
-Status: implementation plan, 7 September 2026. No implementation or publication performed by this document.
+Status: implementation in progress, 7 September 2026. Current evidence and remaining limitations are linked below.
 
 ## Decision and intended outcome
 
@@ -113,4 +113,4 @@ Background: [source and functionality comparison](docs/WIDGET-BACKEND-COMPARISON
 
 ## Implementation status — September 2026
 
-The first implementation tranche is implemented in this standalone reactor. See [README](README.md), [compatibility coverage](docs/COMPATIBILITY.md), [prior-port findings](docs/EXISTING-PORT.md), and [recorded verification](reports/). The reusable binding layer is also exercised by an independent published Elemental2 console logger. Broader widget coverage, application migration, cross-browser coverage and Maven publication remain separate milestones; no full migration parity is claimed.
+The standalone reactor and reusable binding layer are implemented. Coverage now includes 51 original gallery pages, 167 sample methods, targeted interactions and three browser engines on both compiler backends. See [README](README.md), [coverage](docs/COMPATIBILITY.md), [showcase inventory](docs/SHOWCASE.md), and [verification reports](reports/). Independent Maven-consumer applications and publication verification are provided under `examples/`. A representative Sarto migration is prepared, with unchanged-baseline framework blockers documented in [MIGRATION.md](docs/MIGRATION.md). Full application retirement and all-widget behavioral parity remain open.

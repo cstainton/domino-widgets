@@ -33,18 +33,20 @@ jobs:
           fi
       - name: Verify packaging and prepare browser fixtures
         run: |
+          python3 scripts/generate-showcase.py --check
           python3 scripts/check-analysis.py
           python3 scripts/check-artifacts.py
           python3 scripts/member-inventory.py
           python3 scripts/prepare-sites.py
       - run: npm ci
         working-directory: browser-tests
-      - run: npx playwright install --with-deps chromium
+      - run: npx playwright install --with-deps chromium firefox webkit
         working-directory: browser-tests
       - run: npm test
         working-directory: browser-tests
         env:
           PLAYWRIGHT_CHANNEL: chromium
+          BROWSERS: chromium,firefox,webkit
       - name: Index analyzer results
         if: always()
         run: python3 scripts/spotbugs-index.py

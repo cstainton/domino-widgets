@@ -1,2 +1,10 @@
-const {defineConfig} = require('@playwright/test');
-module.exports = defineConfig({testDir:'.',testMatch:'*.spec.js',use:{screenshot:"only-on-failure",trace:"retain-on-failure",headless:true,channel:process.env.PLAYWRIGHT_CHANNEL || "chrome"},reporter:[['list'],['json',{outputFile:'test-results/results.json'}]],webServer:{command:'python3 -m http.server 8791 --directory ..',port:8791},projects:[{name:'gwt',testMatch:'contracts.spec.js',use:{baseURL:'http://localhost:8791/showcase-gwt/target/site/'}},{name:'teavm',testMatch:'contracts.spec.js',use:{baseURL:'http://localhost:8791/showcase-teavm/target/site/'}},{name:'reuse',testMatch:'reuse.spec.js',use:{baseURL:'http://localhost:8791/compat-reuse-smoke/target/site/'}}]});
+const {defineConfig}=require('@playwright/test');
+const browsers=(process.env.BROWSERS||'chromium').split(',');
+const projects=[];
+for(const browserName of browsers){
+ const use={browserName,locale:'en-US',timezoneId:'UTC'};
+ if(browserName==='chromium')use.channel=process.env.PLAYWRIGHT_CHANNEL||'chromium';
+ for(const backend of ['gwt','teavm'])projects.push({name:browserName==='chromium'?backend:backend+'-'+browserName,testMatch:['contracts.spec.js','gallery.spec.js','native.spec.js','interactions.spec.js'],use:{...use,baseURL:'http://127.0.0.1:8791/showcase-'+backend+'/target/site/'}});
+ projects.push({name:browserName==='chromium'?'reuse':'reuse-'+browserName,testMatch:'reuse.spec.js',use:{...use,baseURL:'http://127.0.0.1:8791/compat-reuse-smoke/target/site/'}});
+}
+module.exports=defineConfig({workers:2,globalTimeout:600000,testDir:'.',testMatch:'*.spec.js',use:{screenshot:'only-on-failure',trace:'retain-on-failure',headless:true},reporter:[['list'],['json',{outputFile:'test-results/results.json'}]],webServer:{command:'python3 server.py',port:8791},projects});

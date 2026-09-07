@@ -12,9 +12,23 @@
         "initSimpleButtons",
         "initButtonSizes",
         "initDisabledButtons",
-        "initButtonsBasicGroup"
+        "initButtons",
+        "initTextButtons",
+        "initButtonsBasicGroup",
+        "initButtonsToolbar",
+        "initSizingGroup",
+        "initNestingGroup",
+        "initVerticalGroup",
+        "initSplitButton",
+        "initDropDownPosition"
       ],
-      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/ButtonsExamples.java"
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/ButtonsExamples.java",
+      "route": "buttons",
+      "fields": "    private static final Logger LOGGER = LoggerFactory.getLogger(ButtonsExamples.class);",
+      "helpers": [
+        "heading"
+      ],
+      "nativeElement": false
     },
     {
       "path": "basic-forms/src/main/java/org/dominokit/domino/basicforms/client/views/ui/BasicFormsViewImpl.java",
@@ -22,9 +36,18 @@
       "methods": [
         "initBasicExamples",
         "initBasicTextAreaExample",
-        "initCheckboxExample"
+        "initCheckboxExample",
+        "initRadioExample",
+        "initSwitchExample"
       ],
-      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/FormsExamples.java"
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/FormsExamples.java",
+      "route": "forms",
+      "fields": "private static final org.dominokit.domino.ui.utils.ElementsFactory elements=org.dominokit.domino.ui.utils.ElementsFactory.elements;\n\n    public static class IconOption extends SelectOption<MdiIcon> {\n        public IconOption(MdiIcon mdiIcon) {\n            super(mdiIcon.getName(), mdiIcon,\n                    (key, value) -> elements.div()\n                            .appendChild(LabeledIcon.create(mdiIcon.copy(), mdiIcon.getName())\n                                    .addCss(dui_rounded_full, dui_accent, dui_p_x_1))\n                    ,\n                    (key, icon) -> CustomMenuItem.<MdiIcon>create()\n                            .setSearchFilter((token, caseSensitive) -> icon.getMetaInfo()\n                                    .getAliases()\n                                    .stream()\n                                    .anyMatch(alias -> compare(alias, token, caseSensitive)) ||\n                                    compare(icon.getMetaInfo().getName(), token, caseSensitive) ||\n                                    icon.getMetaInfo().getTags()\n                                            .stream().anyMatch(iconTag -> compare(iconTag, token, caseSensitive))\n                            )\n                            .appendChild(elements.div()\n                                    .addCss(dui_flex, dui_gap_1, dui_items_center)\n                                    .appendChild(mdiIcon)\n                                    .appendChild(elements.span()\n                                            .addCss(dui_grow_1)\n                                            .textContent(mdiIcon.getName()))\n                                    .appendChild(Badge.create(\"version :\" + mdiIcon.getMetaInfo().getVersion())\n                                            .addCss(dui_rounded_full))\n                            )\n            );\n        }\n\n        private static boolean compare(String left, String right, boolean caseSensitive) {\n            if (caseSensitive) {\n                return left.contains(right);\n            } else {\n                return left.toLowerCase().contains(right.toLowerCase());\n            }\n        }\n\n        public static IconOption create(MdiIcon icon) {\n            return new IconOption(icon);\n        }\n    }\n\n\n",
+      "helpers": [
+        "initSelectExample"
+      ],
+      "nativeElement": false,
+      "replacements": {}
     },
     {
       "path": "dialogs/src/main/java/org/dominokit/domino/dialogs/client/views/ui/DialogsViewImpl.java",
@@ -32,12 +55,948 @@
       "methods": [
         "sample"
       ],
-      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/DialogsExamples.java"
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/DialogsExamples.java",
+      "route": "dialogs",
+      "fields": "",
+      "helpers": [],
+      "nativeElement": false
+    },
+    {
+      "path": "alerts/src/main/java/org/dominokit/domino/alerts/client/views/ui/AlertsViewImpl.java",
+      "sha256": "2c6ee4af001496f1480f44f877073acbd5b44fa14cd1f8fd2dff4acaba5fb8c1",
+      "methods": [
+        "basicAlerts",
+        "customBackground",
+        "dismissibleAlerts",
+        "linksInAlerts"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/AlertsExamples.java",
+      "route": "alerts",
+      "fields": "",
+      "helpers": [],
+      "nativeElement": true
+    },
+    {
+      "path": "badges/src/main/java/org/dominokit/domino/badges/client/views/ui/BadgesViewImpl.java",
+      "sha256": "393e7e969285a77437594b8e05fde65848356dd3bd7d3d30d619b424d50e027d",
+      "methods": [
+        "buttonExample",
+        "buttonExamplesWithMaterialDesignColors",
+        "listExample"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/BadgesExamples.java",
+      "route": "badges",
+      "fields": "\n    private static class BadgeSample {\n        private final String desc;\n        private final String badgeText;\n        private final CssClass[] cssClasses;\n\n        public BadgeSample(String desc, String badgeText, CssClass... cssClasses) {\n            this.desc = desc;\n            this.badgeText = badgeText;\n            this.cssClasses = cssClasses;\n        }\n    }\n\n",
+      "helpers": [],
+      "nativeElement": true
+    },
+    {
+      "path": "breadcrumb/src/main/java/org/dominokit/domino/breadcrumb/client/views/ui/BreadcrumbViewImpl.java",
+      "sha256": "cfd1334e3ab72fb1aa5a2db4d81457015840ea67ccc88e3bf0d42459f5b84cfc",
+      "methods": [
+        "basicBreadcrumb",
+        "coloredBreadcrumb",
+        "breadcrumbWithBackground",
+        "alignment"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/BreadcrumbExamples.java",
+      "route": "breadcrumb",
+      "fields": "",
+      "helpers": [],
+      "nativeElement": false
+    },
+    {
+      "path": "cards/src/main/java/org/dominokit/domino/cards/client/views/ui/CardsViewImpl.java",
+      "sha256": "c8eaddae32ad6539c8ab3d99d8a5915e751cae087ea7450529063699bfc593aa",
+      "methods": [
+        "cardsWithoutHeaders",
+        "cardsWithHeaders",
+        "coloredCards",
+        "collapsibleCards",
+        "cardLogo",
+        "subheader"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/CardsExamples.java",
+      "route": "cards",
+      "fields": "    private static final String SAMPLE_CONTENT = \"Quis pharetra a pharetra fames blandit. Risus faucibus velit Risus imperdiet mattis neque volutpat, etiam lacinia netus dictum magnis per facilisi sociosqu. Volutpat. Ridiculus nostra.\";",
+      "helpers": [],
+      "nativeElement": false,
+      "replacements": {
+        "http://placehold.jp/3d4070/ffffff/36x36.png": "showcase-image.jpg",
+        "http://placehold.jp/36x36.png": "showcase-image.jpg"
+      }
+    },
+    {
+      "path": "chips/src/main/java/org/dominokit/domino/chips/client/views/ui/ChipsViewImpl.java",
+      "sha256": "9f132ff730ca5e41cec78083efeee8408bf5bf5481f73c24e540525013f15d83",
+      "methods": [
+        "initSimpleExample",
+        "initRemovableExample",
+        "initChipsWithIconsExample",
+        "initChipsWithImagesExample",
+        "initChipsWithLettersExample",
+        "initSelectableChipsExample"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/ChipsExamples.java",
+      "route": "chips",
+      "fields": "    private Card simpleCard;\n    private Card removableCard;\n    private Card iconChipsCard;\n    private Card imagesChipsCard;\n    private Card lettersChipsCard;\n    private Card selectableChipsCard;",
+      "before": "        simpleCard = Card.create(\"SIMPLE CHIPS\");\n        removableCard = Card.create(\"REMOVABLE CHIPS\");\n        iconChipsCard = Card.create(\"CHIPS WITH ICONS\");\n        imagesChipsCard = Card.create(\"CHIPS WITH IMAGES\");\n        lettersChipsCard = Card.create(\"CHIPS WITH LETTERS\");\n        selectableChipsCard = Card.create(\"SELECTABLE CHIPS\");",
+      "after": "element.appendChild(simpleCard);\nelement.appendChild(removableCard);\nelement.appendChild(iconChipsCard);\nelement.appendChild(imagesChipsCard);\nelement.appendChild(lettersChipsCard);\nelement.appendChild(selectableChipsCard);",
+      "helpers": [],
+      "nativeElement": false,
+      "replacements": {
+        "https://randomuser.me/api/portraits/med/men/0.jpg": "showcase-image.jpg",
+        "https://randomuser.me/api/portraits/med/men/1.jpg": "showcase-image.jpg",
+        "https://randomuser.me/api/portraits/med/men/2.jpg": "showcase-image.jpg",
+        "https://randomuser.me/api/portraits/med/men/3.jpg": "showcase-image.jpg",
+        "https://randomuser.me/api/portraits/med/men/4.jpg": "showcase-image.jpg",
+        "https://randomuser.me/api/portraits/med/men/5.jpg": "showcase-image.jpg"
+      }
+    },
+    {
+      "path": "collapse/src/main/java/org/dominokit/domino/collapse/client/views/ui/CollapseViewImpl.java",
+      "sha256": "7cee1126c886e53fcf5c5a206f7ab1e77c5eef349f4a0f3f876f295f7e9607c0",
+      "methods": [
+        "example",
+        "accordionSample",
+        "colorFullWithIcons",
+        "multiOpenItems"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/CollapseExamples.java",
+      "route": "collapse",
+      "fields": "    private static final String SAMPLE_CONTENT = \"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.\";",
+      "replacements": {
+        "CollapseDuration": "CollapsibleDuration"
+      },
+      "helpers": [],
+      "nativeElement": false
+    },
+    {
+      "path": "grids/src/main/java/org/dominokit/domino/grids/client/views/ui/GridsViewImpl.java",
+      "sha256": "eff5048f0da1b288c8a9fb0026c3fb2c5217cc595415a78984d00d936a4f14ee",
+      "methods": [
+        "grid12Columns",
+        "grid16Columns",
+        "grid18Columns",
+        "grid24Columns",
+        "grid32Columns"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/GridsExamples.java",
+      "route": "grids",
+      "fields": "",
+      "helpers": [],
+      "nativeElement": true
+    },
+    {
+      "path": "helpers/src/main/java/org/dominokit/domino/helpers/client/views/ui/HelpersViewImpl.java",
+      "sha256": "5179436af641f1af6710b5c91a6e5c5468efc5d8673b77ed20d0c5e7bddbb9b7",
+      "methods": [
+        "heightClasses",
+        "widthClasses",
+        "marginClasses",
+        "paddingClasses"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/HelpersExamples.java",
+      "route": "helpers",
+      "fields": "    private static final String SAMPLE_TEXT = \"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\";",
+      "helpers": [],
+      "nativeElement": false
+    },
+    {
+      "path": "infobox/src/main/java/org/dominokit/domino/infobox/client/views/ui/InfoBoxViewImpl.java",
+      "sha256": "d3934eb71ab78dbe139d2e9af8fe6582445c84d1377356fe2062674bfa3b8df0",
+      "methods": [
+        "basicInfoBoxes",
+        "hoverZoomEffect",
+        "rightAligned"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/InfoBoxExamples.java",
+      "route": "infobox",
+      "fields": "    private Counter counter;",
+      "helpers": [
+        "restartCounters"
+      ],
+      "nativeElement": false,
+      "replacements": {
+        ".incrementBy(5)": ".step(5)"
+      }
+    },
+    {
+      "path": "inputfields/src/main/java/org/dominokit/domino/inputfields/client/views/ui/InputFieldsViewImpl.java",
+      "sha256": "9069d651a9005a70bbac7b22bbada2f5b1c251f20464372b412dcd6d38e74a40",
+      "methods": [
+        "initNumberFields",
+        "initAdvancedFields"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/InputFieldsExamples.java",
+      "route": "inputfields",
+      "fields": "",
+      "helpers": [],
+      "nativeElement": false
+    },
+    {
+      "path": "labels/src/main/java/org/dominokit/domino/labels/client/views/ui/LabelsViewImpl.java",
+      "sha256": "ffc179c74081b7c40fc7c852a9b61e4103f040a89a59f41a88c929ca48dbf01d",
+      "methods": [
+        "initLabels",
+        "initMaterialLabels"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/LabelsExamples.java",
+      "route": "labels",
+      "fields": "",
+      "helpers": [],
+      "nativeElement": false
+    },
+    {
+      "path": "lists/src/main/java/org/dominokit/domino/lists/client/views/ui/ListsViewImpl.java",
+      "sha256": "009580e70f3bc001130788da93ba6bf89d72017b3d34f36b334ce7faa54475bd",
+      "methods": [
+        "listSample"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/ListsExamples.java",
+      "route": "lists",
+      "fields": "",
+      "helpers": [],
+      "nativeElement": false,
+      "replacements": {
+        "        Random random = new Random();\n        int i = random.nextInt(100 - 10);\n        DemoServiceFactory.INSTANCE\n                .list()\n                .onSuccess(items -> {\n                    singleSelectList.setItems(items.subList(i, i + 10));\n                    multiSelectList.setItems(items.subList(i, i + 10));\n                })\n                .onFailed(failedResponse -> {\n                })\n                .send();": "singleSelectList.setItems(SampleContacts.create());\nmultiSelectList.setItems(SampleContacts.create());",
+        "ContactUiUtils.getAvatarUrl(item.getValue())": "item.getValue().getPicture()"
+      }
+    },
+    {
+      "path": "loaders/src/main/java/org/dominokit/domino/loaders/client/views/ui/LoadersViewImpl.java",
+      "sha256": "545b607740d19058e4e0a17d09c05741d7ef83efc44e6dad9a4253f751bf091b",
+      "methods": [
+        "initSample"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/LoadersExamples.java",
+      "route": "loaders",
+      "fields": "    private static final String SAMPLE_CONTENT = \"Quis pharetra a pharetra fames blandit. Risus faucibus velit Risus imperdiet mattis neque volutpat, etiam lacinia netus dictum magnis per facilisi sociosqu. Volutpat. Ridiculus nostra.\";",
+      "replacements": {
+        "import org.gwtproject.timer.client.Timer;": "import org.dominokit.domino.ui.utils.DominoTimer;",
+        "new Timer()": "new DominoTimer()"
+      },
+      "helpers": [
+        "createCard",
+        "sample"
+      ],
+      "nativeElement": false
+    },
+    {
+      "path": "menu/src/main/java/org/dominokit/domino/menu/client/views/ui/MenuViewImpl.java",
+      "sha256": "03bd3bde2722fa35e7bd2195ac6c54b3aae25340266323833f8fc5aea7163a4e",
+      "methods": [
+        "basicMenu",
+        "basicMenuWithHeaderAndActions",
+        "basicMenuSubHeader",
+        "dropMenu",
+        "contextMenu",
+        "nestedMenu"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/MenuExamples.java",
+      "route": "menu",
+      "fields": "",
+      "helpers": [
+        "basicMenuSearchableAndAddMissing",
+        "basicMenuCustomItems",
+        "basicMenuAllBasicFeatures",
+        "embedIntoElements"
+      ],
+      "nativeElement": false
+    },
+    {
+      "path": "notifications/src/main/java/org/dominokit/domino/notifications/client/views/ui/NotificationsViewImpl.java",
+      "sha256": "1ddc7bc1757daea324e8731f91e68465ce1ed7f7b53d7d5fecd4f99ef15e6c43",
+      "methods": [
+        "notificationsPosition",
+        "notificationsTypes",
+        "withMaterialColors",
+        "withAnimation"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/NotificationsExamples.java",
+      "route": "notifications",
+      "fields": "",
+      "helpers": [],
+      "nativeElement": false
+    },
+    {
+      "path": "pagination/src/main/java/org/dominokit/domino/pagination/client/views/ui/PaginationViewImpl.java",
+      "sha256": "9a9e121611b74f6635777b5b123cdfff111ad7aa080ea3e617fb413f55c35bf4",
+      "methods": [
+        "defaultPagination",
+        "activePageSample",
+        "sizesSample",
+        "initScrollerPagination",
+        "initAdvancedPagination",
+        "pagerNexPrevSample"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/PaginationExamples.java",
+      "route": "pagination",
+      "fields": "",
+      "helpers": [],
+      "nativeElement": false
+    },
+    {
+      "path": "popover/src/main/java/org/dominokit/domino/popover/client/views/ui/PopoverViewImpl.java",
+      "sha256": "04281f50a665927f9b621dce92f47f072d9661adbbb3eeed10e50050cbd3b00b",
+      "methods": [
+        "tooltips",
+        "popover"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/PopoverExamples.java",
+      "route": "popover",
+      "fields": "",
+      "helpers": [],
+      "nativeElement": false
+    },
+    {
+      "path": "preloaders/src/main/java/org/dominokit/domino/preloaders/client/views/ui/PreloadersViewImpl.java",
+      "sha256": "a3a2a3f255b8c67f8c1288397edea2d9ad9c8c0ca96b2c7b0c5273e882689bad",
+      "methods": [
+        "sizesSample",
+        "colorsSample"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/PreloadersExamples.java",
+      "route": "preloaders",
+      "fields": "",
+      "helpers": [],
+      "nativeElement": false
+    },
+    {
+      "path": "progress/src/main/java/org/dominokit/domino/progress/client/views/ui/ProgressViewImpl.java",
+      "sha256": "e44c173a0be4c245aa9f33c605be3b66e19e77e924970240d7ca531cb8c22e96",
+      "methods": [
+        "basicSample",
+        "contextualAlternatives",
+        "stripedSample",
+        "animatedSample",
+        "stackedSample",
+        "materialDesignColors"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/ProgressExamples.java",
+      "route": "progress",
+      "fields": "    private ProgressBar movingBar;",
+      "replacements": {
+        "import org.gwtproject.timer.client.Timer;": "import org.dominokit.domino.ui.utils.DominoTimer;",
+        "new Timer()": "new DominoTimer()"
+      },
+      "helpers": [
+        "restartProgress"
+      ],
+      "nativeElement": false
+    },
+    {
+      "path": "sliders/src/main/java/org/dominokit/domino/sliders/client/views/ui/SlidersViewImpl.java",
+      "sha256": "224c325640360b42dc3cfac054aec31139b9af10d09e43cbd0c7e3822b15049b",
+      "methods": [
+        "initBasic",
+        "initColors",
+        "initExample"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/SlidersExamples.java",
+      "route": "sliders",
+      "fields": "    private Card basicCard;\n    private Card colorsSlidersCard;\n    private Card sampleCard;",
+      "helpers": [
+        "showNotification",
+        "updateBackgroundColor",
+        "updateColorAndTextBoxes"
+      ],
+      "nativeElement": false,
+      "before": "        basicCard = Card.create(\"BASIC SLIDERS\");\n        colorsSlidersCard = Card.create(\"SLIDERS WITH COLORS\");\n        sampleCard = Card.create(\"SLIDERS EXAMPLE\");",
+      "after": "element.appendChild(basicCard);\nelement.appendChild(colorsSlidersCard);\nelement.appendChild(sampleCard);"
+    },
+    {
+      "path": "spin/src/main/java/org/dominokit/domino/spin/client/views/ui/SpinSelectViewImpl.java",
+      "sha256": "e8a0d47f3ddf83887dd494c75afdee4cda0c4f3df0eb7fe79d1ea2fcad678c63",
+      "methods": [
+        "horizontalSpin",
+        "verticalSpin"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/SpinSelectExamples.java",
+      "route": "spin",
+      "fields": "",
+      "helpers": [],
+      "nativeElement": false
+    },
+    {
+      "path": "splitPanel/src/main/java/org/dominokit/domino/splitPanel/client/views/ui/SplitPanelViewImpl.java",
+      "sha256": "f208c9f3e7451395052419d54e09b2a60343923e6b9c09a0d90ceb8a8b660374",
+      "methods": [
+        "horizontalSplitPanel",
+        "verticalSplitPanel",
+        "splitPanelMinMax",
+        "multiSplit",
+        "combined"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/SplitPanelExamples.java",
+      "route": "splitPanel",
+      "fields": "    private final CssClass demo_split_div = () -> \"demo-split-div\";\n",
+      "helpers": [],
+      "nativeElement": true
+    },
+    {
+      "path": "steppers/src/main/java/org/dominokit/domino/steppers/client/views/ui/SteppersViewImpl.java",
+      "sha256": "7d13bd9a82890ba4dda10f1db1d73f1322ca8bff994e4efa59faee0c5eef73b5",
+      "methods": [
+        "horizontalStepperTrack",
+        "verticalStepperTrack",
+        "horizontalStepper",
+        "verticalStepper"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/SteppersExamples.java",
+      "route": "steppers",
+      "fields": "    private static final String SAMPLE_CONTENT = \"Quis pharetra a pharetra fames blandit. Risus faucibus velit Risus imperdiet mattis neque volutpat, etiam lacinia netus dictum magnis per facilisi sociosqu. Volutpat. Ridiculus nostra.\";",
+      "helpers": [],
+      "nativeElement": false
+    },
+    {
+      "path": "tabs/src/main/java/org/dominokit/domino/tabs/client/views/ui/TabsViewImpl.java",
+      "sha256": "7c2584a8b4115c2d973d8d616fa045ebc732a732479e9cde7646bbac5bd76b87",
+      "methods": [
+        "basicSample",
+        "iconsOnly",
+        "withIconsAndTextSample",
+        "tabsAlignment",
+        "closableTabsSample",
+        "materialDesignColorsSample",
+        "backgroundSample",
+        "initDifferentContentSample",
+        "withAnimation"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/TabsExamples.java",
+      "route": "tabs",
+      "fields": "    private static final String SAMPLE_TEXT = \"Lorem ipsum dolor sit amet, ut duo atqui exerci dicunt, ius impedit mediocritatem an. Pri ut tation electram moderatius. Per te suavitate democritum. Duis nemore probatus ne quo, ad liber essent aliquid pro. Et eos nusquam accumsan, vide mentitum fabellas ne est, eu munere gubergren sadipscing mel.\";",
+      "helpers": [
+        "Tabs"
+      ],
+      "nativeElement": false
+    },
+    {
+      "path": "timepicker/src/main/java/org/dominokit/domino/timepicker/client/views/ui/TimePickerViewImpl.java",
+      "sha256": "1ca66ccc5785f1b73675f65d0349119c59cd1564f8aad17b5eef738efc38f954",
+      "methods": [
+        "inlineTimePicker",
+        "withHeader",
+        "withFooter",
+        "dropdownTimePicker",
+        "timeBox"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/TimePickerExamples.java",
+      "route": "timepicker",
+      "replacements": {
+        "import org.gwtproject.i18n.shared.cldr.impl.DateTimeFormatInfoImpl_ar;": "",
+        "new DateTimeFormatInfoImpl_ar()": "new org.gwtproject.i18n.shared.cldr.impl.BrowserDateTimeFormatInfo(\"ar\")",
+        "import org.gwtproject.i18n.shared.cldr.impl.DateTimeFormatInfoImpl_es;": "",
+        "new DateTimeFormatInfoImpl_es()": "new org.gwtproject.i18n.shared.cldr.impl.BrowserDateTimeFormatInfo(\"es\")"
+      },
+      "fields": "",
+      "helpers": [],
+      "nativeElement": false
+    },
+    {
+      "path": "typography/src/main/java/org/dominokit/domino/typography/client/views/ui/TypographyViewImpl.java",
+      "sha256": "6e61b8541a8b48032da763ede5bd702e82c7f4ae697e2cf618789be60f2ca370",
+      "methods": [
+        "bodyCopy",
+        "heading",
+        "textStyles",
+        "blockqoute",
+        "lists",
+        "fontSizes"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/TypographyExamples.java",
+      "route": "typography",
+      "fields": "",
+      "helpers": [],
+      "nativeElement": false
+    },
+    {
+      "path": "waves/src/main/java/org/dominokit/domino/waves/client/views/ui/WavesViewImpl.java",
+      "sha256": "b966de21512cd6aa53522c3a88bb9dd13bb6722b019f7028d6fa7703cba31d6b",
+      "methods": [
+        "waves"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/WavesExamples.java",
+      "route": "waves",
+      "fields": "",
+      "helpers": [],
+      "nativeElement": false
+    },
+    {
+      "path": "datepicker/src/main/java/org/dominokit/domino/datepicker/client/views/ui/DatePickerViewImpl.java",
+      "sha256": "b84352440809a7c91b53b332845ebf9b1a2cba5220beac26a90835edd44ca7a0",
+      "methods": [
+        "inlineCalendar",
+        "withHeader",
+        "withFooter",
+        "dropdownCalendar",
+        "dateBox"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/DatePickerExamples.java",
+      "route": "datepicker",
+      "replacements": {
+        "import org.gwtproject.i18n.shared.cldr.impl.DateTimeFormatInfoImpl_ar;": "",
+        "new DateTimeFormatInfoImpl_ar()": "new org.gwtproject.i18n.shared.cldr.impl.BrowserDateTimeFormatInfo(\"ar\")",
+        "import org.gwtproject.i18n.shared.cldr.impl.DateTimeFormatInfoImpl_es;": "",
+        "new DateTimeFormatInfoImpl_es()": "new org.gwtproject.i18n.shared.cldr.impl.BrowserDateTimeFormatInfo(\"es\")"
+      },
+      "fields": "",
+      "helpers": [],
+      "nativeElement": false
+    },
+    {
+      "path": "formsvalidations/src/main/java/org/dominokit/domino/formsvalidations/client/views/ui/FormsValidationsViewImpl.java",
+      "sha256": "5646dcea9b9a6be2e59aedbfea4750f4f786fba7ca0b843f534d0d65f368211d",
+      "methods": [
+        "initHelperText",
+        "initIcons",
+        "initWordCount",
+        "initValidations",
+        "initReadOnly"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/FormsValidationsExamples.java",
+      "route": "formsvalidations",
+      "fields": "    private Card countsCard;\n    private Card validationsCard;\n    private Card readOnlyCard;",
+      "helpers": [],
+      "nativeElement": false,
+      "before": "        countsCard = Card.create(\"WORD COUNTER\");\n        validationsCard = Card.create(\"VALIDATIONS\");\n        readOnlyCard = Card.create(\"READ ONLY\");",
+      "after": "element.appendChild(countsCard);\nelement.appendChild(validationsCard);\nelement.appendChild(readOnlyCard);"
+    },
+    {
+      "path": "tree/src/main/java/org/dominokit/domino/tree/client/views/ui/TreeViewImpl.java",
+      "sha256": "fe1ddc482f53603b1523807e0b1106daa21d2e89ba38cbd01b8292eaf4a3e5ed",
+      "route": "tree",
+      "methods": [
+        "simpleTree",
+        "nestedTree",
+        "activeAndExpandIcons"
+      ],
+      "helpers": [],
+      "fields": "",
+      "nativeElement": false,
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/TreeExamples.java",
+      "replacements": {
+        "COUNTRIES": "Countries.COUNTRIES",
+        "Countries.MAPPER.read(Countries.COUNTRIES)": "SampleCountries.create()",
+        "setTreeItemIconSupplier": "setNodeIconSupplier"
+      }
+    },
+    {
+      "path": "advanced-forms/src/main/java/org/dominokit/domino/advancedforms/client/views/ui/AdvancedFormsViewImpl.java",
+      "sha256": "827d206450676a6d761a5baf5bc06bc5353918221d514e6472f015d9a2ee14f7",
+      "route": "advanced-forms",
+      "methods": [
+        "initFileUploadExample",
+        "initTagsInputExample",
+        "initSuggestBoxExample"
+      ],
+      "helpers": [],
+      "fields": "    private static final String IP_ADDRESS_REGEX = \"^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$\";\n    public static class Person {\n\n        private int id;\n        private String name;\n\n        public Person(int id, String name) {\n            this.id = id;\n            this.name = name;\n        }\n\n        public Person(String name) {\n            this.id = 0;\n            this.name = name;\n        }\n\n        public int getId() {\n            return id;\n        }\n\n        public void setId(int id) {\n            this.id = id;\n        }\n\n        public String getName() {\n            return name;\n        }\n\n        public void setName(String name) {\n            this.name = name;\n        }\n\n        @Override\n        public String toString() {\n            return \"Person{\" +\n                    \"id=\" + id +\n                    \", name='\" + name + '\\'' +\n                    '}';\n        }\n    }\n",
+      "nativeElement": false,
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/AdvancedFormsExamples.java",
+      "replacements": {
+        "http://localhost:8090/service/upload": "./service/upload",
+        "https://restcountries.com/v2/all?fields=name": "./countries.json"
+      }
+    },
+    {
+      "path": "animation/src/main/java/org/dominokit/domino/animation/client/views/ui/AnimationViewImpl.java",
+      "sha256": "943e922be8b7c8e063310341291cb77f382c824ce1e7585f3fe2f72ba52b71ff",
+      "route": "animation",
+      "methods": [],
+      "helpers": [
+        "createCard"
+      ],
+      "fields": "",
+      "nativeElement": false,
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/AnimationExamples.java",
+      "replacements": {
+        "GWT.getModuleBaseURL() + \"/images/": "\"images/"
+      },
+      "before": "for(Transition transition:new Transition[]{Transition.BOUNCE,Transition.FLASH,Transition.PULSE,Transition.SHAKE})element.appendChild(createCard(transition));"
+    },
+    {
+      "path": "carousel/src/main/java/org/dominokit/domino/carousel/client/views/ui/CarouselViewImpl.java",
+      "sha256": "b5e36012bc778411db055e4980873aa422495fc8a52f7971c1984d0f84aa032b",
+      "route": "carousel",
+      "methods": [
+        "basicSample"
+      ],
+      "helpers": [],
+      "fields": "",
+      "nativeElement": false,
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/CarouselExamples.java",
+      "replacements": {
+        "GWT.getModuleBaseURL() + \"/images/": "\"images/"
+      }
+    },
+    {
+      "path": "media/src/main/java/org/dominokit/domino/media/client/views/ui/MediaViewImpl.java",
+      "sha256": "806726050eda11972e6fbe528c56b046a2cca7632a528b51317ffcc0ba6d7656",
+      "route": "media",
+      "methods": [
+        "defaultMedia",
+        "mediaAlignment"
+      ],
+      "helpers": [],
+      "fields": "    private static final String SAMPLE_TEXT = \"Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.\";",
+      "nativeElement": false,
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/MediaExamples.java",
+      "replacements": {
+        "http://placehold.it/64x64": "showcase-image.jpg"
+      }
+    },
+    {
+      "path": "thumbnails/src/main/java/org/dominokit/domino/thumbnails/client/views/ui/ThumbnailsViewImpl.java",
+      "sha256": "d376502004d74b6172195ca76435fa5dbb65032091dcc3f6110cb30ef96dddde",
+      "route": "thumbnails",
+      "methods": [
+        "basicSample",
+        "withExtraContentSample",
+        "withTitle",
+        "differentDirections"
+      ],
+      "helpers": [],
+      "fields": "    private static final String SAMPLE_TEXT = \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s\";",
+      "nativeElement": false,
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/ThumbnailsExamples.java",
+      "replacements": {
+        "GWT.getModuleBaseURL() + \"/images/": "\"images/"
+      }
+    },
+    {
+      "path": "modals/src/main/java/org/dominokit/domino/modals/client/views/ui/ModalsViewImpl.java",
+      "sha256": "d98a03b535fa4d3b75a69c6f7024034a927fce8d411ae2d8895ada0decc3aa9a",
+      "route": "modals",
+      "methods": [
+        "initModalsSize",
+        "initSheets",
+        "initModalColor",
+        "initWindow"
+      ],
+      "helpers": [
+        "cleanup"
+      ],
+      "fields": "    private static final String SAMPLE_CONTENT = \" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales orci ante, sed ornare eros vestibulum ut. Ut accumsan vitae eros sit amet tristique. Nullam scelerisque nunc enim, non dignissim nibh faucibus ullamcorper. Fusce pulvinar libero vel ligula iaculis ullamcorper. Integer dapibus, mi ac tempor varius, purus nibh mattis erat, vitae porta nunc nisi non tellus. Vivamus mollis ante non massa egestas fringilla. Vestibulum egestas consectetur nunc at ultricies. Morbi quis consectetur nunc. \";",
+      "nativeElement": false,
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/ModalsExamples.java",
+      "replacements": {
+        ".setType(DialogType.RIGHT_SHEET)": ".addCss(DialogStyles.dui_right_sheet)",
+        ".setType(DialogType.TOP_SHEET)": ".addCss(DialogStyles.dui_top_sheet)",
+        ".setType(DialogType.BOTTOM_SHEET)": ".addCss(DialogStyles.dui_bottom_sheet)"
+      }
+    },
+    {
+      "path": "dnd/src/main/java/org/dominokit/domino/dnd/client/views/ui/DndViewImpl.java",
+      "sha256": "7b838a97f3339788753b3a3bf54893d2d8df11764998a9d428f2b3dc40b9c40d",
+      "route": "dnd",
+      "methods": [
+        "dragAndDrop"
+      ],
+      "helpers": [],
+      "fields": "",
+      "nativeElement": false,
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/DndExamples.java",
+      "replacements": {}
+    },
+    {
+      "path": "datatable/src/main/java/org/dominokit/domino/datatable/client/views/ui/BasicDataTableViewImpl.java",
+      "sha256": "886d9737879f6ffc6ba2757ed9bfd51ddd6ac472aeed0a7cc1238ff03d09f519",
+      "route": "table-basic-data-table",
+      "methods": [
+        "basicTable"
+      ],
+      "helpers": [],
+      "fields": "",
+      "nativeElement": false,
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/BasicDataTableExamples.java",
+      "replacements": {}
+    },
+    {
+      "path": "datatable/src/main/java/org/dominokit/domino/datatable/client/views/ui/SelectionPluginViewImpl.java",
+      "sha256": "1921388a9f8c26453c3d8a2e4c45bcaa3c4fad792fe2d6ebe64d11506fb05ff5",
+      "route": "table-selection-plugin",
+      "methods": [
+        "singleSelectionPlugin",
+        "multiSelectionPlugin"
+      ],
+      "helpers": [],
+      "fields": "",
+      "nativeElement": false,
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/SelectionPluginExamples.java",
+      "replacements": {}
+    },
+    {
+      "path": "datatable/src/main/java/org/dominokit/domino/datatable/client/views/ui/SortAndSearchPluginViewImpl.java",
+      "sha256": "2c0ecd46b3f72c2a27737b8aaa677a6f6fffba9c1cbc44a39bdc2a9c87a0c24b",
+      "route": "table-sort-and-search-plugin",
+      "methods": [
+        "sortAndSearch"
+      ],
+      "helpers": [],
+      "fields": "",
+      "nativeElement": false,
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/SortAndSearchPluginExamples.java",
+      "replacements": {}
+    },
+    {
+      "path": "datatable/src/main/java/org/dominokit/domino/datatable/client/views/ui/PaginationPluginViewImpl.java",
+      "sha256": "48697dc441a6067a631252403cb598450490c34118eb693c1953458d5de665f3",
+      "route": "table-pagination-plugin",
+      "methods": [
+        "simplePagination",
+        "scrollingPagination",
+        "advancedPagination"
+      ],
+      "helpers": [],
+      "fields": "",
+      "nativeElement": false,
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/PaginationPluginExamples.java",
+      "replacements": {}
+    },
+    {
+      "path": "datatable/src/main/java/org/dominokit/domino/datatable/client/views/ui/HeaderBarPluginViewImpl.java",
+      "sha256": "c6a97845165c3c3cf9b07ad9e1a319c4e3fb3265a14ff1ea1a24b911ec10bc34",
+      "route": "table-header-bar-plugin",
+      "methods": [
+        "tableHeaderBarPlugin"
+      ],
+      "helpers": [],
+      "fields": "",
+      "nativeElement": false,
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/HeaderBarPluginExamples.java",
+      "replacements": {}
+    },
+    {
+      "path": "datatable/src/main/java/org/dominokit/domino/datatable/client/views/ui/ColumnResizePluginViewImpl.java",
+      "sha256": "cb488f7e9eaf15aabcd427b0b0a7c11bf42421fd8e2b5a3059e7fe531da03514",
+      "route": "table-column-resize-plugin",
+      "methods": [
+        "resizableColumns"
+      ],
+      "helpers": [],
+      "fields": "",
+      "nativeElement": false,
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/ColumnResizePluginExamples.java",
+      "replacements": {}
+    },
+    {
+      "path": "datatable/src/main/java/org/dominokit/domino/datatable/client/views/ui/PinColumnsPluginViewImpl.java",
+      "sha256": "343ef53fb173f647ce8fd066ef73215e95c62374a8ab811e86c16c26585a6fd4",
+      "route": "table-pin-columns-plugin",
+      "methods": [
+        "pinColumns"
+      ],
+      "helpers": [],
+      "fields": "",
+      "nativeElement": false,
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/PinColumnsPluginExamples.java",
+      "replacements": {}
+    },
+    {
+      "path": "datatable/src/main/java/org/dominokit/domino/datatable/client/views/ui/EmptyStatePluginViewImpl.java",
+      "sha256": "e71730eeeac61f95699fe0a86debad60d1484b2b00b79e4f2ed4537252551e87",
+      "route": "table-empty-state-plugin",
+      "methods": [
+        "emptyState"
+      ],
+      "helpers": [],
+      "fields": "",
+      "nativeElement": false,
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/EmptyStatePluginExamples.java",
+      "replacements": {}
+    },
+    {
+      "path": "datatable/src/main/java/org/dominokit/domino/datatable/client/views/ui/FixedDataTableViewImpl.java",
+      "sha256": "b5fc14985f36653b12ca38ca9c4330199c62e2da7bd66b6a31fd624bccd4518b",
+      "route": "table-fixed-data-table",
+      "methods": [
+        "basicFixedTable"
+      ],
+      "helpers": [],
+      "fields": "",
+      "nativeElement": false,
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/FixedDataTableExamples.java",
+      "replacements": {}
+    },
+    {
+      "path": "datatable/src/main/java/org/dominokit/domino/datatable/client/views/ui/MarkerPluginViewImpl.java",
+      "sha256": "a5aacce991743425d00dd260bacf72a6f3d809db7f61d1f173ac8cfcf3291bb7",
+      "route": "table-marker-plugin",
+      "methods": [
+        "markerPlugin"
+      ],
+      "helpers": [],
+      "fields": "",
+      "nativeElement": false,
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/MarkerPluginExamples.java",
+      "replacements": {}
+    },
+    {
+      "path": "datatable/src/main/java/org/dominokit/domino/datatable/client/views/ui/ColumnsGroupsViewImpl.java",
+      "sha256": "2d055c45dbe7de0101f39342e7f2d058cbaa24981daaae599622760125761b84",
+      "route": "table-columns-groups",
+      "methods": [
+        "groupColumns",
+        "groupPinResizeColumns"
+      ],
+      "helpers": [],
+      "fields": "",
+      "nativeElement": false,
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/ColumnsGroupsExamples.java",
+      "replacements": {}
     }
   ],
   "asset": {
     "path": "showcase-image.jpg",
     "original": "ui-demo-backend/src/main/resources/app/images/image-gallery/9.jpg",
     "sha256": "647a183994a12ef4cbb56905812645e7f41b42d90249a7e414f1242b74e322a0"
-  }
+  },
+  "supporting": [
+    {
+      "path": "datatable/src/main/java/org/dominokit/domino/datatable/client/views/model/Contact.java",
+      "sha256": "f300713ce8b60225263f3d83874bdf5016aa820229ce1409b07466bce2304e46",
+      "name": "Contact"
+    },
+    {
+      "path": "datatable/src/main/java/org/dominokit/domino/datatable/client/views/model/Gender.java",
+      "sha256": "ba3e2f80ba9fca5d651f5aed906399683f79daa10bb26815b6cb0385b1c9715d",
+      "name": "Gender"
+    },
+    {
+      "path": "datatable/src/main/java/org/dominokit/domino/datatable/client/views/model/EyeColor.java",
+      "sha256": "9afcec2dd7545b1d63f70157a8510839285c523a1528565f87170a14e4a3f411",
+      "name": "EyeColor"
+    },
+    {
+      "path": "datatable/src/main/java/org/dominokit/domino/datatable/client/views/ui/ContactUiUtils.java",
+      "sha256": "48f61861c2e135b642bb9a4c50b2f3815dcfd9cf873b2fd60013fc791b9ad76c",
+      "name": "ContactUiUtils"
+    },
+    {
+      "path": "component-case/component-case-frontend-ui/src/main/java/org/dominokit/domino/componentcase/client/ui/views/Constants.java",
+      "sha256": "09fe7720db12c35e45f2553f602f3c715f97e56d76b0e03e6e3771af79383b69",
+      "name": "Constants"
+    },
+    {
+      "path": "datatable/src/main/java/org/dominokit/domino/datatable/client/views/model/ContactSearchFilter.java",
+      "sha256": "4854a96b184ba22fd71aaa6928e07f72fa3d3fc5cdf9aa32211944024dec4d36",
+      "name": "ContactSearchFilter"
+    },
+    {
+      "path": "datatable/src/main/java/org/dominokit/domino/datatable/client/views/model/ContactSorter.java",
+      "sha256": "d0e4b5121f3cb1b4ae65ec162428ab14900c5f947e9467870fe0404e52d3e37e",
+      "name": "ContactSorter"
+    },
+    {
+      "path": "datatable/src/main/java/org/dominokit/domino/datatable/client/task/ContactsProvider.java",
+      "sha256": "53a249680db9554e875b136e4e49dd06dea1c982ff46f46e5ca965b54987b951",
+      "name": "ContactsProvider",
+      "replacements": {
+        "static List<Contact> contacts;": "static List<Contact> contacts=SampleContacts.create();",
+        "random.nextInt(contacts.size() - 1)": "random.nextInt(ContactsProvider.contacts.size())",
+        "new Contact(contacts.get(randomIndex))": "new Contact(ContactsProvider.contacts.get(randomIndex))",
+        "new Random(new Date().getTime())": "RANDOM",
+        "public class ContactsProvider {": "public class ContactsProvider {\n    private static final Random RANDOM = new Random(1);"
+      }
+    },
+    {
+      "path": "datatable/src/main/java/org/dominokit/domino/datatable/client/views/ui/TableStyleActions.java",
+      "sha256": "25fb869843283e4a49500c2502442c6a575a13c700df63be537ca809bb4ae9bf",
+      "name": "TableStyleActions",
+      "replacements": {
+        "public class TableStyleActions extends BaseDominoElement<HTMLDivElement, TableStyleActions> {": "public class TableStyleActions extends BaseDominoElement<HTMLDivElement, TableStyleActions> implements org.dominokit.domino.ui.style.DominoCss {",
+        "import elemental2.dom.HTMLDivElement;": "import elemental2.dom.HTMLDivElement;\nimport static org.dominokit.domino.ui.utils.Domino.*;"
+      }
+    },
+    {
+      "path": "tree/src/main/java/org/dominokit/domino/tree/client/views/Country.java",
+      "sha256": "bbe38c4bea906113eef234e3817c8161a5411551899bf122261ac768fefc9e18",
+      "name": "Country"
+    },
+    {
+      "path": "tree/src/main/java/org/dominokit/domino/tree/client/views/Countries.java",
+      "sha256": "364dac08da4120eaa5680796a24921f33826ff4d5c42cfdba5739afc64d281bf",
+      "name": "Countries",
+      "replacements": {
+        "import org.dominokit.jackson.annotation.JSONMapper;": "",
+        "@JSONMapper": "",
+        "public static final Countries_MapperImpl MAPPER = new Countries_MapperImpl();": ""
+      }
+    }
+  ],
+  "assets": [
+    {
+      "path": "images/flags/palestine.png",
+      "sha256": "b27b4d9125772fc795480929a3934979f219ceaef33f8b37c77ab5394878e42d"
+    },
+    {
+      "path": "images/flags/brazil.png",
+      "sha256": "487670b69d25d14d0098e77ff9f9ca92a04997586c5a1e5b1cee9077d55394cd"
+    },
+    {
+      "path": "images/flags/jordan.png",
+      "sha256": "eb304ef37c0a75def65ee5143a0999f808ab7d74793643ccb72043d2fe72b82a"
+    },
+    {
+      "path": "images/flags/oman.png",
+      "sha256": "c5bd7564e6577b013f53b54066b619c13b82cac897ce5d516025b5a6b15ae481"
+    },
+    {
+      "path": "images/flags/european-union.png",
+      "sha256": "87d404d79f62a979d45e52a863a23a796b8c01362536e2b58f14cd6edac1de03"
+    },
+    {
+      "path": "images/animation-bg.jpg",
+      "sha256": "47b036f6a342fe022ccc6375ba91e58a546508c1e6188e81fd76d7eee25ecc23"
+    },
+    {
+      "path": "images/image-gallery/19.jpg",
+      "sha256": "8a41434659febadaa8ce9de6415c0dbd32ed0f1df669a2988cc08a28c0a11401"
+    },
+    {
+      "path": "images/image-gallery/12.jpg",
+      "sha256": "f3b36d61427d2d4d50a55c8e82df52f2021f8d5d06e2e9c60f636d9a68df1c55"
+    },
+    {
+      "path": "images/image-gallery/6.jpg",
+      "sha256": "22036de0a55d4c30e8538324f2982dbf2e3e0d75595f556b7edb00f9eb0ceefb"
+    },
+    {
+      "path": "images/image-gallery/11.jpg",
+      "sha256": "2ee982af4c6efc9db90b0aea863a2d645d413f1add678b938811230b66544d1b"
+    },
+    {
+      "path": "images/image-gallery/5.jpg",
+      "sha256": "7814dab35bbd67eb1e363bb42b7dfbd708e59cfceb4c0e0f68777abf1a14f7f7"
+    },
+    {
+      "path": "images/image-gallery/4.jpg",
+      "sha256": "91213437460de7fda370e06f8105f9adc6eb2d05ef78ba61334103d5c043a8f7"
+    },
+    {
+      "path": "images/image-gallery/8.jpg",
+      "sha256": "74291ba9f13151a6a786f725a31756630304a4c7dce28c0ac04fca8cfdf8bd00"
+    },
+    {
+      "path": "images/image-gallery/3.jpg",
+      "sha256": "6244bdb451e598641f6e3d175d35467f63683732329ee37427137650eb12cc91"
+    },
+    {
+      "path": "images/image-gallery/2.jpg",
+      "sha256": "86ce8861d239c4bfcd2c498413196c1d3c27cfb6c544c81d582fddf7a9605396"
+    },
+    {
+      "path": "images/image-gallery/7.jpg",
+      "sha256": "efb34db9cf3c9d0b408d09e9693cb9c23e9544ba7c2a2091ab762b648a0e5711"
+    },
+    {
+      "path": "images/image-gallery/1.jpg",
+      "sha256": "561b1fd57d67b26f86253c0343d3c93ec913aa7e4d7c7dedab6e37285e364079"
+    },
+    {
+      "path": "images/image-gallery/9.jpg",
+      "sha256": "647a183994a12ef4cbb56905812645e7f41b42d90249a7e414f1242b74e322a0"
+    }
+  ]
 }

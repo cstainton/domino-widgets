@@ -125,6 +125,31 @@ public final class GenerateBindings {
       if (Set.of("JsType", "JsFunction", "JsOverlay", "JsProperty", "JsMethod", "JsConstructor")
           .contains(n)) a.remove();
     }
+    // TeaVM erases generic functor arguments to wrapped JS values. Normalize promise
+    // callback values before the application's bridge method casts them to String/Number.
+    if (cu.getPackageDeclaration().map(p -> p.getNameAsString()).orElse("").equals("elemental2.promise")) {
+      for (ClassOrInterfaceDeclaration owner : cu.findAll(ClassOrInterfaceDeclaration.class)) {
+        for (MethodDeclaration m : new ArrayList<>(owner.getMethods())) {
+          if (!(m.getNameAsString().equals("then") || m.getNameAsString().equals("catch_"))) continue;
+          if (m.getBody().isPresent()) continue;
+          String nativeName = m.getNameAsString().equals("catch_") ? "catch" : "then";
+          MethodDeclaration bridge = m.clone();
+          bridge.setName("$native" + m.getNameAsString());
+          bridge.getAnnotations().clear();
+          annotate(bridge, "@JSMethod(\"" + nativeName + "\")");
+          owner.addMember(bridge);
+          m.getAnnotations().removeIf(a -> a.getNameAsString().equals("JSMethod"));
+          m.setNative(false);
+          if (owner.isInterface()) m.setDefault(true);
+          List<String> args = new ArrayList<>();
+          for (var p : m.getParameters()) {
+            String n = p.getNameAsString();
+            args.add(n + " == null ? null : value -> jsinterop.base.Js.<IThenable<V>>uncheckedCast(" + n + ".onInvoke(jsinterop.base.Js.cast(value)))");
+          }
+          m.setBody(StaticJavaParser.parseBlock("{return " + bridge.getNameAsString() + "(" + String.join(",", args) + ");}"));
+        }
+      }
+    }
     int varargIndex = 0;
     for (MethodDeclaration m : new ArrayList<>(cu.findAll(MethodDeclaration.class))) {
       if (!m.isNative() || m.getParameters().isEmpty()) continue;

@@ -1,15 +1,28 @@
-# Migration boundary
+# Consumer migration
 
-The old Verrai modules remain in their existing repositories. They must not be removed until their consumers have tested replacements.
+A source/import inventory of the Verrai and Sarto checkouts found these remaining consumers:
 
-| Existing Verrai API | Original-library direction | Outstanding work |
-|---|---|---|
-| `io.instanto.verrai.domino.Button` | `org.dominokit.domino.ui.button.Button` | Thin template/DI attachment adapter and consumer regression |
-| Text inputs / value interfaces | `org.dominokit.domino.ui.forms.TextBox` and shared value listeners | Binding/validation adapter; APIs are not drop-in compatible |
-| `Modal` | Original `dialogs.Dialog` | Map old modal methods and verify application focus assumptions |
-| `TableWidget` | Original `datatable.DataTable` with plugins/store | Migrate old row, sort, filter and pagination contracts |
-| Calendar and date widgets | Original datepicker widgets | Locale parsing, selection and lifecycle browser tests required first |
-| Remaining wrappers | Original counterpart, assessed individually | No broad replacement claim until browser coverage exists |
-| Verrai Bootstrap consumers | Standalone `bootstrap-widgets` | Separate API migration and application regressions |
+| Consumer | Prepared change / status |
+|---|---|
+| Sarto Running Club `MembersEventsPage` | Original `datepicker.Calendar`, `CalendarDay`, plugin and listener APIs; `.element()` with two identity casts to the framework's TeaVM DOM; matched assets JAR |
+| Sarto TMS Domino client | No old Domino widget imports; unused `verrai-widgets-domino` dependency removed in migration branch |
+| Verrai demo `WidgetContractTest` | Old Button framework contract still needs a thin template/value adapter and a replacement regression |
+| Verrai parent/BOM/module entries | Keep until consumer migration is verified; do not remove the implementation prematurely |
 
-The first tranche proves the compiler boundary with four original components. It does not retire the 53-file Verrai Domino implementation, migrate application templates or claim that the larger original widget catalogue has browser parity. A representative framework application migration is the next milestone after the coverage inventory identifies all its required widgets. Framework-specific adapters belong in that framework's repository.
+The Running Club changes are isolated on local Sarto branch `codex/standalone-domino-calendar`, based on `dbe32ec85`, preserving unrelated working-checkout changes. Java compilation and generated template/CDI/RPC processing pass. Full TeaVM application verification is blocked: both the modified and untouched baselines fail on the same missing `ExecutorService`, `CompletionException`, `AuthenticationJson`, persistence model/runtime classes and `StompRpcTransport.StompClient`. The migration branch documents the exact build command and required application regressions.
+
+Standalone browser contracts cover the calendar's day/month navigation and the shared compatibility boundaries. They do not replace the blocked application's RPC, navigation and event-marker regressions. No full application migration or retirement is claimed.
+
+## API directions for remaining wrappers
+
+| Old Verrai API | Original API / migration work |
+|---|---|
+| `Button` | `org.dominokit.domino.ui.button.Button`; template attachment and framework listener contract |
+| Text/value inputs | Original forms plus framework value/validation adapter |
+| `Modal` | `dialogs.Dialog`; translate API and verify application focus assumptions |
+| `TableWidget` | `datatable.DataTable`, stores and plugins; migrate data/selection/filter/pagination behavior |
+| Calendar | Original datepicker APIs; representative migration prepared above |
+| Other wrappers | Assess each consumer's actual behaviors; they are not drop-in API equivalents |
+| Bootstrap wrappers | Separate migration to standalone `bootstrap-widgets` |
+
+Framework adapters belong in the consuming framework and must not recreate widget rendering or state. The standalone artifacts have no Verrai/Sarto/CDI dependencies.

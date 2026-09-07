@@ -1,0 +1,110 @@
+package org.dominokit.domino.media.client.views.ui;
+
+import elemental2.dom.HTMLDivElement;
+import org.dominokit.domino.SampleClass;
+import org.dominokit.domino.SampleMethod;
+import org.dominokit.domino.api.client.annotations.UiView;
+import org.dominokit.domino.componentcase.client.ui.views.BaseDemoView;
+import org.dominokit.domino.componentcase.client.ui.views.CodeCard;
+import org.dominokit.domino.componentcase.client.ui.views.LinkToSourceCode;
+import org.dominokit.domino.media.client.presenters.MediaProxy;
+import org.dominokit.domino.media.client.views.MediaView;
+import org.dominokit.domino.ui.cards.Card;
+import org.dominokit.domino.ui.elements.DivElement;
+import org.dominokit.domino.ui.media.MediaObject;
+import org.dominokit.domino.ui.typography.BlockHeader;
+
+@UiView(presentable = MediaProxy.class)
+@SampleClass
+public class MediaViewImpl extends BaseDemoView<HTMLDivElement> implements MediaView {
+
+    private static final String SAMPLE_TEXT = "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.";
+    private DivElement element;
+
+    @Override
+    protected HTMLDivElement init() {
+        element = div();
+
+        element.appendChild(LinkToSourceCode.createLink("media", this.getClass()));
+        element.appendChild(BlockHeader.create("MEDIA OBJECT"));
+
+        defaultMedia();
+        element.appendChild(CodeCard.createCodeCard(CodeResource.INSTANCE.defaultMedia()));
+
+        mediaAlignment();
+        element.appendChild(CodeCard.createCodeCard(CodeResource.INSTANCE.mediaAlignment()));
+
+        return element.element();
+    }
+
+    @SampleMethod
+    private void defaultMedia() {
+        element.appendChild(Card.create("DEFAULT MEDIA", "The default media displays a media object (images, video, audio) to the left or right of a content block.")
+                .appendChild(MediaObject.create()
+                        .setHeader("Media heading")
+                        .setLeftMedia(a()
+                                .appendChild(img("http://placehold.it/64x64")
+                                        .addCss(dui_w_16, dui_h_16)))
+                        .appendChild(text(SAMPLE_TEXT)))
+                .appendChild(MediaObject.create()
+                        .setHeader("Media heading")
+                        .setLeftMedia(a()
+                                .appendChild(img("http://placehold.it/64x64")
+                                        .addCss(dui_w_16, dui_h_16)))
+                        .appendChild(text(SAMPLE_TEXT))
+                        .appendChild(MediaObject.create()
+                                .setHeader("Media heading")
+                                .setLeftMedia(a()
+                                        .appendChild(img("http://placehold.it/64x64")
+                                                .addCss(dui_w_16, dui_h_16)))
+                                .appendChild(text(SAMPLE_TEXT))))
+                .appendChild(MediaObject.create()
+                        .setHeader("Media heading")
+                        .setRightMedia(a()
+                                .appendChild(img("http://placehold.it/64x64")
+                                        .addCss(dui_w_16, dui_h_16)))
+                        .appendChild(text(SAMPLE_TEXT)))
+                .appendChild(MediaObject.create()
+                        .setHeader("Media heading")
+                        .setRightMedia(a()
+                                .appendChild(img("http://placehold.it/64x64")
+                                        .addCss(dui_w_16, dui_h_16)))
+                        .setLeftMedia(a()
+                                .appendChild(img("http://placehold.it/64x64")
+                                        .addCss(dui_w_16, dui_h_16)))
+                        .appendChild(text(SAMPLE_TEXT)))
+                );
+
+    }
+
+    @SampleMethod
+    private void mediaAlignment() {
+
+        element.appendChild(Card.create("MEDIA ALIGNMENT","The images or other media can be aligned top, middle, or bottom. The default is top aligned.")
+                .appendChild(MediaObject.create()
+                        .setHeader("Media heading")
+                        .setLeftMedia(a()
+                                .appendChild(img("http://placehold.it/64x64")
+                                        .addCss(dui_w_16, dui_h_16, dui_rounded_full)))
+                        .appendChild(p(SAMPLE_TEXT))
+                        .appendChild(p(SAMPLE_TEXT)))
+                .appendChild(MediaObject.create()
+                        .setHeader("Media heading")
+                        .setLeftMedia(a()
+                                .appendChild(img("http://placehold.it/64x64")
+                                        .addCss(dui_w_16, dui_h_16, dui_rounded_full)))
+                                .withLeftMedia((parent, leftMedia) -> leftMedia.addCss(dui_self_center))
+                        .appendChild(p(SAMPLE_TEXT))
+                        .appendChild(p(SAMPLE_TEXT)))
+                .appendChild(MediaObject.create()
+                        .setHeader("Media heading")
+                        .setLeftMedia(a()
+                                .appendChild(img("http://placehold.it/64x64")
+                                        .addCss(dui_w_16, dui_h_16, dui_rounded_full)))
+                        .withLeftMedia((parent, leftMedia) -> leftMedia.addCss(dui_self_end))
+                        .appendChild(p(SAMPLE_TEXT))
+                        .appendChild(p(SAMPLE_TEXT)))
+                );
+
+    }
+}

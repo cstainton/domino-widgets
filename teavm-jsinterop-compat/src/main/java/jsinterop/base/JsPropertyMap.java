@@ -3,24 +3,24 @@ package jsinterop.base;
 import org.teavm.jso.*;
 
 public interface JsPropertyMap<T> extends JSObject {
-  static JsPropertyMap<Object> of() {
-    return Js.emptyMap();
+  static <T> JsPropertyMap<T> of() {
+    return Js.uncheckedCast(Js.emptyMap());
   }
 
-  static JsPropertyMap<Object> of(String k, Object v) {
-    var m = of();
+  static <T> JsPropertyMap<T> of(String k, T v) {
+    JsPropertyMap<T> m = of();
     m.set(k, v);
     return m;
   }
 
-  static JsPropertyMap<Object> of(String k, Object v, String k2, Object v2) {
-    var m = of(k, v);
+  static <T> JsPropertyMap<T> of(String k, T v, String k2, T v2) {
+    JsPropertyMap<T> m = of(k, v);
     m.set(k2, v2);
     return m;
   }
 
-  static JsPropertyMap<Object> of(String k, Object v, String k2, Object v2, String k3, Object v3) {
-    var m = of(k, v, k2, v2);
+  static <T> JsPropertyMap<T> of(String k, T v, String k2, T v2, String k3, T v3) {
+    JsPropertyMap<T> m = of(k, v, k2, v2);
     m.set(k3, v3);
     return m;
   }

@@ -68,7 +68,7 @@ if __name__=='__main__': main()
 
 # Pin the original showcase examples separately from the widget source.
 showcase_lock=json.loads((ROOT/"upstream/showcase-lock.json").read_text())
-for source in showcase_lock["sources"]:
+for source in showcase_lock["sources"]+showcase_lock.get("supporting",[])+showcase_lock.get("assets",[]):
  p=ROOT/"upstream/showcase"/source["path"]
  if hashlib.sha256(p.read_bytes()).hexdigest()!=source["sha256"]:raise SystemExit("Showcase checksum mismatch: "+str(p))
 

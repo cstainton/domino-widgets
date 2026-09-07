@@ -14,6 +14,8 @@ for backend in ['gwt','teavm']:
  site=r/f'showcase-{backend}/target/site'
  files=list((site/'showcase').glob('*.cache.js')) if backend=='gwt' else [site/'showcase.js']
  summary['bundleBytes'][backend]=sum(p.stat().st_size for p in files)
+summary['showcase']={'pages':len(json.loads((r/'upstream/showcase-lock.json').read_text())['sources']),'sampleMethods':sum(len(x['methods']) for x in json.loads((r/'upstream/showcase-lock.json').read_text())['sources'])}
+summary['browserProjects']=[p['name'] for p in browser['config']['projects']]
 summary['spotbugs']=json.loads((r/'target/spotbugs/index.json').read_text())
 (out/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
 manifest={str(p.relative_to(r/'target/compat')):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((r/'target/compat').rglob('*.java'))}

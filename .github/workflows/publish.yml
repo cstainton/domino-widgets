@@ -19,10 +19,29 @@ jobs:
           node-version: '22'
       - run: mvn -B -ntp -Pproduction,release clean verify
       - run: python3 scripts/check-analysis.py && python3 scripts/check-artifacts.py && python3 scripts/prepare-sites.py
-      - run: npm ci && npx playwright install --with-deps chromium && npm test
+      - run: npm ci && npx playwright install --with-deps chromium firefox webkit && npm test
         working-directory: browser-tests
         env:
           PLAYWRIGHT_CHANNEL: chromium
+          BROWSERS: chromium,firefox,webkit
       - run: mvn -B -ntp -Pproduction,release deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Consume published artifacts from an empty Maven repository
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cp -R examples "$RUNNER_TEMP/domino-external"
+          mvn -B -ntp -U -f "$RUNNER_TEMP/domino-external/pom.xml" -Dmaven.repo.local="$RUNNER_TEMP/domino-m2" clean verify
+          python3 "$RUNNER_TEMP/domino-external/prepare.py"
+      - name: Verify external applications in all three browsers
+        working-directory: browser-tests
+        env:
+          EXTERNAL_SAMPLE: ${{ runner.temp }}/domino-external
+          BROWSERS: chromium,firefox,webkit
+        run: npx playwright test -c external.config.js
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: published-consumer-verification
+          path: browser-tests/test-results/**
