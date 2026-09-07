@@ -4,7 +4,7 @@ import json,sys,hashlib,os,xml.etree.ElementTree as E
 r=Path(__file__).resolve().parents[1];mode=sys.argv[1] if len(sys.argv)>1 else 'development'
 build=Path(os.environ.get('DOMINO_BUILD_ROOT',str(r)))
 out=r/'reports'/mode;out.mkdir(parents=True,exist_ok=True)
-browser=json.loads((r/'browser-tests/test-results/results.json').read_text())
+browser=json.loads((r/'browser-tests'/os.environ.get('BROWSER_RESULTS','test-results/results.json')).read_text())
 if browser['stats']['unexpected']:raise SystemExit('Refusing to record a passing report with unexpected browser failures')
 (out/'browser.json').write_text(json.dumps(browser,indent=2).replace(str(r),'.')+'\n')
 summary={'mode':mode,'source':json.loads((r/'upstream/source-lock.json').read_text()),'browser':browser['stats'],'compilers':{'gwt':'2.13.1','teavm':'0.15.0','jdk':'21','javaRelease':17},'unitTests':[],'bundleBytes':{}}

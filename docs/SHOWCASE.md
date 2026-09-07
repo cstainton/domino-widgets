@@ -68,6 +68,6 @@ Each page receives a render and browser-error check in both backends. Interactio
 
 ## Remaining coverage
 
-The original application's framework shell, generated source viewers, and the remaining advanced table examples are not claimed as ported. The newer `domino-showcases` project targets current snapshot Domino/Brix and optional Pro dependencies; it is not the source baseline for this fork.
+The [complete pinned view inventory](../reports/showcase-intake.json) lists 51 included and 26 remaining view files. Remaining views include the original framework shell, source viewers, application screens and advanced table combinations; these are not claimed as ported. The newer `domino-showcases` project targets current snapshot Domino/Brix and optional Pro dependencies; it is not the source baseline for this fork.
 
 The original demo repository did not include a root license file at the selected commit. Extracted examples retain attribution; the widget library's Apache-2.0 license does not newly license upstream demo material.

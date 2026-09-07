@@ -61,7 +61,8 @@ test('all four widgets remain usable after repeated screen attachment',async({pa
  await expect(page.locator('#screen')).toHaveAttribute('data-value','Reattached');
  // Safari does not focus buttons on pointer click. Establish the focus origin explicitly.
  await page.locator('#open-dialog').focus();
- await page.locator('#open-dialog').click();await expect(page.locator('#close-dialog')).toBeVisible();
+ await expect(page.locator('#open-dialog')).toBeFocused();
+ await page.locator('#open-dialog').press('Enter');await expect(page.locator('#close-dialog')).toBeVisible();
  await page.locator('#close-dialog').click();await expect(page.locator('#open-dialog')).toBeFocused();
  await page.locator('#update-rows').click();await expect(page.locator('#records')).toContainText('Gamma');
 });
