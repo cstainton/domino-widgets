@@ -1,0 +1,7 @@
+<module rename-to="showcase">
+  <inherits name="com.google.gwt.user.User"/>
+  <inherits name="org.dominokit.domino.ui.DominoUI"/>
+  <source path="client"/>
+  <entry-point class="io.instanto.domino.client.GwtLauncher"/>
+  <set-property name="user.agent" value="safari"/>
+</module>

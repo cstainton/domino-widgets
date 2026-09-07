@@ -1,0 +1,6 @@
+Domino Widgets derives from Domino UI, Copyright 2019 Dominokit, under Apache-2.0.
+Original Java packages and copyright headers are preserved.
+See upstream/source-lock.json for the exact source revision.
+
+Selected showcase examples are adapted from DominoKit/domino-ui-demo.
+See upstream/showcase-lock.json and docs/SHOWCASE.md for provenance.

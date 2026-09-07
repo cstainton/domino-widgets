@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/cstainton/domino-ui",
+  "commit": "e7ed739e75b2bbd3d7cb9c1d9d1eba3d11d98e8c",
+  "remote_baseline": "2a8d44cc8550cce24f277e9036925f8e34a6a78c",
+  "remote_commit_available": true,
+  "archive": "domino-ui.tar.gz",
+  "sha256": "41d59674697c10368c433b4031ad9bb8b58eec1d274c1b210a494cec7f772c3b",
+  "patches": [
+    "08c1bab Address SpotBugs findings",
+    "e7ed739e75b2bbd3d7cb9c1d9d1eba3d11d98e8c Use integral epoch milliseconds for CSS-safe IDs"
+  ],
+  "note": "Corrected source commit is published on codex/domino-css-safe-ids; the complete immutable git archive is vendored."
+}

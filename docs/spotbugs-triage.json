@@ -1,0 +1,72 @@
+[
+  {
+    "type": "NM_SAME_SIMPLE_NAME_AS_SUPERCLASS",
+    "class": "org.dominokit.domino.ui.datatable.store.DataChangedEvent",
+    "field": null,
+    "method": null,
+    "reason": "Source-compatible legacy alias deliberately retains the original public name."
+  },
+  {
+    "type": "MS_SHOULD_BE_FINAL",
+    "class": "org.dominokit.domino.ui.labels.Label",
+    "field": "dui_label",
+    "method": null,
+    "reason": "Retained upstream public API mutability; making this field final would change source compatibility."
+  },
+  {
+    "type": "DLS_DEAD_LOCAL_STORE",
+    "class": "org.dominokit.domino.ui.utils.BaseDominoElement",
+    "field": null,
+    "method": "onTextContentChange",
+    "reason": "The getter call initializes the observer map. Preserve that side effect; removing only the unused local is an upstream cleanup."
+  },
+  {
+    "type": "MS_SHOULD_BE_FINAL",
+    "class": "org.dominokit.domino.ui.utils.BaseDominoElement",
+    "field": "ATTACH_UID_KEY",
+    "method": null,
+    "reason": "Retained upstream public API mutability; making this field final would change source compatibility."
+  },
+  {
+    "type": "MS_SHOULD_BE_FINAL",
+    "class": "org.dominokit.domino.ui.utils.BaseDominoElement",
+    "field": "ATTRIBUTE_CHANGE_UID_KEY",
+    "method": null,
+    "reason": "Retained upstream public API mutability; making this field final would change source compatibility."
+  },
+  {
+    "type": "MS_SHOULD_BE_FINAL",
+    "class": "org.dominokit.domino.ui.utils.BaseDominoElement",
+    "field": "CHARACTER_DATA_CHANGE_UID_KEY",
+    "method": null,
+    "reason": "Retained upstream public API mutability; making this field final would change source compatibility."
+  },
+  {
+    "type": "MS_SHOULD_BE_FINAL",
+    "class": "org.dominokit.domino.ui.utils.BaseDominoElement",
+    "field": "DETACH_UID_KEY",
+    "method": null,
+    "reason": "Retained upstream public API mutability; making this field final would change source compatibility."
+  },
+  {
+    "type": "MF_CLASS_MASKS_FIELD",
+    "class": "org.dominokit.domino.ui.utils.DominoDocument",
+    "field": "activeElement",
+    "method": null,
+    "reason": "Native DOM property declaration: both fields map to browser activeElement, not separate Java storage; exercised by dialog browser contracts."
+  },
+  {
+    "type": "MS_SHOULD_BE_FINAL",
+    "class": "org.dominokit.domino.ui.utils.DominoDom",
+    "field": "document",
+    "method": null,
+    "reason": "Native browser global property mapped by the compiler; Java final initialization is not an equivalent binding."
+  },
+  {
+    "type": "MS_SHOULD_BE_FINAL",
+    "class": "org.dominokit.domino.ui.utils.DominoDom",
+    "field": "window",
+    "method": null,
+    "reason": "Native browser global property mapped by the compiler; Java final initialization is not an equivalent binding."
+  }
+]

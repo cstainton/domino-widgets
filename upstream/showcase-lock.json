@@ -1,0 +1,43 @@
+{
+  "repository": "https://github.com/DominoKit/domino-ui-demo",
+  "branch_at_intake": "version-2",
+  "commit": "51e1f75d43179a544c010ca5e88517c93263eeed",
+  "domino_version": "2.0.0-RC3",
+  "adaptation": "Retain selected sample method bodies; replace MVP view, async loading and generated CodeResource shell with a plain shared Java launcher. Original source files retained for comparison. Custom-dialog image URL uses a relative pinned asset instead of GWT.getModuleBaseURL().",
+  "sources": [
+    {
+      "path": "buttons/src/main/java/org/dominokit/domino/buttons/client/views/ui/ButtonsViewImpl.java",
+      "sha256": "c1bf069ac89918ccae24c2fd7506eea637b359850ca0a9ca2ee0cb46bee15602",
+      "methods": [
+        "initSimpleButtons",
+        "initButtonSizes",
+        "initDisabledButtons",
+        "initButtonsBasicGroup"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/ButtonsExamples.java"
+    },
+    {
+      "path": "basic-forms/src/main/java/org/dominokit/domino/basicforms/client/views/ui/BasicFormsViewImpl.java",
+      "sha256": "daebb19a7731dc4d4fca47220d50f366b7673b50b74d5dd01e79c2f8baa3592c",
+      "methods": [
+        "initBasicExamples",
+        "initBasicTextAreaExample",
+        "initCheckboxExample"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/FormsExamples.java"
+    },
+    {
+      "path": "dialogs/src/main/java/org/dominokit/domino/dialogs/client/views/ui/DialogsViewImpl.java",
+      "sha256": "fc8ee8d261511a1d5cc851f1feb100ceabda825544ab2697c630a00940fc601a",
+      "methods": [
+        "sample"
+      ],
+      "adapter": "showcase-shared/src/main/java/io/instanto/domino/client/DialogsExamples.java"
+    }
+  ],
+  "asset": {
+    "path": "showcase-image.jpg",
+    "original": "ui-demo-backend/src/main/resources/app/images/image-gallery/9.jpg",
+    "sha256": "647a183994a12ef4cbb56905812645e7f41b42d90249a7e414f1242b74e322a0"
+  }
+}

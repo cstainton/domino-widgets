@@ -1,0 +1,155 @@
+{
+  "mode": "production",
+  "source": {
+    "repository": "https://github.com/cstainton/domino-ui",
+    "commit": "e7ed739e75b2bbd3d7cb9c1d9d1eba3d11d98e8c",
+    "remote_baseline": "2a8d44cc8550cce24f277e9036925f8e34a6a78c",
+    "remote_commit_available": true,
+    "archive": "domino-ui.tar.gz",
+    "sha256": "41d59674697c10368c433b4031ad9bb8b58eec1d274c1b210a494cec7f772c3b",
+    "patches": [
+      "08c1bab Address SpotBugs findings",
+      "e7ed739e75b2bbd3d7cb9c1d9d1eba3d11d98e8c Use integral epoch milliseconds for CSS-safe IDs"
+    ],
+    "note": "Corrected source commit is published on codex/domino-css-safe-ids; the complete immutable git archive is vendored."
+  },
+  "browser": {
+    "startTime": "2026-09-07T17:09:26.496Z",
+    "duration": 6883.057000000001,
+    "expected": 23,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "compilers": {
+    "gwt": "2.13.1",
+    "teavm": "0.15.0",
+    "jdk": "21",
+    "javaRelease": 17
+  },
+  "unitTests": [
+    {
+      "name": "io.instanto.compat.GenerateBindingsTest",
+      "tests": "7",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    }
+  ],
+  "bundleBytes": {
+    "gwt": 784775,
+    "teavm": 1499721
+  },
+  "spotbugs": [
+    {
+      "module": "binding-generator",
+      "status": "analyzed",
+      "findings": 3,
+      "high": 0,
+      "errors": {
+        "missingClasses": "0",
+        "errors": "0"
+      },
+      "missingClasses": []
+    },
+    {
+      "module": "compat-reuse-smoke",
+      "status": "analyzed",
+      "findings": 0,
+      "high": 0,
+      "errors": {
+        "missingClasses": "0",
+        "errors": "0"
+      },
+      "missingClasses": []
+    },
+    {
+      "module": "domino-widgets-gwt",
+      "status": "analyzed",
+      "findings": 1135,
+      "high": 10,
+      "errors": {
+        "missingClasses": "0",
+        "errors": "0"
+      },
+      "missingClasses": []
+    },
+    {
+      "module": "domino-widgets-teavm",
+      "status": "analyzed",
+      "findings": 1137,
+      "high": 10,
+      "errors": {
+        "missingClasses": "0",
+        "errors": "0"
+      },
+      "missingClasses": []
+    },
+    {
+      "module": "gwt-modular-services",
+      "status": "analyzed",
+      "findings": 28,
+      "high": 0,
+      "errors": {
+        "missingClasses": "0",
+        "errors": "0"
+      },
+      "missingClasses": []
+    },
+    {
+      "module": "showcase-gwt",
+      "status": "analyzed",
+      "findings": 7,
+      "high": 0,
+      "errors": {
+        "missingClasses": "0",
+        "errors": "0"
+      },
+      "missingClasses": []
+    },
+    {
+      "module": "showcase-teavm",
+      "status": "analyzed",
+      "findings": 7,
+      "high": 0,
+      "errors": {
+        "missingClasses": "0",
+        "errors": "0"
+      },
+      "missingClasses": []
+    },
+    {
+      "module": "teavm-elemental2-compat",
+      "status": "analyzed",
+      "findings": 1715,
+      "high": 0,
+      "errors": {
+        "missingClasses": "0",
+        "errors": "0"
+      },
+      "missingClasses": []
+    },
+    {
+      "module": "teavm-gwt-modular-services",
+      "status": "analyzed",
+      "findings": 28,
+      "high": 0,
+      "errors": {
+        "missingClasses": "0",
+        "errors": "0"
+      },
+      "missingClasses": []
+    },
+    {
+      "module": "teavm-jsinterop-compat",
+      "status": "analyzed",
+      "findings": 0,
+      "high": 0,
+      "errors": {
+        "missingClasses": "0",
+        "errors": "0"
+      },
+      "missingClasses": []
+    }
+  ]
+}

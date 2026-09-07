@@ -1,0 +1,237 @@
+package io.instanto.compat;
+
+import com.github.javaparser.StaticJavaParser;
+import com.github.javaparser.ast.*;
+import com.github.javaparser.ast.body.*;
+import com.github.javaparser.ast.expr.*;
+import com.github.javaparser.ast.nodeTypes.NodeWithAnnotations;
+import java.nio.file.*;
+import java.util.*;
+import java.util.jar.*;
+
+/** Deterministic JsInterop declaration to TeaVM JSO source adapter. */
+public final class GenerateBindings {
+  private static String value(AnnotationExpr a, String key, String fallback) {
+    if (a instanceof NormalAnnotationExpr normal) {
+      return normal.getPairs().stream()
+          .filter(p -> p.getNameAsString().equals(key))
+          .map(
+              p ->
+                  p.getValue().isStringLiteralExpr()
+                      ? p.getValue().asStringLiteralExpr().asString()
+                      : p.getValue().toString())
+          .findFirst()
+          .orElse(fallback);
+    }
+    return fallback;
+  }
+
+  private static void annotate(NodeWithAnnotations<?> n, String text) {
+    n.addAnnotation(StaticJavaParser.parseAnnotation(text));
+  }
+
+  public static String transform(String source) {
+    CompilationUnit cu = StaticJavaParser.parse(source);
+    if (!source.contains("jsinterop.annotations")) return source;
+    cu.addImport("org.teavm.jso.*");
+    for (ClassOrInterfaceDeclaration c : cu.findAll(ClassOrInterfaceDeclaration.class)) {
+      var jsType = c.getAnnotationByName("JsType");
+      boolean functor = c.getAnnotationByName("JsFunction").isPresent();
+      if (jsType.isEmpty() && !functor) continue;
+      if (jsType.isPresent() && !value(jsType.get(), "isNative", "false").equals("true")) continue;
+      String name =
+          jsType.map(a -> value(a, "name", c.getNameAsString())).orElse(c.getNameAsString());
+      String namespace = jsType.map(a -> value(a, "namespace", "")).orElse("");
+      boolean global = name.equals("goog.global");
+      if (c.getNameAsString().equals("JsDate") && !c.isInterface()) {
+        for (int count = 1; count <= 7; count++) {
+          var ctor = c.addConstructor(Modifier.Keyword.PUBLIC);
+          for (int i = 0; i < count; i++) ctor.addParameter("double", "value" + i);
+        }
+        c.addConstructor(Modifier.Keyword.PUBLIC).addParameter("String", "value");
+      }
+      if (c.getNameAsString().equals("JsArray") && !c.isInterface()) {
+        // TeaVM 0.15 spreads varargs methods, but not native constructors.
+        // Preserve correct zero-argument Array construction used by Intl locale lists.
+        c.addConstructor(Modifier.Keyword.PUBLIC).setBody(StaticJavaParser.parseBlock("{}"));
+      }
+      if (c.isInterface()) c.addExtendedType("JSObject");
+      else {
+        c.addImplementedType("JSObject");
+        String qualified =
+            global
+                ? "globalThis"
+                : "globalThis."
+                    + ((!namespace.isEmpty() && !namespace.equals("JsPackage.GLOBAL"))
+                        ? namespace + "."
+                        : "")
+                    + name;
+        // Explicit global access also prevents minifier names (e.g. CSS) shadowing browser globals.
+        annotate(c, "@JSClass(name = \"" + qualified + "\")");
+      }
+      if (functor) annotate(c, "@JSFunctor");
+      for (FieldDeclaration f : c.getFields()) {
+        if (f.getAnnotationByName("JsOverlay").isPresent()) continue;
+        if (f.isStatic()) annotate(f, "@JSProperty");
+        for (var v : f.getVariables()) v.removeInitializer();
+      }
+    }
+    for (MethodCallExpr call : cu.findAll(MethodCallExpr.class)) {
+      if (call.getScope().map(Object::toString).orElse("").equals("Js")
+          && Set.of("cast", "uncheckedCast").contains(call.getNameAsString())
+          && call.getTypeArguments().map(Object::toString).orElse("").contains("UnionType")) {
+        call.setName("nativeCast");
+        // Preserve the declared functor type before a union erases it to Object.
+        var method = call.findAncestor(MethodDeclaration.class);
+        if (method.isPresent() && call.getArgument(0).isNameExpr()) {
+          String arg = call.getArgument(0).asNameExpr().getNameAsString();
+          var parameter =
+              method.get().getParameters().stream()
+                  .filter(p -> p.getNameAsString().equals(arg))
+                  .findFirst();
+          if (parameter.isPresent()) {
+            String type = parameter.get().getType().toString().replaceAll("<.*>", "");
+            if (type.endsWith("Fn")) {
+              var owner =
+                  method.get().findAncestor(ClassOrInterfaceDeclaration.class).orElseThrow();
+              String helper = "$wrap" + type.replace('.', '_');
+              if (owner.getMethodsByName(helper).isEmpty()) {
+                var bridge =
+                    owner.addMethod(
+                        helper,
+                        Modifier.Keyword.PRIVATE,
+                        Modifier.Keyword.STATIC,
+                        Modifier.Keyword.NATIVE);
+                bridge.setType("JSObject").addParameter(type, "value").removeBody();
+                annotate(bridge, "@JSBody(params=\"value\",script=\"return value;\")");
+              }
+              call.setArgument(0, new MethodCallExpr(helper).addArgument(arg));
+            }
+          }
+        }
+      }
+    }
+    for (AnnotationExpr a : new ArrayList<>(cu.findAll(AnnotationExpr.class))) {
+      String n = a.getNameAsString();
+      if (n.equals("JsProperty") || n.equals("JsMethod")) {
+        var owner = (NodeWithAnnotations<?>) a.getParentNode().orElseThrow();
+        String name = value(a, "name", "");
+        annotate(
+            owner,
+            "@"
+                + (n.equals("JsProperty") ? "JSProperty" : "JSMethod")
+                + (name.isEmpty() ? "" : "(\"" + name + "\")"));
+      }
+      if (Set.of("JsType", "JsFunction", "JsOverlay", "JsProperty", "JsMethod", "JsConstructor")
+          .contains(n)) a.remove();
+    }
+    int varargIndex = 0;
+    for (MethodDeclaration m : new ArrayList<>(cu.findAll(MethodDeclaration.class))) {
+      if (!m.isNative() || m.getParameters().isEmpty()) continue;
+      var last = m.getParameter(m.getParameters().size() - 1);
+      if (!last.isVarArgs() || !last.getType().toString().equals("Object")) continue;
+      var owner = m.findAncestor(ClassOrInterfaceDeclaration.class).orElseThrow();
+      if (owner.isInterface()) continue;
+      String helper = "$nativeVarargs" + (varargIndex++);
+      cu.addImport("jsinterop.base.Js");
+      MethodDeclaration bridge = m.clone().setName(helper).setPublic(false).setPrivate(true);
+      bridge.getParameter(bridge.getParameters().size() - 1).setType("JSObject");
+      String jsName =
+          m.getAnnotationByName("JSMethod")
+              .map(
+                  a ->
+                      a.isSingleMemberAnnotationExpr()
+                          ? a.asSingleMemberAnnotationExpr()
+                              .getMemberValue()
+                              .asStringLiteralExpr()
+                              .asString()
+                          : m.getNameAsString())
+              .orElse(m.getNameAsString());
+      bridge.getAnnotations().removeIf(a -> a.getNameAsString().equals("JSMethod"));
+      annotate(bridge, "@JSMethod(\"" + jsName + "\")");
+      owner.addMember(bridge);
+      String args = last.getNameAsString();
+      String prefix =
+          m.getParameters().subList(0, m.getParameters().size() - 1).stream()
+              .map(Parameter::getNameAsString)
+              .collect(java.util.stream.Collectors.joining(","));
+      if (!prefix.isEmpty()) prefix += ",";
+      m.setNative(false);
+      m.getAnnotations()
+          .removeIf(a -> Set.of("JSTopLevel", "JSMethod").contains(a.getNameAsString()));
+      m.setBody(
+          StaticJavaParser.parseBlock(
+              "{JSObject[] nativeArgs=new JSObject["
+                  + args
+                  + ".length];for(int i=0;i<nativeArgs.length;i++) nativeArgs[i]=Js.asAny("
+                  + args
+                  + "[i]);"
+                  + (m.getType().isVoidType() ? "" : "return ")
+                  + helper
+                  + "("
+                  + prefix
+                  + "nativeArgs);}"));
+    }
+    return cu.toString();
+  }
+
+  private static void write(Path p, String source) throws Exception {
+    Files.createDirectories(p.getParent());
+    Files.writeString(p, transform(source));
+  }
+
+  public static void main(String[] args) throws Exception {
+    Path root = Path.of(args[0]);
+    Path out = root.resolve("target/compat");
+    if (Files.exists(out))
+      try (var files = Files.walk(out)) {
+        for (Path p : files.sorted(Comparator.reverseOrder()).toList()) Files.delete(p);
+      }
+    try (var jars = Files.list(root.resolve("upstream"))) {
+      for (Path p :
+          jars.filter(
+                  p ->
+                      p.getFileName().toString().startsWith("elemental2-")
+                          && p.toString().endsWith(".jar"))
+              .sorted()
+              .toList()) {
+        try (JarFile jar = new JarFile(p.toFile())) {
+          for (var e :
+              jar.stream()
+                  .filter(e -> e.getName().endsWith(".java"))
+                  .sorted(Comparator.comparing(JarEntry::getName))
+                  .toList()) {
+            write(
+                out.resolve("elemental2").resolve(e.getName()),
+                new String(
+                    jar.getInputStream(e).readAllBytes(), java.nio.charset.StandardCharsets.UTF_8));
+          }
+        }
+      }
+    }
+    Path sourceRoot = root.resolve("target/intake/java");
+    try (var files = Files.walk(sourceRoot)) {
+      for (Path p : files.filter(p -> p.toString().endsWith(".java")).sorted().toList())
+        write(
+            out.resolve(
+                    sourceRoot.relativize(p).toString().startsWith("org/gwtproject/")
+                        ? "services"
+                        : "domino")
+                .resolve(sourceRoot.relativize(p)),
+            Files.readString(p));
+    }
+    StringBuilder manifest = new StringBuilder();
+    var digest = java.security.MessageDigest.getInstance("SHA-256");
+    try (var files = Files.walk(out)) {
+      for (Path p : files.filter(p -> p.toString().endsWith(".java")).sorted().toList()) {
+        manifest
+            .append(java.util.HexFormat.of().formatHex(digest.digest(Files.readAllBytes(p))))
+            .append("  ")
+            .append(out.relativize(p))
+            .append("\n");
+      }
+    }
+    Files.writeString(out.resolve("sources.sha256"), manifest);
+    System.out.println("Generated TeaVM bindings and Domino sources in " + out);
+  }
+}

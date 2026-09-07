@@ -1,0 +1,28 @@
+name: Publish development Maven artifacts
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  packages: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          server-id: github
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: mvn -B -ntp -Pproduction,release clean verify
+      - run: python3 scripts/check-analysis.py && python3 scripts/check-artifacts.py && python3 scripts/prepare-sites.py
+      - run: npm ci && npx playwright install --with-deps chromium && npm test
+        working-directory: browser-tests
+        env:
+          PLAYWRIGHT_CHANNEL: chromium
+      - run: mvn -B -ntp -Pproduction,release deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

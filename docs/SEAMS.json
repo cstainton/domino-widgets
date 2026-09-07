@@ -1,0 +1,93 @@
+[
+  {
+    "id": "native-declarations",
+    "scope": "Native JsType declarations in pinned Elemental2 and fork sources",
+    "mechanism": "JavaParser maps native classes/interfaces, inheritance, fields, constructors and JsProperty/JsMethod metadata to TeaVM JSO; ordinary Java widget logic is retained; qualify browser class names with globalThis to prevent collisions with minified Java locals",
+    "tests": [
+      "GenerateBindingsTest",
+      "BindingContracts"
+    ]
+  },
+  {
+    "id": "static-properties",
+    "scope": "Native static fields versus JsOverlay Java constant aliases",
+    "mechanism": "Explicit JSProperty on native fields of the globalThis class only; retain Java alias initialization without writing browser readonly globals",
+    "tests": [
+      "GenerateBindingsTest.mapsGlobalFieldsAndCallbacks",
+      "Dialog browser contracts"
+    ]
+  },
+  {
+    "id": "callback-unions",
+    "scope": "Elemental2 union overloads with callback Fn parameters",
+    "mechanism": "Typed JSBody bridge preserves JSFunctor export before erasure into the native union",
+    "tests": [
+      "BindingContracts capture/removal",
+      "DataTable deferred attachment timer",
+      "Widget lifecycle contracts"
+    ]
+  },
+  {
+    "id": "native-object-varargs",
+    "scope": "Native class methods with Object... parameters",
+    "mechanism": "Generated Java wrapper normalizes values via Js.asAny into JSObject[]; private native bridge retains JS method name and varargs spreading",
+    "tests": [
+      "Independent published console logger fixture"
+    ]
+  },
+  {
+    "id": "array-constructor",
+    "scope": "elemental2.core.JsArray",
+    "mechanism": "Add an explicit zero-argument constructor because TeaVM 0.15 does not spread constructor varargs",
+    "unsupported": "Native constructor varargs with supplied arguments remain outside the supported surface",
+    "tests": [
+      "Intl widget initialization",
+      "BindingContracts generic array"
+    ]
+  },
+  {
+    "id": "date-constructor",
+    "scope": "elemental2.core.JsDate",
+    "mechanism": "Generate primitive double and String constructor overloads to avoid Object boxing at native constructor calls",
+    "tests": [
+      "BindingContracts native Date constructor"
+    ]
+  },
+  {
+    "id": "jsinterop-values",
+    "scope": "jsinterop.base",
+    "mechanism": "Handwritten small JSO runtime for maps, arrays, primitives, casts and Java object identity; undefined map values follow GWT nullable Java semantics",
+    "unsupported": "Class-to-constructor reflection and unimplemented JsInterop base operations",
+    "tests": [
+      "BindingContracts",
+      "Attribute observer lifecycle",
+      "Independent console logger"
+    ]
+  },
+  {
+    "id": "gwt-services",
+    "scope": "Fork service source set",
+    "mechanism": "Guarded exact substitutions use native GWT DateTimeFormat and URL encoding where the fork calls unavailable JRE APIs; separate GWT module descriptor includes services",
+    "tests": [
+      "Strict GWT compiler",
+      "Shared browser fixture"
+    ]
+  },
+  {
+    "id": "source-correctness",
+    "scope": "DominoId in corrected source fork",
+    "mechanism": "Use integral epoch milliseconds so generated identifiers remain valid CSS selectors; shared by both compilers",
+    "tests": [
+      "DataTable deferred CSS rules without browser exceptions"
+    ]
+  },
+  {
+    "id": "assets",
+    "scope": "Pinned public CSS and fonts",
+    "mechanism": "One deterministic concatenated stylesheet and one assets JAR, excluding redundant cached copies",
+    "tests": [
+      "check-artifacts.py",
+      "Browser requests and rendered fixture"
+    ]
+  }
+]

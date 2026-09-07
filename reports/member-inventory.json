@@ -1,0 +1,5264 @@
+[
+  {
+    "kind": "field",
+    "owner": "elemental2.core.JsArray",
+    "member": "length",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/AttributesObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CharacterDataObserver.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/LocaleInfo.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.core.JsNumber",
+    "member": "NEGATIVE_INFINITY",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/FloatBox.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.core.JsNumber",
+    "member": "POSITIVE_INFINITY",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/FloatBox.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.core.RegExpResult",
+    "member": "length",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CssParser.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.CSSRuleList",
+    "member": "length",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DominoStyleSheet.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.CSSStyleDeclaration",
+    "member": "cssText",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Style.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.CSSStyleDeclaration",
+    "member": "left",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.CSSStyleDeclaration",
+    "member": "top",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.CSSStyleSheet",
+    "member": "cssRules",
+    "descriptor": "Lelemental2/dom/CSSRuleList;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DominoStyleSheet.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.ClipboardEvent",
+    "member": "clipboardData",
+    "descriptor": "Lelemental2/dom/DataTransfer;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/NumberBox.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.CustomEvent",
+    "member": "detail",
+    "descriptor": "Ljava/lang/Object;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/CalendarCustomEvents$UpdateDateEventData.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/BasePopover.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimePickerCustomEvents$UpdateTimeEventData.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.DOMRect",
+    "member": "bottom",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/SpaceChecker.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/notifications/NotificationPosition.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/tabs/TabsDropDownHandler.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.DOMRect",
+    "member": "height",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/MiddleOfScreenDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/MouseBestFitDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/SpaceChecker.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/spin/VSpinSelect.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/splitpanel/VSplitPanel.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/splitpanel/VSplitter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Waves.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/tabs/ScrollTabsHandler.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.DOMRect",
+    "member": "left",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/BottomMiddleDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/SpaceChecker.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/TopMiddleDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Waves.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/tabs/TabsDropDownHandler.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.DOMRect",
+    "member": "right",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/SpaceChecker.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/tabs/ScrollTabsHandler.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/tabs/TabsDropDownHandler.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.DOMRect",
+    "member": "top",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/LeftDownDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/RightDownDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/SpaceChecker.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/notifications/NotificationPosition.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Waves.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/tabs/ScrollTabsHandler.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/tabs/TabsDropDownHandler.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.DOMRect",
+    "member": "width",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/TableConfig.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/column/PinColumnMeta$PinDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/column/PinColumnMeta.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/column/ResizeColumnsPlugin.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/MiddleOfScreenDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/MouseBestFitDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/SpaceChecker.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/spin/HSpinSelect.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/splitpanel/HSplitPanel.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/splitpanel/HSplitter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Waves.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/tabs/ScrollTabsHandler.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.DOMTokenList",
+    "member": "length",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Elevation.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Style.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.DataTransfer",
+    "member": "dropEffect",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dnd/Draggable.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileUpload.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.DataTransfer",
+    "member": "files",
+    "descriptor": "Lelemental2/dom/FileList;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileUpload.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.DomGlobal",
+    "member": "CSS",
+    "descriptor": "Lelemental2/dom/CSSInterface;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DynamicStyleSheet.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.DomGlobal",
+    "member": "console",
+    "descriptor": "Lelemental2/dom/Console;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/button/ToggleButtonsGroup.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/DateBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/DateRangeBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/TimeBox.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.DomGlobal",
+    "member": "document",
+    "descriptor": "Lelemental2/dom/HTMLDocument;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/AbstractDialog.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/InputFormField.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/Radio.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/AbstractSelect.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/AbstractSuggestBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/Option.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/layout/AppLayout.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/base/BaseMenu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/SpaceChecker.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/notifications/Notification.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/notifications/NotificationPosition.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/BasePopover.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/Popover.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/Tooltip.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/scroll/ScrollTop.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/splitpanel/BaseSplitter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/themes/Theme.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/AttributesObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CharacterDataObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DomElements.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DynamicStyleSheet.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementsFactoryDelegate.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/FollowOnScroll.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/PopupsCloser.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.DomGlobal",
+    "member": "window",
+    "descriptor": "Lelemental2/dom/Window;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/AbstractDialog.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/mediaquery/MediaQuery.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/base/BaseMenu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/BottomLeftDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/BottomMiddleDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/BottomRightDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/LeftDownDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/LeftMiddleDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/LeftUpDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/MiddleOfScreenDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/MouseBestFitDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/RightDownDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/RightMiddleDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/RightUpDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/SpaceChecker.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/TopLeftDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/TopMiddleDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/TopRightDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/RichTextCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertHtmlCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/PasteCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/themes/DominoThemeManager.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/Clipboard.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.DragEvent",
+    "member": "dataTransfer",
+    "descriptor": "Lelemental2/dom/DataTransfer;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dnd/Draggable.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dnd/DropZone$DropTarget.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileUpload.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Element",
+    "member": "childElementCount",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Element",
+    "member": "childNodes",
+    "descriptor": "Lelemental2/dom/NodeList;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Element",
+    "member": "classList",
+    "descriptor": "Lelemental2/dom/DOMTokenList;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/CompositeCssClass.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/CssClass.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Elevation.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Style.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/ToggleCssClass.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Element",
+    "member": "clientHeight",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/tabs/TabsDropDownHandler.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Element",
+    "member": "clientWidth",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/tabs/TabsDropDownHandler.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Element",
+    "member": "firstChild",
+    "descriptor": "Lelemental2/dom/Node;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/RemoveLinkCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Element",
+    "member": "firstElementChild",
+    "descriptor": "Lelemental2/dom/Element;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/notifications/NotificationPosition.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Element",
+    "member": "id",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Element",
+    "member": "innerHTML",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Element",
+    "member": "isConnected",
+    "descriptor": "Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Element",
+    "member": "lastChild",
+    "descriptor": "Lelemental2/dom/Node;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Element",
+    "member": "nextSibling",
+    "descriptor": "Lelemental2/dom/Node;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Element",
+    "member": "parentElement",
+    "descriptor": "Lelemental2/dom/Element;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Element",
+    "member": "parentNode",
+    "descriptor": "Lelemental2/dom/Node;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/RemoveLinkCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Element",
+    "member": "scrollHeight",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/collapsible/HeightCollapseStrategy.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/tabs/TabsDropDownHandler.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Element",
+    "member": "scrollTop",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/scroll/ScrollTop.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Element",
+    "member": "scrollWidth",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/tabs/TabsDropDownHandler.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Element",
+    "member": "textContent",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/Option.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Event",
+    "member": "currentTarget",
+    "descriptor": "Lelemental2/dom/EventTarget;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/base/BaseMenu.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Event",
+    "member": "target",
+    "descriptor": "Lelemental2/dom/EventTarget;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/animations/TransitionListeners.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/ModalBackDrop.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/base/BaseMenu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileUpload.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.File",
+    "member": "name",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/UploadBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/DefaultFilePreview.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.File",
+    "member": "size",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/DefaultFilePreview.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.File",
+    "member": "type",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.FileList",
+    "member": "length",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertImageCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileUpload.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.FileReader",
+    "member": "result",
+    "descriptor": "Lelemental2/dom/FileReader$ResultUnionType;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/DefaultFilePreview.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLBodyElement",
+    "member": "childNodes",
+    "descriptor": "Lelemental2/dom/NodeList;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertHtmlCommand.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLBodyElement",
+    "member": "classList",
+    "descriptor": "Lelemental2/dom/DOMTokenList;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/themes/Theme.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLBodyElement",
+    "member": "scrollTop",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLDataListElement",
+    "member": "id",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/HasInputDataList.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLDivElement",
+    "member": "innerHTML",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/RichTextEditor.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLDivElement",
+    "member": "offsetHeight",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLDivElement",
+    "member": "offsetLeft",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLDivElement",
+    "member": "offsetTop",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLDivElement",
+    "member": "offsetWidth",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLDivElement",
+    "member": "style",
+    "descriptor": "Lelemental2/dom/CSSStyleDeclaration;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLDivElement",
+    "member": "textContent",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/BounceLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/BouncePulseLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/FacebookLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/IosLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/NoneLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/OrbitLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/ProgressBarLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/PulseLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/RotatePlaneLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/RotationLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/RoundBounceLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/StretchLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/TimerLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/Win8LinearLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/Win8Loader.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLDocument",
+    "member": "ELEMENT_NODE",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/Option.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLDocument",
+    "member": "TEXT_NODE",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/Option.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLDocument",
+    "member": "activeElement",
+    "descriptor": "Lelemental2/dom/Element;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/InputFormField.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/Radio.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/AbstractSelect.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/AbstractSuggestBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/BasePopover.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLDocument",
+    "member": "body",
+    "descriptor": "Lelemental2/dom/HTMLBodyElement;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/AbstractDialog.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/base/BaseMenu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/notifications/Notification.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/BasePopover.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/Popover.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/Tooltip.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertHtmlCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/splitpanel/BaseSplitter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/themes/Theme.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/AttributesObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CharacterDataObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DomElements.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLDocument",
+    "member": "documentElement",
+    "descriptor": "Lelemental2/dom/HTMLHtmlElement;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLDocument",
+    "member": "scrollingElement",
+    "descriptor": "Lelemental2/dom/Element;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/scroll/ScrollTop.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLElement",
+    "member": "classList",
+    "descriptor": "Lelemental2/dom/DOMTokenList;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dnd/Draggable.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLElement",
+    "member": "draggable",
+    "descriptor": "Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dnd/Draggable.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLElement",
+    "member": "scrollTop",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/layout/AppLayout.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLHtmlElement",
+    "member": "scrollTop",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLIFrameElement",
+    "member": "src",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DomElements.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLImageElement",
+    "member": "src",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DomElements.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLInputElement",
+    "member": "accept",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/UploadBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileUpload.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLInputElement",
+    "member": "checked",
+    "descriptor": "Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/CheckBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/Radio.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/SwitchButton.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLInputElement",
+    "member": "files",
+    "descriptor": "Lelemental2/dom/FileList;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/UploadBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertImageCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileUpload.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLInputElement",
+    "member": "indeterminate",
+    "descriptor": "Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/CheckBox.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLInputElement",
+    "member": "max",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/NumberBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/sliders/Slider.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLInputElement",
+    "member": "min",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/NumberBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/sliders/Slider.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLInputElement",
+    "member": "multiple",
+    "descriptor": "Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/UploadBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileUpload.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLInputElement",
+    "member": "name",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/elements/InputElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/CheckBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/NumberBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/Radio.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/SwitchButton.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/TextInputFormField.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/UploadBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/AbstractSelect.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/AbstractSuggestBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileUpload.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLInputElement",
+    "member": "offsetHeight",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/sliders/Slider.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLInputElement",
+    "member": "offsetLeft",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/sliders/Slider.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLInputElement",
+    "member": "offsetWidth",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/sliders/Slider.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLInputElement",
+    "member": "placeholder",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/NumberBox.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLInputElement",
+    "member": "step",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/NumberBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/sliders/Slider.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLInputElement",
+    "member": "type",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/CustomInputBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DomElements.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLInputElement",
+    "member": "validity",
+    "descriptor": "Lelemental2/dom/ValidityState;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/TextInputFormField.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/validations/MaxLengthValidator.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/validations/MinLengthValidator.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLInputElement",
+    "member": "value",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/filter/header/DecimalHeaderFilter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/filter/header/DoubleHeaderFilter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/filter/header/FloatHeaderFilter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/filter/header/IntegerHeaderFilter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/filter/header/LongHeaderFilter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/filter/header/ShortHeaderFilter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/elements/InputElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/BaseTextBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/CustomInputBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/DateBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/DateRangeBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/NumberBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/TimeBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/AbstractSelect.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/AbstractSuggestBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/MultiSuggestBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/SuggestBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/search/Search$1.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/search/Search.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/sliders/Slider.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileUpload.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLInputElement",
+    "member": "valueAsNumber",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/sliders/Slider.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLLabelElement",
+    "member": "textContent",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/Radio.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLStyleElement",
+    "member": "id",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DynamicStyleSheet.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLStyleElement",
+    "member": "sheet",
+    "descriptor": "Lelemental2/dom/StyleSheet;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DominoStyleSheet.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DynamicStyleSheet.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLStyleElement",
+    "member": "type",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DynamicStyleSheet.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLTableElement",
+    "member": "clientHeight",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/pagination/BodyScrollPlugin.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLTableElement",
+    "member": "offsetHeight",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/pagination/BodyScrollPlugin.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLTableElement",
+    "member": "scrollHeight",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/pagination/BodyScrollPlugin.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLTableElement",
+    "member": "scrollLeft",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/DataTable.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLTableElement",
+    "member": "scrollTop",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/DataTable.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/pagination/BodyScrollPlugin.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLTableRowElement",
+    "member": "nextSibling",
+    "descriptor": "Lelemental2/dom/Node;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/grouping/GroupingPlugin.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/row/RecordDetailsPlugin.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLTableRowElement",
+    "member": "previousElementSibling",
+    "descriptor": "Lelemental2/dom/Element;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/tree/TreeGridPlugin.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLTextAreaElement",
+    "member": "name",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/TextAreaBox.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLTextAreaElement",
+    "member": "scrollHeight",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/TextAreaBox.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLTextAreaElement",
+    "member": "scrollTop",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/TextAreaBox.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLTextAreaElement",
+    "member": "value",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/TextAreaBox.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLUListElement",
+    "member": "scrollLeft",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/tabs/ScrollTabsHandler.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.HTMLUListElement",
+    "member": "scrollTop",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/tabs/ScrollTabsHandler.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.InputEvent",
+    "member": "inputType",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/NumberBox.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.KeyboardEvent",
+    "member": "altKey",
+    "descriptor": "Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyEvent.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyboardKeyListener.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.KeyboardEvent",
+    "member": "char_",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyEvent.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.KeyboardEvent",
+    "member": "code",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/AbstractDialog.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyEvent.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.KeyboardEvent",
+    "member": "ctrlKey",
+    "descriptor": "Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyEvent.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyboardKeyListener.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.KeyboardEvent",
+    "member": "key",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/AbstractSelect.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyEvent.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyboardEvents.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyboardKeyListener.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/KeyboardNavigation.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.KeyboardEvent",
+    "member": "locale",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyEvent.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.KeyboardEvent",
+    "member": "location",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyEvent.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.KeyboardEvent",
+    "member": "metaKey",
+    "descriptor": "Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyEvent.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyboardKeyListener.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.KeyboardEvent",
+    "member": "repeat",
+    "descriptor": "Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyEvent.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyboardKeyListener.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.KeyboardEvent",
+    "member": "shiftKey",
+    "descriptor": "Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/AbstractDialog.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyEvent.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyboardKeyListener.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.KeyboardEvent",
+    "member": "target",
+    "descriptor": "Lelemental2/dom/EventTarget;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/KeyboardNavigation.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.MediaQueryList",
+    "member": "matches",
+    "descriptor": "Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/mediaquery/MediaQuery.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.MouseEvent",
+    "member": "button",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.MouseEvent",
+    "member": "buttons",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/column/ResizeColumnsPlugin.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/Tooltip.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/splitpanel/BaseSplitter.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.MouseEvent",
+    "member": "clientX",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/column/ResizeColumnsPlugin.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/MouseBestFitDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/splitpanel/HSplitter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Waves.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.MouseEvent",
+    "member": "clientY",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/MouseBestFitDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/splitpanel/VSplitter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Waves.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.MouseEvent",
+    "member": "shiftKey",
+    "descriptor": "Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/selection/SelectionPlugin.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/lists/ListItem.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.MutationRecord",
+    "member": "addedNodes",
+    "descriptor": "Lelemental2/dom/NodeList;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.MutationRecord",
+    "member": "attributeName",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.MutationRecord",
+    "member": "removedNodes",
+    "descriptor": "Lelemental2/dom/NodeList;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.MutationRecord",
+    "member": "target",
+    "descriptor": "Lelemental2/dom/Node;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/AttributesObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CharacterDataObserver.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.MutationRecord",
+    "member": "type",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/AttributesObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CharacterDataObserver.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Node",
+    "member": "ELEMENT_NODE",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Node",
+    "member": "childNodes",
+    "descriptor": "Lelemental2/dom/NodeList;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/Option.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Node",
+    "member": "nextSibling",
+    "descriptor": "Lelemental2/dom/Node;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Node",
+    "member": "nodeName",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/Option.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Node",
+    "member": "nodeType",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/Option.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Node",
+    "member": "nodeValue",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/Option.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Node",
+    "member": "parentElement",
+    "descriptor": "Lelemental2/dom/Element;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/Option.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CharacterDataObserver.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Node",
+    "member": "parentNode",
+    "descriptor": "Lelemental2/dom/Node;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.NodeList",
+    "member": "length",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/Option.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.ProgressEvent",
+    "member": "lengthComputable",
+    "descriptor": "Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.ProgressEvent",
+    "member": "loaded",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Range",
+    "member": "commonAncestorContainer",
+    "descriptor": "Lelemental2/dom/Node;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/RichTextCommand.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Selection",
+    "member": "rangeCount",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/RichTextCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertHtmlCommand.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Text",
+    "member": "textContent",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/badges/Badge.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/DragDropPlugin.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/AbstractFormElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/pagination/Pager.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Touch",
+    "member": "clientX",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/splitpanel/HSplitter.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Touch",
+    "member": "clientY",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/splitpanel/VSplitter.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Touch",
+    "member": "pageX",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/SwipeUtil.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Touch",
+    "member": "pageY",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/SwipeUtil.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.TouchEvent",
+    "member": "changedTouches",
+    "descriptor": "Lelemental2/dom/TouchList;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/SwipeUtil.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.TouchEvent",
+    "member": "touches",
+    "descriptor": "Lelemental2/dom/TouchList;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/splitpanel/HSplitter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/splitpanel/VSplitter.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.ValidityState",
+    "member": "patternMismatch",
+    "descriptor": "Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/TextInputFormField.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.ValidityState",
+    "member": "tooLong",
+    "descriptor": "Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/validations/MaxLengthValidator.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.ValidityState",
+    "member": "tooShort",
+    "descriptor": "Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/validations/MinLengthValidator.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.ValidityState",
+    "member": "typeMismatch",
+    "descriptor": "Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/TextInputFormField.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.WheelEvent",
+    "member": "deltaY",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/carousel/Carousel.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Window",
+    "member": "innerHeight",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/MiddleOfScreenDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/MouseBestFitDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/SpaceChecker.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Window",
+    "member": "innerWidth",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/MiddleOfScreenDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/MouseBestFitDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/SpaceChecker.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Window",
+    "member": "navigator",
+    "descriptor": "Lelemental2/dom/Navigator;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/PasteCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/Clipboard.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Window",
+    "member": "pageXOffset",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/BottomMiddleDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/BottomRightDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/LeftDownDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/LeftMiddleDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/LeftUpDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/MouseBestFitDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/RightDownDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/RightMiddleDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/RightUpDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/SpaceChecker.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/TopMiddleDropDirection.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.Window",
+    "member": "pageYOffset",
+    "descriptor": "D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/AbstractDialog.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/BottomLeftDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/BottomMiddleDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/BottomRightDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/LeftDownDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/LeftMiddleDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/LeftUpDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/MiddleOfScreenDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/MouseBestFitDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/RightDownDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/RightMiddleDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/RightUpDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/SpaceChecker.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/TopLeftDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/TopMiddleDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/TopRightDropDirection.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.XMLHttpRequest",
+    "member": "onabort",
+    "descriptor": "Lelemental2/dom/XMLHttpRequest$OnabortFn;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.XMLHttpRequest",
+    "member": "readyState",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.XMLHttpRequest",
+    "member": "responseText",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.XMLHttpRequest",
+    "member": "responseType",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.XMLHttpRequest",
+    "member": "status",
+    "descriptor": "I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.XMLHttpRequest",
+    "member": "upload",
+    "descriptor": "Lelemental2/dom/XMLHttpRequestUpload;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.dom.XMLHttpRequestUpload",
+    "member": "onprogress",
+    "descriptor": "Lelemental2/dom/XMLHttpRequestUpload$OnprogressFn;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "elemental2.webstorage.WebStorageWindow",
+    "member": "localStorage",
+    "descriptor": "Lelemental2/webstorage/Storage;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/themes/DominoThemeManager.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.client.NumberFormat",
+    "member": "intlFormat",
+    "descriptor": "Lorg/gwtproject/i18n/shared/browser/JsIntlNumberFormat;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/client/NumberFormat.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.client.NumberFormat",
+    "member": "isDecimal",
+    "descriptor": "Z",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/client/NumberFormat.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.client.NumberFormat",
+    "member": "numberConstants",
+    "descriptor": "Lorg/gwtproject/i18n/shared/cldr/NumberConstants;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/client/NumberFormat.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat",
+    "member": "intlFormatter",
+    "descriptor": "Lorg/gwtproject/i18n/shared/browser/JsIntlDateTimeFormat;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat",
+    "member": "pattern",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat$PredefinedFormat",
+    "member": "$VALUES",
+    "descriptor": "[Lorg/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat$PredefinedFormat",
+    "member": "DATE_FULL",
+    "descriptor": "Lorg/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat$PredefinedFormat",
+    "member": "DATE_LONG",
+    "descriptor": "Lorg/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat$PredefinedFormat",
+    "member": "DATE_MEDIUM",
+    "descriptor": "Lorg/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat$PredefinedFormat",
+    "member": "DATE_SHORT",
+    "descriptor": "Lorg/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/DateFormatter$DefaultFormatter.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat$PredefinedFormat",
+    "member": "DATE_TIME_FULL",
+    "descriptor": "Lorg/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat$PredefinedFormat",
+    "member": "DATE_TIME_LONG",
+    "descriptor": "Lorg/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat$PredefinedFormat",
+    "member": "DATE_TIME_MEDIUM",
+    "descriptor": "Lorg/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat$PredefinedFormat",
+    "member": "DATE_TIME_SHORT",
+    "descriptor": "Lorg/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat$PredefinedFormat",
+    "member": "ISO_8601",
+    "descriptor": "Lorg/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat$PredefinedFormat",
+    "member": "RFC_2822",
+    "descriptor": "Lorg/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat$PredefinedFormat",
+    "member": "TIME_FULL",
+    "descriptor": "Lorg/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat$PredefinedFormat",
+    "member": "TIME_LONG",
+    "descriptor": "Lorg/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat$PredefinedFormat",
+    "member": "TIME_MEDIUM",
+    "descriptor": "Lorg/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat$PredefinedFormat",
+    "member": "TIME_SHORT",
+    "descriptor": "Lorg/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimeFormatter$DefaultFormatter.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat$PredefinedFormat",
+    "member": "token",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlDateTimeFormatOptions",
+    "member": "dateStyle",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlDateTimeFormatOptions.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlDateTimeFormatOptions",
+    "member": "hour",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlDateTimeFormatOptions",
+    "member": "hour12",
+    "descriptor": "Z",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlDateTimeFormatOptions",
+    "member": "month",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlDateTimeFormatOptions",
+    "member": "timeStyle",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlDateTimeFormatOptions.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlDateTimeFormatOptions",
+    "member": "weekday",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlFormatPart",
+    "member": "type",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/LocaleInfo.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlFormatPart",
+    "member": "value",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/LocaleInfo.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlNumberFormatOptions",
+    "member": "maximumFractionDigits",
+    "descriptor": "I",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/client/NumberFormat.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/LocaleInfo.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlNumberFormatOptions",
+    "member": "minimumFractionDigits",
+    "descriptor": "I",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/client/NumberFormat.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/LocaleInfo.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlNumberFormatOptions",
+    "member": "style",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlNumberFormatOptions.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.cldr.LocaleInfo",
+    "member": "CURRENT",
+    "descriptor": "Lorg/gwtproject/i18n/shared/cldr/LocaleInfo;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/LocaleInfo.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.cldr.LocaleInfo",
+    "member": "numberConstants",
+    "descriptor": "Lorg/gwtproject/i18n/shared/cldr/NumberConstants;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/LocaleInfo.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.cldr.LocaleInfo$1",
+    "member": "val$decimalSep",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/LocaleInfo$1.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.cldr.LocaleInfo$1",
+    "member": "val$groupSep",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/LocaleInfo$1.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.cldr.LocaleInfo$1",
+    "member": "val$minusSign",
+    "descriptor": "Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/LocaleInfo$1.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.cldr.impl.BrowserDateTimeFormatInfo",
+    "member": "ampms",
+    "descriptor": "[Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.cldr.impl.BrowserDateTimeFormatInfo",
+    "member": "monthsFull",
+    "descriptor": "[Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.cldr.impl.BrowserDateTimeFormatInfo",
+    "member": "monthsShort",
+    "descriptor": "[Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.cldr.impl.BrowserDateTimeFormatInfo",
+    "member": "weekdaysFull",
+    "descriptor": "[Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.cldr.impl.BrowserDateTimeFormatInfo",
+    "member": "weekdaysShort",
+    "descriptor": "[Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.i18n.shared.cldr.impl.DateTimeFormatInfo_factory",
+    "member": "INSTANCE",
+    "descriptor": "Lorg/gwtproject/i18n/shared/cldr/DateTimeFormatInfo;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/DateTimeFormatInfo_factory.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.safehtml.shared.SafeHtmlBuilder",
+    "member": "buffer",
+    "descriptor": "Ljava/lang/StringBuilder;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/safehtml/shared/SafeHtmlBuilder.class"
+    ]
+  },
+  {
+    "kind": "field",
+    "owner": "org.gwtproject.safehtml.shared.SafeHtmlUtils",
+    "member": "EMPTY_SAFE_HTML",
+    "descriptor": "Lorg/gwtproject/safehtml/shared/SafeHtml;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/safehtml/shared/SafeHtmlUtils.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "com.google.gwt.http.client.URL",
+    "member": "encodeQueryString",
+    "descriptor": "(Ljava/lang/String;)Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/safehtml/shared/SafeHtmlBuilder.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "com.google.gwt.i18n.client.DateTimeFormat",
+    "member": "format",
+    "descriptor": "(Ljava/util/Date;)Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "com.google.gwt.i18n.client.DateTimeFormat",
+    "member": "getFormat",
+    "descriptor": "(Ljava/lang/String;)Lcom/google/gwt/i18n/client/DateTimeFormat;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "com.google.gwt.i18n.client.DateTimeFormat",
+    "member": "parse",
+    "descriptor": "(Ljava/lang/String;)Ljava/util/Date;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "com.google.gwt.i18n.client.DateTimeFormat",
+    "member": "parseStrict",
+    "descriptor": "(Ljava/lang/String;)Ljava/util/Date;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsArray",
+    "member": "<init>",
+    "descriptor": "([Ljava/lang/Object;)V",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlDateTimeFormat.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlNumberFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsArray",
+    "member": "asArray",
+    "descriptor": "([Ljava/lang/Object;)[Ljava/lang/Object;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/AttributesObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CharacterDataObserver.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsArray",
+    "member": "asList",
+    "descriptor": "()Ljava/util/List;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/TextAreaBox.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsArray",
+    "member": "getAt",
+    "descriptor": "(I)Ljava/lang/Object;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/LocaleInfo.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsDate",
+    "member": "<init>",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/CalendarSelectors.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DominoId.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsDate",
+    "member": "<init>",
+    "descriptor": "(Ljava/lang/Object;)V",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsDate",
+    "member": "<init>",
+    "descriptor": "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/MonthData.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsDate",
+    "member": "<init>",
+    "descriptor": "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsDate",
+    "member": "getDate",
+    "descriptor": "()I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/MonthData.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsDate",
+    "member": "getFullYear",
+    "descriptor": "()I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/MonthData.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsDate",
+    "member": "getMonth",
+    "descriptor": "()I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/CalendarSelectors.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsDate",
+    "member": "getTime",
+    "descriptor": "()D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/CalendarSelectors.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DominoId.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsDate",
+    "member": "now",
+    "descriptor": "()D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/AbstractMenuItem.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsDate",
+    "member": "parse",
+    "descriptor": "(Ljava/lang/Object;)D",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsDate",
+    "member": "setFullYear",
+    "descriptor": "(III)D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/CalendarSelectors.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsDate",
+    "member": "setMonth",
+    "descriptor": "(I)D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/CalendarSelectors.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsMath",
+    "member": "abs",
+    "descriptor": "(Ljava/lang/Object;)D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/pagination/BodyScrollPlugin.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsNumber",
+    "member": "<init>",
+    "descriptor": "(Ljava/lang/Object;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsNumber",
+    "member": "parseInt",
+    "descriptor": "(Ljava/lang/String;I)I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/column/ResizeColumnMeta.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsNumber",
+    "member": "toFixed",
+    "descriptor": "(I)Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsRegExp",
+    "member": "<init>",
+    "descriptor": "(Ljava/lang/Object;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CssParser.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsRegExp",
+    "member": "<init>",
+    "descriptor": "(Ljava/lang/Object;Ljava/lang/Object;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyboardKeyListener.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/MatchHighlighter.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsRegExp",
+    "member": "exec",
+    "descriptor": "(Ljava/lang/String;)Lelemental2/core/RegExpResult;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CssParser.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/MatchHighlighter.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.JsRegExp",
+    "member": "test",
+    "descriptor": "(Ljava/lang/String;)Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyboardKeyListener.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.core.RegExpResult",
+    "member": "getAt",
+    "descriptor": "(I)Ljava/lang/Object;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CssParser.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/MatchHighlighter.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.AddEventListenerOptions",
+    "member": "create",
+    "descriptor": "()Lelemental2/dom/AddEventListenerOptions;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/collapsible/HeightCollapseStrategy.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/events/EventOptions.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Waves.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.AddEventListenerOptions",
+    "member": "setCapture",
+    "descriptor": "(Z)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/events/EventOptions.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.AddEventListenerOptions",
+    "member": "setOnce",
+    "descriptor": "(Z)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/collapsible/HeightCollapseStrategy.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/events/EventOptions.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Waves.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.AddEventListenerOptions",
+    "member": "setPassive",
+    "descriptor": "(Z)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/events/EventOptions.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.CSSInterface",
+    "member": "escape",
+    "descriptor": "(Ljava/lang/String;)Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DynamicStyleSheet.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.CSSStyleDeclaration",
+    "member": "get",
+    "descriptor": "(Ljava/lang/String;)Ljava/lang/Object;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/TextAreaBox.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.CSSStyleDeclaration",
+    "member": "getPropertyValue",
+    "descriptor": "(Ljava/lang/String;)Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/pickers/SimpleColorPicker.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/FontPicker.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.CSSStyleDeclaration",
+    "member": "removeProperty",
+    "descriptor": "(Ljava/lang/String;)Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Style.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.CSSStyleDeclaration",
+    "member": "setProperty",
+    "descriptor": "(Ljava/lang/String;Ljava/lang/String;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/BottomLeftDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/BottomMiddleDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/BottomRightDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/LeftDownDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/LeftMiddleDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/LeftUpDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/MiddleOfScreenDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/MouseBestFitDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/RightDownDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/RightMiddleDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/RightUpDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/TopLeftDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/TopMiddleDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/TopRightDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Style.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.CSSStyleDeclaration",
+    "member": "setProperty",
+    "descriptor": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Style.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.CSSStyleSheet",
+    "member": "deleteRule",
+    "descriptor": "(I)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DominoStyleSheet.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.CSSStyleSheet",
+    "member": "insertRule",
+    "descriptor": "(Ljava/lang/String;I)I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DominoStyleSheet.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Console",
+    "member": "info",
+    "descriptor": "([Ljava/lang/Object;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/button/ToggleButtonsGroup.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Console",
+    "member": "warn",
+    "descriptor": "([Ljava/lang/Object;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/DateBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/DateRangeBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/TimeBox.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.CustomEvent",
+    "member": "<init>",
+    "descriptor": "(Ljava/lang/String;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/events/CustomEvents.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.CustomEvent",
+    "member": "<init>",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/CustomEventInit;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/CalendarCustomEvents.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/ModalBackDrop.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/events/CustomEvents.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimePickerCustomEvents.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/AttributesObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CharacterDataObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.CustomEventInit",
+    "member": "create",
+    "descriptor": "()Lelemental2/dom/CustomEventInit;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/CalendarCustomEvents.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/ModalBackDrop.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/events/CustomEvents.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimePickerCustomEvents.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/AttributesObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CharacterDataObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.CustomEventInit",
+    "member": "setBubbles",
+    "descriptor": "(Z)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/CalendarCustomEvents.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimePickerCustomEvents.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.CustomEventInit",
+    "member": "setDetail",
+    "descriptor": "(Ljava/lang/Object;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/CalendarCustomEvents.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/ModalBackDrop.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/events/CustomEvents.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimePickerCustomEvents.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/AttributesObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CharacterDataObserver.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.DOMTokenList",
+    "member": "add",
+    "descriptor": "([Ljava/lang/String;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dnd/Draggable.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/CssClass.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Style.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/ToggleCssClass.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.DOMTokenList",
+    "member": "asList",
+    "descriptor": "()Ljava/util/List;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/CompositeCssClass.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.DOMTokenList",
+    "member": "contains",
+    "descriptor": "(Ljava/lang/String;)Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/CssClass.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Style.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/ToggleCssClass.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.DOMTokenList",
+    "member": "item",
+    "descriptor": "(I)Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Elevation.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Style.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.DOMTokenList",
+    "member": "remove",
+    "descriptor": "([Ljava/lang/String;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/CssClass.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Elevation.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Style.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/ToggleCssClass.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/themes/Theme.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.DataTransfer",
+    "member": "getData",
+    "descriptor": "(Ljava/lang/String;)Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dnd/DropZone$DropTarget.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/NumberBox.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.DataTransfer",
+    "member": "setData",
+    "descriptor": "(Ljava/lang/String;Ljava/lang/String;)Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dnd/Draggable.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.DocumentFragment",
+    "member": "<init>",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertHtmlCommand.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.DocumentFragment",
+    "member": "append",
+    "descriptor": "([Lelemental2/dom/Node;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertHtmlCommand.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.DocumentFragment",
+    "member": "insertBefore",
+    "descriptor": "(Lelemental2/dom/Node;Lelemental2/dom/Node;)Lelemental2/dom/Node;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/RemoveLinkCommand.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.DocumentFragment",
+    "member": "querySelectorAll",
+    "descriptor": "(Ljava/lang/String;)Lelemental2/dom/NodeList;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/RemoveLinkCommand.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.DomGlobal",
+    "member": "clearInterval",
+    "descriptor": "(D)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DominoScheduler.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DominoTimer.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.DomGlobal",
+    "member": "clearTimeout",
+    "descriptor": "(D)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DominoTimer.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.DomGlobal",
+    "member": "requestAnimationFrame",
+    "descriptor": "(Lelemental2/dom/FrameRequestCallback;)I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/collapsible/HeightCollapseStrategy.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/column/PinColumnsPlugin.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/column/ResizeColumnsPlugin.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/splitpanel/BaseSplitPanel.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.DomGlobal",
+    "member": "setInterval",
+    "descriptor": "(Lelemental2/dom/DomGlobal$SetIntervalCallbackFn;D[Ljava/lang/Object;)D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DominoScheduler.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DominoTimer.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.DomGlobal",
+    "member": "setTimeout",
+    "descriptor": "(Lelemental2/dom/DomGlobal$SetTimeoutCallbackFn;)D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/column/PinColumnsPlugin.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/base/BaseMenu.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.DomGlobal",
+    "member": "setTimeout",
+    "descriptor": "(Lelemental2/dom/DomGlobal$SetTimeoutCallbackFn;D[Ljava/lang/Object;)D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/DataTable.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/column/ResizeColumnsPlugin.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/AbstractSelect.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/BasePopover.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/progress/ProgressBar.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/sliders/Slider.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/spin/SpinSelect.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/AttributesObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CharacterDataObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DominoScheduler.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DominoStyleSheet.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DominoTimer.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "<init>",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/DominoElementAdapter.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "addEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/Popover.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "addEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;Lelemental2/dom/AddEventListenerOptions;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/collapsible/HeightCollapseStrategy.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Waves.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "addEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;Lelemental2/dom/EventTarget$AddEventListenerOptionsUnionType;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "addEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;Z)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "appendChild",
+    "descriptor": "(Lelemental2/dom/Node;)Lelemental2/dom/Node;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/Option.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/PostfixElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/PrefixElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/PrimaryAddOnElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "blur",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "contains",
+    "descriptor": "(Lelemental2/dom/Node;)Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/KeyboardNavigation.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "dispatchEvent",
+    "descriptor": "(Lelemental2/dom/Event;)Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/notifications/Notification.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/AttributesObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CharacterDataObserver.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "focus",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/AbstractDialog.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/base/BaseMenu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/KeyboardNavigation.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "getAttribute",
+    "descriptor": "(Ljava/lang/String;)Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/SpaceChecker.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ObserverEventType.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "getBoundingClientRect",
+    "descriptor": "()Lelemental2/dom/DOMRect;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/LeftDownDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/MiddleOfScreenDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/MouseBestFitDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/RightDownDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/SpaceChecker.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/tabs/TabsDropDownHandler.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "hasAttribute",
+    "descriptor": "(Ljava/lang/String;)Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "hasChildNodes",
+    "descriptor": "()Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "insertAdjacentElement",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/Element;)Lelemental2/dom/Element;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "insertBefore",
+    "descriptor": "(Lelemental2/dom/Node;Lelemental2/dom/Node;)Lelemental2/dom/Node;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "isEqualNode",
+    "descriptor": "(Lelemental2/dom/Node;)Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "querySelector",
+    "descriptor": "(Ljava/lang/String;)Lelemental2/dom/Element;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/InputFieldInitializer.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "querySelectorAll",
+    "descriptor": "(Ljava/lang/String;)Lelemental2/dom/NodeList;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/PostfixElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/PrefixElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/PrimaryAddOnElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "remove",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/RemoveLinkCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/LazyChild.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/PostfixElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/PrefixElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/PrimaryAddOnElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "removeAttribute",
+    "descriptor": "(Ljava/lang/String;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/MiddleOfScreenDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "removeChild",
+    "descriptor": "(Lelemental2/dom/Node;)Lelemental2/dom/Node;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/Option.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "removeEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "removeEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;Lelemental2/dom/EventListenerOptions;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "removeEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;Z)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "scrollIntoView",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "scrollIntoView",
+    "descriptor": "(Lelemental2/dom/ScrollIntoViewOptions;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "setAttribute",
+    "descriptor": "(Ljava/lang/String;D)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "setAttribute",
+    "descriptor": "(Ljava/lang/String;Ljava/lang/String;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/collapsible/Collapsible.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Element",
+    "member": "setAttribute",
+    "descriptor": "(Ljava/lang/String;Z)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Event",
+    "member": "preventDefault",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/carousel/Carousel.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/chips/Chip.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/DataTable.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/column/ResizeColumnsPlugin.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/AbstractDialog.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/ModalBackDrop.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dnd/Draggable.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dnd/DropZone$DropTarget.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/CheckBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/NumberBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/SwitchButton.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/AbstractSuggestBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyboardKeyListener.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/lists/ListGroup.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/AbstractMenuItem.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/base/BaseMenu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/BasePopover.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/splitpanel/BaseSplitter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileUpload.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/KeyboardNavigation.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/SwipeUtil.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Event",
+    "member": "stopPropagation",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/button/BaseButton.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/chips/Chip.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/DataTable.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/column/ResizeColumnsPlugin.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/grouping/GroupingPlugin.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/header/HeaderBarPlugin$ShowHideColumnsAction.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/header/ShowHideColumnsAction.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/tree/TreeGridPlugin.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/Calendar.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/AbstractDialog.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/ModalBackDrop.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/CheckBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/DateBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/DateRangeBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/SwitchButton.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/TimeBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/AbstractSelect.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/AbstractSuggestBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyboardKeyListener.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/layout/AppLayout.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/lists/ListGroup.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/AbstractMenuItem.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/base/BaseMenu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/BasePopover.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/Popover.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/Tooltip.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/search/Search.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/search/SearchBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/splitpanel/BaseSplitter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/tree/TreeNode.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/tree/TreeRoot.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/DefaultFilePreview.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileUpload.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/KeyboardNavigation.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.EventListener",
+    "member": "handleEvent",
+    "descriptor": "(Lelemental2/dom/Event;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyboardKeyListener.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/SwipeUtil.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.EventTarget",
+    "member": "equals",
+    "descriptor": "(Ljava/lang/Object;)Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/animations/TransitionListeners.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.EventTarget$AddEventListenerOptionsUnionType",
+    "member": "asAddEventListenerOptions",
+    "descriptor": "()Lelemental2/dom/AddEventListenerOptions;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.FileList",
+    "member": "asList",
+    "descriptor": "()Ljava/util/List;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/UploadBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileUpload.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.FileList",
+    "member": "item",
+    "descriptor": "(D)Lelemental2/dom/File;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertImageCommand.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.FileReader",
+    "member": "<init>",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/DefaultFilePreview.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.FileReader",
+    "member": "addEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/DefaultFilePreview.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.FileReader",
+    "member": "readAsDataURL",
+    "descriptor": "(Lelemental2/dom/Blob;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/DefaultFilePreview.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.FileReader$ResultUnionType",
+    "member": "asString",
+    "descriptor": "()Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/DefaultFilePreview.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.FormData",
+    "member": "<init>",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.FormData",
+    "member": "append",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/Blob;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLAnchorElement",
+    "member": "addEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/tabs/TabsPanel.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLAnchorElement",
+    "member": "focus",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/tree/TreeRoot.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLBodyElement",
+    "member": "addEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/column/ResizeColumnsPlugin.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/Popover.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/Tooltip.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/splitpanel/BaseSplitter.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLBodyElement",
+    "member": "addEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;Z)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/BasePopover.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLBodyElement",
+    "member": "appendChild",
+    "descriptor": "(Lelemental2/dom/Node;)Lelemental2/dom/Node;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/AbstractDialog.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/notifications/Notification.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLBodyElement",
+    "member": "getBoundingClientRect",
+    "descriptor": "()Lelemental2/dom/DOMRect;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/BottomMiddleDropDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/TopMiddleDropDirection.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLBodyElement",
+    "member": "querySelectorAll",
+    "descriptor": "(Ljava/lang/String;)Lelemental2/dom/NodeList;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/InputFieldInitializer.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLBodyElement",
+    "member": "removeEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/column/ResizeColumnsPlugin.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLBodyElement",
+    "member": "removeEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;Z)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/BasePopover.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLDivElement",
+    "member": "addEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/AbstractDialog.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLDivElement",
+    "member": "appendChild",
+    "descriptor": "(Lelemental2/dom/Node;)Lelemental2/dom/Node;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/header/TopPanelPlugin.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLDivElement",
+    "member": "contains",
+    "descriptor": "(Lelemental2/dom/Node;)Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/BasePopover.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLDivElement",
+    "member": "focus",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/PasteCommand.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLDivElement",
+    "member": "getBoundingClientRect",
+    "descriptor": "()Lelemental2/dom/DOMRect;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLDivElement",
+    "member": "remove",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/AbstractDialog.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/BounceLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/BouncePulseLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/FacebookLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/IosLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/Loader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/NoneLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/OrbitLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/ProgressBarLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/PulseLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/RotatePlaneLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/RotationLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/RoundBounceLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/StretchLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/TimerLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/Win8LinearLoader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/loaders/Win8Loader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/notifications/Notification.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/BasePopover.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/preloaders/Preloader.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLDocument",
+    "member": "<init>",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DominoDocument.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLDocument",
+    "member": "addEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/layout/AppLayout.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/scroll/ScrollTop.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/PopupsCloser.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLDocument",
+    "member": "addEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;Z)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/FollowOnScroll.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLDocument",
+    "member": "createElement",
+    "descriptor": "(Ljava/lang/String;)Lelemental2/dom/Element;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DomElements.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DynamicStyleSheet.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementsFactoryDelegate.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLDocument",
+    "member": "createElementNS",
+    "descriptor": "(Ljava/lang/String;Ljava/lang/String;)Lelemental2/dom/Element;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DomElements.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLDocument",
+    "member": "createTextNode",
+    "descriptor": "(Ljava/lang/String;)Lelemental2/dom/Text;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementsFactoryDelegate.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLDocument",
+    "member": "dispatchEvent",
+    "descriptor": "(Lelemental2/dom/Event;)Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/PopupsCloser.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLDocument",
+    "member": "getElementById",
+    "descriptor": "(Ljava/lang/String;)Lelemental2/dom/Element;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementsFactoryDelegate.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLDocument",
+    "member": "querySelectorAll",
+    "descriptor": "(Ljava/lang/String;)Lelemental2/dom/NodeList;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/SpaceChecker.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/notifications/Notification.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/notifications/NotificationPosition.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLDocument",
+    "member": "removeEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/base/BaseMenu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/Popover.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLDocument",
+    "member": "removeEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;Z)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/FollowOnScroll.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLElement",
+    "member": "addEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dnd/DropZone$DropTarget.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DelayedTextInput.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLElement",
+    "member": "addEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;Z)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/SwipeUtil.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLElement",
+    "member": "blur",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/InputFormField.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLElement",
+    "member": "dispatchEvent",
+    "descriptor": "(Lelemental2/dom/Event;)Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLElement",
+    "member": "focus",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/InputFormField.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/AbstractMenuItem.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/base/BaseMenu.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLElement",
+    "member": "hasAttribute",
+    "descriptor": "(Ljava/lang/String;)Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLElement",
+    "member": "querySelectorAll",
+    "descriptor": "(Ljava/lang/String;)Lelemental2/dom/NodeList;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/AbstractDialog.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLElement",
+    "member": "removeEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dnd/Draggable.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLInputElement",
+    "member": "blur",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/Radio.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/AbstractSelect.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/AbstractSuggestBox.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLInputElement",
+    "member": "click",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileUpload.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLInputElement",
+    "member": "focus",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/InputFieldInitializer.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/Radio.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/AbstractSelect.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/AbstractSuggestBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/MultiSelect.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/Select.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/search/Search.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/search/SearchBox.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLLIElement",
+    "member": "remove",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/breadcrumbs/Breadcrumb.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLTableCellElement",
+    "member": "getBoundingClientRect",
+    "descriptor": "()Lelemental2/dom/DOMRect;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/TableConfig.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLTableElement",
+    "member": "addEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/pagination/BodyScrollPlugin.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLTableRowElement",
+    "member": "appendChild",
+    "descriptor": "(Lelemental2/dom/Node;)Lelemental2/dom/Node;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/TableRow.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/summary/SummaryRow.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.HTMLTextAreaElement",
+    "member": "setAttribute",
+    "descriptor": "(Ljava/lang/String;D)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/TextAreaBox.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.KeyboardEvent",
+    "member": "preventDefault",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/AbstractSelect.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyEvent.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.KeyboardEvent",
+    "member": "stopPropagation",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/AbstractSelect.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyEvent.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.MediaQueryList",
+    "member": "addListener",
+    "descriptor": "(Lelemental2/dom/MediaQueryListListener;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/mediaquery/MediaQuery.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.MediaQueryList",
+    "member": "removeListener",
+    "descriptor": "(Lelemental2/dom/MediaQueryListListener;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/mediaquery/MediaQuery.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.MediaQueryListListener",
+    "member": "onInvoke",
+    "descriptor": "(Lelemental2/dom/MediaQueryList;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/mediaquery/MediaQuery.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.MouseEvent",
+    "member": "preventDefault",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/column/ResizeColumnsPlugin.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.MouseEvent",
+    "member": "stopPropagation",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/column/ResizeColumnsPlugin.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.MutationObserver",
+    "member": "<init>",
+    "descriptor": "(Lelemental2/dom/MutationObserver$MutationObserverCallbackFn;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/AttributesObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CharacterDataObserver.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.MutationObserver",
+    "member": "observe",
+    "descriptor": "(Lelemental2/dom/Node;Lelemental2/dom/MutationObserverInit;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/AttributesObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CharacterDataObserver.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.MutationObserverInit",
+    "member": "create",
+    "descriptor": "()Lelemental2/dom/MutationObserverInit;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/AttributesObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CharacterDataObserver.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.MutationObserverInit",
+    "member": "setAttributes",
+    "descriptor": "(Z)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/AttributesObserver.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.MutationObserverInit",
+    "member": "setCharacterData",
+    "descriptor": "(Z)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CharacterDataObserver.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.MutationObserverInit",
+    "member": "setCharacterDataOldValue",
+    "descriptor": "(Z)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CharacterDataObserver.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.MutationObserverInit",
+    "member": "setChildList",
+    "descriptor": "(Z)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.MutationObserverInit",
+    "member": "setSubtree",
+    "descriptor": "(Z)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/AttributesObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CharacterDataObserver.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Navigator",
+    "member": "<init>",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DominoNavigator.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Node",
+    "member": "addEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyboardEvents.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Node",
+    "member": "insertBefore",
+    "descriptor": "(Lelemental2/dom/Node;Lelemental2/dom/Node;)Lelemental2/dom/Node;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/RemoveLinkCommand.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Node",
+    "member": "removeEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyboardEvents.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.NodeList",
+    "member": "asList",
+    "descriptor": "()Ljava/util/List;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/AbstractDialog.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/InputFieldInitializer.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/SpaceChecker.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/notifications/Notification.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/notifications/NotificationPosition.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/PostfixElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/PrefixElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/PrimaryAddOnElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.NodeList",
+    "member": "forEach",
+    "descriptor": "(Lelemental2/dom/NodeList$ForEachCallbackFn;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertHtmlCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/RemoveLinkCommand.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.NodeList",
+    "member": "getAt",
+    "descriptor": "(I)Ljava/lang/Object;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/Option.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.NodeList",
+    "member": "item",
+    "descriptor": "(I)Ljava/lang/Object;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Range",
+    "member": "cloneRange",
+    "descriptor": "()Lelemental2/dom/Range;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/RichTextCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertHtmlCommand.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Range",
+    "member": "deleteContents",
+    "descriptor": "()D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertHtmlCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertImageCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertImageLinkCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertParagraphCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/PasteCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/RemoveLinkCommand.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Range",
+    "member": "extractContents",
+    "descriptor": "()Lelemental2/dom/DocumentFragment;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertLinkCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertParagraphCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/RemoveLinkCommand.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Range",
+    "member": "insertNode",
+    "descriptor": "(Lelemental2/dom/Node;)Lelemental2/dom/DocumentFragment;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertHtmlCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertImageCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertImageLinkCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertLinkCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertParagraphCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/PasteCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/RemoveLinkCommand.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.ScrollIntoViewOptions",
+    "member": "setBehavior",
+    "descriptor": "(Ljava/lang/String;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ScrollOptions.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.ScrollIntoViewOptions",
+    "member": "setBlock",
+    "descriptor": "(Ljava/lang/String;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ScrollOptions.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.ScrollIntoViewOptions",
+    "member": "setInline",
+    "descriptor": "(Ljava/lang/String;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ScrollOptions.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Selection",
+    "member": "getRangeAt",
+    "descriptor": "(I)Lelemental2/dom/Range;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/RichTextCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertHtmlCommand.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.TouchList",
+    "member": "getAt",
+    "descriptor": "(I)Ljava/lang/Object;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/splitpanel/HSplitter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/splitpanel/VSplitter.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.TouchList",
+    "member": "item",
+    "descriptor": "(I)Lelemental2/dom/Touch;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/SwipeUtil.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Window",
+    "member": "<init>",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DominoWindow.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Window",
+    "member": "addEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Window",
+    "member": "addEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;Z)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Window",
+    "member": "getSelection",
+    "descriptor": "()Lelemental2/dom/Selection;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/RichTextCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertHtmlCommand.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Window",
+    "member": "matchMedia",
+    "descriptor": "(Ljava/lang/String;)Lelemental2/dom/MediaQueryList;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/mediaquery/MediaQuery.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Window",
+    "member": "open",
+    "descriptor": "(Ljava/lang/String;Ljava/lang/String;)Lelemental2/dom/Window;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Window",
+    "member": "removeEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/base/BaseMenu.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.Window",
+    "member": "removeEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;Z)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.XMLHttpRequest",
+    "member": "<init>",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.XMLHttpRequest",
+    "member": "abort",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.XMLHttpRequest",
+    "member": "addEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.XMLHttpRequest",
+    "member": "open",
+    "descriptor": "(Ljava/lang/String;Ljava/lang/String;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.XMLHttpRequest",
+    "member": "send",
+    "descriptor": "(Lelemental2/dom/FormData;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileUpload.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.dom.XMLHttpRequestUpload",
+    "member": "addEventListener",
+    "descriptor": "(Ljava/lang/String;Lelemental2/dom/EventListener;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileItem.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.promise.Promise",
+    "member": "then",
+    "descriptor": "(Lelemental2/promise/IThenable$ThenOnFulfilledCallbackFn;)Lelemental2/promise/Promise;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/PasteCommand.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.webstorage.Storage",
+    "member": "getItem",
+    "descriptor": "(Ljava/lang/String;)Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/themes/DominoThemeManager.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.webstorage.Storage",
+    "member": "setItem",
+    "descriptor": "(Ljava/lang/String;Ljava/lang/String;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/themes/DominoThemeManager.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "elemental2.webstorage.WebStorageWindow",
+    "member": "of",
+    "descriptor": "(Lelemental2/dom/Window;)Lelemental2/webstorage/WebStorageWindow;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/themes/DominoThemeManager.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "jsinterop.base.Js",
+    "member": "asPropertyMap",
+    "descriptor": "(Ljava/lang/Object;)Ljsinterop/base/JsPropertyMap;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "jsinterop.base.Js",
+    "member": "cast",
+    "descriptor": "(Ljava/lang/Object;)Ljava/lang/Object;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/selection/SelectionPlugin.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/FieldsGrouping.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DomElements.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementsFactoryDelegate.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ResizeObserverOptions$BoxUnionType.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlDateTimeFormatOptions.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "jsinterop.base.Js",
+    "member": "uncheckedCast",
+    "descriptor": "(Ljava/lang/Object;)Ljava/lang/Object;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/carousel/Carousel.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/column/PinColumnsPlugin.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/column/ResizeColumnsPlugin.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/selection/SelectionPlugin.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datatable/plugins/tree/TreeGridPlugin.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/CalendarCustomEvents$UpdateDateEventData.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/CalendarCustomEvents.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/ModalBackDrop.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/dialogs/Window.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/events/CustomEvents.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/InputFieldInitializer.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/InputFormField.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/NumberBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/Radio.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/TextInputFormField.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/AbstractSelect.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/AbstractSuggestBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/suggest/Option.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/keyboard/KeyboardKeyListener.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/lists/ListItem.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/mediaquery/MediaQuery.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/Menu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/base/BaseMenu.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/MouseBestFitDirection.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/BasePopover.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/popover/Tooltip.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/InsertHtmlCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/PasteCommand.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/search/Search.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/splitpanel/BaseSplitter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Style.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/style/Waves.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/thumbnails/Thumbnail.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimePickerCustomEvents$UpdateTimeEventData.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimePickerCustomEvents.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/upload/FileUpload.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/AttributesObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BodyObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/CharacterDataObserver.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/Clipboard.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DelayedTextInput.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/DominoStyleSheet.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/IntersectionObserverOptions.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/KeyboardNavigation.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ResizeObserver$ResizeObserverCallbackFn.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ResizeObserverOptions.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ScrollOptions.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/SwipeUtil.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlDateTimeFormatOptions.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlNumberFormatOptions.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "jsinterop.base.JsPropertyMap",
+    "member": "delete",
+    "descriptor": "(Ljava/lang/String;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "jsinterop.base.JsPropertyMap",
+    "member": "get",
+    "descriptor": "(Ljava/lang/String;)Ljava/lang/Object;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/CalendarCustomEvents$UpdateDateEventData.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimePickerCustomEvents$UpdateTimeEventData.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "jsinterop.base.JsPropertyMap",
+    "member": "has",
+    "descriptor": "(Ljava/lang/String;)Z",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "jsinterop.base.JsPropertyMap",
+    "member": "of",
+    "descriptor": "()Ljsinterop/base/JsPropertyMap;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/CalendarCustomEvents.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimePickerCustomEvents.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/IntersectionObserverOptions.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ResizeObserverOptions.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlDateTimeFormatOptions.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlNumberFormatOptions.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "jsinterop.base.JsPropertyMap",
+    "member": "set",
+    "descriptor": "(Ljava/lang/String;Ljava/lang/Object;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/CalendarCustomEvents.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimePickerCustomEvents.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlDateTimeFormatOptions.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.editor.client.EditorError",
+    "member": "getEditor",
+    "descriptor": "()Lorg/gwtproject/editor/client/Editor;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/AbstractFormElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.editor.client.EditorError",
+    "member": "getMessage",
+    "descriptor": "()Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/AbstractFormElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.client.NumberFormat",
+    "member": "<init>",
+    "descriptor": "(Lorg/gwtproject/i18n/shared/browser/JsIntlNumberFormat;Z)V",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/client/NumberFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.client.NumberFormat",
+    "member": "countMaxFractionDigits",
+    "descriptor": "(Ljava/lang/String;)I",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/client/NumberFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.client.NumberFormat",
+    "member": "countMinFractionDigits",
+    "descriptor": "(Ljava/lang/String;)I",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/client/NumberFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.client.NumberFormat",
+    "member": "format",
+    "descriptor": "(D)Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/client/NumberFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.client.NumberFormat",
+    "member": "format",
+    "descriptor": "(Ljava/lang/Number;)Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/NumberBox.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.client.NumberFormat",
+    "member": "getDecimalFormat",
+    "descriptor": "()Lorg/gwtproject/i18n/client/NumberFormat;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/NumberBox.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.client.NumberFormat",
+    "member": "getFormat",
+    "descriptor": "(Ljava/lang/String;)Lorg/gwtproject/i18n/client/NumberFormat;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/NumberBox.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.client.NumberFormat",
+    "member": "normalise",
+    "descriptor": "(Ljava/lang/String;)Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/client/NumberFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.client.NumberFormat",
+    "member": "parse",
+    "descriptor": "(Ljava/lang/String;)D",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/NumberBox.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat",
+    "member": "<init>",
+    "descriptor": "(Ljava/lang/String;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/DateFormatter$DefaultFormatter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimeFormatter$DefaultFormatter.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat",
+    "member": "format",
+    "descriptor": "(Ljava/util/Date;)Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/DateFormatter$DefaultFormatter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimeFormatter$DefaultFormatter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimePicker.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat",
+    "member": "getFormat",
+    "descriptor": "(Ljava/lang/String;)Lorg/gwtproject/i18n/shared/DateTimeFormat;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimePicker.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat",
+    "member": "getFormat",
+    "descriptor": "(Lorg/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat;)Lorg/gwtproject/i18n/shared/DateTimeFormat;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/DateFormatter$DefaultFormatter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimeFormatter$DefaultFormatter.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat",
+    "member": "getPattern",
+    "descriptor": "()Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/DateFormatter$DefaultFormatter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimeFormatter$DefaultFormatter.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat",
+    "member": "intlFormatter",
+    "descriptor": "()Lorg/gwtproject/i18n/shared/browser/JsIntlDateTimeFormat;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat",
+    "member": "isSentinel",
+    "descriptor": "(Ljava/lang/String;)Z",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat",
+    "member": "parse",
+    "descriptor": "(Ljava/lang/String;)Ljava/util/Date;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/DateFormatter$DefaultFormatter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimeFormatter$DefaultFormatter.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat",
+    "member": "parseInternal",
+    "descriptor": "(Ljava/lang/String;Z)Ljava/util/Date;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat",
+    "member": "parseStrict",
+    "descriptor": "(Ljava/lang/String;)Ljava/util/Date;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/DateFormatter$DefaultFormatter.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimeFormatter$DefaultFormatter.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat",
+    "member": "sentinelToOptions",
+    "descriptor": "(Ljava/lang/String;)Lorg/gwtproject/i18n/shared/browser/JsIntlDateTimeFormatOptions;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat",
+    "member": "toJsDate",
+    "descriptor": "(Ljava/util/Date;)Lelemental2/core/JsDate;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat$PredefinedFormat",
+    "member": "$values",
+    "descriptor": "()[Lorg/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat$PredefinedFormat",
+    "member": "<init>",
+    "descriptor": "(Ljava/lang/String;ILjava/lang/String;)V",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat$PredefinedFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.DateTimeFormat$PredefinedFormat",
+    "member": "token",
+    "descriptor": "()Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlDateTimeFormat",
+    "member": "<init>",
+    "descriptor": "(Lelemental2/core/JsArray;Lorg/gwtproject/i18n/shared/browser/JsIntlDateTimeFormatOptions;)V",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlDateTimeFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlDateTimeFormat",
+    "member": "create",
+    "descriptor": "(Lorg/gwtproject/i18n/shared/browser/JsIntlDateTimeFormatOptions;)Lorg/gwtproject/i18n/shared/browser/JsIntlDateTimeFormat;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlDateTimeFormat",
+    "member": "format",
+    "descriptor": "(Lelemental2/core/JsDate;)Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlDateTimeFormat",
+    "member": "formatToParts",
+    "descriptor": "(Lelemental2/core/JsDate;)Lelemental2/core/JsArray;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlDateTimeFormatOptions",
+    "member": "create",
+    "descriptor": "()Lorg/gwtproject/i18n/shared/browser/JsIntlDateTimeFormatOptions;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlDateTimeFormatOptions.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlDateTimeFormatOptions",
+    "member": "forDateStyle",
+    "descriptor": "(Ljava/lang/String;)Lorg/gwtproject/i18n/shared/browser/JsIntlDateTimeFormatOptions;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlDateTimeFormatOptions",
+    "member": "forTimeStyle",
+    "descriptor": "(Ljava/lang/String;)Lorg/gwtproject/i18n/shared/browser/JsIntlDateTimeFormatOptions;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlDateTimeFormatOptions",
+    "member": "set",
+    "descriptor": "(Ljava/lang/String;Ljava/lang/Object;)Lorg/gwtproject/i18n/shared/browser/JsIntlDateTimeFormatOptions;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/DateTimeFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlNumberFormat",
+    "member": "<init>",
+    "descriptor": "(Lelemental2/core/JsArray;Lorg/gwtproject/i18n/shared/browser/JsIntlNumberFormatOptions;)V",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlNumberFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlNumberFormat",
+    "member": "create",
+    "descriptor": "(Lorg/gwtproject/i18n/shared/browser/JsIntlNumberFormatOptions;)Lorg/gwtproject/i18n/shared/browser/JsIntlNumberFormat;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/client/NumberFormat.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlNumberFormat.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/LocaleInfo.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlNumberFormat",
+    "member": "decimal",
+    "descriptor": "()Lorg/gwtproject/i18n/shared/browser/JsIntlNumberFormat;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/client/NumberFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlNumberFormat",
+    "member": "format",
+    "descriptor": "(D)Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/client/NumberFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlNumberFormat",
+    "member": "formatToParts",
+    "descriptor": "(D)Lelemental2/core/JsArray;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/LocaleInfo.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlNumberFormatOptions",
+    "member": "create",
+    "descriptor": "()Lorg/gwtproject/i18n/shared/browser/JsIntlNumberFormatOptions;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlNumberFormatOptions.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.browser.JsIntlNumberFormatOptions",
+    "member": "decimal",
+    "descriptor": "()Lorg/gwtproject/i18n/shared/browser/JsIntlNumberFormatOptions;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/client/NumberFormat.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/browser/JsIntlNumberFormat.class",
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/LocaleInfo.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.DateTimeFormatInfo",
+    "member": "ampms",
+    "descriptor": "()[Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimePickerSelectors.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.DateTimeFormatInfo",
+    "member": "dateFormatFull",
+    "descriptor": "()Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/DateBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/DateRangeBox.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.DateTimeFormatInfo",
+    "member": "dateFormatLong",
+    "descriptor": "()Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/DateBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/DateRangeBox.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.DateTimeFormatInfo",
+    "member": "dateFormatMedium",
+    "descriptor": "()Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/DateBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/DateRangeBox.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.DateTimeFormatInfo",
+    "member": "dateFormatShort",
+    "descriptor": "()Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/DateBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/DateRangeBox.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.DateTimeFormatInfo",
+    "member": "firstDayOfTheWeek",
+    "descriptor": "()I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/CalendarMonth.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.DateTimeFormatInfo",
+    "member": "formatHour12Minute",
+    "descriptor": "()Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimePicker.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.DateTimeFormatInfo",
+    "member": "formatHour12MinuteSecond",
+    "descriptor": "()Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimePicker.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.DateTimeFormatInfo",
+    "member": "formatHour24Minute",
+    "descriptor": "()Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimePicker.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.DateTimeFormatInfo",
+    "member": "formatHour24MinuteSecond",
+    "descriptor": "()Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimePicker.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.DateTimeFormatInfo",
+    "member": "monthsFull",
+    "descriptor": "()[Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/CalendarHeader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/CalendarSelectors.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.DateTimeFormatInfo",
+    "member": "monthsShort",
+    "descriptor": "()[Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/MonthsPicker.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.DateTimeFormatInfo",
+    "member": "timeFormatFull",
+    "descriptor": "()Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/TimeBox.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.DateTimeFormatInfo",
+    "member": "timeFormatLong",
+    "descriptor": "()Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/TimeBox.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.DateTimeFormatInfo",
+    "member": "timeFormatMedium",
+    "descriptor": "()Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/TimeBox.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.DateTimeFormatInfo",
+    "member": "timeFormatShort",
+    "descriptor": "()Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/TimeBox.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.DateTimeFormatInfo",
+    "member": "weekdaysFull",
+    "descriptor": "()[Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/CalendarHeader.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/WeekDayHeader.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.DateTimeFormatInfo",
+    "member": "weekdaysShort",
+    "descriptor": "()[Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/WeekDayHeader.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.DateTimeFormatInfo",
+    "member": "weekendEnd",
+    "descriptor": "()I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/CalendarDay.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.DateTimeFormatInfo",
+    "member": "weekendStart",
+    "descriptor": "()I",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/CalendarDay.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.LocaleInfo",
+    "member": "<init>",
+    "descriptor": "()V",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/LocaleInfo.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.LocaleInfo",
+    "member": "buildNumberConstants",
+    "descriptor": "()Lorg/gwtproject/i18n/shared/cldr/NumberConstants;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/LocaleInfo.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.LocaleInfo",
+    "member": "getCurrentLocale",
+    "descriptor": "()Lorg/gwtproject/i18n/shared/cldr/LocaleInfo;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/NumberBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class",
+      "gwt-modular-services/org/gwtproject/i18n/client/NumberFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.LocaleInfo",
+    "member": "getNumberConstants",
+    "descriptor": "()Lorg/gwtproject/i18n/shared/cldr/NumberConstants;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/NumberBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class",
+      "gwt-modular-services/org/gwtproject/i18n/client/NumberFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.LocaleInfo$1",
+    "member": "<init>",
+    "descriptor": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/LocaleInfo.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.NumberConstants",
+    "member": "decimalSeparator",
+    "descriptor": "()Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/NumberBox.class",
+      "gwt-modular-services/org/gwtproject/i18n/client/NumberFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.NumberConstants",
+    "member": "groupingSeparator",
+    "descriptor": "()Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/client/NumberFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.NumberConstants",
+    "member": "minusSign",
+    "descriptor": "()Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/NumberBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/ElementUtil.class",
+      "gwt-modular-services/org/gwtproject/i18n/client/NumberFormat.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.impl.BrowserDateTimeFormatInfo",
+    "member": "<init>",
+    "descriptor": "()V",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/DateTimeFormatInfo_factory.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.impl.BrowserDateTimeFormatInfo",
+    "member": "buildAmpms",
+    "descriptor": "()[Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.impl.BrowserDateTimeFormatInfo",
+    "member": "buildMonthNames",
+    "descriptor": "(Ljava/lang/String;)[Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.impl.BrowserDateTimeFormatInfo",
+    "member": "buildWeekdayNames",
+    "descriptor": "(Ljava/lang/String;)[Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.impl.BrowserDateTimeFormatInfo",
+    "member": "extractPart",
+    "descriptor": "(Lorg/gwtproject/i18n/shared/browser/JsIntlDateTimeFormat;Lelemental2/core/JsDate;Ljava/lang/String;)Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/i18n/shared/cldr/impl/BrowserDateTimeFormatInfo.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.i18n.shared.cldr.impl.DateTimeFormatInfo_factory",
+    "member": "create",
+    "descriptor": "()Lorg/gwtproject/i18n/shared/cldr/DateTimeFormatInfo;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/datepicker/Calendar.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/DateBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/DateRangeBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/TimeBox.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/timepicker/TimePicker.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.safehtml.shared.SafeHtml",
+    "member": "asString",
+    "descriptor": "()Ljava/lang/String;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/forms/Radio.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/RichTextEditor.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class",
+      "gwt-modular-services/org/gwtproject/safehtml/shared/SafeHtmlBuilder.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.safehtml.shared.SafeHtmlBuilder",
+    "member": "<init>",
+    "descriptor": "()V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/RichTextEditor.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.safehtml.shared.SafeHtmlBuilder",
+    "member": "appendHtmlConstant",
+    "descriptor": "(Ljava/lang/String;)Lorg/gwtproject/safehtml/shared/SafeHtmlBuilder;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/RichTextEditor.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.safehtml.shared.SafeHtmlBuilder",
+    "member": "lambda$toSafeHtml$0",
+    "descriptor": "(Ljava/lang/String;)Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/safehtml/shared/SafeHtmlBuilder.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.safehtml.shared.SafeHtmlBuilder",
+    "member": "toSafeHtml",
+    "descriptor": "()Lorg/gwtproject/safehtml/shared/SafeHtml;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/RichTextEditor.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.safehtml.shared.SafeHtmlUtils",
+    "member": "htmlEscape",
+    "descriptor": "(Ljava/lang/String;)Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/safehtml/shared/SafeHtmlBuilder.class",
+      "gwt-modular-services/org/gwtproject/safehtml/shared/SafeHtmlUtils.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.safehtml.shared.SafeHtmlUtils",
+    "member": "lambda$fromString$1",
+    "descriptor": "(Ljava/lang/String;)Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/safehtml/shared/SafeHtmlUtils.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.safehtml.shared.SafeHtmlUtils",
+    "member": "lambda$fromTrustedString$2",
+    "descriptor": "(Ljava/lang/String;)Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/safehtml/shared/SafeHtmlUtils.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.gwtproject.safehtml.shared.SafeHtmlUtils",
+    "member": "lambda$static$0",
+    "descriptor": "()Ljava/lang/String;",
+    "callers": [
+      "gwt-modular-services/org/gwtproject/safehtml/shared/SafeHtmlUtils.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.slf4j.Logger",
+    "member": "info",
+    "descriptor": "(Ljava/lang/String;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/richtext/commands/PasteCommand.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.slf4j.Logger",
+    "member": "warn",
+    "descriptor": "(Ljava/lang/String;)V",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/pagination/BasePagination.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/pagination/VirtualScrollingPagination.class"
+    ]
+  },
+  {
+    "kind": "method",
+    "owner": "org.slf4j.LoggerFactory",
+    "member": "getLogger",
+    "descriptor": "(Ljava/lang/Class;)Lorg/slf4j/Logger;",
+    "callers": [
+      "domino-widgets-gwt/org/dominokit/domino/ui/menu/direction/SpaceChecker.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/pagination/VirtualScrollingPagination.class",
+      "domino-widgets-gwt/org/dominokit/domino/ui/utils/BaseDominoElement.class"
+    ]
+  }
+]
