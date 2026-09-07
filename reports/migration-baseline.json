@@ -1,0 +1,17 @@
+{
+  "application": "Sarto Running Club",
+  "baseline": "dbe32ec85",
+  "migration": "f7fd21f5b",
+  "command": "mvn -f demos/running-club/pom.xml -pl running-club-client -am -Dteavm.skip=false -DskipTests package",
+  "javaCompilation": "passed",
+  "teavmCompilation": "blocked in both baseline and migration",
+  "identicalMissingTypes": [
+    "[ERROR] Class io.instanto.sarto.async.PortableThreadExecutor implements java.util.concurrent.ExecutorService, which is missing in the classpath",
+    "[ERROR] Class io.instanto.sarto.auth.json.AuthenticationJson was not found",
+    "[ERROR] Class io.instanto.sarto.persistence.PersistenceCapabilities was not found",
+    "[ERROR] Class io.instanto.sarto.persistence.PersistenceUnitModel was not found",
+    "[ERROR] Class io.instanto.sarto.transport.stomp.StompRpcTransport$StompClient was not found",
+    "[ERROR] Class io.instanto.verrai.persistence.IndexedDbAsyncPersistenceRuntime implements io.instanto.sarto.persistence.AsyncPersistenceRuntime, which is missing in the classpath",
+    "[ERROR] Class java.util.concurrent.CompletionException was not found"
+  ]
+}

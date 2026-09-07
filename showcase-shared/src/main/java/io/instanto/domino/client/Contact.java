@@ -22,7 +22,7 @@ public class Contact {
     private String about;
 
     private int depth =0;
-    
+
     private boolean hasChildren = true;
 
     private List<Contact> friends = new ArrayList<>();

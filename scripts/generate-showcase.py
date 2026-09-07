@@ -5,6 +5,7 @@ Run explicitly when updating showcase-lock.json. Never modifies widget sources.
 from pathlib import Path
 import re,json,hashlib,sys
 def write(path,code):
+ code=re.sub(r"^[ \t]+$", "", code, flags=re.M)
  if "--check" in sys.argv:
   if not path.exists() or path.read_text()!=code:raise SystemExit("Regenerate showcase adapter: "+str(path))
  else:path.write_text(code)
