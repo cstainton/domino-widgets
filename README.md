@@ -1,6 +1,6 @@
 # Domino Widgets
 
-Standalone, shared-source Domino UI libraries for **GWT 2.13.1** and **TeaVM 0.15.0**. Both backends compile the same pinned original `org.dominokit.domino.ui` widget sources. There is no Verrai, Sarto or CDI dependency.
+Standalone, shared-source Domino UI libraries for **GWT 2.13.1** and **TeaVM 0.15.0**. Both backends compile the same pinned original `org.dominokit.domino.ui` widget sources.
 
 The gallery now contains 51 original pages and 167 original sample methods. Shared contracts cover core widgets, calendar navigation, table selection/pagination, trees, rich text, uploads, dynamic suggestions and browser APIs. See [coverage and limitations](docs/COMPATIBILITY.md) for the exact tested behaviors and remaining work.
 
@@ -88,8 +88,6 @@ The [successful publication workflow](https://github.com/cstainton/domino-widget
 | `teavm-gwt-modular-services` | Same fork service APIs with generated TeaVM native declarations |
 | `domino-widgets-assets` | Matched CSS, fonts and icon resources |
 | `binding-generator` | Deterministic JavaParser-based build tool; not a runtime widget dependency |
-
-The existing Bootstrap compatibility library implements `com.google.gwt` APIs. This fork's service layer uses `org.gwtproject` packages, so copying Bootstrap's implementation would not satisfy these contracts. The existing Domino history/REST ports remain optional future integration work. See [prior-port findings](docs/EXISTING-PORT.md) and [migration status](docs/MIGRATION.md).
 
 ## Reproducibility
 
