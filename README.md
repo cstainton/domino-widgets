@@ -4,6 +4,8 @@ Standalone, shared-source Domino UI libraries for **GWT 2.13.1** and **TeaVM 0.1
 
 The gallery now contains 51 original pages and 167 original sample methods. Shared contracts cover core widgets, calendar navigation, table selection/pagination, trees, rich text, uploads, dynamic suggestions and browser APIs. See [coverage and limitations](docs/COMPATIBILITY.md) for the exact tested behaviors and remaining work.
 
+Recorded local verification: **441 browser tests per build mode (882 total)**, seven JVM generator tests, complete analyzer reports, and identical generated Java sources across development and production. The [reports](reports/) retain the exact scenarios and source metadata.
+
 [Hosted showcases](https://cstainton.github.io/domino-widgets/) offer both compiler builds. Pages deploys only after the development and production CI contracts pass.
 
 ## Build and test

@@ -2,21 +2,22 @@
   "mode": "production",
   "source": {
     "repository": "https://github.com/cstainton/domino-ui",
-    "commit": "e7ed739e75b2bbd3d7cb9c1d9d1eba3d11d98e8c",
+    "commit": "31404a554cda9a7118c5419b4690e980f67d7d7f",
     "remote_baseline": "2a8d44cc8550cce24f277e9036925f8e34a6a78c",
     "remote_commit_available": true,
     "archive": "domino-ui.tar.gz",
-    "sha256": "41d59674697c10368c433b4031ad9bb8b58eec1d274c1b210a494cec7f772c3b",
+    "sha256": "27adb6a57e5b6b7ef10b0f0998e9bdc25893bd233dce982cb4332e1b17326361",
     "patches": [
       "08c1bab Address SpotBugs findings",
-      "e7ed739e75b2bbd3d7cb9c1d9d1eba3d11d98e8c Use integral epoch milliseconds for CSS-safe IDs"
+      "e7ed739e75b2bbd3d7cb9c1d9d1eba3d11d98e8c Use integral epoch milliseconds for CSS-safe IDs",
+      "31404a554cda9a7118c5419b4690e980f67d7d7f Allow explicit browser calendar label locales"
     ],
     "note": "Corrected source commit is published on codex/domino-css-safe-ids; the complete immutable git archive is vendored."
   },
   "browser": {
-    "startTime": "2026-09-07T17:09:26.496Z",
-    "duration": 6883.057000000001,
-    "expected": 23,
+    "startTime": "2026-09-07T21:46:26.825Z",
+    "duration": 175924.765,
+    "expected": 441,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
@@ -37,9 +38,24 @@
     }
   ],
   "bundleBytes": {
-    "gwt": 784775,
-    "teavm": 1499721
+    "gwt": 4903324,
+    "teavm": 2784074
   },
+  "showcase": {
+    "pages": 51,
+    "sampleMethods": 167
+  },
+  "browserProjects": [
+    "gwt",
+    "teavm",
+    "reuse",
+    "gwt-firefox",
+    "teavm-firefox",
+    "reuse-firefox",
+    "gwt-webkit",
+    "teavm-webkit",
+    "reuse-webkit"
+  ],
   "spotbugs": [
     {
       "module": "binding-generator",
@@ -99,7 +115,7 @@
     {
       "module": "showcase-gwt",
       "status": "analyzed",
-      "findings": 7,
+      "findings": 47,
       "high": 0,
       "errors": {
         "missingClasses": "0",
@@ -110,7 +126,7 @@
     {
       "module": "showcase-teavm",
       "status": "analyzed",
-      "findings": 7,
+      "findings": 47,
       "high": 0,
       "errors": {
         "missingClasses": "0",
