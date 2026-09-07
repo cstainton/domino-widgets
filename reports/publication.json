@@ -1,0 +1,38 @@
+{
+  "version": "0.1.0-SNAPSHOT",
+  "sourceCommit": "728b0ea8043ab5fb3a776678b32648dd8d0a9535",
+  "repository": "https://github.com/cstainton/domino-widgets",
+  "mavenRepository": "https://maven.pkg.github.com/cstainton/domino-widgets",
+  "packageVisibility": "public",
+  "authenticationRequiredForConsumption": true,
+  "publishedArtifacts": [
+    "io.instanto:domino-widgets-parent",
+    "io.instanto:domino-widgets-bom",
+    "io.instanto:domino-widgets-assets",
+    "io.instanto:gwt-modular-services",
+    "io.instanto:domino-widgets-gwt",
+    "io.instanto:binding-generator",
+    "io.instanto:teavm-jsinterop-compat",
+    "io.instanto:teavm-elemental2-compat",
+    "io.instanto:teavm-gwt-modular-services",
+    "io.instanto:domino-widgets-teavm"
+  ],
+  "ci": {
+    "url": "https://github.com/cstainton/domino-widgets/actions/runs/34164420101",
+    "conclusion": "success",
+    "buildModes": ["development", "production"]
+  },
+  "publication": {
+    "url": "https://github.com/cstainton/domino-widgets/actions/runs/34164420844",
+    "conclusion": "success",
+    "consumerBuildOutsideCheckout": true,
+    "emptyMavenRepository": true,
+    "consumerBackends": ["gwt", "teavm"],
+    "browserEngines": ["chromium", "firefox", "webkit"],
+    "consumerBrowserChecksPassed": 6
+  },
+  "pages": {
+    "url": "https://github.com/cstainton/domino-widgets/actions/runs/34165356380",
+    "conclusion": "success"
+  }
+}

@@ -13,6 +13,6 @@ The suite covers 51 original gallery pages and 167 extracted sample methods, plu
 
 `bundleBytes` in the summary measures uncompressed emitted JavaScript. The GWT value sums both browser permutations; an individual browser downloads one permutation. These figures are not startup benchmarks or directly equivalent download-size comparisons.
 
-`examples/` contains independent BOM consumers for both compilers. Their local builds and six browser checks passed. The publication workflow separately verifies downloads from an empty Maven repository after deployment; its completion is tracked on GitHub Actions.
+`examples/` contains independent BOM consumers for both compilers. Their local builds and six browser checks passed. The [publication workflow](https://github.com/cstainton/domino-widgets/actions/runs/34164420844) also passed: all ten artifacts deployed, both consumers built from an empty Maven repository outside the checkout, and all six external browser checks passed. `publication.json` records the tested source commit and workflow links. `hosted-verification.json` records a separate check of both public Pages showcases, including table selection and absence of browser errors.
 
 `migration-baseline.json` records the identical pre-existing framework failures in the original and migrated Running Club application. That application migration is not claimed as browser-verified.

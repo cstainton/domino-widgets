@@ -1,0 +1,21 @@
+{
+  "workflow": "https://github.com/cstainton/domino-widgets/actions/runs/34165356380",
+  "results": [
+    {
+      "backend": "gwt",
+      "url": "https://cstainton.github.io/domino-widgets/gwt/?page=table-selection-plugin",
+      "status": 200,
+      "options": 54,
+      "selection": true,
+      "errors": []
+    },
+    {
+      "backend": "teavm",
+      "url": "https://cstainton.github.io/domino-widgets/teavm/?page=table-selection-plugin",
+      "status": 200,
+      "options": 54,
+      "selection": true,
+      "errors": []
+    }
+  ]
+}

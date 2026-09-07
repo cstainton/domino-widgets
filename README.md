@@ -72,7 +72,9 @@ The GWT backend supplies `org.dominokit.domino.ui.DominoUI`; inherit that module
 
 The assets JAR exposes `META-INF/resources/domino-widgets/`; serve that directory and load `domino-widgets/css/domino-ui/domino-ui.css`. Browser assets are packaged once, outside the Java libraries.
 
-Maven publication uses the manual GitHub Actions workflow. After deployment it builds the [external sample applications](examples/) outside the checkout with an empty Maven repository, then tests them in all three browser engines. A release profile attaches Javadocs; source JARs are attached by default. Builds require no sibling checkouts or locally modified dependency binaries.
+Version `0.1.0-SNAPSHOT` is published to [GitHub Packages](https://github.com/cstainton/domino-widgets/packages). Configure `https://maven.pkg.github.com/cstainton/domino-widgets` and the credentials described in the [external sample applications](examples/README.md). GitHub Maven requires authentication even for public packages.
+
+The [successful publication workflow](https://github.com/cstainton/domino-widgets/actions/runs/34164420844) built both external applications outside the checkout using an empty Maven repository and passed all six consumer checks across Chromium, Firefox and WebKit. A release profile attaches Javadocs; source JARs are attached by default. Builds require no sibling checkouts or locally modified dependency binaries.
 
 ## Compatibility architecture
 
