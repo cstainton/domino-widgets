@@ -1,6 +1,6 @@
 # Coverage and limitations
 
-A compiled declaration is not evidence of browser behavior. `browser-tested` below refers only to the named scenarios. The shared suite runs against GWT and TeaVM in Chromium, Firefox and WebKit, for development and optimized production builds. Exact outcomes and compiler/source metadata are recorded under [reports](../reports).
+A compiled declaration is not evidence of browser behavior. `browser-tested` below refers only to the named scenarios. The shared suite runs against TeaVM in Chromium, Firefox and WebKit, for development and optimized production builds. Exact outcomes and compiler/source metadata are recorded under [reports](../reports).
 
 | Area | Coverage |
 |---|---|
@@ -26,7 +26,7 @@ A compiled declaration is not evidence of browser behavior. `browser-tested` bel
 | WebAssembly GC | Outside the supported browser-JavaScript targets |
 | Verrai/Sarto application retirement | In progress; [consumer inventory and concrete blocker](MIGRATION.md) |
 
-Baselines: GWT 2.13.1, TeaVM 0.15.0, JDK 21, Java release 17, Elemental2 1.2.3, native JsInterop base 1.0.1 and annotations 2.0.2. GWT builds both Safari/Chromium and Gecko permutations with its strict compiler.
+Baseline: TeaVM 0.15.0, JDK 21, Java release 17, Elemental2 1.2.3, native JsInterop base 1.0.1 and annotations 2.0.2. Historical reports retain the former GWT baseline; current builds use upstream links for comparison.
 
 The complete widget archive is retained. Original widget implementations are shared; general fixes live in the source fork. The framework demo shell, optional history/REST modules and annotation/webjar processor build machinery are excluded from the runtime libraries. Checked-in generated icons and their inputs are retained.
 

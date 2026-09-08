@@ -1,10 +1,11 @@
-name: Both browser backends
+name: TeaVM browser verification
 on:
   push:
   pull_request:
   workflow_dispatch:
 permissions:
   contents: read
+  packages: read
 jobs:
   contracts:
     runs-on: ubuntu-latest
@@ -19,12 +20,20 @@ jobs:
           distribution: temurin
           java-version: '21'
           cache: maven
+      - name: Configure compatibility package access
+        env:
+          PACKAGES_READ_TOKEN: ${{ secrets.PACKAGES_READ_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          echo "PACKAGES_READ_TOKEN=$PACKAGES_READ_TOKEN" >> "$GITHUB_ENV"
+          cat > "$HOME/.m2/settings.xml" <<'XML'
+          <settings><servers><server><id>github-teavm-compat</id><username>${env.GITHUB_ACTOR}</username><password>${env.PACKAGES_READ_TOKEN}</password></server></servers></settings>
+          XML
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: npm
           cache-dependency-path: browser-tests/package-lock.json
-      - name: Build both compilers and analyze bytecode
+      - name: Build TeaVM and analyze bytecode
         run: |
           if [ '${{ matrix.mode }}' = production ]; then
             mvn -B -ntp -Pproduction clean verify

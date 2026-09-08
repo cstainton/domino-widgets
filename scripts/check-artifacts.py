@@ -3,19 +3,19 @@
 from pathlib import Path
 from zipfile import ZipFile
 ROOT=Path(__file__).resolve().parents[1]
-for backend, modules in {'gwt':['gwt-modular-services','domino-widgets-gwt'],'teavm':['teavm-jsinterop-compat','teavm-elemental2-compat','teavm-gwt-modular-services','domino-widgets-teavm']}.items():
- owners={}
- for module in modules:
-  jars=list((ROOT/module/'target').glob(f'{module}-*.jar'))
-  jars=[p for p in jars if not p.name.endswith(('-sources.jar','-javadoc.jar'))]
-  if len(jars)!=1:raise SystemExit(f'Expected one binary jar for {module}')
-  with ZipFile(jars[0]) as jar:
-   for n in jar.namelist():
-    if n.endswith('.class'):
-     if n in owners:raise SystemExit(f'Duplicate {backend} class {n}: {owners[n]} and {module}')
-     owners[n]=module
-    if n.endswith(('.css','.woff','.woff2','.ttf','.eot')):raise SystemExit(f'Asset duplicated in code artifact: {module}/{n}')
- print(backend,len(owners),'unique project classes')
+owners={}
+jars=list((ROOT/'domino-widgets-teavm/target').glob('domino-widgets-teavm-*.jar'))
+jars += list((ROOT/'domino-widgets-teavm/target/compat-dependencies').glob('*.jar'))
+jars=[p for p in jars if not p.name.endswith(('-sources.jar','-javadoc.jar'))]
+if len(jars)!=4:raise SystemExit('Expected widgets plus three resolved compatibility JARs')
+for path in jars:
+ with ZipFile(path) as jar:
+  for name in jar.namelist():
+   if name.endswith('.class'):
+    if name in owners:raise SystemExit(f'Duplicate class {name}: {owners[name]} and {path.name}')
+    owners[name]=path.name
+   if name.endswith(('.css','.woff','.woff2','.ttf','.eot')):raise SystemExit(f'Asset duplicated in code artifact: {path.name}/{name}')
+print('teavm',len(owners),'unique project classes')
 
 import hashlib
 manifest=ROOT/'target/compat/sources.sha256'

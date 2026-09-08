@@ -2,7 +2,7 @@
 from pathlib import Path
 import shutil
 r=Path(__file__).resolve().parents[1]
-for backend in ['gwt','teavm']:
+for backend in ['teavm']:
  site=r/f'showcase-{backend}/target/site'
  if not site.exists():continue
  assets=site/'domino-widgets'
@@ -23,7 +23,7 @@ for backend in ['gwt','teavm']:
 <link rel="stylesheet" href="domino-widgets/css/domino-ui/domino-ui.css">
 <link rel="stylesheet" href="showcase.css">
 </head>
-<body data-compiler="{compiler}" data-peer-href="../../../showcase-{peer}/target/site/">
+<body data-compiler="{compiler}">
 <noscript>This interactive widget gallery needs JavaScript. <a href="https://github.com/cstainton/domino-widgets/blob/main/docs/SHOWCASE.md">Read the showcase guide</a>.</noscript>
 {script}
 </body>

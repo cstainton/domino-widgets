@@ -30,34 +30,6 @@ def main():
     dest.parent.mkdir(parents=True,exist_ok=True)
     if dest.exists(): raise SystemExit('Duplicate source input: '+str(dest))
     dest.write_bytes(data)
- extra=out/'resources/org/gwtproject/ForkServices.gwt.xml'
- extra.parent.mkdir(parents=True,exist_ok=True)
- extra.write_text('<module><inherits name="com.google.gwt.i18n.I18N"/><inherits name="com.google.gwt.http.HTTP"/><source path=""/></module>')
- module=out/'resources/org/dominokit/domino/ui/DominoUI.gwt.xml'
- module.write_text(module.read_text().replace('<module>', '<module><inherits name="org.gwtproject.ForkServices"/>'))
- out.mkdir(parents=True,exist_ok=True)
- # GWT's java.text emulation does not supply SimpleDateFormat; use its native formatter.
- shutil.copytree(out/'java/org/dominokit',out/'gwt-widgets/org/dominokit')
- gwt_services=out/'gwt-services'
- shutil.copytree(out/'java/org/gwtproject',gwt_services/'org/gwtproject')
- date=gwt_services/'org/gwtproject/i18n/shared/DateTimeFormat.java'
- text=date.read_text()
- changes={
-  'new java.text.SimpleDateFormat(pattern).format(date)': 'com.google.gwt.i18n.client.DateTimeFormat.getFormat(pattern).format(date)',
-  'java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat(pattern);': 'com.google.gwt.i18n.client.DateTimeFormat sdf = com.google.gwt.i18n.client.DateTimeFormat.getFormat(pattern);',
-  'sdf.setLenient(!strict);': '// Strictness is selected at the native GWT parser call.',
-  'return sdf.parse(text);': 'return strict ? sdf.parseStrict(text) : sdf.parse(text);',
-  'catch (java.text.ParseException e)': 'catch (IllegalArgumentException e)'
- }
- for old,new in changes.items():
-  if text.count(old)!=1:raise SystemExit('GWT date seam input changed: '+old)
-  text=text.replace(old,new)
- date.write_text(text)
- safe=gwt_services/'org/gwtproject/safehtml/shared/SafeHtmlBuilder.java'
- text=safe.read_text()
- old='    try {\n      buffer.append(java.net.URLEncoder.encode(url, "UTF-8").replace("+", "%20"));\n    } catch (java.io.UnsupportedEncodingException e) {\n      // UTF-8 is always supported\n      buffer.append(url);\n    }'
- if text.count(old)!=1:raise SystemExit('GWT URL seam input changed')
- safe.write_text(text.replace(old,'buffer.append(com.google.gwt.http.client.URL.encodeQueryString(url).replace("+", "%20"));'))
  # Upstream ships components; assemble one deterministic, version-matched stylesheet.
  css=out/'assets/META-INF/resources/domino-widgets/css/domino-ui'
  parts=sorted((css/'dui-components').rglob('*.css'))

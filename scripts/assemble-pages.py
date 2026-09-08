@@ -6,11 +6,8 @@ root=Path(__file__).resolve().parents[1]
 out=root/'target/pages'
 if out.exists():shutil.rmtree(out)
 out.mkdir(parents=True)
-for backend in ['gwt','teavm']:
+for backend in ['teavm']:
  shutil.copytree(root/f'showcase-{backend}/target/site',out/backend)
- peer='gwt' if backend=='teavm' else 'teavm'
- index=out/backend/'index.html'
- index.write_text(index.read_text().replace(f'../../../showcase-{peer}/target/site/',f'../{peer}/'))
 (out/'index.html').write_text('''<!doctype html>
 <html lang="en">
 <head>
@@ -21,10 +18,13 @@ for backend in ['gwt','teavm']:
 </head>
 <body>
 <h1>Domino Widgets showcase</h1>
-<p><a href="teavm/">Explore the TeaVM widget gallery</a> or <a href="gwt/">open the GWT gallery</a>.</p>
+<p><a href="teavm/">Explore the TeaVM widget gallery</a> or <a href="https://dominokit.com/domino-ui/demo/v2/home">compare with DominoKit’s showcase</a>.</p>
 <p>Widgets by <a href="https://dominokit.com/domino-ui/demo/v2/home">DominoKit</a>, adapted for this independent port.</p>
 </body>
 </html>
 ''')
+# Preserve old bookmarks without maintaining a second compiler distribution.
+(out/'gwt').mkdir()
+(out/'gwt/index.html').write_text('<!doctype html><meta http-equiv="refresh" content="0;url=https://dominokit.com/domino-ui/demo/v2/home"><title>DominoKit showcase</title><a href="https://dominokit.com/domino-ui/demo/v2/home">Open the upstream DominoKit showcase</a>')
 (out/'.nojekyll').touch()
 print(out)

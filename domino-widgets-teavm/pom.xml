@@ -1,4 +1,3 @@
-<?xml version="1.0" ?>
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
   <parent>
@@ -10,13 +9,11 @@
   <dependencies>
     <dependency>
       <groupId>io.instanto</groupId>
-      <artifactId>teavm-gwt-modular-services</artifactId>
-      <version>${project.version}</version>
+      <artifactId>gwt-modular-services-compat</artifactId>
     </dependency>
     <dependency>
       <groupId>io.instanto</groupId>
-      <artifactId>teavm-elemental2-compat</artifactId>
-      <version>${project.version}</version>
+      <artifactId>elemental2-compat</artifactId>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -75,6 +72,24 @@
             <exclude>org/gwtproject/**</exclude>
           </excludes>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.8.1</version>
+        <executions>
+          <execution>
+            <id>inspect-compat-artifacts</id>
+            <phase>package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <includeGroupIds>io.instanto</includeGroupIds>
+              <outputDirectory>${project.build.directory}/compat-dependencies</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
     <sourceDirectory>../target/compat/domino</sourceDirectory>

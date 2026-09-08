@@ -27,7 +27,7 @@ npx playwright install --with-deps chromium firefox webkit
 BROWSERS=chromium,firefox,webkit npm test
 ```
 
-`mvn -Pproduction clean verify` enables GWT obfuscation and TeaVM advanced optimization/minification. Run the same browser commands afterward. CI runs both build modes and all three browser engines. SpotBugs runs on normal builds; `-Dspotbugs.skip=true` is an explicit fast-development option. Analyzer errors fail the build; findings and missing-class diagnostics are reported separately in `target/spotbugs/index.html` (the full reactor generates the index automatically).
+`mvn -Pproduction clean verify` enables TeaVM advanced optimization/minification. Run the same browser commands afterward. CI runs both build modes and all three browser engines. SpotBugs runs on normal builds; `-Dspotbugs.skip=true` is an explicit fast-development option. Analyzer errors fail the build; findings and missing-class diagnostics are reported separately in `target/spotbugs/index.html` (the full reactor generates the index automatically).
 
 Serve the two launchers after preparing the sites:
 
@@ -35,14 +35,14 @@ Serve the two launchers after preparing the sites:
 python3 -m http.server 8080 --bind 127.0.0.1
 ```
 
-Open `/showcase-gwt/target/site/` or `/showcase-teavm/target/site/`. The screen and gallery live once in `showcase-shared/`; launchers only invoke them. The grouped navigation and widget search open the included gallery on either backend. The default route is the public gallery home; lifecycle fixtures use `?page=contracts` and native API fixtures use `?page=browser-apis`. See [showcase provenance and included pages](../docs/SHOWCASE.md). CSS and fonts come from the same pinned archive as the Java sources.
+Open `/showcase-teavm/target/site/`. The screen and gallery live once in `showcase-shared/`; launchers only invoke them. The grouped navigation and widget search open the included gallery on TeaVM. The default route is the public gallery home; lifecycle fixtures use `?page=contracts` and native API fixtures use `?page=browser-apis`. See [showcase provenance and included pages](../docs/SHOWCASE.md). CSS and fonts come from the same pinned archive as the Java sources.
 
 See the [port design](DESIGN.md) for compatibility layers and source generation,
 and the [upstream update assessment](UPSTREAM.md) for outstanding source changes.
 
 ## Format Java sources
 
-The build checks Java formatting during `validate`, using Spotless with a pinned
+The build automatically applies Java formatting during `validate`, using Spotless with a pinned
 Google Java Format version. Format maintained sources and the extracted examples with:
 
 ```sh
@@ -65,7 +65,7 @@ source hashes and adaptation rules still provide the provenance check.
 
 ## Check native scrolling
 
-After compiling and preparing both sites, run the Java browser checks:
+After compiling and preparing the TeaVM site, run the Java browser checks:
 
 ```sh
 mvn -f browser-tests/platform-checks/pom.xml test

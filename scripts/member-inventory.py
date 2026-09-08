@@ -30,7 +30,7 @@ def references(path):
     yield ('field' if entry[0]==9 else 'method',owner.replace('/','.'),pool[name_type[1]][1],pool[name_type[2]][1])
 def main():
  refs={}
- for module in ['domino-widgets-gwt','gwt-modular-services']:
+ for module in ['domino-widgets-teavm']:
   classes=ROOT/module/'target/classes'
   for p in sorted(classes.rglob('*.class')):
    for ref in references(p):refs.setdefault(ref,set()).add(module+'/'+str(p.relative_to(classes)))

@@ -7,11 +7,11 @@ out=r/'reports'/mode;out.mkdir(parents=True,exist_ok=True)
 browser=json.loads((r/'browser-tests'/os.environ.get('BROWSER_RESULTS','test-results/results.json')).read_text())
 if browser['stats']['unexpected']:raise SystemExit('Refusing to record a passing report with unexpected browser failures')
 (out/'browser.json').write_text(json.dumps(browser,indent=2).replace(str(r),'.')+'\n')
-summary={'mode':mode,'source':json.loads((r/'upstream/source-lock.json').read_text()),'browser':browser['stats'],'compilers':{'gwt':'2.13.1','teavm':'0.15.0','jdk':'21','javaRelease':17},'unitTests':[],'bundleBytes':{}}
+summary={'mode':mode,'source':json.loads((r/'upstream/source-lock.json').read_text()),'browser':browser['stats'],'compilers':{'teavm':'0.15.0','jdk':'21','javaRelease':17},'unitTests':[],'bundleBytes':{}}
 for p in build.glob('*/target/surefire-reports/TEST-*.xml'):
  root=E.parse(p).getroot();summary['unitTests'].append({k:root.get(k) for k in ['name','tests','failures','errors','skipped']})
  (out/p.name).write_text(p.read_text().replace(str(r),'.'))
-for backend in ['gwt','teavm']:
+for backend in ['teavm']:
  site=build/f'showcase-{backend}/target/site'
  files=list((site/'showcase').glob('*.cache.js')) if backend=='gwt' else [site/'showcase.js']
  summary['bundleBytes'][backend]=sum(p.stat().st_size for p in files)

@@ -56,11 +56,7 @@ public final class Showcase {
     }
     HTMLElement footer = element("footer", "showcase-footer");
     footer.appendChild(
-        text(
-            "p",
-            "Widgets by DominoKit and its contributors. Independent TeaVM port with a shared GWT"
-                + " build.",
-            ""));
+        text("p", "Widgets by DominoKit and its contributors. Independent TeaVM port.", ""));
     footer.appendChild(link("About this port", REPO, ""));
     footer.appendChild(
         link("Coverage & limitations", REPO + "/blob/main/docs/COMPATIBILITY.md", ""));
@@ -92,12 +88,6 @@ public final class Showcase {
     header.appendChild(text("span", compiler + " showcase", "showcase-compiler"));
     HTMLElement links = element("nav", "showcase-top-links");
     links.setAttribute("aria-label", "Project links");
-    String peer = DomGlobal.document.body.getAttribute("data-peer-href");
-    links.appendChild(
-        link(
-            "Try " + (compiler.equals("TeaVM") ? "GWT" : "TeaVM"),
-            peer + (route.isEmpty() ? "" : "?page=" + route),
-            ""));
     links.appendChild(link("Upstream showcase ↗", ShowcasePages.UPSTREAM + "home", ""));
     links.appendChild(link("GitHub ↗", REPO, ""));
     header.appendChild(links);
@@ -213,7 +203,7 @@ public final class Showcase {
     copy.appendChild(
         text(
             "p",
-            "Explore Domino UI’s components, layouts, forms and tables for Java applications. These examples run through our TeaVM port and the shared GWT build.",
+            "Explore Domino UI’s components, layouts, forms and tables for Java applications. These examples run through our TeaVM port.",
             "showcase-lead"));
     copy.appendChild(
         text(

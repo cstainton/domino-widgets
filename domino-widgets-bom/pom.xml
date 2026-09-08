@@ -1,15 +1,16 @@
-<?xml version="1.0" ?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>io.instanto</groupId>
-    <artifactId>domino-widgets-parent</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
-  </parent>
   <artifactId>domino-widgets-bom</artifactId>
   <packaging>pom</packaging>
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>io.instanto</groupId>
+        <artifactId>teavm-compat-bom</artifactId>
+        <version>${teavm-compat.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
       <dependency>
         <groupId>io.instanto</groupId>
         <artifactId>domino-widgets-assets</artifactId>
@@ -17,34 +18,26 @@
       </dependency>
       <dependency>
         <groupId>io.instanto</groupId>
-        <artifactId>domino-widgets-gwt</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>io.instanto</groupId>
         <artifactId>domino-widgets-teavm</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>io.instanto</groupId>
-        <artifactId>gwt-modular-services</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>io.instanto</groupId>
-        <artifactId>teavm-gwt-modular-services</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>io.instanto</groupId>
-        <artifactId>teavm-jsinterop-compat</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>io.instanto</groupId>
-        <artifactId>teavm-elemental2-compat</artifactId>
         <version>${project.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
+  <properties>
+    <teavm-compat.version>0.1.0-SNAPSHOT</teavm-compat.version>
+  </properties>
+  <repositories>
+    <repository>
+      <id>github-teavm-compat</id>
+      <url>https://maven.pkg.github.com/cstainton/teavm-compat</url>
+    </repository>
+  </repositories>
+  <groupId>io.instanto</groupId>
+  <version>0.1.0-SNAPSHOT</version>
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/cstainton/domino-widgets</url>
+    </repository>
+  </distributionManagement>
 </project>

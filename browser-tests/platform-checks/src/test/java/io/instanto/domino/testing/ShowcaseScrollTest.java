@@ -24,9 +24,9 @@ public class ShowcaseScrollTest {
   public static Collection<Object[]> browsers() {
     return Arrays.asList(
         new Object[][] {
-          {"gwt", "chromium"}, {"teavm", "chromium"},
-          {"gwt", "firefox"}, {"teavm", "firefox"},
-          {"gwt", "webkit"}, {"teavm", "webkit"}
+          {"teavm", "chromium"},
+          {"teavm", "firefox"},
+          {"teavm", "webkit"}
         });
   }
 
