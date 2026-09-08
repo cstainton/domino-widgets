@@ -1,7 +1,7 @@
 const {test,expect} = require('@playwright/test');
 test.beforeEach(async({page})=>{
  const errors=[];page.contractErrors=errors;page.on('pageerror',e=>{errors.push(e.message); console.error(e.stack);});
- await page.goto('./');
+ await page.goto('?page=contracts');
  await expect(page.locator('#screen')).toHaveAttribute('data-ready','true');
  expect(errors).toEqual([]);
 });

@@ -35,7 +35,7 @@ Serve the two launchers after preparing the sites:
 python3 -m http.server 8080 --bind 127.0.0.1
 ```
 
-Open `/showcase-gwt/target/site/` or `/showcase-teavm/target/site/`. The screen and gallery live once in `showcase-shared/`; launchers only invoke them. The All examples selector opens the complete included gallery on either backend. See [showcase provenance and included pages](../docs/SHOWCASE.md). CSS and fonts come from the same pinned archive as the Java sources.
+Open `/showcase-gwt/target/site/` or `/showcase-teavm/target/site/`. The screen and gallery live once in `showcase-shared/`; launchers only invoke them. The grouped navigation and widget search open the included gallery on either backend. The default route is the public gallery home; lifecycle fixtures use `?page=contracts` and native API fixtures use `?page=browser-apis`. See [showcase provenance and included pages](../docs/SHOWCASE.md). CSS and fonts come from the same pinned archive as the Java sources.
 
 See the [port design](DESIGN.md) for compatibility layers and source generation,
 and the [upstream update assessment](UPSTREAM.md) for outstanding source changes.

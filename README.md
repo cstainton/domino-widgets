@@ -132,9 +132,9 @@ button and click listener using the same approach.
 
 The showcases are adapted from [DominoKit’s original demo](https://github.com/DominoKit/domino-ui-demo).
 They retain 51 original pages and 167 sample methods, presented through a shared
-launcher for GWT and TeaVM. Use **All examples**
-to browse the included gallery, then find the corresponding Java in the
-[shared examples](showcase-shared/src/main/java/io/instanto/domino/client).
+launcher for GWT and TeaVM. Use the grouped navigation or widget search to browse
+the gallery. Each page links to its Java example and upstream counterpart. Browse
+the [shared examples](showcase-shared/src/main/java/io/instanto/domino/client).
 
 Both showcases use the same widget and example sources. Check the
 [coverage guide](docs/COMPATIBILITY.md) when choosing a feature: it describes the

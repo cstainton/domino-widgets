@@ -72,6 +72,23 @@ selected interactions, while separate binding contracts check the compatibility
 boundaries. The [coverage guide](COMPATIBILITY.md) distinguishes tested behaviour
 from declarations that merely compile.
 
+The gallery home, searchable navigation and example descriptions belong to the port's
+shared launcher. Original samples keep their widget implementations and styles;
+each gallery page links to its pinned Java adapter and the corresponding live upstream
+example. Lifecycle and browser API fixtures remain on explicit development routes.
+
+`upstream/showcase-lock.json` records the retained example files, supporting models,
+assets and SHA-256 hashes. `scripts/generate-showcase.py --check` checks that the
+extracted adapters still match the pinned sources. The adapters replace MVP views,
+generated source-display resources, JSON annotation processors and remote demo
+services. Contact tables use deterministic sample records; country JSON is decoded
+through Elemental2, and images use pinned local assets. Upload tests exercise the
+original XHR/FormData implementation with a local server response.
+
+The original demo repository did not include a root license file at the selected
+commit. Extracted examples retain attribution; the widget library's Apache-2.0
+license does not newly license upstream demo material.
+
 ## Make source updates reproducible
 
 

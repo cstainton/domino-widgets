@@ -12,11 +12,11 @@ import org.dominokit.domino.ui.forms.TextBox;
 public final class SharedScreen {
   private static int clicks;
 
-  public static void mount() {
+  public static void mount(HTMLElement parent) {
     BindingContracts.run();
-    HTMLElement root = (HTMLElement) DomGlobal.document.createElement("main");
+    HTMLElement root = (HTMLElement) DomGlobal.document.createElement("section");
     root.id = "screen";
-    DomGlobal.document.body.appendChild(root);
+    parent.appendChild(root);
     Button button = Button.create("Count").setId("count");
     EventListener listener =
         e -> {
@@ -119,8 +119,8 @@ public final class SharedScreen {
             .setId("reattach-screen")
             .addClickListener(
                 e -> {
-                  DomGlobal.document.body.removeChild(root);
-                  DomGlobal.document.body.appendChild(root);
+                  parent.removeChild(root);
+                  parent.appendChild(root);
                 })
             .element());
     root.setAttribute("data-ready", "true");

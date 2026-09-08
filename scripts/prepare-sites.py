@@ -10,9 +10,26 @@ for backend in ['gwt','teavm']:
  shutil.copy2(r/'upstream/showcase/showcase-image.jpg',site/'showcase-image.jpg')
  if (r/'upstream/showcase/images').exists():shutil.copytree(r/'upstream/showcase/images',site/'images',dirs_exist_ok=True)
  (site/'countries.json').write_text('[{"name":"United Kingdom"},{"name":"Spain"},{"name":"Jordan"},{"name":"France"}]')
- css=assets/'css/domino-ui'
  script='<script src="showcase/showcase.nocache.js"></script>' if backend=='gwt' else '<script src="showcase.js"></script><script>main();</script>'
- (site/'index.html').write_text('<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Domino Widgets — '+backend+'</title><link rel="stylesheet" href="domino-widgets/css/domino-ui/domino-ui.css"><style>body{margin:0;padding:24px;background:#f5f7fb}#gallery-header{max-width:1200px;margin:0 auto 24px}#gallery-header h1{margin:0;color:#24334d}#gallery-header p{color:#58677d}#gallery-header nav{display:flex;gap:20px;flex-wrap:wrap}#gallery-header a{color:#2856b0;font-weight:600}#gallery-examples,#screen{max-width:1200px;margin:auto}#screen>button{margin:6px}</style></head><body>'+script+'</body></html>')
+ shutil.copy2(r/'showcase-shared/showcase.css', site/'showcase.css')
+ peer='gwt' if backend=='teavm' else 'teavm'
+ compiler='GWT' if backend=='gwt' else 'TeaVM'
+ (site/'index.html').write_text(f'''<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Domino Widgets — {compiler}</title>
+<link rel="stylesheet" href="domino-widgets/css/domino-ui/domino-ui.css">
+<link rel="stylesheet" href="showcase.css">
+</head>
+<body data-compiler="{compiler}" data-peer-href="../../../showcase-{peer}/target/site/">
+<noscript>This interactive widget gallery needs JavaScript. <a href="https://github.com/cstainton/domino-widgets/blob/main/docs/SHOWCASE.md">Read the showcase guide</a>.</noscript>
+{script}
+</body>
+</html>
+''')
+
 
 site=r/'compat-reuse-smoke/target/site'
 if site.exists():
