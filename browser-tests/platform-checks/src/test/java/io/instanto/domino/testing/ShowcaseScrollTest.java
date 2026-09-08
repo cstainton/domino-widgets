@@ -146,8 +146,9 @@ public class ShowcaseScrollTest {
       JsonObject gesture = new JsonObject();
       gesture.addProperty("x", 370);
       gesture.addProperty("y", 700);
-      gesture.addProperty("yDistance", -1800);
-      gesture.addProperty("speed", 5000);
+      // Keep the whole swipe inside the mobile viewport, as a finger would move.
+      gesture.addProperty("yDistance", -500);
+      gesture.addProperty("speed", 800);
       gesture.addProperty("gestureSourceType", "touch");
       cdp.send("Input.synthesizeScrollGesture", gesture);
       page.waitForCondition(() -> scrollY() > 100);
@@ -155,7 +156,7 @@ public class ShowcaseScrollTest {
         cdp.send("Input.synthesizeScrollGesture", gesture);
       assertTrue("Touch can reach the footer on " + route, footerInView());
       gesture.addProperty("y", 200);
-      gesture.addProperty("yDistance", 1800);
+      gesture.addProperty("yDistance", 500);
       for (int i = 0; i < 30 && scrollY() > 10; i++)
         cdp.send("Input.synthesizeScrollGesture", gesture);
       page.waitForCondition(() -> scrollY() < 10);
