@@ -9,6 +9,10 @@ adds the compatibility layers and build support for both compilers while preserv
 the original `org.dominokit.domino.ui` packages. Attribution and source provenance
 are recorded in [NOTICE](NOTICE).
 
+We changed the Maven groupId to `io.instanto` to distinguish this port from upstream
+DominoKit releases and avoid confusion about its origin or ownership. This is an
+independently maintained distribution, not an official DominoKit release.
+
 **[Try the GWT showcase](https://cstainton.github.io/domino-widgets/gwt/)** ·
 **[Try the TeaVM showcase](https://cstainton.github.io/domino-widgets/teavm/)**
 
