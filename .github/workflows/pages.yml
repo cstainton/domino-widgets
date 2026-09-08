@@ -2,7 +2,7 @@ name: Showcase Pages
 
 on:
   workflow_run:
-    workflows: [ Both browser backends ]
+    workflows: [ TeaVM browser verification ]
     types: [ completed ]
 
 permissions:

@@ -17,6 +17,10 @@
       <id>github</id>
       <url>https://maven.pkg.github.com/cstainton/domino-widgets</url>
     </repository>
+    <repository>
+      <id>github-teavm-compat</id>
+      <url>https://maven.pkg.github.com/cstainton/teavm-compat</url>
+    </repository>
   </repositories>
   <dependencyManagement>
     <dependencies>
