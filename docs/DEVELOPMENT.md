@@ -39,3 +39,41 @@ Open `/showcase-gwt/target/site/` or `/showcase-teavm/target/site/`. The screen 
 
 See the [port design](DESIGN.md) for compatibility layers and source generation,
 and the [upstream update assessment](UPSTREAM.md) for outstanding source changes.
+
+## Format Java sources
+
+The build checks Java formatting during `validate`, using Spotless with a pinned
+Google Java Format version. Format maintained sources and the extracted examples with:
+
+```sh
+mvn -N spotless:apply
+mvn -N spotless:check
+```
+
+The original files under `upstream/` and generated files under `target/` are outside
+the formatting scope. When regenerating showcase examples, prepare the same formatter
+and then run the generator:
+
+```sh
+mvn -N initialize
+python3 scripts/generate-showcase.py
+python3 scripts/generate-showcase.py --check
+```
+
+The generator formats the extracted Java before writing or comparing it. Original
+source hashes and adaptation rules still provide the provenance check.
+
+## Check native scrolling
+
+After compiling and preparing both sites, run the Java browser checks:
+
+```sh
+mvn -f browser-tests/platform-checks/pom.xml test
+```
+
+These checks start their own loopback server. They exercise native wheel scrolling
+in Chromium, Firefox and WebKit, and native touch gestures in Chromium. The touch
+checks scroll from the top to the footer and back on the home, buttons and forms
+pages. They use browser input rather than scripted `scrollTo`, which can move content
+even when CSS has disabled user scrolling. Native touch tests are explicitly skipped
+on Firefox and WebKit because the CDP gesture API is Chromium-specific.

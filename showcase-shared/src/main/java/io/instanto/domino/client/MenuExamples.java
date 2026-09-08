@@ -1,5 +1,9 @@
-// Adapted from DominoKit/domino-ui-demo at 51e1f75d43179a544c010ca5e88517c93263eeed; see upstream/showcase-lock.json.
+// Adapted from DominoKit/domino-ui-demo at 51e1f75d43179a544c010ca5e88517c93263eeed; see
+// upstream/showcase-lock.json.
 package io.instanto.domino.client;
+
+import static org.dominokit.domino.ui.utils.Domino.*;
+
 import elemental2.dom.HTMLDivElement;
 import org.dominokit.domino.ui.alerts.Alert;
 import org.dominokit.domino.ui.badges.Badge;
@@ -24,1444 +28,2053 @@ import org.dominokit.domino.ui.utils.PostfixAddOn;
 import org.dominokit.domino.ui.utils.PrefixAddOn;
 import org.dominokit.domino.ui.utils.Separator;
 import org.dominokit.domino.ui.utils.SubheaderAddon;
-import elemental2.dom.HTMLDivElement;
-import org.dominokit.domino.ui.elements.DivElement;
-import static org.dominokit.domino.ui.utils.Domino.*;
+
 public final class MenuExamples implements org.dominokit.domino.ui.style.DominoCss {
- private final DivElement element=div();
+  private final DivElement element = div();
 
- public HTMLDivElement render(){
-basicMenu();
-basicMenuWithHeaderAndActions();
-basicMenuSubHeader();
-dropMenu();
-contextMenu();
-nestedMenu();
-return element.element();}
-    private void basicMenu() {
-        element
-                .appendChild(Card.create("SIMPLE MENU", "Simple menu items with addons and description")
-                        .setCollapsible(true)
-                        .appendChild(Row.create()
-                                .appendChild(Column
-                                        .span4()
-                                        .appendChild(Menu.<String>create()
-                                                .addCss(dui_w_full)
-                                                .appendChild(MenuItem.<String>create("New ...")
-                                                        .setKey("new-key")
-                                                        .withValue("new-value")
-                                                )
-                                                .appendChild(MenuItem.<String>create("Open")
-                                                        .setKey("open-key")
-                                                        .withValue("open-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.folder_open().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(MenuItem.<String>create("Close")
-                                                        .setKey("close-key")
-                                                        .withValue("close-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.close_box().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(MenuItem.<String>create("Close all")
-                                                        .setKey("close-all-key")
-                                                        .withValue("close-all-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.close_box_multiple().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(Separator.create())
-                                                .appendChild(MenuItem.<String>create("Project structure")
-                                                        .setKey("structure-key")
-                                                        .withValue("structure-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.folder_cog().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(MenuItem.<String>create("Settings")
-                                                        .setKey("settings-key")
-                                                        .withValue("settings-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.cog().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(Separator.create())
-                                                .appendChild(MenuItem.<String>create("Invalidate cache", "Takes effect after restart")
-                                                        .setKey("cache-key")
-                                                        .withValue("cache-value")
-                                                )
-                                                .appendChild(MenuItem.<String>create("Restart")
-                                                        .setKey("restart-key")
-                                                        .withValue("restart-value")
-                                                        .appendChild(PostfixAddOn.of(Icons.information()
-                                                                        .addCss(dui_font_size_5)
-                                                                        .setTooltip("Just a tool tip!")
-                                                                )
-                                                        )
-                                                )
-                                                .addSelectionListener((source, selectedItems) -> {
-                                                    source.ifPresent(menuItem -> {
-                                                        Notification.create("Key : " + menuItem + ", value : " + menuItem.getValue()).show();
-                                                    });
-                                                })
-                                        )
-                                )
-                        )
-                        .element());
-    }
-    private void basicMenuWithHeaderAndActions() {
-        element
-                .appendChild(Card.create("HEADER ACTIONS", "Menu can have header with title and actions")
-                        .setCollapsible(true)
-                        .appendChild(Row.create()
-                                .appendChild(Column
-                                        .span4()
-                                        .appendChild(Menu.<String>create()
-                                                .addCss(dui_w_full)
-                                                .setIcon(Icons.file())
-                                                .setTitle("Files")
-                                                .withHeader((menu, header) -> header
-                                                        .appendChild(PostfixAddOn.of(Icons.folder_key_outline()
-                                                                        .addCss(dui_font_size_5)
-                                                                        .clickable()
-                                                                        .addClickListener(evt -> {
-                                                                            Notification.create("Action clicked").show();
-                                                                        })
-                                                                )
-                                                        )
-                                                        .appendChild(PostfixAddOn.of(Icons.folder_heart_outline()
-                                                                        .addCss(dui_font_size_5)
-                                                                        .clickable()
-                                                                        .addClickListener(evt -> {
-                                                                            Notification.create("Action clicked").show();
-                                                                        })
-                                                                )
-                                                        )
-                                                )
-                                                .appendChild(MenuItem.<String>create("New ...")
-                                                        .setKey("new-key")
-                                                        .withValue("new-value")
-                                                )
-                                                .appendChild(MenuItem.<String>create("Open")
-                                                        .setKey("open-key")
-                                                        .withValue("open-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.folder_open().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(MenuItem.<String>create("Close")
-                                                        .setKey("close-key")
-                                                        .withValue("close-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.close_box().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(MenuItem.<String>create("Close all")
-                                                        .setKey("close-all-key")
-                                                        .withValue("close-all-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.close_box_multiple().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(Separator.create())
-                                                .appendChild(MenuItem.<String>create("Project structure")
-                                                        .setKey("structure-key")
-                                                        .withValue("structure-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.folder_cog().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(MenuItem.<String>create("Settings")
-                                                        .setKey("settings-key")
-                                                        .withValue("settings-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.cog().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(Separator.create())
-                                                .appendChild(MenuItem.<String>create("Invalidate cache", "Takes effect after restart")
-                                                        .setKey("cache-key")
-                                                        .withValue("cache-value")
-                                                )
-                                                .appendChild(MenuItem.<String>create("Restart")
-                                                        .setKey("restart-key")
-                                                        .withValue("restart-value")
-                                                        .appendChild(PostfixAddOn.of(Icons.information()
-                                                                        .addCss(dui_font_size_5)
-                                                                        .setTooltip("Just a tool tip!")
-                                                                )
-                                                        )
-                                                )
-                                                .addSelectionListener((source, selectedItems) -> {
-                                                    source.ifPresent(menuItem -> {
-                                                        Notification.create("Key : " + menuItem + ", value : " + menuItem.getValue()).show();
-                                                    });
-                                                })
-                                        )
-                                )
-                        )
-                        .element());
-    }
-    private void basicMenuSubHeader() {
-        element
-                .appendChild(Card.create("MENU SUB-HEADER", "Menu can have sub-header")
-                        .setCollapsible(true)
-                        .appendChild(Row.create()
-                                .appendChild(Column
-                                        .span4()
-                                        .appendChild(Menu.<String>create()
-                                                .addCss(dui_w_full)
-                                                .setIcon(Icons.file())
-                                                .setTitle("Files")
-                                                .withHeader((menu, header) -> header
-                                                        .appendChild(PostfixAddOn.of(Icons.folder_key_outline()
-                                                                        .addCss(dui_font_size_5)
-                                                                        .clickable()
-                                                                        .addClickListener(evt -> {
-                                                                            Notification.create("Action clicked").show();
-                                                                        })
-                                                                )
-                                                        )
-                                                        .appendChild(PostfixAddOn.of(Icons.folder_heart_outline()
-                                                                        .addCss(dui_font_size_5)
-                                                                        .clickable()
-                                                                        .addClickListener(evt -> {
-                                                                            Notification.create("Action clicked").show();
-                                                                        })
-                                                                )
-                                                        )
-                                                )
-                                                .appendChild(SubheaderAddon.of(Badge.create("Saved")
-                                                        .addCss(dui_green)
-                                                        .setRemovable(true))
-                                                )
-                                                .appendChild(SubheaderAddon.of(Badge.create("Edited")
-                                                        .addCss(dui_orange)
-                                                        .setRemovable(true))
-                                                )
-                                                .appendChild(SubheaderAddon.of(Badge.create("Deleted")
-                                                        .addCss(dui_red)
-                                                        .setRemovable(true))
-                                                )
-                                                .appendChild(MenuItem.<String>create("New ...")
-                                                        .setKey("new-key")
-                                                        .withValue("new-value")
-                                                )
-                                                .appendChild(MenuItem.<String>create("Open")
-                                                        .setKey("open-key")
-                                                        .withValue("open-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.folder_open().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(MenuItem.<String>create("Close")
-                                                        .setKey("close-key")
-                                                        .withValue("close-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.close_box().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(MenuItem.<String>create("Close all")
-                                                        .setKey("close-all-key")
-                                                        .withValue("close-all-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.close_box_multiple().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(Separator.create())
-                                                .appendChild(MenuItem.<String>create("Project structure")
-                                                        .setKey("structure-key")
-                                                        .withValue("structure-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.folder_cog().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(MenuItem.<String>create("Settings")
-                                                        .setKey("settings-key")
-                                                        .withValue("settings-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.cog().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(Separator.create())
-                                                .appendChild(MenuItem.<String>create("Invalidate cache", "Takes effect after restart")
-                                                        .setKey("cache-key")
-                                                        .withValue("cache-value")
-                                                )
-                                                .appendChild(MenuItem.<String>create("Restart")
-                                                        .setKey("restart-key")
-                                                        .withValue("restart-value")
-                                                        .appendChild(PostfixAddOn.of(Icons.information()
-                                                                        .addCss(dui_font_size_5)
-                                                                        .setTooltip("Just a tool tip!")
-                                                                )
-                                                        )
-                                                )
-                                                .addSelectionListener((source, selectedItems) -> {
-                                                    source.ifPresent(menuItem -> {
-                                                        Notification.create("Key : " + menuItem + ", value : " + menuItem.getValue()).show();
-                                                    });
-                                                })
-                                        )
-                                )
-                        )
-                        .element());
-    }
-    private void dropMenu() {
+  public HTMLDivElement render() {
+    basicMenu();
+    basicMenuWithHeaderAndActions();
+    basicMenuSubHeader();
+    dropMenu();
+    contextMenu();
+    nestedMenu();
+    return element.element();
+  }
 
-        element
-                .appendChild(Card.create("DROP DOWN MENU", "Use the menu as a dropdown menu and pick the drop direction from a set of predefined drop directions.")
-                        .setCollapsible(true)
-                        .appendChild(Alert.info()
-                                .addCss(dui_m_b_8)
-                                .appendChild("Check out all implementations of ")
-                                .appendChild(strong().textContent(DropDirection.class.getCanonicalName()))
-                                .appendChild(" to find out all possible Drop directions")
-                        )
-                        .appendChild(Alert.info().appendChild("By default the menu will use best fit drop direction preferring the right side, and for small screens will always show up centered.").element())
-                        .appendChild(div().addCss(dui_flex, dui_justify_between, dui_m_t_8)
-                                .appendChild(Button.create("TOP-RIGHT")
-                                                .setDropMenu(Menu.<String>create()
-                                                        .setIcon(Icons.file())
-                                                        .setTitle("Files")
-                                                        .setDropDirection(new TopRightDropDirection())
-                                                        .withHeader((menu, header) -> header
-                                                                .appendChild(PostfixAddOn.of(Icons.folder_key_outline()
-                                                                                .addCss(dui_font_size_5)
-                                                                                .clickable()
-                                                                                .addClickListener(evt -> {
-                                                                                    Notification.create("Action clicked").show();
-                                                                                })
-                                                                        )
-                                                                )
-                                                                .appendChild(PostfixAddOn.of(Icons.folder_heart_outline()
-                                                                                .addCss(dui_font_size_5)
-                                                                                .clickable()
-                                                                                .addClickListener(evt -> {
-                                                                                    Notification.create("Action clicked").show();
-                                                                                })
-                                                                        )
-                                                                )
-                                                        )
-                                                        .setSearchable(true)
-                                                        .setMissingItemHandler((token, menu) -> menu.appendChild(MenuItem.create(token, "The item was initially missing")))
-                                                        .appendChild(SubheaderAddon.of(Badge.create("Saved")
-                                                                .addCss(dui_green)
-                                                                .setRemovable(true))
-                                                        )
-                                                        .appendChild(SubheaderAddon.of(Badge.create("Edited")
-                                                                .addCss(dui_orange)
-                                                                .setRemovable(true))
-                                                        )
-                                                        .appendChild(SubheaderAddon.of(Badge.create("Deleted")
-                                                                .addCss(dui_red)
-                                                                .setRemovable(true))
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("New ...")
-                                                                .setKey("new-key")
-                                                                .withValue("new-value")
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("Open")
-                                                                .setKey("open-key")
-                                                                .withValue("open-value")
-                                                                .appendChild(PrefixAddOn.of(Icons.folder_open().addCss(dui_font_size_5)))
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("Close")
-                                                                .setKey("close-key")
-                                                                .withValue("close-value")
-                                                                .appendChild(PrefixAddOn.of(Icons.close_box().addCss(dui_font_size_5)))
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("Close all")
-                                                                .setKey("close-all-key")
-                                                                .withValue("close-all-value")
-                                                                .appendChild(PrefixAddOn.of(Icons.close_box_multiple().addCss(dui_font_size_5)))
-                                                        ).appendChild(Separator.create())
-                                                        .appendChild(CustomMenuItem.<String>create()
-                                                                .addCss(dui_hover_disabled)
-                                                                .setKey("custom-key")
-                                                                .withValue("custom-value")
-                                                                .appendChild(div().addCss(dui_flex, dui_justify_center, dui_gap_6)
-                                                                        .appendChild(Icons.content_cut().addCss(dui_font_size_5).setTooltip("Cut").clickable())
-                                                                        .appendChild(Icons.content_copy().addCss(dui_font_size_5).setTooltip("Copy").clickable())
-                                                                        .appendChild(Icons.content_paste().addCss(dui_font_size_5).setTooltip("Paste").clickable())
-                                                                )
-                                                        )
-                                                        .appendChild(Separator.create())
-                                                        .appendChild(MenuItem.<String>create("Project structure")
-                                                                .setKey("structure-key")
-                                                                .withValue("structure-value")
-                                                                .appendChild(PrefixAddOn.of(Icons.folder_cog().addCss(dui_font_size_5)))
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("Settings")
-                                                                .setKey("settings-key")
-                                                                .withValue("settings-value")
-                                                                .appendChild(PrefixAddOn.of(Icons.cog().addCss(dui_font_size_5)))
-                                                        )
-                                                        .appendChild(Separator.create())
-                                                        .appendChild(MenuItem.<String>create("Invalidate cache", "Takes effect after restart")
-                                                                .setKey("cache-key")
-                                                                .withValue("cache-value")
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("Restart")
-                                                                .setKey("restart-key")
-                                                                .withValue("restart-value")
-                                                                .appendChild(PostfixAddOn.of(Icons.information()
-                                                                                .addCss(dui_font_size_5)
-                                                                                .setTooltip("Just a tool tip!")
-                                                                        )
-                                                                )
-                                                        )
-                                                        .addSelectionListener((source, selectedItems) -> {
-                                                            source.ifPresent(menuItem -> {
-                                                                Notification.create("Key : " + menuItem + ", value : " + menuItem.getValue()).show();
-                                                            });
-                                                        })
-                                                )
+  private void basicMenu() {
+    element.appendChild(
+        Card.create("SIMPLE MENU", "Simple menu items with addons and description")
+            .setCollapsible(true)
+            .appendChild(
+                Row.create()
+                    .appendChild(
+                        Column.span4()
+                            .appendChild(
+                                Menu.<String>create()
+                                    .addCss(dui_w_full)
+                                    .appendChild(
+                                        MenuItem.<String>create("New ...")
+                                            .setKey("new-key")
+                                            .withValue("new-value"))
+                                    .appendChild(
+                                        MenuItem.<String>create("Open")
+                                            .setKey("open-key")
+                                            .withValue("open-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.folder_open().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Close")
+                                            .setKey("close-key")
+                                            .withValue("close-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.close_box().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Close all")
+                                            .setKey("close-all-key")
+                                            .withValue("close-all-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.close_box_multiple()
+                                                        .addCss(dui_font_size_5))))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        MenuItem.<String>create("Project structure")
+                                            .setKey("structure-key")
+                                            .withValue("structure-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.folder_cog().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Settings")
+                                            .setKey("settings-key")
+                                            .withValue("settings-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.cog().addCss(dui_font_size_5))))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        MenuItem.<String>create(
+                                                "Invalidate cache", "Takes effect after restart")
+                                            .setKey("cache-key")
+                                            .withValue("cache-value"))
+                                    .appendChild(
+                                        MenuItem.<String>create("Restart")
+                                            .setKey("restart-key")
+                                            .withValue("restart-value")
+                                            .appendChild(
+                                                PostfixAddOn.of(
+                                                    Icons.information()
+                                                        .addCss(dui_font_size_5)
+                                                        .setTooltip("Just a tool tip!"))))
+                                    .addSelectionListener(
+                                        (source, selectedItems) -> {
+                                          source.ifPresent(
+                                              menuItem -> {
+                                                Notification.create(
+                                                        "Key : "
+                                                            + menuItem
+                                                            + ", value : "
+                                                            + menuItem.getValue())
+                                                    .show();
+                                              });
+                                        }))))
+            .element());
+  }
 
-                                )
-                                .appendChild(Button.create("TOP-MIDDLE")
-                                                .setDropMenu(Menu.<String>create()
-                                                        .setIcon(Icons.file())
-                                                        .setTitle("Files")
-                                                        .setDropDirection(new TopMiddleDropDirection())
-                                                        .withHeader((menu, header) -> header
-                                                                .appendChild(PostfixAddOn.of(Icons.folder_key_outline()
-                                                                                .addCss(dui_font_size_5)
-                                                                                .clickable()
-                                                                                .addClickListener(evt -> {
-                                                                                    Notification.create("Action clicked").show();
-                                                                                })
-                                                                        )
-                                                                )
-                                                                .appendChild(PostfixAddOn.of(Icons.folder_heart_outline()
-                                                                                .addCss(dui_font_size_5)
-                                                                                .clickable()
-                                                                                .addClickListener(evt -> {
-                                                                                    Notification.create("Action clicked").show();
-                                                                                })
-                                                                        )
-                                                                )
-                                                        )
-                                                        .setSearchable(true)
-                                                        .setMissingItemHandler((token, menu) -> menu.appendChild(MenuItem.create(token, "The item was initially missing")))
-                                                        .appendChild(SubheaderAddon.of(Badge.create("Saved")
-                                                                .addCss(dui_green)
-                                                                .setRemovable(true))
-                                                        )
-                                                        .appendChild(SubheaderAddon.of(Badge.create("Edited")
-                                                                .addCss(dui_orange)
-                                                                .setRemovable(true))
-                                                        )
-                                                        .appendChild(SubheaderAddon.of(Badge.create("Deleted")
-                                                                .addCss(dui_red)
-                                                                .setRemovable(true))
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("New ...")
-                                                                .setKey("new-key")
-                                                                .withValue("new-value")
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("Open")
-                                                                .setKey("open-key")
-                                                                .withValue("open-value")
-                                                                .appendChild(PrefixAddOn.of(Icons.folder_open().addCss(dui_font_size_5)))
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("Close")
-                                                                .setKey("close-key")
-                                                                .withValue("close-value")
-                                                                .appendChild(PrefixAddOn.of(Icons.close_box().addCss(dui_font_size_5)))
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("Close all")
-                                                                .setKey("close-all-key")
-                                                                .withValue("close-all-value")
-                                                                .appendChild(PrefixAddOn.of(Icons.close_box_multiple().addCss(dui_font_size_5)))
-                                                        ).appendChild(Separator.create())
-                                                        .appendChild(CustomMenuItem.<String>create()
-                                                                .addCss(dui_hover_disabled)
-                                                                .setKey("custom-key")
-                                                                .withValue("custom-value")
-                                                                .appendChild(div().addCss(dui_flex, dui_justify_center, dui_gap_6)
-                                                                        .appendChild(Icons.content_cut().addCss(dui_font_size_5).setTooltip("Cut").clickable())
-                                                                        .appendChild(Icons.content_copy().addCss(dui_font_size_5).setTooltip("Copy").clickable())
-                                                                        .appendChild(Icons.content_paste().addCss(dui_font_size_5).setTooltip("Paste").clickable())
-                                                                )
-                                                        )
-                                                        .appendChild(Separator.create())
-                                                        .appendChild(MenuItem.<String>create("Project structure")
-                                                                .setKey("structure-key")
-                                                                .withValue("structure-value")
-                                                                .appendChild(PrefixAddOn.of(Icons.folder_cog().addCss(dui_font_size_5)))
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("Settings")
-                                                                .setKey("settings-key")
-                                                                .withValue("settings-value")
-                                                                .appendChild(PrefixAddOn.of(Icons.cog().addCss(dui_font_size_5)))
-                                                        )
-                                                        .appendChild(Separator.create())
-                                                        .appendChild(MenuItem.<String>create("Invalidate cache", "Takes effect after restart")
-                                                                .setKey("cache-key")
-                                                                .withValue("cache-value")
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("Restart")
-                                                                .setKey("restart-key")
-                                                                .withValue("restart-value")
-                                                                .appendChild(PostfixAddOn.of(Icons.information()
-                                                                                .addCss(dui_font_size_5)
-                                                                                .setTooltip("Just a tool tip!")
-                                                                        )
-                                                                )
-                                                        )
-                                                        .addSelectionListener((source, selectedItems) -> {
-                                                            source.ifPresent(menuItem -> {
-                                                                Notification.create("Key : " + menuItem + ", value : " + menuItem.getValue()).show();
-                                                            });
-                                                        })
-                                                )
+  private void basicMenuWithHeaderAndActions() {
+    element.appendChild(
+        Card.create("HEADER ACTIONS", "Menu can have header with title and actions")
+            .setCollapsible(true)
+            .appendChild(
+                Row.create()
+                    .appendChild(
+                        Column.span4()
+                            .appendChild(
+                                Menu.<String>create()
+                                    .addCss(dui_w_full)
+                                    .setIcon(Icons.file())
+                                    .setTitle("Files")
+                                    .withHeader(
+                                        (menu, header) ->
+                                            header
+                                                .appendChild(
+                                                    PostfixAddOn.of(
+                                                        Icons.folder_key_outline()
+                                                            .addCss(dui_font_size_5)
+                                                            .clickable()
+                                                            .addClickListener(
+                                                                evt -> {
+                                                                  Notification.create(
+                                                                          "Action clicked")
+                                                                      .show();
+                                                                })))
+                                                .appendChild(
+                                                    PostfixAddOn.of(
+                                                        Icons.folder_heart_outline()
+                                                            .addCss(dui_font_size_5)
+                                                            .clickable()
+                                                            .addClickListener(
+                                                                evt -> {
+                                                                  Notification.create(
+                                                                          "Action clicked")
+                                                                      .show();
+                                                                }))))
+                                    .appendChild(
+                                        MenuItem.<String>create("New ...")
+                                            .setKey("new-key")
+                                            .withValue("new-value"))
+                                    .appendChild(
+                                        MenuItem.<String>create("Open")
+                                            .setKey("open-key")
+                                            .withValue("open-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.folder_open().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Close")
+                                            .setKey("close-key")
+                                            .withValue("close-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.close_box().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Close all")
+                                            .setKey("close-all-key")
+                                            .withValue("close-all-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.close_box_multiple()
+                                                        .addCss(dui_font_size_5))))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        MenuItem.<String>create("Project structure")
+                                            .setKey("structure-key")
+                                            .withValue("structure-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.folder_cog().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Settings")
+                                            .setKey("settings-key")
+                                            .withValue("settings-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.cog().addCss(dui_font_size_5))))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        MenuItem.<String>create(
+                                                "Invalidate cache", "Takes effect after restart")
+                                            .setKey("cache-key")
+                                            .withValue("cache-value"))
+                                    .appendChild(
+                                        MenuItem.<String>create("Restart")
+                                            .setKey("restart-key")
+                                            .withValue("restart-value")
+                                            .appendChild(
+                                                PostfixAddOn.of(
+                                                    Icons.information()
+                                                        .addCss(dui_font_size_5)
+                                                        .setTooltip("Just a tool tip!"))))
+                                    .addSelectionListener(
+                                        (source, selectedItems) -> {
+                                          source.ifPresent(
+                                              menuItem -> {
+                                                Notification.create(
+                                                        "Key : "
+                                                            + menuItem
+                                                            + ", value : "
+                                                            + menuItem.getValue())
+                                                    .show();
+                                              });
+                                        }))))
+            .element());
+  }
 
-                                )
-                                .appendChild(Button.create("BOTTOM-LEFT")
-                                                .setDropMenu(Menu.<String>create()
-                                                        .setIcon(Icons.file())
-                                                        .setTitle("Files")
-                                                        .setDropDirection(new BottomLeftDropDirection())
-                                                        .withHeader((menu, header) -> header
-                                                                .appendChild(PostfixAddOn.of(Icons.folder_key_outline()
-                                                                                .addCss(dui_font_size_5)
-                                                                                .clickable()
-                                                                                .addClickListener(evt -> {
-                                                                                    Notification.create("Action clicked").show();
-                                                                                })
-                                                                        )
-                                                                )
-                                                                .appendChild(PostfixAddOn.of(Icons.folder_heart_outline()
-                                                                                .addCss(dui_font_size_5)
-                                                                                .clickable()
-                                                                                .addClickListener(evt -> {
-                                                                                    Notification.create("Action clicked").show();
-                                                                                })
-                                                                        )
-                                                                )
-                                                        )
-                                                        .setSearchable(true)
-                                                        .setMissingItemHandler((token, menu) -> menu.appendChild(MenuItem.create(token, "The item was initially missing")))
-                                                        .appendChild(SubheaderAddon.of(Badge.create("Saved")
-                                                                .addCss(dui_green)
-                                                                .setRemovable(true))
-                                                        )
-                                                        .appendChild(SubheaderAddon.of(Badge.create("Edited")
-                                                                .addCss(dui_orange)
-                                                                .setRemovable(true))
-                                                        )
-                                                        .appendChild(SubheaderAddon.of(Badge.create("Deleted")
-                                                                .addCss(dui_red)
-                                                                .setRemovable(true))
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("New ...")
-                                                                .setKey("new-key")
-                                                                .withValue("new-value")
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("Open")
-                                                                .setKey("open-key")
-                                                                .withValue("open-value")
-                                                                .appendChild(PrefixAddOn.of(Icons.folder_open().addCss(dui_font_size_5)))
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("Close")
-                                                                .setKey("close-key")
-                                                                .withValue("close-value")
-                                                                .appendChild(PrefixAddOn.of(Icons.close_box().addCss(dui_font_size_5)))
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("Close all")
-                                                                .setKey("close-all-key")
-                                                                .withValue("close-all-value")
-                                                                .appendChild(PrefixAddOn.of(Icons.close_box_multiple().addCss(dui_font_size_5)))
-                                                        ).appendChild(Separator.create())
-                                                        .appendChild(CustomMenuItem.<String>create()
-                                                                .addCss(dui_hover_disabled)
-                                                                .setKey("custom-key")
-                                                                .withValue("custom-value")
-                                                                .appendChild(div().addCss(dui_flex, dui_justify_center, dui_gap_6)
-                                                                        .appendChild(Icons.content_cut().addCss(dui_font_size_5).setTooltip("Cut").clickable())
-                                                                        .appendChild(Icons.content_copy().addCss(dui_font_size_5).setTooltip("Copy").clickable())
-                                                                        .appendChild(Icons.content_paste().addCss(dui_font_size_5).setTooltip("Paste").clickable())
-                                                                )
-                                                        )
-                                                        .appendChild(Separator.create())
-                                                        .appendChild(MenuItem.<String>create("Project structure")
-                                                                .setKey("structure-key")
-                                                                .withValue("structure-value")
-                                                                .appendChild(PrefixAddOn.of(Icons.folder_cog().addCss(dui_font_size_5)))
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("Settings")
-                                                                .setKey("settings-key")
-                                                                .withValue("settings-value")
-                                                                .appendChild(PrefixAddOn.of(Icons.cog().addCss(dui_font_size_5)))
-                                                        )
-                                                        .appendChild(Separator.create())
-                                                        .appendChild(MenuItem.<String>create("Invalidate cache", "Takes effect after restart")
-                                                                .setKey("cache-key")
-                                                                .withValue("cache-value")
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("Restart")
-                                                                .setKey("restart-key")
-                                                                .withValue("restart-value")
-                                                                .appendChild(PostfixAddOn.of(Icons.information()
-                                                                                .addCss(dui_font_size_5)
-                                                                                .setTooltip("Just a tool tip!")
-                                                                        )
-                                                                )
-                                                        )
-                                                        .addSelectionListener((source, selectedItems) -> {
-                                                            source.ifPresent(menuItem -> {
-                                                                Notification.create("Key : " + menuItem + ", value : " + menuItem.getValue()).show();
-                                                            });
-                                                        })
-                                                )
-
-                                )
-                        )
-                );
-        ;
-    }
-    private void contextMenu() {
-
-        this.element
-                .appendChild(Card.create("CONTEXT MENU", "Menu can be used as a right click context menu.")
-                        .setCollapsible(true)
-                        .appendChild(div()
-                                .addCss(dui_h_96,
-                                        dui_w_full,
-                                        dui_border,
-                                        dui_border_2px,
-                                        dui_border_dashed,
-                                        dui_text_center,
-                                        dui_font_size_12,
-                                        dui_fg_grey,
-                                        dui_flex,
-                                        dui_justify_center,
-                                        dui_items_center)
-                                .setTextContent("Right click to open the context menu")
-                                .setDropMenu(Menu.<String>create()
-                                        .setIcon(Icons.file())
-                                        .setTitle("Files")
-                                        .setContextMenu(true)
-                                        .setDropDirection(new TopMiddleDropDirection())
-                                        .withHeader((menu, header) -> header
-                                                .appendChild(PostfixAddOn.of(Icons.folder_key_outline()
-                                                                .addCss(dui_font_size_5)
-                                                                .clickable()
-                                                                .addClickListener(evt -> {
-                                                                    Notification.create("Action clicked").show();
-                                                                })
-                                                        )
-                                                )
-                                                .appendChild(PostfixAddOn.of(Icons.folder_heart_outline()
-                                                                .addCss(dui_font_size_5)
-                                                                .clickable()
-                                                                .addClickListener(evt -> {
-                                                                    Notification.create("Action clicked").show();
-                                                                })
-                                                        )
-                                                )
-                                        )
-                                        .setSearchable(true)
-                                        .setMissingItemHandler((token, menu) -> menu.appendChild(MenuItem.create(token, "The item was initially missing")))
-                                        .appendChild(SubheaderAddon.of(Badge.create("Saved")
+  private void basicMenuSubHeader() {
+    element.appendChild(
+        Card.create("MENU SUB-HEADER", "Menu can have sub-header")
+            .setCollapsible(true)
+            .appendChild(
+                Row.create()
+                    .appendChild(
+                        Column.span4()
+                            .appendChild(
+                                Menu.<String>create()
+                                    .addCss(dui_w_full)
+                                    .setIcon(Icons.file())
+                                    .setTitle("Files")
+                                    .withHeader(
+                                        (menu, header) ->
+                                            header
+                                                .appendChild(
+                                                    PostfixAddOn.of(
+                                                        Icons.folder_key_outline()
+                                                            .addCss(dui_font_size_5)
+                                                            .clickable()
+                                                            .addClickListener(
+                                                                evt -> {
+                                                                  Notification.create(
+                                                                          "Action clicked")
+                                                                      .show();
+                                                                })))
+                                                .appendChild(
+                                                    PostfixAddOn.of(
+                                                        Icons.folder_heart_outline()
+                                                            .addCss(dui_font_size_5)
+                                                            .clickable()
+                                                            .addClickListener(
+                                                                evt -> {
+                                                                  Notification.create(
+                                                                          "Action clicked")
+                                                                      .show();
+                                                                }))))
+                                    .appendChild(
+                                        SubheaderAddon.of(
+                                            Badge.create("Saved")
                                                 .addCss(dui_green)
-                                                .setRemovable(true))
-                                        )
-                                        .appendChild(SubheaderAddon.of(Badge.create("Edited")
+                                                .setRemovable(true)))
+                                    .appendChild(
+                                        SubheaderAddon.of(
+                                            Badge.create("Edited")
                                                 .addCss(dui_orange)
-                                                .setRemovable(true))
-                                        )
-                                        .appendChild(SubheaderAddon.of(Badge.create("Deleted")
+                                                .setRemovable(true)))
+                                    .appendChild(
+                                        SubheaderAddon.of(
+                                            Badge.create("Deleted")
                                                 .addCss(dui_red)
-                                                .setRemovable(true))
-                                        )
-                                        .appendChild(MenuItem.<String>create("New ...")
-                                                .setKey("new-key")
-                                                .withValue("new-value")
-                                        )
-                                        .appendChild(MenuItem.<String>create("Open")
-                                                .setKey("open-key")
-                                                .withValue("open-value")
-                                                .appendChild(PrefixAddOn.of(Icons.folder_open().addCss(dui_font_size_5)))
-                                        )
-                                        .appendChild(MenuItem.<String>create("Close")
-                                                .setKey("close-key")
-                                                .withValue("close-value")
-                                                .appendChild(PrefixAddOn.of(Icons.close_box().addCss(dui_font_size_5)))
-                                        )
-                                        .appendChild(MenuItem.<String>create("Close all")
-                                                .setKey("close-all-key")
-                                                .withValue("close-all-value")
-                                                .appendChild(PrefixAddOn.of(Icons.close_box_multiple().addCss(dui_font_size_5)))
-                                        ).appendChild(Separator.create())
-                                        .appendChild(CustomMenuItem.<String>create()
-                                                .addCss(dui_hover_disabled)
-                                                .setKey("custom-key")
-                                                .withValue("custom-value")
-                                                .appendChild(div().addCss(dui_flex, dui_justify_center, dui_gap_6)
-                                                        .appendChild(Icons.content_cut().addCss(dui_font_size_5).setTooltip("Cut").clickable())
-                                                        .appendChild(Icons.content_copy().addCss(dui_font_size_5).setTooltip("Copy").clickable())
-                                                        .appendChild(Icons.content_paste().addCss(dui_font_size_5).setTooltip("Paste").clickable())
-                                                )
-                                        )
-                                        .appendChild(Separator.create())
-                                        .appendChild(MenuItem.<String>create("Project structure")
-                                                .setKey("structure-key")
-                                                .withValue("structure-value")
-                                                .appendChild(PrefixAddOn.of(Icons.folder_cog().addCss(dui_font_size_5)))
-                                        )
-                                        .appendChild(MenuItem.<String>create("Settings")
-                                                .setKey("settings-key")
-                                                .withValue("settings-value")
-                                                .appendChild(PrefixAddOn.of(Icons.cog().addCss(dui_font_size_5)))
-                                        )
-                                        .appendChild(Separator.create())
-                                        .appendChild(MenuItem.<String>create("Invalidate cache", "Takes effect after restart")
-                                                .setKey("cache-key")
-                                                .withValue("cache-value")
-                                        )
-                                        .appendChild(MenuItem.<String>create("Restart")
-                                                .setKey("restart-key")
-                                                .withValue("restart-value")
-                                                .appendChild(PostfixAddOn.of(Icons.information()
+                                                .setRemovable(true)))
+                                    .appendChild(
+                                        MenuItem.<String>create("New ...")
+                                            .setKey("new-key")
+                                            .withValue("new-value"))
+                                    .appendChild(
+                                        MenuItem.<String>create("Open")
+                                            .setKey("open-key")
+                                            .withValue("open-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.folder_open().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Close")
+                                            .setKey("close-key")
+                                            .withValue("close-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.close_box().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Close all")
+                                            .setKey("close-all-key")
+                                            .withValue("close-all-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.close_box_multiple()
+                                                        .addCss(dui_font_size_5))))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        MenuItem.<String>create("Project structure")
+                                            .setKey("structure-key")
+                                            .withValue("structure-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.folder_cog().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Settings")
+                                            .setKey("settings-key")
+                                            .withValue("settings-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.cog().addCss(dui_font_size_5))))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        MenuItem.<String>create(
+                                                "Invalidate cache", "Takes effect after restart")
+                                            .setKey("cache-key")
+                                            .withValue("cache-value"))
+                                    .appendChild(
+                                        MenuItem.<String>create("Restart")
+                                            .setKey("restart-key")
+                                            .withValue("restart-value")
+                                            .appendChild(
+                                                PostfixAddOn.of(
+                                                    Icons.information()
+                                                        .addCss(dui_font_size_5)
+                                                        .setTooltip("Just a tool tip!"))))
+                                    .addSelectionListener(
+                                        (source, selectedItems) -> {
+                                          source.ifPresent(
+                                              menuItem -> {
+                                                Notification.create(
+                                                        "Key : "
+                                                            + menuItem
+                                                            + ", value : "
+                                                            + menuItem.getValue())
+                                                    .show();
+                                              });
+                                        }))))
+            .element());
+  }
+
+  private void dropMenu() {
+
+    element.appendChild(
+        Card.create(
+                "DROP DOWN MENU",
+                "Use the menu as a dropdown menu and pick the drop direction from a set of"
+                    + " predefined drop directions.")
+            .setCollapsible(true)
+            .appendChild(
+                Alert.info()
+                    .addCss(dui_m_b_8)
+                    .appendChild("Check out all implementations of ")
+                    .appendChild(strong().textContent(DropDirection.class.getCanonicalName()))
+                    .appendChild(" to find out all possible Drop directions"))
+            .appendChild(
+                Alert.info()
+                    .appendChild(
+                        "By default the menu will use best fit drop direction preferring the right"
+                            + " side, and for small screens will always show up centered.")
+                    .element())
+            .appendChild(
+                div()
+                    .addCss(dui_flex, dui_justify_between, dui_m_t_8)
+                    .appendChild(
+                        Button.create("TOP-RIGHT")
+                            .setDropMenu(
+                                Menu.<String>create()
+                                    .setIcon(Icons.file())
+                                    .setTitle("Files")
+                                    .setDropDirection(new TopRightDropDirection())
+                                    .withHeader(
+                                        (menu, header) ->
+                                            header
+                                                .appendChild(
+                                                    PostfixAddOn.of(
+                                                        Icons.folder_key_outline()
+                                                            .addCss(dui_font_size_5)
+                                                            .clickable()
+                                                            .addClickListener(
+                                                                evt -> {
+                                                                  Notification.create(
+                                                                          "Action clicked")
+                                                                      .show();
+                                                                })))
+                                                .appendChild(
+                                                    PostfixAddOn.of(
+                                                        Icons.folder_heart_outline()
+                                                            .addCss(dui_font_size_5)
+                                                            .clickable()
+                                                            .addClickListener(
+                                                                evt -> {
+                                                                  Notification.create(
+                                                                          "Action clicked")
+                                                                      .show();
+                                                                }))))
+                                    .setSearchable(true)
+                                    .setMissingItemHandler(
+                                        (token, menu) ->
+                                            menu.appendChild(
+                                                MenuItem.create(
+                                                    token, "The item was initially missing")))
+                                    .appendChild(
+                                        SubheaderAddon.of(
+                                            Badge.create("Saved")
+                                                .addCss(dui_green)
+                                                .setRemovable(true)))
+                                    .appendChild(
+                                        SubheaderAddon.of(
+                                            Badge.create("Edited")
+                                                .addCss(dui_orange)
+                                                .setRemovable(true)))
+                                    .appendChild(
+                                        SubheaderAddon.of(
+                                            Badge.create("Deleted")
+                                                .addCss(dui_red)
+                                                .setRemovable(true)))
+                                    .appendChild(
+                                        MenuItem.<String>create("New ...")
+                                            .setKey("new-key")
+                                            .withValue("new-value"))
+                                    .appendChild(
+                                        MenuItem.<String>create("Open")
+                                            .setKey("open-key")
+                                            .withValue("open-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.folder_open().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Close")
+                                            .setKey("close-key")
+                                            .withValue("close-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.close_box().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Close all")
+                                            .setKey("close-all-key")
+                                            .withValue("close-all-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.close_box_multiple()
+                                                        .addCss(dui_font_size_5))))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        CustomMenuItem.<String>create()
+                                            .addCss(dui_hover_disabled)
+                                            .setKey("custom-key")
+                                            .withValue("custom-value")
+                                            .appendChild(
+                                                div()
+                                                    .addCss(dui_flex, dui_justify_center, dui_gap_6)
+                                                    .appendChild(
+                                                        Icons.content_cut()
+                                                            .addCss(dui_font_size_5)
+                                                            .setTooltip("Cut")
+                                                            .clickable())
+                                                    .appendChild(
+                                                        Icons.content_copy()
+                                                            .addCss(dui_font_size_5)
+                                                            .setTooltip("Copy")
+                                                            .clickable())
+                                                    .appendChild(
+                                                        Icons.content_paste()
+                                                            .addCss(dui_font_size_5)
+                                                            .setTooltip("Paste")
+                                                            .clickable())))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        MenuItem.<String>create("Project structure")
+                                            .setKey("structure-key")
+                                            .withValue("structure-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.folder_cog().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Settings")
+                                            .setKey("settings-key")
+                                            .withValue("settings-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.cog().addCss(dui_font_size_5))))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        MenuItem.<String>create(
+                                                "Invalidate cache", "Takes effect after restart")
+                                            .setKey("cache-key")
+                                            .withValue("cache-value"))
+                                    .appendChild(
+                                        MenuItem.<String>create("Restart")
+                                            .setKey("restart-key")
+                                            .withValue("restart-value")
+                                            .appendChild(
+                                                PostfixAddOn.of(
+                                                    Icons.information()
+                                                        .addCss(dui_font_size_5)
+                                                        .setTooltip("Just a tool tip!"))))
+                                    .addSelectionListener(
+                                        (source, selectedItems) -> {
+                                          source.ifPresent(
+                                              menuItem -> {
+                                                Notification.create(
+                                                        "Key : "
+                                                            + menuItem
+                                                            + ", value : "
+                                                            + menuItem.getValue())
+                                                    .show();
+                                              });
+                                        })))
+                    .appendChild(
+                        Button.create("TOP-MIDDLE")
+                            .setDropMenu(
+                                Menu.<String>create()
+                                    .setIcon(Icons.file())
+                                    .setTitle("Files")
+                                    .setDropDirection(new TopMiddleDropDirection())
+                                    .withHeader(
+                                        (menu, header) ->
+                                            header
+                                                .appendChild(
+                                                    PostfixAddOn.of(
+                                                        Icons.folder_key_outline()
+                                                            .addCss(dui_font_size_5)
+                                                            .clickable()
+                                                            .addClickListener(
+                                                                evt -> {
+                                                                  Notification.create(
+                                                                          "Action clicked")
+                                                                      .show();
+                                                                })))
+                                                .appendChild(
+                                                    PostfixAddOn.of(
+                                                        Icons.folder_heart_outline()
+                                                            .addCss(dui_font_size_5)
+                                                            .clickable()
+                                                            .addClickListener(
+                                                                evt -> {
+                                                                  Notification.create(
+                                                                          "Action clicked")
+                                                                      .show();
+                                                                }))))
+                                    .setSearchable(true)
+                                    .setMissingItemHandler(
+                                        (token, menu) ->
+                                            menu.appendChild(
+                                                MenuItem.create(
+                                                    token, "The item was initially missing")))
+                                    .appendChild(
+                                        SubheaderAddon.of(
+                                            Badge.create("Saved")
+                                                .addCss(dui_green)
+                                                .setRemovable(true)))
+                                    .appendChild(
+                                        SubheaderAddon.of(
+                                            Badge.create("Edited")
+                                                .addCss(dui_orange)
+                                                .setRemovable(true)))
+                                    .appendChild(
+                                        SubheaderAddon.of(
+                                            Badge.create("Deleted")
+                                                .addCss(dui_red)
+                                                .setRemovable(true)))
+                                    .appendChild(
+                                        MenuItem.<String>create("New ...")
+                                            .setKey("new-key")
+                                            .withValue("new-value"))
+                                    .appendChild(
+                                        MenuItem.<String>create("Open")
+                                            .setKey("open-key")
+                                            .withValue("open-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.folder_open().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Close")
+                                            .setKey("close-key")
+                                            .withValue("close-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.close_box().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Close all")
+                                            .setKey("close-all-key")
+                                            .withValue("close-all-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.close_box_multiple()
+                                                        .addCss(dui_font_size_5))))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        CustomMenuItem.<String>create()
+                                            .addCss(dui_hover_disabled)
+                                            .setKey("custom-key")
+                                            .withValue("custom-value")
+                                            .appendChild(
+                                                div()
+                                                    .addCss(dui_flex, dui_justify_center, dui_gap_6)
+                                                    .appendChild(
+                                                        Icons.content_cut()
+                                                            .addCss(dui_font_size_5)
+                                                            .setTooltip("Cut")
+                                                            .clickable())
+                                                    .appendChild(
+                                                        Icons.content_copy()
+                                                            .addCss(dui_font_size_5)
+                                                            .setTooltip("Copy")
+                                                            .clickable())
+                                                    .appendChild(
+                                                        Icons.content_paste()
+                                                            .addCss(dui_font_size_5)
+                                                            .setTooltip("Paste")
+                                                            .clickable())))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        MenuItem.<String>create("Project structure")
+                                            .setKey("structure-key")
+                                            .withValue("structure-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.folder_cog().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Settings")
+                                            .setKey("settings-key")
+                                            .withValue("settings-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.cog().addCss(dui_font_size_5))))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        MenuItem.<String>create(
+                                                "Invalidate cache", "Takes effect after restart")
+                                            .setKey("cache-key")
+                                            .withValue("cache-value"))
+                                    .appendChild(
+                                        MenuItem.<String>create("Restart")
+                                            .setKey("restart-key")
+                                            .withValue("restart-value")
+                                            .appendChild(
+                                                PostfixAddOn.of(
+                                                    Icons.information()
+                                                        .addCss(dui_font_size_5)
+                                                        .setTooltip("Just a tool tip!"))))
+                                    .addSelectionListener(
+                                        (source, selectedItems) -> {
+                                          source.ifPresent(
+                                              menuItem -> {
+                                                Notification.create(
+                                                        "Key : "
+                                                            + menuItem
+                                                            + ", value : "
+                                                            + menuItem.getValue())
+                                                    .show();
+                                              });
+                                        })))
+                    .appendChild(
+                        Button.create("BOTTOM-LEFT")
+                            .setDropMenu(
+                                Menu.<String>create()
+                                    .setIcon(Icons.file())
+                                    .setTitle("Files")
+                                    .setDropDirection(new BottomLeftDropDirection())
+                                    .withHeader(
+                                        (menu, header) ->
+                                            header
+                                                .appendChild(
+                                                    PostfixAddOn.of(
+                                                        Icons.folder_key_outline()
+                                                            .addCss(dui_font_size_5)
+                                                            .clickable()
+                                                            .addClickListener(
+                                                                evt -> {
+                                                                  Notification.create(
+                                                                          "Action clicked")
+                                                                      .show();
+                                                                })))
+                                                .appendChild(
+                                                    PostfixAddOn.of(
+                                                        Icons.folder_heart_outline()
+                                                            .addCss(dui_font_size_5)
+                                                            .clickable()
+                                                            .addClickListener(
+                                                                evt -> {
+                                                                  Notification.create(
+                                                                          "Action clicked")
+                                                                      .show();
+                                                                }))))
+                                    .setSearchable(true)
+                                    .setMissingItemHandler(
+                                        (token, menu) ->
+                                            menu.appendChild(
+                                                MenuItem.create(
+                                                    token, "The item was initially missing")))
+                                    .appendChild(
+                                        SubheaderAddon.of(
+                                            Badge.create("Saved")
+                                                .addCss(dui_green)
+                                                .setRemovable(true)))
+                                    .appendChild(
+                                        SubheaderAddon.of(
+                                            Badge.create("Edited")
+                                                .addCss(dui_orange)
+                                                .setRemovable(true)))
+                                    .appendChild(
+                                        SubheaderAddon.of(
+                                            Badge.create("Deleted")
+                                                .addCss(dui_red)
+                                                .setRemovable(true)))
+                                    .appendChild(
+                                        MenuItem.<String>create("New ...")
+                                            .setKey("new-key")
+                                            .withValue("new-value"))
+                                    .appendChild(
+                                        MenuItem.<String>create("Open")
+                                            .setKey("open-key")
+                                            .withValue("open-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.folder_open().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Close")
+                                            .setKey("close-key")
+                                            .withValue("close-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.close_box().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Close all")
+                                            .setKey("close-all-key")
+                                            .withValue("close-all-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.close_box_multiple()
+                                                        .addCss(dui_font_size_5))))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        CustomMenuItem.<String>create()
+                                            .addCss(dui_hover_disabled)
+                                            .setKey("custom-key")
+                                            .withValue("custom-value")
+                                            .appendChild(
+                                                div()
+                                                    .addCss(dui_flex, dui_justify_center, dui_gap_6)
+                                                    .appendChild(
+                                                        Icons.content_cut()
+                                                            .addCss(dui_font_size_5)
+                                                            .setTooltip("Cut")
+                                                            .clickable())
+                                                    .appendChild(
+                                                        Icons.content_copy()
+                                                            .addCss(dui_font_size_5)
+                                                            .setTooltip("Copy")
+                                                            .clickable())
+                                                    .appendChild(
+                                                        Icons.content_paste()
+                                                            .addCss(dui_font_size_5)
+                                                            .setTooltip("Paste")
+                                                            .clickable())))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        MenuItem.<String>create("Project structure")
+                                            .setKey("structure-key")
+                                            .withValue("structure-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.folder_cog().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Settings")
+                                            .setKey("settings-key")
+                                            .withValue("settings-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.cog().addCss(dui_font_size_5))))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        MenuItem.<String>create(
+                                                "Invalidate cache", "Takes effect after restart")
+                                            .setKey("cache-key")
+                                            .withValue("cache-value"))
+                                    .appendChild(
+                                        MenuItem.<String>create("Restart")
+                                            .setKey("restart-key")
+                                            .withValue("restart-value")
+                                            .appendChild(
+                                                PostfixAddOn.of(
+                                                    Icons.information()
+                                                        .addCss(dui_font_size_5)
+                                                        .setTooltip("Just a tool tip!"))))
+                                    .addSelectionListener(
+                                        (source, selectedItems) -> {
+                                          source.ifPresent(
+                                              menuItem -> {
+                                                Notification.create(
+                                                        "Key : "
+                                                            + menuItem
+                                                            + ", value : "
+                                                            + menuItem.getValue())
+                                                    .show();
+                                              });
+                                        })))));
+    ;
+  }
+
+  private void contextMenu() {
+
+    this.element.appendChild(
+        Card.create("CONTEXT MENU", "Menu can be used as a right click context menu.")
+            .setCollapsible(true)
+            .appendChild(
+                div()
+                    .addCss(
+                        dui_h_96,
+                        dui_w_full,
+                        dui_border,
+                        dui_border_2px,
+                        dui_border_dashed,
+                        dui_text_center,
+                        dui_font_size_12,
+                        dui_fg_grey,
+                        dui_flex,
+                        dui_justify_center,
+                        dui_items_center)
+                    .setTextContent("Right click to open the context menu")
+                    .setDropMenu(
+                        Menu.<String>create()
+                            .setIcon(Icons.file())
+                            .setTitle("Files")
+                            .setContextMenu(true)
+                            .setDropDirection(new TopMiddleDropDirection())
+                            .withHeader(
+                                (menu, header) ->
+                                    header
+                                        .appendChild(
+                                            PostfixAddOn.of(
+                                                Icons.folder_key_outline()
+                                                    .addCss(dui_font_size_5)
+                                                    .clickable()
+                                                    .addClickListener(
+                                                        evt -> {
+                                                          Notification.create("Action clicked")
+                                                              .show();
+                                                        })))
+                                        .appendChild(
+                                            PostfixAddOn.of(
+                                                Icons.folder_heart_outline()
+                                                    .addCss(dui_font_size_5)
+                                                    .clickable()
+                                                    .addClickListener(
+                                                        evt -> {
+                                                          Notification.create("Action clicked")
+                                                              .show();
+                                                        }))))
+                            .setSearchable(true)
+                            .setMissingItemHandler(
+                                (token, menu) ->
+                                    menu.appendChild(
+                                        MenuItem.create(token, "The item was initially missing")))
+                            .appendChild(
+                                SubheaderAddon.of(
+                                    Badge.create("Saved").addCss(dui_green).setRemovable(true)))
+                            .appendChild(
+                                SubheaderAddon.of(
+                                    Badge.create("Edited").addCss(dui_orange).setRemovable(true)))
+                            .appendChild(
+                                SubheaderAddon.of(
+                                    Badge.create("Deleted").addCss(dui_red).setRemovable(true)))
+                            .appendChild(
+                                MenuItem.<String>create("New ...")
+                                    .setKey("new-key")
+                                    .withValue("new-value"))
+                            .appendChild(
+                                MenuItem.<String>create("Open")
+                                    .setKey("open-key")
+                                    .withValue("open-value")
+                                    .appendChild(
+                                        PrefixAddOn.of(
+                                            Icons.folder_open().addCss(dui_font_size_5))))
+                            .appendChild(
+                                MenuItem.<String>create("Close")
+                                    .setKey("close-key")
+                                    .withValue("close-value")
+                                    .appendChild(
+                                        PrefixAddOn.of(Icons.close_box().addCss(dui_font_size_5))))
+                            .appendChild(
+                                MenuItem.<String>create("Close all")
+                                    .setKey("close-all-key")
+                                    .withValue("close-all-value")
+                                    .appendChild(
+                                        PrefixAddOn.of(
+                                            Icons.close_box_multiple().addCss(dui_font_size_5))))
+                            .appendChild(Separator.create())
+                            .appendChild(
+                                CustomMenuItem.<String>create()
+                                    .addCss(dui_hover_disabled)
+                                    .setKey("custom-key")
+                                    .withValue("custom-value")
+                                    .appendChild(
+                                        div()
+                                            .addCss(dui_flex, dui_justify_center, dui_gap_6)
+                                            .appendChild(
+                                                Icons.content_cut()
+                                                    .addCss(dui_font_size_5)
+                                                    .setTooltip("Cut")
+                                                    .clickable())
+                                            .appendChild(
+                                                Icons.content_copy()
+                                                    .addCss(dui_font_size_5)
+                                                    .setTooltip("Copy")
+                                                    .clickable())
+                                            .appendChild(
+                                                Icons.content_paste()
+                                                    .addCss(dui_font_size_5)
+                                                    .setTooltip("Paste")
+                                                    .clickable())))
+                            .appendChild(Separator.create())
+                            .appendChild(
+                                MenuItem.<String>create("Project structure")
+                                    .setKey("structure-key")
+                                    .withValue("structure-value")
+                                    .appendChild(
+                                        PrefixAddOn.of(Icons.folder_cog().addCss(dui_font_size_5))))
+                            .appendChild(
+                                MenuItem.<String>create("Settings")
+                                    .setKey("settings-key")
+                                    .withValue("settings-value")
+                                    .appendChild(
+                                        PrefixAddOn.of(Icons.cog().addCss(dui_font_size_5))))
+                            .appendChild(Separator.create())
+                            .appendChild(
+                                MenuItem.<String>create(
+                                        "Invalidate cache", "Takes effect after restart")
+                                    .setKey("cache-key")
+                                    .withValue("cache-value"))
+                            .appendChild(
+                                MenuItem.<String>create("Restart")
+                                    .setKey("restart-key")
+                                    .withValue("restart-value")
+                                    .appendChild(
+                                        PostfixAddOn.of(
+                                            Icons.information()
+                                                .addCss(dui_font_size_5)
+                                                .setTooltip("Just a tool tip!"))))
+                            .addSelectionListener(
+                                (source, selectedItems) -> {
+                                  source.ifPresent(
+                                      menuItem -> {
+                                        Notification.create(
+                                                "Key : "
+                                                    + menuItem
+                                                    + ", value : "
+                                                    + menuItem.getValue())
+                                            .show();
+                                      });
+                                }))));
+  }
+
+  private void nestedMenu() {
+
+    this.element.appendChild(
+        Card.create("NESTED MENU", "Menu items can open nested menu.")
+            .appendChild(
+                Row.create()
+                    .appendChild(
+                        Column.span4()
+                            .appendChild(
+                                Menu.<String>create()
+                                    .setIcon(Icons.file())
+                                    .setTitle("Files")
+                                    .withHeader(
+                                        (menu, header) ->
+                                            header
+                                                .appendChild(
+                                                    PostfixAddOn.of(
+                                                        Icons.folder_key_outline()
+                                                            .addCss(dui_font_size_5)
+                                                            .clickable()
+                                                            .addClickListener(
+                                                                evt -> {
+                                                                  Notification.create(
+                                                                          "Action clicked")
+                                                                      .show();
+                                                                })))
+                                                .appendChild(
+                                                    PostfixAddOn.of(
+                                                        Icons.folder_heart_outline()
+                                                            .addCss(dui_font_size_5)
+                                                            .clickable()
+                                                            .addClickListener(
+                                                                evt -> {
+                                                                  Notification.create(
+                                                                          "Action clicked")
+                                                                      .show();
+                                                                }))))
+                                    .setSearchable(true)
+                                    .setMissingItemHandler(
+                                        (token, menu) ->
+                                            menu.appendChild(
+                                                MenuItem.create(
+                                                    token, "The item was initially missing")))
+                                    .appendChild(
+                                        SubheaderAddon.of(
+                                            Badge.create("Saved")
+                                                .addCss(dui_green)
+                                                .setRemovable(true)))
+                                    .appendChild(
+                                        SubheaderAddon.of(
+                                            Badge.create("Edited")
+                                                .addCss(dui_orange)
+                                                .setRemovable(true)))
+                                    .appendChild(
+                                        SubheaderAddon.of(
+                                            Badge.create("Deleted")
+                                                .addCss(dui_red)
+                                                .setRemovable(true)))
+                                    .appendChild(
+                                        MenuItem.<String>create("New ...")
+                                            .setKey("new-key")
+                                            .withValue("new-value"))
+                                    .appendChild(
+                                        MenuItem.<String>create("Open")
+                                            .setKey("open-key")
+                                            .withValue("open-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.folder_open().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Close")
+                                            .setKey("close-key")
+                                            .withValue("close-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.close_box().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Close all")
+                                            .setKey("close-all-key")
+                                            .withValue("close-all-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.close_box_multiple()
+                                                        .addCss(dui_font_size_5))))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        CustomMenuItem.<String>create()
+                                            .addCss(dui_hover_disabled)
+                                            .setKey("custom-key")
+                                            .withValue("custom-value")
+                                            .appendChild(
+                                                div()
+                                                    .addCss(dui_flex, dui_justify_center, dui_gap_6)
+                                                    .appendChild(
+                                                        Icons.content_cut()
+                                                            .addCss(dui_font_size_5)
+                                                            .setTooltip("Cut")
+                                                            .clickable())
+                                                    .appendChild(
+                                                        Icons.content_copy()
+                                                            .addCss(dui_font_size_5)
+                                                            .setTooltip("Copy")
+                                                            .clickable())
+                                                    .appendChild(
+                                                        Icons.content_paste()
+                                                            .addCss(dui_font_size_5)
+                                                            .setTooltip("Paste")
+                                                            .clickable())))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        MenuItem.<String>create("Help")
+                                            .setKey("Help-key")
+                                            .withValue("Help-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.help().addCss(dui_font_size_5)))
+                                            .setMenu(
+                                                Menu.<String>create()
+                                                    .appendChild(
+                                                        MenuItem.<String>create("Documentation")
+                                                            .setKey("Documentation-key")
+                                                            .withValue("Documentation-value"))
+                                                    .appendChild(
+                                                        MenuItem.<String>create("Samples")
+                                                            .setKey("Samples-key")
+                                                            .withValue("Samples-value"))
+                                                    .appendChild(
+                                                        MenuItem.<String>create("Tools")
+                                                            .setKey("Tools-key")
+                                                            .withValue("Tools-value")
+                                                            .setMenu(
+                                                                Menu.<String>create()
+                                                                    .appendChild(
+                                                                        MenuItem.<String>create(
+                                                                                "Editor")
+                                                                            .setKey("Editor-key")
+                                                                            .withValue(
+                                                                                "Editor-value"))
+                                                                    .appendChild(
+                                                                        MenuItem.<String>create(
+                                                                                "Log viewer")
+                                                                            .setKey(
+                                                                                "Log viewer-key")
+                                                                            .withValue(
+                                                                                "Log viewer-value"))))
+                                                    .appendChild(
+                                                        MenuItem.<String>create("About us")
+                                                            .setKey("About us-key")
+                                                            .withValue("About us-value"))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Project structure")
+                                            .setKey("structure-key")
+                                            .withValue("structure-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.folder_cog().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Settings")
+                                            .setKey("settings-key")
+                                            .withValue("settings-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.cog().addCss(dui_font_size_5))))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        MenuItem.<String>create(
+                                                "Invalidate cache", "Takes effect after restart")
+                                            .setKey("cache-key")
+                                            .withValue("cache-value"))
+                                    .appendChild(
+                                        MenuItem.<String>create("Restart")
+                                            .setKey("restart-key")
+                                            .withValue("restart-value")
+                                            .appendChild(
+                                                PostfixAddOn.of(
+                                                    Icons.information()
+                                                        .addCss(dui_font_size_5)
+                                                        .setTooltip("Just a tool tip!"))))
+                                    .addSelectionListener(
+                                        (source, selectedItems) -> {
+                                          source.ifPresent(
+                                              menuItem -> {
+                                                Notification.create(
+                                                        "Key : "
+                                                            + menuItem
+                                                            + ", value : "
+                                                            + menuItem.getValue())
+                                                    .show();
+                                              });
+                                        })))
+                    .appendChild(
+                        Column.span4()
+                            .appendChild(
+                                Button.create("Cascade drop menu")
+                                    .setDropMenu(
+                                        Menu.<String>create()
+                                            .setIcon(Icons.file())
+                                            .setTitle("Files")
+                                            .withHeader(
+                                                (menu, header) ->
+                                                    header
+                                                        .appendChild(
+                                                            PostfixAddOn.of(
+                                                                Icons.folder_key_outline()
+                                                                    .addCss(dui_font_size_5)
+                                                                    .clickable()
+                                                                    .addClickListener(
+                                                                        evt -> {
+                                                                          Notification.create(
+                                                                                  "Action clicked")
+                                                                              .show();
+                                                                        })))
+                                                        .appendChild(
+                                                            PostfixAddOn.of(
+                                                                Icons.folder_heart_outline()
+                                                                    .addCss(dui_font_size_5)
+                                                                    .clickable()
+                                                                    .addClickListener(
+                                                                        evt -> {
+                                                                          Notification.create(
+                                                                                  "Action clicked")
+                                                                              .show();
+                                                                        }))))
+                                            .setSearchable(true)
+                                            .setMissingItemHandler(
+                                                (token, menu) ->
+                                                    menu.appendChild(
+                                                        MenuItem.create(
+                                                            token,
+                                                            "The item was initially missing")))
+                                            .appendChild(
+                                                SubheaderAddon.of(
+                                                    Badge.create("Saved")
+                                                        .addCss(dui_green)
+                                                        .setRemovable(true)))
+                                            .appendChild(
+                                                SubheaderAddon.of(
+                                                    Badge.create("Edited")
+                                                        .addCss(dui_orange)
+                                                        .setRemovable(true)))
+                                            .appendChild(
+                                                SubheaderAddon.of(
+                                                    Badge.create("Deleted")
+                                                        .addCss(dui_red)
+                                                        .setRemovable(true)))
+                                            .appendChild(
+                                                MenuItem.<String>create("New ...")
+                                                    .setKey("new-key")
+                                                    .withValue("new-value"))
+                                            .appendChild(
+                                                MenuItem.<String>create("Open")
+                                                    .setKey("open-key")
+                                                    .withValue("open-value")
+                                                    .appendChild(
+                                                        PrefixAddOn.of(
+                                                            Icons.folder_open()
+                                                                .addCss(dui_font_size_5))))
+                                            .appendChild(
+                                                MenuItem.<String>create("Close")
+                                                    .setKey("close-key")
+                                                    .withValue("close-value")
+                                                    .appendChild(
+                                                        PrefixAddOn.of(
+                                                            Icons.close_box()
+                                                                .addCss(dui_font_size_5))))
+                                            .appendChild(
+                                                MenuItem.<String>create("Close all")
+                                                    .setKey("close-all-key")
+                                                    .withValue("close-all-value")
+                                                    .appendChild(
+                                                        PrefixAddOn.of(
+                                                            Icons.close_box_multiple()
+                                                                .addCss(dui_font_size_5))))
+                                            .appendChild(Separator.create())
+                                            .appendChild(
+                                                CustomMenuItem.<String>create()
+                                                    .addCss(dui_hover_disabled)
+                                                    .setKey("custom-key")
+                                                    .withValue("custom-value")
+                                                    .appendChild(
+                                                        div()
+                                                            .addCss(
+                                                                dui_flex,
+                                                                dui_justify_center,
+                                                                dui_gap_6)
+                                                            .appendChild(
+                                                                Icons.content_cut()
+                                                                    .addCss(dui_font_size_5)
+                                                                    .setTooltip("Cut")
+                                                                    .clickable())
+                                                            .appendChild(
+                                                                Icons.content_copy()
+                                                                    .addCss(dui_font_size_5)
+                                                                    .setTooltip("Copy")
+                                                                    .clickable())
+                                                            .appendChild(
+                                                                Icons.content_paste()
+                                                                    .addCss(dui_font_size_5)
+                                                                    .setTooltip("Paste")
+                                                                    .clickable())))
+                                            .appendChild(Separator.create())
+                                            .appendChild(
+                                                MenuItem.<String>create("Help")
+                                                    .setKey("Help-key")
+                                                    .withValue("Help-value")
+                                                    .appendChild(
+                                                        PrefixAddOn.of(
+                                                            Icons.help().addCss(dui_font_size_5)))
+                                                    .setMenu(
+                                                        Menu.<String>create()
+                                                            .appendChild(
+                                                                MenuItem.<String>create(
+                                                                        "Documentation")
+                                                                    .setKey("Documentation-key")
+                                                                    .withValue(
+                                                                        "Documentation-value"))
+                                                            .appendChild(
+                                                                MenuItem.<String>create("Samples")
+                                                                    .setKey("Samples-key")
+                                                                    .withValue("Samples-value"))
+                                                            .appendChild(
+                                                                MenuItem.<String>create("Tools")
+                                                                    .setKey("Tools-key")
+                                                                    .withValue("Tools-value")
+                                                                    .setMenu(
+                                                                        Menu.<String>create()
+                                                                            .appendChild(
+                                                                                MenuItem
+                                                                                    .<String>create(
+                                                                                        "Editor")
+                                                                                    .setKey(
+                                                                                        "Editor-key")
+                                                                                    .withValue(
+                                                                                        "Editor-value"))
+                                                                            .appendChild(
+                                                                                MenuItem
+                                                                                    .<String>create(
+                                                                                        "Log viewer")
+                                                                                    .setKey(
+                                                                                        "Log viewer-key")
+                                                                                    .withValue(
+                                                                                        "Log viewer-value"))))
+                                                            .appendChild(
+                                                                MenuItem.<String>create("About us")
+                                                                    .setKey("About us-key")
+                                                                    .withValue("About us-value"))))
+                                            .appendChild(
+                                                MenuItem.<String>create("Project structure")
+                                                    .setKey("structure-key")
+                                                    .withValue("structure-value")
+                                                    .appendChild(
+                                                        PrefixAddOn.of(
+                                                            Icons.folder_cog()
+                                                                .addCss(dui_font_size_5))))
+                                            .appendChild(
+                                                MenuItem.<String>create("Settings")
+                                                    .setKey("settings-key")
+                                                    .withValue("settings-value")
+                                                    .appendChild(
+                                                        PrefixAddOn.of(
+                                                            Icons.cog().addCss(dui_font_size_5))))
+                                            .appendChild(Separator.create())
+                                            .appendChild(
+                                                MenuItem.<String>create(
+                                                        "Invalidate cache",
+                                                        "Takes effect after restart")
+                                                    .setKey("cache-key")
+                                                    .withValue("cache-value"))
+                                            .appendChild(
+                                                MenuItem.<String>create("Restart")
+                                                    .setKey("restart-key")
+                                                    .withValue("restart-value")
+                                                    .appendChild(
+                                                        PostfixAddOn.of(
+                                                            Icons.information()
                                                                 .addCss(dui_font_size_5)
-                                                                .setTooltip("Just a tool tip!")
-                                                        )
-                                                )
-                                        )
-                                        .addSelectionListener((source, selectedItems) -> {
-                                            source.ifPresent(menuItem -> {
-                                                Notification.create("Key : " + menuItem + ", value : " + menuItem.getValue()).show();
-                                            });
-                                        })
-                                )
-                        )
-                );
-    }
-    private void nestedMenu() {
+                                                                .setTooltip("Just a tool tip!"))))
+                                            .addSelectionListener(
+                                                (source, selectedItems) -> {
+                                                  source.ifPresent(
+                                                      menuItem -> {
+                                                        Notification.create(
+                                                                "Key : "
+                                                                    + menuItem
+                                                                    + ", value : "
+                                                                    + menuItem.getValue())
+                                                            .show();
+                                                      });
+                                                }))))));
+  }
 
-        this.element
-                .appendChild(Card.create("NESTED MENU", "Menu items can open nested menu.")
-                        .appendChild(Row.create()
-                                .appendChild(Column.span4()
-                                        .appendChild(Menu.<String>create()
-                                                .setIcon(Icons.file())
-                                                .setTitle("Files")
-                                                .withHeader((menu, header) -> header
-                                                        .appendChild(PostfixAddOn.of(Icons.folder_key_outline()
-                                                                        .addCss(dui_font_size_5)
-                                                                        .clickable()
-                                                                        .addClickListener(evt -> {
-                                                                            Notification.create("Action clicked").show();
-                                                                        })
-                                                                )
-                                                        )
-                                                        .appendChild(PostfixAddOn.of(Icons.folder_heart_outline()
-                                                                        .addCss(dui_font_size_5)
-                                                                        .clickable()
-                                                                        .addClickListener(evt -> {
-                                                                            Notification.create("Action clicked").show();
-                                                                        })
-                                                                )
-                                                        )
-                                                )
-                                                .setSearchable(true)
-                                                .setMissingItemHandler((token, menu) -> menu.appendChild(MenuItem.create(token, "The item was initially missing")))
-                                                .appendChild(SubheaderAddon.of(Badge.create("Saved")
-                                                        .addCss(dui_green)
-                                                        .setRemovable(true))
-                                                )
-                                                .appendChild(SubheaderAddon.of(Badge.create("Edited")
-                                                        .addCss(dui_orange)
-                                                        .setRemovable(true))
-                                                )
-                                                .appendChild(SubheaderAddon.of(Badge.create("Deleted")
-                                                        .addCss(dui_red)
-                                                        .setRemovable(true))
-                                                )
-                                                .appendChild(MenuItem.<String>create("New ...")
-                                                        .setKey("new-key")
-                                                        .withValue("new-value")
-                                                )
-                                                .appendChild(MenuItem.<String>create("Open")
-                                                        .setKey("open-key")
-                                                        .withValue("open-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.folder_open().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(MenuItem.<String>create("Close")
-                                                        .setKey("close-key")
-                                                        .withValue("close-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.close_box().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(MenuItem.<String>create("Close all")
-                                                        .setKey("close-all-key")
-                                                        .withValue("close-all-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.close_box_multiple().addCss(dui_font_size_5)))
-                                                ).appendChild(Separator.create())
-                                                .appendChild(CustomMenuItem.<String>create()
-                                                        .addCss(dui_hover_disabled)
-                                                        .setKey("custom-key")
-                                                        .withValue("custom-value")
-                                                        .appendChild(div().addCss(dui_flex, dui_justify_center, dui_gap_6)
-                                                                .appendChild(Icons.content_cut().addCss(dui_font_size_5).setTooltip("Cut").clickable())
-                                                                .appendChild(Icons.content_copy().addCss(dui_font_size_5).setTooltip("Copy").clickable())
-                                                                .appendChild(Icons.content_paste().addCss(dui_font_size_5).setTooltip("Paste").clickable())
-                                                        )
-                                                )
-                                                .appendChild(Separator.create())
-                                                .appendChild(MenuItem.<String>create("Help")
-                                                        .setKey("Help-key")
-                                                        .withValue("Help-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.help().addCss(dui_font_size_5)))
-                                                        .setMenu(Menu.<String>create()
-                                                                .appendChild(MenuItem.<String>create("Documentation")
-                                                                        .setKey("Documentation-key")
-                                                                        .withValue("Documentation-value")
-                                                                )
-                                                                .appendChild(MenuItem.<String>create("Samples")
-                                                                        .setKey("Samples-key")
-                                                                        .withValue("Samples-value")
-                                                                )
-                                                                .appendChild(MenuItem.<String>create("Tools")
-                                                                        .setKey("Tools-key")
-                                                                        .withValue("Tools-value")
-                                                                        .setMenu(Menu.<String>create()
-                                                                                .appendChild(MenuItem.<String>create("Editor")
-                                                                                        .setKey("Editor-key")
-                                                                                        .withValue("Editor-value")
-                                                                                )
-                                                                                .appendChild(MenuItem.<String>create("Log viewer")
-                                                                                        .setKey("Log viewer-key")
-                                                                                        .withValue("Log viewer-value")
-                                                                                )
-                                                                        )
-                                                                )
-                                                                .appendChild(MenuItem.<String>create("About us")
-                                                                        .setKey("About us-key")
-                                                                        .withValue("About us-value")
-                                                                )
-                                                        )
-                                                )
-                                                .appendChild(MenuItem.<String>create("Project structure")
-                                                        .setKey("structure-key")
-                                                        .withValue("structure-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.folder_cog().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(MenuItem.<String>create("Settings")
-                                                        .setKey("settings-key")
-                                                        .withValue("settings-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.cog().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(Separator.create())
-                                                .appendChild(MenuItem.<String>create("Invalidate cache", "Takes effect after restart")
-                                                        .setKey("cache-key")
-                                                        .withValue("cache-value")
-                                                )
-                                                .appendChild(MenuItem.<String>create("Restart")
-                                                        .setKey("restart-key")
-                                                        .withValue("restart-value")
-                                                        .appendChild(PostfixAddOn.of(Icons.information()
-                                                                        .addCss(dui_font_size_5)
-                                                                        .setTooltip("Just a tool tip!")
-                                                                )
-                                                        )
-                                                )
-                                                .addSelectionListener((source, selectedItems) -> {
-                                                    source.ifPresent(menuItem -> {
-                                                        Notification.create("Key : " + menuItem + ", value : " + menuItem.getValue()).show();
-                                                    });
-                                                })
-                                        )
-                                )
-                                .appendChild(Column.span4()
-                                        .appendChild(Button.create("Cascade drop menu")
-                                                .setDropMenu(Menu.<String>create()
-                                                        .setIcon(Icons.file())
-                                                        .setTitle("Files")
-                                                        .withHeader((menu, header) -> header
-                                                                .appendChild(PostfixAddOn.of(Icons.folder_key_outline()
-                                                                                .addCss(dui_font_size_5)
-                                                                                .clickable()
-                                                                                .addClickListener(evt -> {
-                                                                                    Notification.create("Action clicked").show();
-                                                                                })
-                                                                        )
-                                                                )
-                                                                .appendChild(PostfixAddOn.of(Icons.folder_heart_outline()
-                                                                                .addCss(dui_font_size_5)
-                                                                                .clickable()
-                                                                                .addClickListener(evt -> {
-                                                                                    Notification.create("Action clicked").show();
-                                                                                })
-                                                                        )
-                                                                )
-                                                        )
-                                                        .setSearchable(true)
-                                                        .setMissingItemHandler((token, menu) -> menu.appendChild(MenuItem.create(token, "The item was initially missing")))
-                                                        .appendChild(SubheaderAddon.of(Badge.create("Saved")
+  private void basicMenuSearchableAndAddMissing() {
+    element.appendChild(
+        Card.create(
+                "SEARCH & MISSING ITEMS", "Menu can be searchable and allow adding missing items")
+            .setCollapsible(true)
+            .appendChild(
+                Row.create()
+                    .appendChild(
+                        Column.span4()
+                            .appendChild(
+                                Menu.<String>create()
+                                    .addCss(dui_w_full)
+                                    .setIcon(Icons.file())
+                                    .setTitle("Files")
+                                    .withHeader(
+                                        (menu, header) ->
+                                            header
+                                                .appendChild(
+                                                    PostfixAddOn.of(
+                                                        Icons.folder_key_outline()
+                                                            .addCss(dui_font_size_5)
+                                                            .clickable()
+                                                            .addClickListener(
+                                                                evt -> {
+                                                                  Notification.create(
+                                                                          "Action clicked")
+                                                                      .show();
+                                                                })))
+                                                .appendChild(
+                                                    PostfixAddOn.of(
+                                                        Icons.folder_heart_outline()
+                                                            .addCss(dui_font_size_5)
+                                                            .clickable()
+                                                            .addClickListener(
+                                                                evt -> {
+                                                                  Notification.create(
+                                                                          "Action clicked")
+                                                                      .show();
+                                                                }))))
+                                    .setSearchable(true)
+                                    .setMissingItemHandler(
+                                        (token, menu) ->
+                                            menu.appendChild(
+                                                MenuItem.create(
+                                                    token, "The item was initially missing")))
+                                    .appendChild(
+                                        MenuItem.<String>create("New ...")
+                                            .setKey("new-key")
+                                            .withValue("new-value"))
+                                    .appendChild(
+                                        MenuItem.<String>create("Open")
+                                            .setKey("open-key")
+                                            .withValue("open-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.folder_open().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Close")
+                                            .setKey("close-key")
+                                            .withValue("close-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.close_box().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Close all")
+                                            .setKey("close-all-key")
+                                            .withValue("close-all-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.close_box_multiple()
+                                                        .addCss(dui_font_size_5))))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        MenuItem.<String>create("Project structure")
+                                            .setKey("structure-key")
+                                            .withValue("structure-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.folder_cog().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Settings")
+                                            .setKey("settings-key")
+                                            .withValue("settings-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.cog().addCss(dui_font_size_5))))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        MenuItem.<String>create(
+                                                "Invalidate cache", "Takes effect after restart")
+                                            .setKey("cache-key")
+                                            .withValue("cache-value"))
+                                    .appendChild(
+                                        MenuItem.<String>create("Restart")
+                                            .setKey("restart-key")
+                                            .withValue("restart-value")
+                                            .appendChild(
+                                                PostfixAddOn.of(
+                                                    Icons.information()
+                                                        .addCss(dui_font_size_5)
+                                                        .setTooltip("Just a tool tip!"))))
+                                    .addSelectionListener(
+                                        (source, selectedItems) -> {
+                                          source.ifPresent(
+                                              menuItem -> {
+                                                Notification.create(
+                                                        "Key : "
+                                                            + menuItem
+                                                            + ", value : "
+                                                            + menuItem.getValue())
+                                                    .show();
+                                              });
+                                        }))))
+            .element());
+  }
+
+  private void basicMenuCustomItems() {
+    element.appendChild(
+        Card.create("CUSTOM MENU ITEMS", "Menu can have custom menu items")
+            .setCollapsible(true)
+            .appendChild(
+                Row.create()
+                    .appendChild(
+                        Column.span4()
+                            .appendChild(
+                                Menu.<String>create()
+                                    .addCss(dui_w_full)
+                                    .appendChild(
+                                        MenuItem.<String>create("New ...")
+                                            .setKey("new-key")
+                                            .withValue("new-value"))
+                                    .appendChild(
+                                        MenuItem.<String>create("Open")
+                                            .setKey("open-key")
+                                            .withValue("open-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.folder_open().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Close")
+                                            .setKey("close-key")
+                                            .withValue("close-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.close_box().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Close all")
+                                            .setKey("close-all-key")
+                                            .withValue("close-all-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.close_box_multiple()
+                                                        .addCss(dui_font_size_5))))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        CustomMenuItem.<String>create()
+                                            .addCss(dui_hover_disabled)
+                                            .setKey("custom-key")
+                                            .withValue("custom-value")
+                                            .appendChild(
+                                                div()
+                                                    .addCss(dui_flex, dui_justify_center, dui_gap_6)
+                                                    .appendChild(
+                                                        Icons.content_cut()
+                                                            .addCss(dui_font_size_5)
+                                                            .setTooltip("Cut")
+                                                            .clickable())
+                                                    .appendChild(
+                                                        Icons.content_copy()
+                                                            .addCss(dui_font_size_5)
+                                                            .setTooltip("Copy")
+                                                            .clickable())
+                                                    .appendChild(
+                                                        Icons.content_paste()
+                                                            .addCss(dui_font_size_5)
+                                                            .setTooltip("Paste")
+                                                            .clickable())))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        MenuItem.<String>create("Project structure")
+                                            .setKey("structure-key")
+                                            .withValue("structure-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.folder_cog().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Settings")
+                                            .setKey("settings-key")
+                                            .withValue("settings-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.cog().addCss(dui_font_size_5))))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        MenuItem.<String>create(
+                                                "Invalidate cache", "Takes effect after restart")
+                                            .setKey("cache-key")
+                                            .withValue("cache-value"))
+                                    .appendChild(
+                                        MenuItem.<String>create("Restart")
+                                            .setKey("restart-key")
+                                            .withValue("restart-value")
+                                            .appendChild(
+                                                PostfixAddOn.of(
+                                                    Icons.information()
+                                                        .addCss(dui_font_size_5)
+                                                        .setTooltip("Just a tool tip!"))))
+                                    .addSelectionListener(
+                                        (source, selectedItems) -> {
+                                          source.ifPresent(
+                                              menuItem -> {
+                                                Notification.create(
+                                                        "Key : "
+                                                            + menuItem
+                                                            + ", value : "
+                                                            + menuItem.getValue())
+                                                    .show();
+                                              });
+                                        }))))
+            .element());
+  }
+
+  private void basicMenuAllBasicFeatures() {
+    element.appendChild(
+        Card.create("ALL BASIC FEATURES", "Menu with all basic features")
+            .setCollapsible(true)
+            .appendChild(
+                Row.create()
+                    .appendChild(
+                        Column.span4()
+                            .appendChild(
+                                Menu.<String>create()
+                                    .addCss(dui_w_full)
+                                    .setIcon(Icons.file())
+                                    .setTitle("Files")
+                                    .withHeader(
+                                        (menu, header) ->
+                                            header
+                                                .appendChild(
+                                                    PostfixAddOn.of(
+                                                        Icons.folder_key_outline()
+                                                            .addCss(dui_font_size_5)
+                                                            .clickable()
+                                                            .addClickListener(
+                                                                evt -> {
+                                                                  Notification.create(
+                                                                          "Action clicked")
+                                                                      .show();
+                                                                })))
+                                                .appendChild(
+                                                    PostfixAddOn.of(
+                                                        Icons.folder_heart_outline()
+                                                            .addCss(dui_font_size_5)
+                                                            .clickable()
+                                                            .addClickListener(
+                                                                evt -> {
+                                                                  Notification.create(
+                                                                          "Action clicked")
+                                                                      .show();
+                                                                }))))
+                                    .setSearchable(true)
+                                    .setMissingItemHandler(
+                                        (token, menu) ->
+                                            menu.appendChild(
+                                                MenuItem.create(
+                                                    token, "The item was initially missing")))
+                                    .appendChild(
+                                        SubheaderAddon.of(
+                                            Badge.create("Saved")
+                                                .addCss(dui_green)
+                                                .setRemovable(true)))
+                                    .appendChild(
+                                        SubheaderAddon.of(
+                                            Badge.create("Edited")
+                                                .addCss(dui_orange)
+                                                .setRemovable(true)))
+                                    .appendChild(
+                                        SubheaderAddon.of(
+                                            Badge.create("Deleted")
+                                                .addCss(dui_red)
+                                                .setRemovable(true)))
+                                    .appendChild(
+                                        MenuItem.<String>create("New ...")
+                                            .setKey("new-key")
+                                            .withValue("new-value"))
+                                    .appendChild(
+                                        MenuItem.<String>create("Open")
+                                            .setKey("open-key")
+                                            .withValue("open-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.folder_open().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Close")
+                                            .setKey("close-key")
+                                            .withValue("close-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.close_box().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Close all")
+                                            .setKey("close-all-key")
+                                            .withValue("close-all-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.close_box_multiple()
+                                                        .addCss(dui_font_size_5))))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        CustomMenuItem.<String>create()
+                                            .addCss(dui_hover_disabled)
+                                            .setKey("custom-key")
+                                            .withValue("custom-value")
+                                            .appendChild(
+                                                div()
+                                                    .addCss(dui_flex, dui_justify_center, dui_gap_6)
+                                                    .appendChild(
+                                                        Icons.content_cut()
+                                                            .addCss(dui_font_size_5)
+                                                            .setTooltip("Cut")
+                                                            .clickable())
+                                                    .appendChild(
+                                                        Icons.content_copy()
+                                                            .addCss(dui_font_size_5)
+                                                            .setTooltip("Copy")
+                                                            .clickable())
+                                                    .appendChild(
+                                                        Icons.content_paste()
+                                                            .addCss(dui_font_size_5)
+                                                            .setTooltip("Paste")
+                                                            .clickable())))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        MenuItem.<String>create("Project structure")
+                                            .setKey("structure-key")
+                                            .withValue("structure-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.folder_cog().addCss(dui_font_size_5))))
+                                    .appendChild(
+                                        MenuItem.<String>create("Settings")
+                                            .setKey("settings-key")
+                                            .withValue("settings-value")
+                                            .appendChild(
+                                                PrefixAddOn.of(
+                                                    Icons.cog().addCss(dui_font_size_5))))
+                                    .appendChild(Separator.create())
+                                    .appendChild(
+                                        MenuItem.<String>create(
+                                                "Invalidate cache", "Takes effect after restart")
+                                            .setKey("cache-key")
+                                            .withValue("cache-value"))
+                                    .appendChild(
+                                        MenuItem.<String>create("Restart")
+                                            .setKey("restart-key")
+                                            .withValue("restart-value")
+                                            .appendChild(
+                                                PostfixAddOn.of(
+                                                    Icons.information()
+                                                        .addCss(dui_font_size_5)
+                                                        .setTooltip("Just a tool tip!"))))
+                                    .addSelectionListener(
+                                        (source, selectedItems) -> {
+                                          source.ifPresent(
+                                              menuItem -> {
+                                                Notification.create(
+                                                        "Key : "
+                                                            + menuItem
+                                                            + ", value : "
+                                                            + menuItem.getValue())
+                                                    .show();
+                                              });
+                                        })))));
+  }
+
+  private void embedIntoElements() {
+    element.appendChild(
+        Card.create("EMBED MENU", "Menu can be embed into other components")
+            .setCollapsible(true)
+            .appendChild(
+                Row.create()
+                    .appendChild(
+                        Column.span4()
+                            .appendChild(
+                                BlockHeader.create("Embed menu", "Embed menu with borders"))
+                            .appendChild(
+                                Accordion.create()
+                                    .addCss(dui_accent, dui_ignore_bg)
+                                    .setMultiOpen(true)
+                                    .appendChild(
+                                        AccordionPanel.create("Collapsible item 1")
+                                            .expand()
+                                            .appendChild(
+                                                Menu.<String>create()
+                                                    .addCss(dui_w_full)
+                                                    .setIcon(Icons.file())
+                                                    .setTitle("Files")
+                                                    .withHeader(
+                                                        (menu, header) ->
+                                                            header
+                                                                .appendChild(
+                                                                    PostfixAddOn.of(
+                                                                        Icons.folder_key_outline()
+                                                                            .addCss(dui_font_size_5)
+                                                                            .clickable()
+                                                                            .addClickListener(
+                                                                                evt -> {
+                                                                                  Notification
+                                                                                      .create(
+                                                                                          "Action"
+                                                                                              + " clicked")
+                                                                                      .show();
+                                                                                })))
+                                                                .appendChild(
+                                                                    PostfixAddOn.of(
+                                                                        Icons.folder_heart_outline()
+                                                                            .addCss(dui_font_size_5)
+                                                                            .clickable()
+                                                                            .addClickListener(
+                                                                                evt -> {
+                                                                                  Notification
+                                                                                      .create(
+                                                                                          "Action"
+                                                                                              + " clicked")
+                                                                                      .show();
+                                                                                }))))
+                                                    .setSearchable(true)
+                                                    .setMissingItemHandler(
+                                                        (token, menu) ->
+                                                            menu.appendChild(
+                                                                MenuItem.create(
+                                                                    token,
+                                                                    "The item was initially"
+                                                                        + " missing")))
+                                                    .appendChild(
+                                                        SubheaderAddon.of(
+                                                            Badge.create("Saved")
                                                                 .addCss(dui_green)
-                                                                .setRemovable(true))
-                                                        )
-                                                        .appendChild(SubheaderAddon.of(Badge.create("Edited")
+                                                                .setRemovable(true)))
+                                                    .appendChild(
+                                                        SubheaderAddon.of(
+                                                            Badge.create("Edited")
                                                                 .addCss(dui_orange)
-                                                                .setRemovable(true))
-                                                        )
-                                                        .appendChild(SubheaderAddon.of(Badge.create("Deleted")
+                                                                .setRemovable(true)))
+                                                    .appendChild(
+                                                        SubheaderAddon.of(
+                                                            Badge.create("Deleted")
                                                                 .addCss(dui_red)
-                                                                .setRemovable(true))
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("New ...")
-                                                                .setKey("new-key")
-                                                                .withValue("new-value")
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("Open")
-                                                                .setKey("open-key")
-                                                                .withValue("open-value")
-                                                                .appendChild(PrefixAddOn.of(Icons.folder_open().addCss(dui_font_size_5)))
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("Close")
-                                                                .setKey("close-key")
-                                                                .withValue("close-value")
-                                                                .appendChild(PrefixAddOn.of(Icons.close_box().addCss(dui_font_size_5)))
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("Close all")
-                                                                .setKey("close-all-key")
-                                                                .withValue("close-all-value")
-                                                                .appendChild(PrefixAddOn.of(Icons.close_box_multiple().addCss(dui_font_size_5)))
-                                                        ).appendChild(Separator.create())
-                                                        .appendChild(CustomMenuItem.<String>create()
-                                                                .addCss(dui_hover_disabled)
-                                                                .setKey("custom-key")
-                                                                .withValue("custom-value")
-                                                                .appendChild(div().addCss(dui_flex, dui_justify_center, dui_gap_6)
-                                                                        .appendChild(Icons.content_cut().addCss(dui_font_size_5).setTooltip("Cut").clickable())
-                                                                        .appendChild(Icons.content_copy().addCss(dui_font_size_5).setTooltip("Copy").clickable())
-                                                                        .appendChild(Icons.content_paste().addCss(dui_font_size_5).setTooltip("Paste").clickable())
-                                                                )
-                                                        )
-                                                        .appendChild(Separator.create())
-                                                        .appendChild(MenuItem.<String>create("Help")
-                                                                .setKey("Help-key")
-                                                                .withValue("Help-value")
-                                                                .appendChild(PrefixAddOn.of(Icons.help().addCss(dui_font_size_5)))
-                                                                .setMenu(Menu.<String>create()
-                                                                        .appendChild(MenuItem.<String>create("Documentation")
-                                                                                .setKey("Documentation-key")
-                                                                                .withValue("Documentation-value")
-                                                                        )
-                                                                        .appendChild(MenuItem.<String>create("Samples")
-                                                                                .setKey("Samples-key")
-                                                                                .withValue("Samples-value")
-                                                                        )
-                                                                        .appendChild(MenuItem.<String>create("Tools")
-                                                                                .setKey("Tools-key")
-                                                                                .withValue("Tools-value")
-                                                                                .setMenu(Menu.<String>create()
-                                                                                        .appendChild(MenuItem.<String>create("Editor")
-                                                                                                .setKey("Editor-key")
-                                                                                                .withValue("Editor-value")
-                                                                                        )
-                                                                                        .appendChild(MenuItem.<String>create("Log viewer")
-                                                                                                .setKey("Log viewer-key")
-                                                                                                .withValue("Log viewer-value")
-                                                                                        )
-                                                                                )
-                                                                        )
-                                                                        .appendChild(MenuItem.<String>create("About us")
-                                                                                .setKey("About us-key")
-                                                                                .withValue("About us-value")
-                                                                        )
-                                                                )
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("Project structure")
-                                                                .setKey("structure-key")
-                                                                .withValue("structure-value")
-                                                                .appendChild(PrefixAddOn.of(Icons.folder_cog().addCss(dui_font_size_5)))
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("Settings")
-                                                                .setKey("settings-key")
-                                                                .withValue("settings-value")
-                                                                .appendChild(PrefixAddOn.of(Icons.cog().addCss(dui_font_size_5)))
-                                                        )
-                                                        .appendChild(Separator.create())
-                                                        .appendChild(MenuItem.<String>create("Invalidate cache", "Takes effect after restart")
-                                                                .setKey("cache-key")
-                                                                .withValue("cache-value")
-                                                        )
-                                                        .appendChild(MenuItem.<String>create("Restart")
-                                                                .setKey("restart-key")
-                                                                .withValue("restart-value")
-                                                                .appendChild(PostfixAddOn.of(Icons.information()
-                                                                                .addCss(dui_font_size_5)
-                                                                                .setTooltip("Just a tool tip!")
-                                                                        )
-                                                                )
-                                                        )
-                                                        .addSelectionListener((source, selectedItems) -> {
-                                                            source.ifPresent(menuItem -> {
-                                                                Notification.create("Key : " + menuItem + ", value : " + menuItem.getValue()).show();
-                                                            });
-                                                        })
-                                                )
-                                        )
-                                )
-                        )
-                );
-    }
-    private void basicMenuSearchableAndAddMissing() {
-        element
-                .appendChild(Card.create("SEARCH & MISSING ITEMS", "Menu can be searchable and allow adding missing items")
-                        .setCollapsible(true)
-                        .appendChild(Row.create()
-                                .appendChild(Column
-                                        .span4()
-                                        .appendChild(Menu.<String>create()
-                                                .addCss(dui_w_full)
-                                                .setIcon(Icons.file())
-                                                .setTitle("Files")
-                                                .withHeader((menu, header) -> header
-                                                        .appendChild(PostfixAddOn.of(Icons.folder_key_outline()
+                                                                .setRemovable(true)))
+                                                    .appendChild(
+                                                        MenuItem.<String>create("New ...")
+                                                            .setKey("new-key")
+                                                            .withValue("new-value"))
+                                                    .appendChild(
+                                                        MenuItem.<String>create("Open")
+                                                            .setKey("open-key")
+                                                            .withValue("open-value")
+                                                            .appendChild(
+                                                                PrefixAddOn.of(
+                                                                    Icons.folder_open()
+                                                                        .addCss(dui_font_size_5))))
+                                                    .appendChild(
+                                                        MenuItem.<String>create("Close")
+                                                            .setKey("close-key")
+                                                            .withValue("close-value")
+                                                            .appendChild(
+                                                                PrefixAddOn.of(
+                                                                    Icons.close_box()
+                                                                        .addCss(dui_font_size_5))))
+                                                    .appendChild(
+                                                        MenuItem.<String>create("Close all")
+                                                            .setKey("close-all-key")
+                                                            .withValue("close-all-value")
+                                                            .appendChild(
+                                                                PrefixAddOn.of(
+                                                                    Icons.close_box_multiple()
+                                                                        .addCss(dui_font_size_5))))
+                                                    .appendChild(Separator.create())
+                                                    .appendChild(
+                                                        CustomMenuItem.<String>create()
+                                                            .addCss(dui_hover_disabled)
+                                                            .setKey("custom-key")
+                                                            .withValue("custom-value")
+                                                            .appendChild(
+                                                                div()
+                                                                    .addCss(
+                                                                        dui_flex,
+                                                                        dui_justify_center,
+                                                                        dui_gap_6)
+                                                                    .appendChild(
+                                                                        Icons.content_cut()
+                                                                            .addCss(dui_font_size_5)
+                                                                            .setTooltip("Cut")
+                                                                            .clickable())
+                                                                    .appendChild(
+                                                                        Icons.content_copy()
+                                                                            .addCss(dui_font_size_5)
+                                                                            .setTooltip("Copy")
+                                                                            .clickable())
+                                                                    .appendChild(
+                                                                        Icons.content_paste()
+                                                                            .addCss(dui_font_size_5)
+                                                                            .setTooltip("Paste")
+                                                                            .clickable())))
+                                                    .appendChild(Separator.create())
+                                                    .appendChild(
+                                                        MenuItem.<String>create("Project structure")
+                                                            .setKey("structure-key")
+                                                            .withValue("structure-value")
+                                                            .appendChild(
+                                                                PrefixAddOn.of(
+                                                                    Icons.folder_cog()
+                                                                        .addCss(dui_font_size_5))))
+                                                    .appendChild(
+                                                        MenuItem.<String>create("Settings")
+                                                            .setKey("settings-key")
+                                                            .withValue("settings-value")
+                                                            .appendChild(
+                                                                PrefixAddOn.of(
+                                                                    Icons.cog()
+                                                                        .addCss(dui_font_size_5))))
+                                                    .appendChild(Separator.create())
+                                                    .appendChild(
+                                                        MenuItem.<String>create(
+                                                                "Invalidate cache",
+                                                                "Takes effect after restart")
+                                                            .setKey("cache-key")
+                                                            .withValue("cache-value"))
+                                                    .appendChild(
+                                                        MenuItem.<String>create("Restart")
+                                                            .setKey("restart-key")
+                                                            .withValue("restart-value")
+                                                            .appendChild(
+                                                                PostfixAddOn.of(
+                                                                    Icons.information()
                                                                         .addCss(dui_font_size_5)
-                                                                        .clickable()
-                                                                        .addClickListener(evt -> {
-                                                                            Notification.create("Action clicked").show();
-                                                                        })
-                                                                )
-                                                        )
-                                                        .appendChild(PostfixAddOn.of(Icons.folder_heart_outline()
+                                                                        .setTooltip(
+                                                                            "Just a tool tip!"))))
+                                                    .addSelectionListener(
+                                                        (source, selectedItems) -> {
+                                                          source.ifPresent(
+                                                              menuItem -> {
+                                                                Notification.create(
+                                                                        "Key : "
+                                                                            + menuItem
+                                                                            + ", value : "
+                                                                            + menuItem.getValue())
+                                                                    .show();
+                                                              });
+                                                        })))
+                                    .appendChild(
+                                        AccordionPanel.create("Collapsible item 2")
+                                            .withContentBody(
+                                                (parent, content) -> content.addCss(dui_p_0))
+                                            .expand()
+                                            .appendChild(
+                                                Menu.<String>create()
+                                                    .addCss(dui_border_0, dui_w_full)
+                                                    .setIcon(Icons.file())
+                                                    .setTitle("Files")
+                                                    .setBordered(false)
+                                                    .withHeader(
+                                                        (menu, header) ->
+                                                            header
+                                                                .appendChild(
+                                                                    PostfixAddOn.of(
+                                                                        Icons.folder_key_outline()
+                                                                            .addCss(dui_font_size_5)
+                                                                            .clickable()
+                                                                            .addClickListener(
+                                                                                evt -> {
+                                                                                  Notification
+                                                                                      .create(
+                                                                                          "Action"
+                                                                                              + " clicked")
+                                                                                      .show();
+                                                                                })))
+                                                                .appendChild(
+                                                                    PostfixAddOn.of(
+                                                                        Icons.folder_heart_outline()
+                                                                            .addCss(dui_font_size_5)
+                                                                            .clickable()
+                                                                            .addClickListener(
+                                                                                evt -> {
+                                                                                  Notification
+                                                                                      .create(
+                                                                                          "Action"
+                                                                                              + " clicked")
+                                                                                      .show();
+                                                                                }))))
+                                                    .setSearchable(true)
+                                                    .setMissingItemHandler(
+                                                        (token, menu) ->
+                                                            menu.appendChild(
+                                                                MenuItem.create(
+                                                                    token,
+                                                                    "The item was initially"
+                                                                        + " missing")))
+                                                    .appendChild(
+                                                        SubheaderAddon.of(
+                                                            Badge.create("Saved")
+                                                                .addCss(dui_green)
+                                                                .setRemovable(true)))
+                                                    .appendChild(
+                                                        SubheaderAddon.of(
+                                                            Badge.create("Edited")
+                                                                .addCss(dui_orange)
+                                                                .setRemovable(true)))
+                                                    .appendChild(
+                                                        SubheaderAddon.of(
+                                                            Badge.create("Deleted")
+                                                                .addCss(dui_red)
+                                                                .setRemovable(true)))
+                                                    .appendChild(
+                                                        MenuItem.<String>create("New ...")
+                                                            .setKey("new-key")
+                                                            .withValue("new-value"))
+                                                    .appendChild(
+                                                        MenuItem.<String>create("Open")
+                                                            .setKey("open-key")
+                                                            .withValue("open-value")
+                                                            .appendChild(
+                                                                PrefixAddOn.of(
+                                                                    Icons.folder_open()
+                                                                        .addCss(dui_font_size_5))))
+                                                    .appendChild(
+                                                        MenuItem.<String>create("Close")
+                                                            .setKey("close-key")
+                                                            .withValue("close-value")
+                                                            .appendChild(
+                                                                PrefixAddOn.of(
+                                                                    Icons.close_box()
+                                                                        .addCss(dui_font_size_5))))
+                                                    .appendChild(
+                                                        MenuItem.<String>create("Close all")
+                                                            .setKey("close-all-key")
+                                                            .withValue("close-all-value")
+                                                            .appendChild(
+                                                                PrefixAddOn.of(
+                                                                    Icons.close_box_multiple()
+                                                                        .addCss(dui_font_size_5))))
+                                                    .appendChild(Separator.create())
+                                                    .appendChild(
+                                                        CustomMenuItem.<String>create()
+                                                            .addCss(dui_hover_disabled)
+                                                            .setKey("custom-key")
+                                                            .withValue("custom-value")
+                                                            .appendChild(
+                                                                div()
+                                                                    .addCss(
+                                                                        dui_flex,
+                                                                        dui_justify_center,
+                                                                        dui_gap_6)
+                                                                    .appendChild(
+                                                                        Icons.content_cut()
+                                                                            .addCss(dui_font_size_5)
+                                                                            .setTooltip("Cut")
+                                                                            .clickable())
+                                                                    .appendChild(
+                                                                        Icons.content_copy()
+                                                                            .addCss(dui_font_size_5)
+                                                                            .setTooltip("Copy")
+                                                                            .clickable())
+                                                                    .appendChild(
+                                                                        Icons.content_paste()
+                                                                            .addCss(dui_font_size_5)
+                                                                            .setTooltip("Paste")
+                                                                            .clickable())))
+                                                    .appendChild(Separator.create())
+                                                    .appendChild(
+                                                        MenuItem.<String>create("Project structure")
+                                                            .setKey("structure-key")
+                                                            .withValue("structure-value")
+                                                            .appendChild(
+                                                                PrefixAddOn.of(
+                                                                    Icons.folder_cog()
+                                                                        .addCss(dui_font_size_5))))
+                                                    .appendChild(
+                                                        MenuItem.<String>create("Settings")
+                                                            .setKey("settings-key")
+                                                            .withValue("settings-value")
+                                                            .appendChild(
+                                                                PrefixAddOn.of(
+                                                                    Icons.cog()
+                                                                        .addCss(dui_font_size_5))))
+                                                    .appendChild(Separator.create())
+                                                    .appendChild(
+                                                        MenuItem.<String>create(
+                                                                "Invalidate cache",
+                                                                "Takes effect after restart")
+                                                            .setKey("cache-key")
+                                                            .withValue("cache-value"))
+                                                    .appendChild(
+                                                        MenuItem.<String>create("Restart")
+                                                            .setKey("restart-key")
+                                                            .withValue("restart-value")
+                                                            .appendChild(
+                                                                PostfixAddOn.of(
+                                                                    Icons.information()
                                                                         .addCss(dui_font_size_5)
-                                                                        .clickable()
-                                                                        .addClickListener(evt -> {
-                                                                            Notification.create("Action clicked").show();
-                                                                        })
-                                                                )
-                                                        )
-                                                )
-                                                .setSearchable(true)
-                                                .setMissingItemHandler((token, menu) -> menu.appendChild(MenuItem.create(token, "The item was initially missing")))
-                                                .appendChild(MenuItem.<String>create("New ...")
-                                                        .setKey("new-key")
-                                                        .withValue("new-value")
-                                                )
-                                                .appendChild(MenuItem.<String>create("Open")
-                                                        .setKey("open-key")
-                                                        .withValue("open-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.folder_open().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(MenuItem.<String>create("Close")
-                                                        .setKey("close-key")
-                                                        .withValue("close-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.close_box().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(MenuItem.<String>create("Close all")
-                                                        .setKey("close-all-key")
-                                                        .withValue("close-all-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.close_box_multiple().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(Separator.create())
-                                                .appendChild(MenuItem.<String>create("Project structure")
-                                                        .setKey("structure-key")
-                                                        .withValue("structure-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.folder_cog().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(MenuItem.<String>create("Settings")
-                                                        .setKey("settings-key")
-                                                        .withValue("settings-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.cog().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(Separator.create())
-                                                .appendChild(MenuItem.<String>create("Invalidate cache", "Takes effect after restart")
-                                                        .setKey("cache-key")
-                                                        .withValue("cache-value")
-                                                )
-                                                .appendChild(MenuItem.<String>create("Restart")
-                                                        .setKey("restart-key")
-                                                        .withValue("restart-value")
-                                                        .appendChild(PostfixAddOn.of(Icons.information()
-                                                                        .addCss(dui_font_size_5)
-                                                                        .setTooltip("Just a tool tip!")
-                                                                )
-                                                        )
-                                                )
-                                                .addSelectionListener((source, selectedItems) -> {
-                                                    source.ifPresent(menuItem -> {
-                                                        Notification.create("Key : " + menuItem + ", value : " + menuItem.getValue()).show();
-                                                    });
-                                                })
-                                        )
-                                )
-                        )
-                        .element());
-    }
-    private void basicMenuCustomItems() {
-        element
-                .appendChild(Card.create("CUSTOM MENU ITEMS", "Menu can have custom menu items")
-                        .setCollapsible(true)
-                        .appendChild(Row.create()
-                                .appendChild(Column
-                                        .span4()
-                                        .appendChild(Menu.<String>create()
-                                                .addCss(dui_w_full)
-                                                .appendChild(MenuItem.<String>create("New ...")
-                                                        .setKey("new-key")
-                                                        .withValue("new-value")
-                                                )
-                                                .appendChild(MenuItem.<String>create("Open")
-                                                        .setKey("open-key")
-                                                        .withValue("open-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.folder_open().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(MenuItem.<String>create("Close")
-                                                        .setKey("close-key")
-                                                        .withValue("close-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.close_box().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(MenuItem.<String>create("Close all")
-                                                        .setKey("close-all-key")
-                                                        .withValue("close-all-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.close_box_multiple().addCss(dui_font_size_5)))
-                                                )
-
-                                                .appendChild(Separator.create())
-                                                .appendChild(CustomMenuItem.<String>create()
-                                                        .addCss(dui_hover_disabled)
-                                                        .setKey("custom-key")
-                                                        .withValue("custom-value")
-                                                        .appendChild(div().addCss(dui_flex, dui_justify_center, dui_gap_6)
-                                                                .appendChild(Icons.content_cut().addCss(dui_font_size_5).setTooltip("Cut").clickable())
-                                                                .appendChild(Icons.content_copy().addCss(dui_font_size_5).setTooltip("Copy").clickable())
-                                                                .appendChild(Icons.content_paste().addCss(dui_font_size_5).setTooltip("Paste").clickable())
-                                                        )
-                                                )
-                                                .appendChild(Separator.create())
-                                                .appendChild(MenuItem.<String>create("Project structure")
-                                                        .setKey("structure-key")
-                                                        .withValue("structure-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.folder_cog().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(MenuItem.<String>create("Settings")
-                                                        .setKey("settings-key")
-                                                        .withValue("settings-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.cog().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(Separator.create())
-                                                .appendChild(MenuItem.<String>create("Invalidate cache", "Takes effect after restart")
-                                                        .setKey("cache-key")
-                                                        .withValue("cache-value")
-                                                )
-                                                .appendChild(MenuItem.<String>create("Restart")
-                                                        .setKey("restart-key")
-                                                        .withValue("restart-value")
-                                                        .appendChild(PostfixAddOn.of(Icons.information()
-                                                                        .addCss(dui_font_size_5)
-                                                                        .setTooltip("Just a tool tip!")
-                                                                )
-                                                        )
-                                                )
-                                                .addSelectionListener((source, selectedItems) -> {
-                                                    source.ifPresent(menuItem -> {
-                                                        Notification.create("Key : " + menuItem + ", value : " + menuItem.getValue()).show();
-                                                    });
-                                                })
-                                        )
-                                )
-                        )
-                        .element());
-    }
-    private void basicMenuAllBasicFeatures() {
-        element
-                .appendChild(Card.create("ALL BASIC FEATURES", "Menu with all basic features")
-                        .setCollapsible(true)
-                        .appendChild(Row.create()
-                                .appendChild(Column
-                                        .span4()
-                                        .appendChild(Menu.<String>create()
-                                                .addCss(dui_w_full)
-                                                .setIcon(Icons.file())
-                                                .setTitle("Files")
-                                                .withHeader((menu, header) -> header
-                                                        .appendChild(PostfixAddOn.of(Icons.folder_key_outline()
-                                                                        .addCss(dui_font_size_5)
-                                                                        .clickable()
-                                                                        .addClickListener(evt -> {
-                                                                            Notification.create("Action clicked").show();
-                                                                        })
-                                                                )
-                                                        )
-                                                        .appendChild(PostfixAddOn.of(Icons.folder_heart_outline()
-                                                                        .addCss(dui_font_size_5)
-                                                                        .clickable()
-                                                                        .addClickListener(evt -> {
-                                                                            Notification.create("Action clicked").show();
-                                                                        })
-                                                                )
-                                                        )
-                                                )
-                                                .setSearchable(true)
-                                                .setMissingItemHandler((token, menu) -> menu.appendChild(MenuItem.create(token, "The item was initially missing")))
-                                                .appendChild(SubheaderAddon.of(Badge.create("Saved")
-                                                        .addCss(dui_green)
-                                                        .setRemovable(true))
-                                                )
-                                                .appendChild(SubheaderAddon.of(Badge.create("Edited")
-                                                        .addCss(dui_orange)
-                                                        .setRemovable(true))
-                                                )
-                                                .appendChild(SubheaderAddon.of(Badge.create("Deleted")
-                                                        .addCss(dui_red)
-                                                        .setRemovable(true))
-                                                )
-                                                .appendChild(MenuItem.<String>create("New ...")
-                                                        .setKey("new-key")
-                                                        .withValue("new-value")
-                                                )
-                                                .appendChild(MenuItem.<String>create("Open")
-                                                        .setKey("open-key")
-                                                        .withValue("open-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.folder_open().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(MenuItem.<String>create("Close")
-                                                        .setKey("close-key")
-                                                        .withValue("close-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.close_box().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(MenuItem.<String>create("Close all")
-                                                        .setKey("close-all-key")
-                                                        .withValue("close-all-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.close_box_multiple().addCss(dui_font_size_5)))
-                                                ).appendChild(Separator.create())
-                                                .appendChild(CustomMenuItem.<String>create()
-                                                        .addCss(dui_hover_disabled)
-                                                        .setKey("custom-key")
-                                                        .withValue("custom-value")
-                                                        .appendChild(div().addCss(dui_flex, dui_justify_center, dui_gap_6)
-                                                                .appendChild(Icons.content_cut().addCss(dui_font_size_5).setTooltip("Cut").clickable())
-                                                                .appendChild(Icons.content_copy().addCss(dui_font_size_5).setTooltip("Copy").clickable())
-                                                                .appendChild(Icons.content_paste().addCss(dui_font_size_5).setTooltip("Paste").clickable())
-                                                        )
-                                                )
-                                                .appendChild(Separator.create())
-                                                .appendChild(MenuItem.<String>create("Project structure")
-                                                        .setKey("structure-key")
-                                                        .withValue("structure-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.folder_cog().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(MenuItem.<String>create("Settings")
-                                                        .setKey("settings-key")
-                                                        .withValue("settings-value")
-                                                        .appendChild(PrefixAddOn.of(Icons.cog().addCss(dui_font_size_5)))
-                                                )
-                                                .appendChild(Separator.create())
-                                                .appendChild(MenuItem.<String>create("Invalidate cache", "Takes effect after restart")
-                                                        .setKey("cache-key")
-                                                        .withValue("cache-value")
-                                                )
-                                                .appendChild(MenuItem.<String>create("Restart")
-                                                        .setKey("restart-key")
-                                                        .withValue("restart-value")
-                                                        .appendChild(PostfixAddOn.of(Icons.information()
-                                                                        .addCss(dui_font_size_5)
-                                                                        .setTooltip("Just a tool tip!")
-                                                                )
-                                                        )
-                                                )
-                                                .addSelectionListener((source, selectedItems) -> {
-                                                    source.ifPresent(menuItem -> {
-                                                        Notification.create("Key : " + menuItem + ", value : " + menuItem.getValue()).show();
-                                                    });
-                                                })
-                                        )
-                                )
-                        )
-                );
-    }
-    private void embedIntoElements() {
-        element
-                .appendChild(Card.create("EMBED MENU", "Menu can be embed into other components")
-                        .setCollapsible(true)
-                        .appendChild(Row.create()
-                                .appendChild(Column
-                                        .span4()
-                                        .appendChild(BlockHeader.create("Embed menu", "Embed menu with borders"))
-                                        .appendChild(Accordion.create().addCss(dui_accent, dui_ignore_bg)
-                                                .setMultiOpen(true)
-                                                .appendChild(AccordionPanel.create("Collapsible item 1")
-                                                        .expand()
-                                                        .appendChild(Menu.<String>create()
-                                                                .addCss(dui_w_full)
-                                                                .setIcon(Icons.file())
-                                                                .setTitle("Files")
-                                                                .withHeader((menu, header) -> header
-                                                                        .appendChild(PostfixAddOn.of(Icons.folder_key_outline()
-                                                                                        .addCss(dui_font_size_5)
-                                                                                        .clickable()
-                                                                                        .addClickListener(evt -> {
-                                                                                            Notification.create("Action clicked").show();
-                                                                                        })
-                                                                                )
-                                                                        )
-                                                                        .appendChild(PostfixAddOn.of(Icons.folder_heart_outline()
-                                                                                        .addCss(dui_font_size_5)
-                                                                                        .clickable()
-                                                                                        .addClickListener(evt -> {
-                                                                                            Notification.create("Action clicked").show();
-                                                                                        })
-                                                                                )
-                                                                        )
-                                                                )
-                                                                .setSearchable(true)
-                                                                .setMissingItemHandler((token, menu) -> menu.appendChild(MenuItem.create(token, "The item was initially missing")))
-                                                                .appendChild(SubheaderAddon.of(Badge.create("Saved")
-                                                                        .addCss(dui_green)
-                                                                        .setRemovable(true))
-                                                                )
-                                                                .appendChild(SubheaderAddon.of(Badge.create("Edited")
-                                                                        .addCss(dui_orange)
-                                                                        .setRemovable(true))
-                                                                )
-                                                                .appendChild(SubheaderAddon.of(Badge.create("Deleted")
-                                                                        .addCss(dui_red)
-                                                                        .setRemovable(true))
-                                                                )
-                                                                .appendChild(MenuItem.<String>create("New ...")
-                                                                        .setKey("new-key")
-                                                                        .withValue("new-value")
-                                                                )
-                                                                .appendChild(MenuItem.<String>create("Open")
-                                                                        .setKey("open-key")
-                                                                        .withValue("open-value")
-                                                                        .appendChild(PrefixAddOn.of(Icons.folder_open().addCss(dui_font_size_5)))
-                                                                )
-                                                                .appendChild(MenuItem.<String>create("Close")
-                                                                        .setKey("close-key")
-                                                                        .withValue("close-value")
-                                                                        .appendChild(PrefixAddOn.of(Icons.close_box().addCss(dui_font_size_5)))
-                                                                )
-                                                                .appendChild(MenuItem.<String>create("Close all")
-                                                                        .setKey("close-all-key")
-                                                                        .withValue("close-all-value")
-                                                                        .appendChild(PrefixAddOn.of(Icons.close_box_multiple().addCss(dui_font_size_5)))
-                                                                )
-                                                                .appendChild(Separator.create())
-                                                                .appendChild(CustomMenuItem.<String>create()
-                                                                        .addCss(dui_hover_disabled)
-                                                                        .setKey("custom-key")
-                                                                        .withValue("custom-value")
-                                                                        .appendChild(div().addCss(dui_flex, dui_justify_center, dui_gap_6)
-                                                                                .appendChild(Icons.content_cut().addCss(dui_font_size_5).setTooltip("Cut").clickable())
-                                                                                .appendChild(Icons.content_copy().addCss(dui_font_size_5).setTooltip("Copy").clickable())
-                                                                                .appendChild(Icons.content_paste().addCss(dui_font_size_5).setTooltip("Paste").clickable())
-                                                                        )
-                                                                )
-                                                                .appendChild(Separator.create())
-                                                                .appendChild(MenuItem.<String>create("Project structure")
-                                                                        .setKey("structure-key")
-                                                                        .withValue("structure-value")
-                                                                        .appendChild(PrefixAddOn.of(Icons.folder_cog().addCss(dui_font_size_5)))
-                                                                )
-                                                                .appendChild(MenuItem.<String>create("Settings")
-                                                                        .setKey("settings-key")
-                                                                        .withValue("settings-value")
-                                                                        .appendChild(PrefixAddOn.of(Icons.cog().addCss(dui_font_size_5)))
-                                                                )
-                                                                .appendChild(Separator.create())
-                                                                .appendChild(MenuItem.<String>create("Invalidate cache", "Takes effect after restart")
-                                                                        .setKey("cache-key")
-                                                                        .withValue("cache-value")
-                                                                )
-                                                                .appendChild(MenuItem.<String>create("Restart")
-                                                                        .setKey("restart-key")
-                                                                        .withValue("restart-value")
-                                                                        .appendChild(PostfixAddOn.of(Icons.information()
-                                                                                        .addCss(dui_font_size_5)
-                                                                                        .setTooltip("Just a tool tip!")
-                                                                                )
-                                                                        )
-                                                                )
-                                                                .addSelectionListener((source, selectedItems) -> {
-                                                                    source.ifPresent(menuItem -> {
-                                                                        Notification.create("Key : " + menuItem + ", value : " + menuItem.getValue()).show();
-                                                                    });
-                                                                })
-                                                        )
-                                                )
-                                                .appendChild(AccordionPanel.create("Collapsible item 2")
-                                                        .withContentBody((parent, content) -> content.addCss(dui_p_0))
-                                                        .expand()
-                                                        .appendChild(Menu.<String>create()
-                                                                .addCss(dui_border_0, dui_w_full)
-                                                                .setIcon(Icons.file())
-                                                                .setTitle("Files")
-                                                                .setBordered(false)
-                                                                .withHeader((menu, header) -> header
-                                                                        .appendChild(PostfixAddOn.of(Icons.folder_key_outline()
-                                                                                        .addCss(dui_font_size_5)
-                                                                                        .clickable()
-                                                                                        .addClickListener(evt -> {
-                                                                                            Notification.create("Action clicked").show();
-                                                                                        })
-                                                                                )
-                                                                        )
-                                                                        .appendChild(PostfixAddOn.of(Icons.folder_heart_outline()
-                                                                                        .addCss(dui_font_size_5)
-                                                                                        .clickable()
-                                                                                        .addClickListener(evt -> {
-                                                                                            Notification.create("Action clicked").show();
-                                                                                        })
-                                                                                )
-                                                                        )
-                                                                )
-                                                                .setSearchable(true)
-                                                                .setMissingItemHandler((token, menu) -> menu.appendChild(MenuItem.create(token, "The item was initially missing")))
-                                                                .appendChild(SubheaderAddon.of(Badge.create("Saved")
-                                                                        .addCss(dui_green)
-                                                                        .setRemovable(true))
-                                                                )
-                                                                .appendChild(SubheaderAddon.of(Badge.create("Edited")
-                                                                        .addCss(dui_orange)
-                                                                        .setRemovable(true))
-                                                                )
-                                                                .appendChild(SubheaderAddon.of(Badge.create("Deleted")
-                                                                        .addCss(dui_red)
-                                                                        .setRemovable(true))
-                                                                )
-                                                                .appendChild(MenuItem.<String>create("New ...")
-                                                                        .setKey("new-key")
-                                                                        .withValue("new-value")
-                                                                )
-                                                                .appendChild(MenuItem.<String>create("Open")
-                                                                        .setKey("open-key")
-                                                                        .withValue("open-value")
-                                                                        .appendChild(PrefixAddOn.of(Icons.folder_open().addCss(dui_font_size_5)))
-                                                                )
-                                                                .appendChild(MenuItem.<String>create("Close")
-                                                                        .setKey("close-key")
-                                                                        .withValue("close-value")
-                                                                        .appendChild(PrefixAddOn.of(Icons.close_box().addCss(dui_font_size_5)))
-                                                                )
-                                                                .appendChild(MenuItem.<String>create("Close all")
-                                                                        .setKey("close-all-key")
-                                                                        .withValue("close-all-value")
-                                                                        .appendChild(PrefixAddOn.of(Icons.close_box_multiple().addCss(dui_font_size_5)))
-                                                                ).appendChild(Separator.create())
-                                                                .appendChild(CustomMenuItem.<String>create()
-                                                                        .addCss(dui_hover_disabled)
-                                                                        .setKey("custom-key")
-                                                                        .withValue("custom-value")
-                                                                        .appendChild(div().addCss(dui_flex, dui_justify_center, dui_gap_6)
-                                                                                .appendChild(Icons.content_cut().addCss(dui_font_size_5).setTooltip("Cut").clickable())
-                                                                                .appendChild(Icons.content_copy().addCss(dui_font_size_5).setTooltip("Copy").clickable())
-                                                                                .appendChild(Icons.content_paste().addCss(dui_font_size_5).setTooltip("Paste").clickable())
-                                                                        )
-                                                                )
-                                                                .appendChild(Separator.create())
-                                                                .appendChild(MenuItem.<String>create("Project structure")
-                                                                        .setKey("structure-key")
-                                                                        .withValue("structure-value")
-                                                                        .appendChild(PrefixAddOn.of(Icons.folder_cog().addCss(dui_font_size_5)))
-                                                                )
-                                                                .appendChild(MenuItem.<String>create("Settings")
-                                                                        .setKey("settings-key")
-                                                                        .withValue("settings-value")
-                                                                        .appendChild(PrefixAddOn.of(Icons.cog().addCss(dui_font_size_5)))
-                                                                )
-                                                                .appendChild(Separator.create())
-                                                                .appendChild(MenuItem.<String>create("Invalidate cache", "Takes effect after restart")
-                                                                        .setKey("cache-key")
-                                                                        .withValue("cache-value")
-                                                                )
-                                                                .appendChild(MenuItem.<String>create("Restart")
-                                                                        .setKey("restart-key")
-                                                                        .withValue("restart-value")
-                                                                        .appendChild(PostfixAddOn.of(Icons.information()
-                                                                                        .addCss(dui_font_size_5)
-                                                                                        .setTooltip("Just a tool tip!")
-                                                                                )
-                                                                        )
-                                                                )
-                                                                .addSelectionListener((source, selectedItems) -> {
-                                                                    source.ifPresent(menuItem -> {
-                                                                        Notification.create("Key : " + menuItem + ", value : " + menuItem.getValue()).show();
-                                                                    });
-                                                                })
-                                                        )
-                                                )
-                                        )
-                                )
-                        )
-                );
-    }
+                                                                        .setTooltip(
+                                                                            "Just a tool tip!"))))
+                                                    .addSelectionListener(
+                                                        (source, selectedItems) -> {
+                                                          source.ifPresent(
+                                                              menuItem -> {
+                                                                Notification.create(
+                                                                        "Key : "
+                                                                            + menuItem
+                                                                            + ", value : "
+                                                                            + menuItem.getValue())
+                                                                    .show();
+                                                              });
+                                                        })))))));
+  }
 }

@@ -3,11 +3,6 @@ package io.instanto.domino.client;
 import elemental2.dom.*;
 import java.util.ArrayList;
 import java.util.List;
-import org.dominokit.domino.ui.button.Button;
-import org.dominokit.domino.ui.datepicker.Calendar;
-import org.dominokit.domino.ui.dialogs.Dialog;
-import org.dominokit.domino.ui.forms.TextBox;
-import org.dominokit.domino.ui.icons.lib.Icons;
 
 /** Shared public gallery; diagnostic fixtures have explicit, separate routes. */
 public final class Showcase {
@@ -207,124 +202,136 @@ public final class Showcase {
     main.appendChild(heading);
   }
 
+  /** Landing structure and section names follow DominoKit's current showcase home. */
   private static void home(HTMLElement main) {
     HTMLElement root = element("div", "showcase-home");
     root.id = "showcase-home";
     HTMLElement hero = element("section", "showcase-hero");
     HTMLElement copy = element("div", "showcase-hero-copy");
-    copy.appendChild(text("p", "DOMINOKIT, IN YOUR BROWSER", "showcase-eyebrow"));
-    copy.appendChild(text("h1", "Good interfaces start with great widgets.", ""));
+    copy.appendChild(text("p", "DOMINO UI", "showcase-eyebrow"));
+    copy.appendChild(text("h1", "Build polished enterprise interfaces with Domino UI.", ""));
     copy.appendChild(
         text(
             "p",
-            "Discover Domino UI’s forms, tables, navigation and rich interactions. Try the original"
-                + " examples, now running on TeaVM as well as GWT.",
+            "Explore Domino UI’s components, layouts, forms and tables for Java applications. These examples run through our TeaVM port and the shared GWT build.",
+            "showcase-lead"));
+    copy.appendChild(
+        text(
+            "p",
+            "Try the widgets in context, then follow each example’s upstream link to compare it with DominoKit’s current demo.",
             "showcase-lead"));
     HTMLElement actions = element("div", "showcase-hero-actions");
-    actions.appendChild(link("Explore the components", "?page=buttons", "showcase-action"));
-    actions.appendChild(
-        link("Browse data tables →", "?page=table-basic-data-table", "showcase-secondary"));
+    actions.appendChild(link("Open Buttons", "?page=buttons", "showcase-action"));
+    actions.appendChild(link("Explore Forms", "?page=forms", "showcase-secondary"));
+    actions.appendChild(link("View Tables", "?page=table-basic-data-table", "showcase-secondary"));
     copy.appendChild(actions);
-    copy.appendChild(text("p", "Built in Java. Ready to explore.", "showcase-hero-caption"));
+    copy.appendChild(link("Visit DominoKit ↗", "https://dominokit.com/", "showcase-hero-caption"));
     hero.appendChild(copy);
-    HTMLElement preview = element("section", "showcase-preview");
-    preview.setAttribute("aria-label", "Interactive Domino calendar");
-    preview.appendChild(text("p", "TRY A REAL WIDGET", "showcase-eyebrow"));
-    preview.appendChild(text("h2", "Make a little time.", ""));
-    preview.appendChild(Calendar.create().element());
-    preview.appendChild(link("Explore date pickers →", "?page=datepicker", "showcase-secondary"));
-    hero.appendChild(preview);
+    HTMLElement areas = element("div", "showcase-area-grid");
+    area(
+        areas,
+        "Components",
+        "Buttons, cards, trees and the pieces that make up an application screen.");
+    area(areas, "Forms", "Fields, validation, date pickers and steps for collecting information.");
+    area(areas, "Data", "Contact tables with selection, sorting, search and column controls.");
+    area(areas, "Resources", "Java examples, upstream comparisons and guidance on the port.");
+    hero.appendChild(areas);
     root.appendChild(hero);
-
-    root.appendChild(text("h2", "What would you like to build?", "showcase-section-title"));
+    root.appendChild(text("h2", "Featured areas", "showcase-section-title"));
     root.appendChild(
         text(
             "p",
-            "Start with a familiar part of an application, then explore the details.",
+            "Explore a family of widgets, then combine the pieces your screen needs.",
             "showcase-lead"));
     HTMLElement cards = element("div", "showcase-feature-grid");
     feature(
         cards,
         "01",
-        "Forms that respond",
-        "Text fields, validation, dates and guided steps for everyday tasks.",
-        "forms",
-        "Explore forms",
-        "formsvalidations",
-        "Validation",
-        "advanced-forms",
-        "Advanced inputs");
+        "Component workspace",
+        "Start with everyday actions and content containers.",
+        "buttons",
+        "Buttons",
+        "alerts",
+        "Alerts",
+        "cards",
+        "Cards");
     feature(
         cards,
         "02",
-        "Data with detail",
-        "Sort, select, search and arrange records using Domino’s table plugins.",
-        "table-basic-data-table",
-        "Explore tables",
-        "table-sort-and-search-plugin",
-        "Sort & search",
-        "table-columns-groups",
-        "Column groups");
+        "Forms workflow",
+        "Build from simple fields towards validation and guided forms.",
+        "forms",
+        "Basic forms",
+        "inputfields",
+        "Input fields",
+        "steppers",
+        "Steppers");
     feature(
         cards,
         "03",
-        "Room for content",
-        "Compose your screen with cards, tabs, trees and resizable panels.",
-        "cards",
-        "Explore cards",
-        "tabs",
-        "Tabs",
-        "splitPanel",
-        "Split panels");
+        "Data and tables",
+        "Browse records and try the table plugins already included in this port.",
+        "table-basic-data-table",
+        "Basic table",
+        "table-sort-and-search-plugin",
+        "Sort & search",
+        "table-pagination-plugin",
+        "Pagination");
     feature(
         cards,
         "04",
-        "Feedback that fits",
-        "Keep people informed with dialogs, alerts and contextual messages.",
-        "dialogs",
-        "Explore dialogs",
-        "notifications",
-        "Notifications",
-        "popover",
-        "Tooltips");
+        "Design foundations",
+        "Explore type, spacing and responsive columns. The full colour and icon galleries remain upstream.",
+        "typography",
+        "Typography",
+        "helpers",
+        "Spacing & sizing",
+        "grids",
+        "Grids");
     root.appendChild(cards);
-
-    HTMLElement form = element("section", "showcase-live-form");
-    HTMLElement intro = element("div", "");
-    intro.appendChild(text("p", "SMALL DETAILS, REAL INTERACTIONS", "showcase-eyebrow"));
-    intro.appendChild(text("h2", "Give it a try.", ""));
-    intro.appendChild(
+    root.appendChild(text("h2", "Next steps", "showcase-section-title"));
+    root.appendChild(
         text(
             "p",
-            "A Domino text field and dialog, working together. Enter a name to preview an event.",
+            "Move from individual controls to a complete screen, with the original demo alongside you.",
             "showcase-lead"));
-    form.appendChild(intro);
-    HTMLElement controls = element("div", "showcase-form-controls");
-    TextBox title = TextBox.create("Event name").setRequired(true);
-    title.element().id = "preview-event-name";
-    controls.appendChild(title.element());
-    controls.appendChild(
-        Button.create(Icons.calendar(), "Preview event")
-            .addClickListener(
-                event -> {
-                  if (!title.validate().isValid()) return;
-                  Dialog dialog = Dialog.create();
-                  dialog.getContentBody().appendChild(text("h2", title.getValue(), ""));
-                  dialog
-                      .getContentBody()
-                      .appendChild(
-                          text("p", "This is a local preview of Domino’s dialog widget.", ""));
-                  dialog
-                      .getContentBody()
-                      .appendChild(
-                          Button.create("Close preview").addClickListener(e -> dialog.close()));
-                  dialog.open();
-                })
-            .element());
-    form.appendChild(controls);
-    root.appendChild(form);
+    HTMLElement guidance = element("div", "showcase-feature-grid");
+    feature(
+        guidance,
+        "→",
+        "Suggested journeys",
+        "Arrange the page with grids and split panels, then add navigation and data.",
+        "grids",
+        "Explore layouts",
+        "splitPanel",
+        "Split panels",
+        "tree",
+        "Trees");
+    HTMLElement resources = element("article", "showcase-feature");
+    resources.appendChild(text("h3", "Resource center", ""));
+    resources.appendChild(
+        text(
+            "p",
+            "Use DominoKit’s site for the library’s documentation and full showcase. Our guide explains the examples and behaviour covered by this port.",
+            ""));
+    resources.appendChild(
+        link("Upstream showcase ↗", ShowcasePages.UPSTREAM + "home", "showcase-feature-primary"));
+    HTMLElement links = element("div", "showcase-feature-more");
+    links.appendChild(
+        link("Domino UI docs ↗", "https://dominokit.com/solutions/domino-ui/v2/docs/", ""));
+    links.appendChild(link("Port guide ↗", REPO + "/blob/main/docs/SHOWCASE.md", ""));
+    resources.appendChild(links);
+    guidance.appendChild(resources);
+    root.appendChild(guidance);
     main.appendChild(root);
     root.setAttribute("data-ready", "true");
+  }
+
+  private static void area(HTMLElement parent, String title, String description) {
+    HTMLElement area = element("section", "showcase-area");
+    area.appendChild(text("h2", title, ""));
+    area.appendChild(text("p", description, ""));
+    parent.appendChild(area);
   }
 
   private static void feature(

@@ -3,12 +3,10 @@
 Run explicitly when updating showcase-lock.json. Never modifies widget sources.
 """
 from pathlib import Path
-import re,json,hashlib,sys
+import re,json,hashlib,sys,subprocess,tempfile,os
+generated={}
 def write(path,code):
- code=re.sub(r"^[ \t]+$", "", code, flags=re.M)
- if "--check" in sys.argv:
-  if not path.exists() or path.read_text()!=code:raise SystemExit("Regenerate showcase adapter: "+str(path))
- else:path.write_text(code)
+ generated[path]=re.sub(r"^[ \t]+$", "", code, flags=re.M)
 r=Path(__file__).resolve().parents[1]
 lock=json.loads((r/'upstream/showcase-lock.json').read_text())
 for item in lock['sources']:
@@ -52,3 +50,22 @@ for item in lock.get('supporting',[]):
   if old not in code:raise SystemExit('Supporting adaptation drift: '+old)
   code=code.replace(old,new)
  write(r/'showcase-shared/src/main/java/io/instanto/domino/client'/(item['name']+'.java'),'// Original showcase helper; see upstream/showcase-lock.json.\n'+code)
+
+# Use the same pinned formatter as Maven before writing or comparing adapters.
+formatter=r/'target/tools/google-java-format.jar'
+if not formatter.is_file():
+ raise SystemExit('Prepare the Java formatter first: mvn -N initialize')
+java=str(Path(os.environ['JAVA_HOME'])/'bin/java') if os.environ.get('JAVA_HOME') else 'java'
+with tempfile.TemporaryDirectory(prefix='domino-showcase-') as directory:
+ staged=[]
+ for path,code in generated.items():
+  target=Path(directory)/path.name
+  target.write_text(code)
+  staged.append((path,target))
+ subprocess.run([java,'-jar',str(formatter),'--replace']+[str(target) for _,target in staged],check=True)
+ for path,target in staged:
+  code=target.read_text()
+  if '--check' in sys.argv:
+   if not path.exists() or path.read_text()!=code:
+    raise SystemExit('Regenerate showcase adapter: '+str(path))
+  else:path.write_text(code)

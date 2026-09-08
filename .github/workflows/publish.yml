@@ -24,6 +24,8 @@ jobs:
         env:
           PLAYWRIGHT_CHANNEL: chromium
           BROWSERS: chromium,firefox,webkit
+      - name: Verify native scrolling with Playwright Java
+        run: mvn -B -ntp -f browser-tests/platform-checks/pom.xml test
       - run: mvn -B -ntp -Pproduction,release deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

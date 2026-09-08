@@ -34,6 +34,7 @@
     <teavm.optimization>SIMPLE</teavm.optimization>
     <teavm.minify>false</teavm.minify>
     <gwt.style>PRETTY</gwt.style>
+    <google-java-format.version>1.35.0</google-java-format.version>
   </properties>
   <modules>
     <module>domino-widgets-bom</module>
@@ -140,6 +141,59 @@
   </dependencyManagement>
   <build>
     <plugins>
+      <plugin>
+        <groupId>com.diffplug.spotless</groupId>
+        <artifactId>spotless-maven-plugin</artifactId>
+        <version>2.43.0</version>
+        <inherited>false</inherited>
+        <configuration>
+          <java>
+            <includes>
+              <include>*/src/main/java/**/*.java</include>
+              <include>*/src/test/java/**/*.java</include>
+              <include>examples/*/src/main/java/**/*.java</include>
+              <include>browser-tests/platform-checks/src/test/java/**/*.java</include>
+            </includes>
+            <googleJavaFormat>
+              <version>${google-java-format.version}</version>
+            </googleJavaFormat>
+            <removeUnusedImports/>
+          </java>
+        </configuration>
+        <executions>
+          <execution>
+            <id>check-java-format</id>
+            <phase>validate</phase>
+            <goals><goal>check</goal></goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.8.1</version>
+        <inherited>false</inherited>
+        <executions>
+          <execution>
+            <id>showcase-source-formatter</id>
+            <phase>initialize</phase>
+            <goals><goal>copy</goal></goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>com.google.googlejavaformat</groupId>
+                  <artifactId>google-java-format</artifactId>
+                  <version>${google-java-format.version}</version>
+                  <classifier>all-deps</classifier>
+                  <type>jar</type>
+                  <outputDirectory>${project.build.directory}/tools</outputDirectory>
+                  <destFileName>google-java-format.jar</destFileName>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>

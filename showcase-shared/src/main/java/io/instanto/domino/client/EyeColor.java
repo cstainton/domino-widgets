@@ -2,5 +2,7 @@
 package io.instanto.domino.client;
 
 public enum EyeColor {
-    blue, brown, green;
+  blue,
+  brown,
+  green;
 }

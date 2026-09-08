@@ -5,6 +5,7 @@ A compiled declaration is not evidence of browser behavior. `browser-tested` bel
 | Area | Coverage |
 |---|---|
 | Original gallery | 51 pages, 167 extracted sample methods: render, nonempty content and uncaught browser errors; [page inventory](SHOWCASE.md) |
+| Showcase scrolling | Native wheel scrolling in Chromium, Firefox and WebKit; native touch scrolling to the footer and back in Chromium, on both compiler builds. Physical iOS touch behaviour remains unverified. |
 | Button and lifecycle | Clicks, exact handler removal, repeated detach/reattach, mutation observers, original sample interactions |
 | Text inputs | Required validation, invalid-state clearing, value-change events, clearing and changed numeric input |
 | Dialogs | Repeated open/close, Escape, original message/alert/custom content interactions |

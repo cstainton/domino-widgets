@@ -3,7 +3,9 @@
 Open the **[TeaVM showcase](https://cstainton.github.io/domino-widgets/teavm/)**
 or the **[GWT showcase](https://cstainton.github.io/domino-widgets/gwt/)**.
 Both galleries run the same adapted Java examples. Browse by component family,
-search for a widget, or start with the forms, tables and layout examples on the home page.
+search for a widget, or start with the component, form, table and design sections on the home page.
+The landing page follows DominoKit’s showcase headline and section structure, with
+links and descriptions adapted to the examples available in this port.
 The compiler link keeps you on the same example when you switch between TeaVM and GWT.
 
 Use **Compare with upstream** on an example page to open the corresponding

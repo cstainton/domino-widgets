@@ -2,15 +2,16 @@
 package io.instanto.domino.client;
 
 public enum Gender {
-    female("Female"), male("Male");
+  female("Female"),
+  male("Male");
 
-    private String label;
+  private String label;
 
-    Gender(String label) {
-        this.label = label;
-    }
+  Gender(String label) {
+    this.label = label;
+  }
 
-    public String getLabel() {
-        return label;
-    }
+  public String getLabel() {
+    return label;
+  }
 }

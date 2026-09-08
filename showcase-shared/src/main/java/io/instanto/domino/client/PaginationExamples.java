@@ -1,8 +1,11 @@
-// Adapted from DominoKit/domino-ui-demo at 51e1f75d43179a544c010ca5e88517c93263eeed; see upstream/showcase-lock.json.
+// Adapted from DominoKit/domino-ui-demo at 51e1f75d43179a544c010ca5e88517c93263eeed; see
+// upstream/showcase-lock.json.
 package io.instanto.domino.client;
+
+import static org.dominokit.domino.ui.utils.Domino.*;
+
 import elemental2.dom.DomGlobal;
 import elemental2.dom.HTMLDivElement;
-import org.dominokit.domino.ui.button.Button;
 import org.dominokit.domino.ui.cards.Card;
 import org.dominokit.domino.ui.elements.DivElement;
 import org.dominokit.domino.ui.grid.Column;
@@ -11,122 +14,142 @@ import org.dominokit.domino.ui.pagination.AdvancedPagination;
 import org.dominokit.domino.ui.pagination.Pager;
 import org.dominokit.domino.ui.pagination.ScrollingPagination;
 import org.dominokit.domino.ui.pagination.SimplePagination;
-import org.dominokit.domino.ui.typography.BlockHeader;
-import elemental2.dom.HTMLDivElement;
-import org.dominokit.domino.ui.elements.DivElement;
-import static org.dominokit.domino.ui.utils.Domino.*;
+
 public final class PaginationExamples implements org.dominokit.domino.ui.style.DominoCss {
- private final DivElement element=div();
+  private final DivElement element = div();
 
- public HTMLDivElement render(){
-defaultPagination();
-activePageSample();
-sizesSample();
-initScrollerPagination();
-initAdvancedPagination();
-pagerNexPrevSample();
-return element.element();}
-    private void defaultPagination() {
-        element.appendChild(Card.create("DEFAULT PAGINATION",
-                        "Simple pagination inspired by Radio, great for apps and search results. The large block is hard to miss, easily scalable, and provides large click areas.")
-                .appendChild(SimplePagination.create(5)
-                        .addChangeListener((oldPage, pageNumber) -> DomGlobal.console.info(String.valueOf(pageNumber))))
-        );
+  public HTMLDivElement render() {
+    defaultPagination();
+    activePageSample();
+    sizesSample();
+    initScrollerPagination();
+    initAdvancedPagination();
+    pagerNexPrevSample();
+    return element.element();
+  }
 
-    }
-    private void activePageSample() {
-        element.appendChild(Card.create("ACTIVE PAGE", "You can mark the current active page.")
-                .appendChild(SimplePagination.create(5)
-                        .markActivePage()
-                        .addChangeListener((oldPage, pageNumber) -> DomGlobal.console.info(String.valueOf(pageNumber)))
-                        .gotoPage(3))
-        );
+  private void defaultPagination() {
+    element.appendChild(
+        Card.create(
+                "DEFAULT PAGINATION",
+                "Simple pagination inspired by Radio, great for apps and search results. The large"
+                    + " block is hard to miss, easily scalable, and provides large click areas.")
+            .appendChild(
+                SimplePagination.create(5)
+                    .addChangeListener(
+                        (oldPage, pageNumber) ->
+                            DomGlobal.console.info(String.valueOf(pageNumber)))));
+  }
 
+  private void activePageSample() {
+    element.appendChild(
+        Card.create("ACTIVE PAGE", "You can mark the current active page.")
+            .appendChild(
+                SimplePagination.create(5)
+                    .markActivePage()
+                    .addChangeListener(
+                        (oldPage, pageNumber) -> DomGlobal.console.info(String.valueOf(pageNumber)))
+                    .gotoPage(3)));
+  }
 
-    }
-    private void sizesSample() {
+  private void sizesSample() {
 
-        element.appendChild(Card.create("PAGINATION SIZE", "There is three sizes for pagination")
-                .appendChild(Row.create()
-                        .appendChild(Column.span4()
-                                .appendChild(b().textContent("Large"))
-                                .appendChild(SimplePagination.create(5)
-                                        .addCss(dui_large)
-                                        .markActivePage()
-                                        .addChangeListener((oldPage, pageNumber) -> DomGlobal.console.info(String.valueOf(pageNumber)))
-                                        .gotoPage(3)
-                                )
-                        )
-                        .appendChild(Column.span4()
-                                .appendChild(b().textContent("Default"))
-                                .appendChild(SimplePagination.create(5)
-                                        .markActivePage()
-                                        .addChangeListener((oldPage, pageNumber) -> DomGlobal.console.info(String.valueOf(pageNumber)))
-                                        .gotoPage(3)
-                                )
-                        )
-                        .appendChild(Column.span4()
-                                .appendChild(b().textContent("Small"))
-                                .appendChild(SimplePagination.create(5)
-                                        .addCss(dui_small)
-                                        .markActivePage()
-                                        .addChangeListener((oldPage, pageNumber) -> DomGlobal.console.info(String.valueOf(pageNumber)))
-                                        .gotoPage(3)
-                                )
-                        )
-                )
-        );
+    element.appendChild(
+        Card.create("PAGINATION SIZE", "There is three sizes for pagination")
+            .appendChild(
+                Row.create()
+                    .appendChild(
+                        Column.span4()
+                            .appendChild(b().textContent("Large"))
+                            .appendChild(
+                                SimplePagination.create(5)
+                                    .addCss(dui_large)
+                                    .markActivePage()
+                                    .addChangeListener(
+                                        (oldPage, pageNumber) ->
+                                            DomGlobal.console.info(String.valueOf(pageNumber)))
+                                    .gotoPage(3)))
+                    .appendChild(
+                        Column.span4()
+                            .appendChild(b().textContent("Default"))
+                            .appendChild(
+                                SimplePagination.create(5)
+                                    .markActivePage()
+                                    .addChangeListener(
+                                        (oldPage, pageNumber) ->
+                                            DomGlobal.console.info(String.valueOf(pageNumber)))
+                                    .gotoPage(3)))
+                    .appendChild(
+                        Column.span4()
+                            .appendChild(b().textContent("Small"))
+                            .appendChild(
+                                SimplePagination.create(5)
+                                    .addCss(dui_small)
+                                    .markActivePage()
+                                    .addChangeListener(
+                                        (oldPage, pageNumber) ->
+                                            DomGlobal.console.info(String.valueOf(pageNumber)))
+                                    .gotoPage(3)))));
+  }
 
+  private void initScrollerPagination() {
+    element.appendChild(
+        Card.create(
+                "SCROLLING PAGINATION",
+                "For large number of pages scrolling pagiation allow viewing a set of pages at a"
+                    + " time.")
+            .appendChild(
+                ScrollingPagination.create(500, 10, 5)
+                    .addChangeListener(
+                        (oldPage, pageNumber) ->
+                            DomGlobal.console.info(String.valueOf(pageNumber)))));
+  }
 
-    }
-    private void initScrollerPagination() {
-        element.appendChild(Card.create("SCROLLING PAGINATION", "For large number of pages scrolling pagiation allow viewing a set of pages at a time.")
-                .appendChild(ScrollingPagination.create(500, 10, 5)
-                        .addChangeListener((oldPage, pageNumber) -> DomGlobal.console.info(String.valueOf(pageNumber))))
-        );
-    }
-    private void initAdvancedPagination() {
-        element.appendChild(Card.create("ADVANCED PAGINATION", "Old style pagination with advanced page select.")
-                .appendChild(AdvancedPagination.create(50, 10)
-                        .addChangeListener((oldPage, pageNumber) -> DomGlobal.console.info(String.valueOf(pageNumber))))
-        );
+  private void initAdvancedPagination() {
+    element.appendChild(
+        Card.create("ADVANCED PAGINATION", "Old style pagination with advanced page select.")
+            .appendChild(
+                AdvancedPagination.create(50, 10)
+                    .addChangeListener(
+                        (oldPage, pageNumber) ->
+                            DomGlobal.console.info(String.valueOf(pageNumber)))));
+  }
 
+  private void pagerNexPrevSample() {
+    element.appendChild(
+        Card.create("DEFAULT PAGER", "By default, the pager centers links.")
+            .appendChild(
+                Pager.create()
+                    .onNext(() -> DomGlobal.console.info("Going to next page."))
+                    .onPrevious(() -> DomGlobal.console.info("Going to previous page.")))
+            .appendChild(
+                Pager.create()
+                    .onNext(() -> DomGlobal.console.info("Going to next page."))
+                    .onPrevious(() -> DomGlobal.console.info("Going to previous page."))
+                    .nextText("Newer")
+                    .previousText("Older")
+                    .showArrows()));
 
-    }
-    private void pagerNexPrevSample() {
-        element.appendChild(Card.create("DEFAULT PAGER", "By default, the pager centers links.")
-                .appendChild(Pager.create()
-                        .onNext(() -> DomGlobal.console.info("Going to next page."))
-                        .onPrevious(() -> DomGlobal.console.info("Going to previous page.")))
-                .appendChild(Pager.create()
-                        .onNext(() -> DomGlobal.console.info("Going to next page."))
-                        .onPrevious(() -> DomGlobal.console.info("Going to previous page."))
-                        .nextText("Newer")
-                        .previousText("Older")
-                        .showArrows())
-        );
+    element.appendChild(
+        Card.create("PAGER ALIGNED TO EDGES", "Use expand to align the pager to the edges.")
+            .appendChild(
+                Pager.create()
+                    .onNext(() -> DomGlobal.console.info("Going to next page."))
+                    .onPrevious(() -> DomGlobal.console.info("Going to previous page."))
+                    .nextText("Newer")
+                    .previousText("Older")
+                    .showArrows()
+                    .spread(true)));
 
-        element.appendChild(Card.create("PAGER ALIGNED TO EDGES", "Use expand to align the pager to the edges.")
-                .appendChild(Pager.create()
-                        .onNext(() -> DomGlobal.console.info("Going to next page."))
-                        .onPrevious(() -> DomGlobal.console.info("Going to previous page."))
-                        .nextText("Newer")
-                        .previousText("Older")
-                        .showArrows()
-                        .spread(true))
-        );
-
-
-        element.appendChild(Card.create("PAGER WITH DISABLED LINK", "You can Disable/Enable pager links.")
-                .appendChild(Pager.create()
-                        .onNext(() -> DomGlobal.console.info("Going to next page."))
-                        .onPrevious(() -> DomGlobal.console.info("Going to previous page."))
-                        .nextText("Newer")
-                        .previousText("Older")
-                        .showArrows()
-                        .disablePrevious())
-        );
-
-
-    }
+    element.appendChild(
+        Card.create("PAGER WITH DISABLED LINK", "You can Disable/Enable pager links.")
+            .appendChild(
+                Pager.create()
+                    .onNext(() -> DomGlobal.console.info("Going to next page."))
+                    .onPrevious(() -> DomGlobal.console.info("Going to previous page."))
+                    .nextText("Newer")
+                    .previousText("Older")
+                    .showArrows()
+                    .disablePrevious()));
+  }
 }

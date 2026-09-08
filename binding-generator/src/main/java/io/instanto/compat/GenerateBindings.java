@@ -127,10 +127,14 @@ public final class GenerateBindings {
     }
     // TeaVM erases generic functor arguments to wrapped JS values. Normalize promise
     // callback values before the application's bridge method casts them to String/Number.
-    if (cu.getPackageDeclaration().map(p -> p.getNameAsString()).orElse("").equals("elemental2.promise")) {
+    if (cu.getPackageDeclaration()
+        .map(p -> p.getNameAsString())
+        .orElse("")
+        .equals("elemental2.promise")) {
       for (ClassOrInterfaceDeclaration owner : cu.findAll(ClassOrInterfaceDeclaration.class)) {
         for (MethodDeclaration m : new ArrayList<>(owner.getMethods())) {
-          if (!(m.getNameAsString().equals("then") || m.getNameAsString().equals("catch_"))) continue;
+          if (!(m.getNameAsString().equals("then") || m.getNameAsString().equals("catch_")))
+            continue;
           if (m.getBody().isPresent()) continue;
           String nativeName = m.getNameAsString().equals("catch_") ? "catch" : "then";
           MethodDeclaration bridge = m.clone();
@@ -144,9 +148,15 @@ public final class GenerateBindings {
           List<String> args = new ArrayList<>();
           for (var p : m.getParameters()) {
             String n = p.getNameAsString();
-            args.add(n + " == null ? null : value -> jsinterop.base.Js.<IThenable<V>>uncheckedCast(" + n + ".onInvoke(jsinterop.base.Js.cast(value)))");
+            args.add(
+                n
+                    + " == null ? null : value -> jsinterop.base.Js.<IThenable<V>>uncheckedCast("
+                    + n
+                    + ".onInvoke(jsinterop.base.Js.cast(value)))");
           }
-          m.setBody(StaticJavaParser.parseBlock("{return " + bridge.getNameAsString() + "(" + String.join(",", args) + ");}"));
+          m.setBody(
+              StaticJavaParser.parseBlock(
+                  "{return " + bridge.getNameAsString() + "(" + String.join(",", args) + ");}"));
         }
       }
     }
