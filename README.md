@@ -1,49 +1,50 @@
 # Domino Widgets
 
-Standalone, shared-source Domino UI libraries for **GWT 2.13.1** and **TeaVM 0.15.0**. Both backends compile the same pinned original `org.dominokit.domino.ui` widget sources.
+Domino Widgets adds TeaVM support to [DominoKit’s Domino UI](https://github.com/DominoKit/domino-ui).
+Use its Java API to build forms, calendars, tables and dialogs in the browser.
+A GWT build from the same pinned sources is also provided.
 
-The gallery now contains 51 original pages and 167 original sample methods. Shared contracts cover core widgets, calendar navigation, table selection/pagination, trees, rich text, uploads, dynamic suggestions and browser APIs. See [coverage and limitations](docs/COMPATIBILITY.md) for the exact tested behaviors and remaining work.
+The widgets are the work of **DominoKit and its contributors**. This distribution
+adds the compatibility layers and build support for both compilers while preserving
+the original `org.dominokit.domino.ui` packages. Attribution and source provenance
+are recorded in [NOTICE](NOTICE).
 
-Recorded local verification: **441 browser tests per build mode (882 total)**, seven JVM generator tests, complete analyzer reports, and identical generated Java sources across development and production. The [reports](reports/) retain the exact scenarios and source metadata.
+**[Try the GWT showcase](https://cstainton.github.io/domino-widgets/gwt/)** ·
+**[Try the TeaVM showcase](https://cstainton.github.io/domino-widgets/teavm/)**
 
-[Hosted showcases](https://cstainton.github.io/domino-widgets/) offer both compiler builds. Pages deploys only after the development and production CI contracts pass.
+## Choose your compiler
 
-## Build and test
+Choose the artifact that matches your application's compiler:
 
-Prerequisites: JDK 21, Maven 3.9+, Python 3 and Node.js.
+| Compiler | Widget artifact |
+|---|---|
+| GWT 2.13.1 | `domino-widgets-gwt` |
+| TeaVM 0.15.0 | `domino-widgets-teavm` |
 
-```sh
-mvn clean verify
-python3 scripts/check-analysis.py
-python3 scripts/check-artifacts.py
-python3 scripts/member-inventory.py
-python3 scripts/prepare-sites.py
-npm --prefix browser-tests ci
-BROWSERS=chromium,firefox,webkit npm --prefix browser-tests test
-python3 scripts/spotbugs-index.py
+Both provide the same Java packages, so use one widget artifact per application.
+Add `domino-widgets-assets` for the matching styles, fonts and icons.
+
+## Add the dependencies
+
+The current version is `0.1.0-SNAPSHOT`, published under `io.instanto` in GitHub
+Packages. Add this repository inside your POM's `<repositories>` element:
+
+```xml
+<repository>
+  <id>github</id>
+  <url>https://maven.pkg.github.com/cstainton/domino-widgets</url>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
 ```
 
-Install the matching Playwright browsers before running the suite:
+Configure Maven credentials for the server ID `github`, using a token with package
+read access. GitHub Packages requires authentication for public Maven downloads too.
+Keep credentials in your Maven settings, outside the project POM.
 
-```sh
-cd browser-tests
-npx playwright install --with-deps chromium firefox webkit
-BROWSERS=chromium,firefox,webkit npm test
-```
-
-`mvn -Pproduction clean verify` enables GWT obfuscation and TeaVM advanced optimization/minification. Run the same browser commands afterward. CI runs both build modes and all three browser engines. SpotBugs runs on normal builds; `-Dspotbugs.skip=true` is an explicit fast-development option. Analyzer errors fail the build; findings and missing-class diagnostics are reported separately in `target/spotbugs/index.html` (the full reactor generates the index automatically).
-
-Serve the two launchers after preparing the sites:
-
-```sh
-python3 -m http.server 8080 --bind 127.0.0.1
-```
-
-Open `/showcase-gwt/target/site/` or `/showcase-teavm/target/site/`. The screen and gallery live once in `showcase-shared/`; launchers only invoke them. The All examples selector opens the complete included gallery on either backend. See [showcase provenance and included pages](docs/SHOWCASE.md). CSS and fonts come from the same pinned archive as the Java sources.
-
-## Consumption
-
-Import `io.instanto:domino-widgets-bom:0.1.0-SNAPSHOT`, then select **exactly one** of `domino-widgets-gwt` or `domino-widgets-teavm`, and add `domino-widgets-assets`. These are project-owned coordinates; original Java packages are preserved.
+Import the BOM to keep the widget and asset versions together. This example selects
+TeaVM; for GWT, change `domino-widgets-teavm` to `domino-widgets-gwt`.
 
 ```xml
 <dependencyManagement>
@@ -52,7 +53,8 @@ Import `io.instanto:domino-widgets-bom:0.1.0-SNAPSHOT`, then select **exactly on
       <groupId>io.instanto</groupId>
       <artifactId>domino-widgets-bom</artifactId>
       <version>0.1.0-SNAPSHOT</version>
-      <type>pom</type><scope>import</scope>
+      <type>pom</type>
+      <scope>import</scope>
     </dependency>
   </dependencies>
 </dependencyManagement>
@@ -68,31 +70,80 @@ Import `io.instanto:domino-widgets-bom:0.1.0-SNAPSHOT`, then select **exactly on
 </dependencies>
 ```
 
-The GWT backend supplies `org.dominokit.domino.ui.DominoUI`; inherit that module in your application. Compile with source level 17. The TeaVM launcher POM demonstrates compiler/runtime setup, including the SLF4J substitution runtime. Never put original Elemental2 or `com.google.jsinterop:base` alongside the TeaVM compatibility artifacts. Both widget backends contain identical package names and must never be combined.
+The [small example applications](examples/README.md) include complete compiler
+configuration for each choice. They build with JDK 21 and Maven 3.9+, targeting
+Java 17.
 
-The assets JAR exposes `META-INF/resources/domino-widgets/`; serve that directory and load `domino-widgets/css/domino-ui/domino-ui.css`. Browser assets are packaged once, outside the Java libraries.
+For GWT, inherit the widget module in your application's `.gwt.xml`:
 
-Version `0.1.0-SNAPSHOT` is published to [GitHub Packages](https://github.com/cstainton/domino-widgets/packages). Configure `https://maven.pkg.github.com/cstainton/domino-widgets` and the credentials described in the [external sample applications](examples/README.md). GitHub Maven requires authentication even for public packages.
+```xml
+<inherits name="org.dominokit.domino.ui.DominoUI"/>
+```
 
-The [successful publication workflow](https://github.com/cstainton/domino-widgets/actions/runs/34164420844) built both external applications outside the checkout using an empty Maven repository and passed all six consumer checks across Chromium, Firefox and WebKit. A release profile attaches Javadocs; source JARs are attached by default. Builds require no sibling checkouts or locally modified dependency binaries.
+For TeaVM, follow the [example POM](examples/teavm/pom.xml), including its SLF4J
+runtime configuration. Its dependencies supply the Elemental2 and JsInterop
+compatibility layers; adding the original Elemental2 or `com.google.jsinterop:base`
+artifacts alongside them creates duplicate packages.
 
-## Compatibility architecture
+## Load the styles
 
-| Artifact | Responsibility |
-|---|---|
-| `domino-widgets-gwt` | Original widgets with native Elemental2/JsInterop |
-| `domino-widgets-teavm` | Same widgets with generated native declaration adaptations |
-| `teavm-elemental2-compat` | Generated same-package Elemental2 browser bindings |
-| `teavm-jsinterop-compat` | Explicit native/Java value conversions, maps, arrays and casts |
-| `gwt-modular-services` | Fork's modular editor, SafeHtml and i18n APIs, with native GWT compiler seams |
-| `teavm-gwt-modular-services` | Same fork service APIs with generated TeaVM native declarations |
-| `domino-widgets-assets` | Matched CSS, fonts and icon resources |
-| `binding-generator` | Deterministic JavaParser-based build tool; not a runtime widget dependency |
+The assets JAR contains `META-INF/resources/domino-widgets/`. Copy or serve that
+folder as `domino-widgets/` beside your application's HTML, then add:
 
-## Reproducibility
+```html
+<link rel="stylesheet" href="domino-widgets/css/domino-ui/domino-ui.css">
+```
 
-[Source lock](upstream/source-lock.json) records the corrected fork commit and archive SHA-256. [Binding locks](upstream/bindings-lock.json) pin the published Elemental2 inputs. Every build checks these hashes before generating sources; there are no moving-branch downloads. Generated files live under `target/` and must not be edited.
+Keep the folder structure intact so the stylesheet can find its fonts and icons.
+The examples [unpack the assets during Maven packaging](examples/pom.xml) and
+[copy them into the site](examples/prepare.py).
 
-The complete source archive retains the original sources, checked-in generated icons, processor sources, descriptors, resources and notices. `target/intake/inventory.json` accounts for every archived file. [Seam manifest](docs/SEAMS.json) describes the bounded adaptations; [member inventory](reports/member-inventory.json) records binary field/method references rather than imports alone.
+## Create a widget
 
-Apache-2.0; upstream copyright headers and notices are preserved. Font/icon assets retain their upstream provenance; see [asset inventory](docs/ASSETS.md).
+Create widgets in Java and attach their elements to the page. This code works with
+either compiler:
+
+```java
+import elemental2.dom.DomGlobal;
+import org.dominokit.domino.ui.datepicker.Calendar;
+import org.dominokit.domino.ui.forms.TextBox;
+
+public final class Screen {
+    public static void mount() {
+        TextBox name = TextBox.create("Your name");
+        Calendar calendar = Calendar.create();
+
+        DomGlobal.document.body.appendChild(name.element());
+        DomGlobal.document.body.appendChild(calendar.element());
+    }
+}
+```
+
+Call `Screen.mount()` from your GWT entry point's `onModuleLoad()`, or from your
+TeaVM application's `main(String[] args)`, after the page body exists. The
+[example screen](examples/teavm/src/main/java/example/client/Screen.java) adds a
+button and click listener using the same approach.
+
+## Explore the widgets
+
+The showcases are adapted from [DominoKit’s original demo](https://github.com/DominoKit/domino-ui-demo).
+They retain 51 original pages and 167 sample methods, presented through a shared
+launcher for GWT and TeaVM. Use **All examples**
+to browse the included gallery, then find the corresponding Java in the
+[shared examples](showcase-shared/src/main/java/io/instanto/domino/client).
+
+Both showcases use the same widget and example sources. Check the
+[coverage guide](docs/COMPATIBILITY.md) when choosing a feature: it describes the
+interactions tested on each compiler and the remaining limitations.
+
+## Go further
+
+- [Run the example applications](examples/README.md).
+- [Browse the included showcase pages](docs/SHOWCASE.md).
+- [Understand the port design](docs/DESIGN.md).
+- [Build and test the library](docs/DEVELOPMENT.md).
+- [Read the verification reports](reports/README.md).
+
+The Java libraries are distributed under Apache-2.0 with the original notices
+preserved. See [NOTICE](NOTICE) and the [asset inventory](docs/ASSETS.md) for source,
+font and icon attribution.

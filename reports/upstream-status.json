@@ -1,0 +1,309 @@
+{
+  "checkedOn": "2026-09-08",
+  "pinnedForkCommit": "31404a554cda9a7118c5419b4690e980f67d7d7f",
+  "upstreamMaster": "4f2a86662796089bb28bcfb2208dbb310cc0da52",
+  "upstreamDevelopment": "0cb4a784f424d99c30b50ae1c380970f5738f756",
+  "integrated": false,
+  "masterComparedWithPinnedFork": {
+    "status": "diverged",
+    "ahead_by": 31,
+    "behind_by": 24,
+    "total_commits": 31,
+    "html_url": "https://github.com/cstainton/domino-ui/compare/31404a554cda9a7118c5419b4690e980f67d7d7f...DominoKit:master",
+    "mergeBase": "21adff68d9ebefd183feef6e1ce706b7b4f7bd33",
+    "commits": [
+      {
+        "sha": "6a900c0c4d8175a705514ffc5dad1b6445bb2a8e",
+        "subject": "Update for next development version"
+      },
+      {
+        "sha": "9dafb46b4ecca84597099ed426d776bbae586b10",
+        "subject": "fix #1111 BodyScrollPlugin not working with TableMode.AUTO"
+      },
+      {
+        "sha": "0684df77fe7655f67b4cf308998db4a5bcfafeda",
+        "subject": "fix #1112 Initial size for split panels does not apply correctly"
+      },
+      {
+        "sha": "d6a6a61b30b0fd53d14ca9fc264cf5df98b89b4b",
+        "subject": "add FilterData for Collections, fixes #1113 (#1115)"
+      },
+      {
+        "sha": "505f346a1c48001b0b419571868e47c39e2b1ee4",
+        "subject": "fix #1118 Tooltip flickers when the mouse enter the element from the position of the tooltip arrow and stays on the edge"
+      },
+      {
+        "sha": "a1ffccd833727356acd1357b36726f1786d05043",
+        "subject": "Merge branch 'development' of github.com:DominoKit/domino-ui into development"
+      },
+      {
+        "sha": "385c972d24b79f79e06977f3e350426803dd609e",
+        "subject": "fix #1122 Enhancements to ToggleButton implementation"
+      },
+      {
+        "sha": "35339a9cacdd2aec07c9ca991685d44b828c1a9c",
+        "subject": "fix #1123 Fix TableRow selectable flag not working as expected"
+      },
+      {
+        "sha": "a6952d37d036d507f2756714674fe6923168254f",
+        "subject": "fix #1124 Initial SplitPanel sizes not working as expected"
+      },
+      {
+        "sha": "72e328485c2670ef125dcedd93078c27c6b43950",
+        "subject": "fix #1125 UploadBox upload Icon not clickable"
+      },
+      {
+        "sha": "e620ceff0485c48c20ffe35e8fb93166e856c710",
+        "subject": "tweaks and enhancements"
+      },
+      {
+        "sha": "fc2d2b19ae8634db11ec7d0d0103b155d5077251",
+        "subject": "fix #1130 Allow using custom formatters for DateBox and Timebox and move default datetime format info and default fomatter to the global config"
+      },
+      {
+        "sha": "b963cff0ab2dc89144022e17cfdbe1195cbdb528",
+        "subject": "fix #1131 Allow the ability to make elements resizable mainly for window and modals."
+      },
+      {
+        "sha": "c802a4a1591c404f2226b4bc86b3b14574e2479a",
+        "subject": "fix #1128 Unnecessary focus() call in Select.withOption"
+      },
+      {
+        "sha": "1390644cf7f38e597949c206ea8c94ef8f99f439",
+        "subject": "minor tweaks and enhancements"
+      },
+      {
+        "sha": "f49ae3171c9d6d1a5d0b0d8bca64aeab2e31977c",
+        "subject": "fix #1126 ScrollingPagination improvements"
+      },
+      {
+        "sha": "35e998fc631ce942bce6c429625a6ae4ae05adbd",
+        "subject": "fix #1120 Tree nodes expand-collapse state not preserved after filtering the nodes through search"
+      },
+      {
+        "sha": "7dce2e0596cf7164cf74e665e92ab92de2559d39",
+        "subject": "fix #1119 Tree - Auto Collapse does not work reliable"
+      },
+      {
+        "sha": "a7f48a5fcc634b4596b8eab0ac5d58c07fdd7808",
+        "subject": "fix vulnerabilities"
+      },
+      {
+        "sha": "c4e29de177fa4881a52b105f01152aace01b373f",
+        "subject": "fix #1114 submenus will sometimes position off screen"
+      },
+      {
+        "sha": "4745c606d8681d89f7795028ed8c8eea5264b412",
+        "subject": "split spacing css into multiple interfaces"
+      },
+      {
+        "sha": "fe322bfd6bfcf7aeabe7991a6209fde9de5b921a",
+        "subject": "fix #1133 RecordDetails expand button triggers RowClickPlugin"
+      },
+      {
+        "sha": "766b58e3604ab3beddd7a9194a90c1d420858f62",
+        "subject": "fix #1134 EventType: add new focusin and focusout constants"
+      },
+      {
+        "sha": "997758c4ea7704fa76853faf651abb9a06d5227a",
+        "subject": "fix #1136 Datepicker 12AM not selectable"
+      },
+      {
+        "sha": "81c596bbb5fed2c8c3b1fa5efebb31c2e4392437",
+        "subject": "fix #1135 Data picker - cannot select a year on mobile"
+      },
+      {
+        "sha": "e0184b64c4c2e8d95fde4b0b1ca4a9e74127342d",
+        "subject": "fix #1137 Closing menu on Select component causes it to lose focus"
+      },
+      {
+        "sha": "c5ac46ccc225c75a7461eb76907ba5aab3c8c861",
+        "subject": "Update versions for release"
+      },
+      {
+        "sha": "f8e476186a44406898475706383dc320ede84cda",
+        "subject": "Update for next development version"
+      },
+      {
+        "sha": "3b7fc718f16629e07af177a556ca11ed24602e12",
+        "subject": "deps updates"
+      },
+      {
+        "sha": "42a6db4e74105b7cfee7ebc02d69171f207fa9de",
+        "subject": "Update versions for release"
+      },
+      {
+        "sha": "4f2a86662796089bb28bcfb2208dbb310cc0da52",
+        "subject": "Merge branch 'release/2.1.1'"
+      }
+    ]
+  },
+  "developmentComparedWithMaster": {
+    "status": "diverged",
+    "ahead_by": 11,
+    "behind_by": 2,
+    "total_commits": 11,
+    "html_url": "https://github.com/DominoKit/domino-ui/compare/4f2a86662796089bb28bcfb2208dbb310cc0da52...development",
+    "mergeBase": "42a6db4e74105b7cfee7ebc02d69171f207fa9de",
+    "commits": [
+      {
+        "sha": "ad01839c60c9a59f941fa5487934460ad953af66",
+        "subject": "Update for next development version"
+      },
+      {
+        "sha": "520044bc9292436fab0967663c1b09cae212219a",
+        "subject": "fix tooltip not dissappearing issue"
+      },
+      {
+        "sha": "c8e8254c65a054b0bd2314af62e79a15c8607130",
+        "subject": "add DialogSize.NONE to clean up dialog size and set it to default"
+      },
+      {
+        "sha": "549a219ece1901140fe5989a5111fa946de63551",
+        "subject": "fix #1138 AppLayout does not work well with RTL direction"
+      },
+      {
+        "sha": "667a024b36c9836118413670721db86495749c9b",
+        "subject": "fix: improve font theming and defaults (#1139)"
+      },
+      {
+        "sha": "bbf65ba7db39622a2511540d5c6dbb662d9c7c25",
+        "subject": "fix #1141 add built-in themes set"
+      },
+      {
+        "sha": "784d614edc11055437eba4e282cf7d207df7087f",
+        "subject": "fix #1140 Make card body more structural with a body header/footer."
+      },
+      {
+        "sha": "2cc19758ae26a17ae1f4e0d32087b010e8afd8f8",
+        "subject": "add more themes enhancements"
+      },
+      {
+        "sha": "f0d896d5dbb7aa47e50beec95512d66be3c8bedb",
+        "subject": "add more themes enhancements"
+      },
+      {
+        "sha": "1f77f64423b15855479503330809ef80571b9e29",
+        "subject": "add more accents"
+      },
+      {
+        "sha": "0cb4a784f424d99c30b50ae1c380970f5738f756",
+        "subject": "fix #1144 Improve accessibility"
+      }
+    ]
+  },
+  "showcaseComparedWithPinnedVersion2": {
+    "status": "identical",
+    "ahead_by": 0,
+    "behind_by": 0,
+    "total_commits": 0,
+    "html_url": "https://github.com/DominoKit/domino-ui-demo/compare/51e1f75d43179a544c010ca5e88517c93263eeed...version-2",
+    "mergeBase": "51e1f75d43179a544c010ca5e88517c93263eeed",
+    "commits": []
+  },
+  "forkComparedWithMaster": {
+    "status": "diverged",
+    "ahead_by": 24,
+    "behind_by": 31,
+    "total_commits": 24,
+    "html_url": "https://github.com/cstainton/domino-ui/compare/DominoKit:4f2a86662796089bb28bcfb2208dbb310cc0da52...31404a554cda9a7118c5419b4690e980f67d7d7f",
+    "commits": [
+      {
+        "sha": "a4ac145b5bdbf8d18555b5b7f26d24a0d960facf",
+        "subject": "Refactor: abstract Timer to DominoTimer to support TeaVM compilation"
+      },
+      {
+        "sha": "e69b598bd1853eadd211736bb4d718fd44ab6266",
+        "subject": "Merge pull request #1 from cstainton/teavm-timer-poc-7561862648147766461"
+      },
+      {
+        "sha": "de464e00993f64596397acf470b45419683b179e",
+        "subject": "Refactor: stub org.gwtproject.editor.client for TeaVM compatibility"
+      },
+      {
+        "sha": "2eac44fe0289f6b1d7eeba3668b2c29d59f84b36",
+        "subject": "Merge pull request #2 from cstainton/teavm-timer-poc-7561862648147766461"
+      },
+      {
+        "sha": "db5bbaaa95e234ecc12273aac82a23524a882071",
+        "subject": "Continue TeaVM port: scheduler abstraction, SafeHtml stubs, build profile"
+      },
+      {
+        "sha": "500deda09e07b63cdb1a7e01870b275173b7e9fa",
+        "subject": "Replace GWT i18n/SafeHtml library deps with browser Intl stubs"
+      },
+      {
+        "sha": "548c80033293001a0d55b376ace35165e97882c1",
+        "subject": "Wire teavm-maven-plugin into domino-ui -Pteavm profile"
+      },
+      {
+        "sha": "90f03bf21506ed1f37f666b611574d88ea22e9b5",
+        "subject": "Remove unused gwt-validation-api and gwt-core compile deps"
+      },
+      {
+        "sha": "76bda325e47b1279e8a261ff6373b4dad1034235",
+        "subject": "Merge pull request #3 from cstainton/claude/port-to-teavm-fYebf"
+      },
+      {
+        "sha": "cb2d5f0d261a6589515a2d03992642041ed6429e",
+        "subject": "Wire teavm-extras-slf4j into the -Pteavm profile"
+      },
+      {
+        "sha": "b4aca619ad5e1384289cd25d8379f39a4f8b757f",
+        "subject": "Fix teavm-maven-plugin setup: plugin deps, correct goal name, jso-impl"
+      },
+      {
+        "sha": "1029bffdd81c93db319986a963134c9bcc9ca9e7",
+        "subject": "Add domino-ui-demo: TeaVM demo exercising domino-jackson and domino-history-shared"
+      },
+      {
+        "sha": "28904d015a994d5a98fd9e3e77c84ce398825957",
+        "subject": "Add domino-history-teavm: TeaVM port of domino-history-client StateHistory"
+      },
+      {
+        "sha": "7fb9bdcb5229ca6547fdeca6c32dcd879b96e523",
+        "subject": "Merge pull request #4 from cstainton/claude/teavm-demo-and-history-port"
+      },
+      {
+        "sha": "7d6c4c18e64793e7f905f61816409fc010a13767",
+        "subject": "Add domino-rest-teavm: TeaVM port of domino-rest-client"
+      },
+      {
+        "sha": "6a31546e06058366a33b41b3f6b1bd5e631a0ede",
+        "subject": "Merge pull request #5 from cstainton/claude/teavm-phase-2"
+      },
+      {
+        "sha": "844ad37217ee2d6b32f23ca29e9a2a699a53cf17",
+        "subject": "Wire domino-history-teavm and domino-rest-teavm into parent dependencyManagement"
+      },
+      {
+        "sha": "285ebf8d478187588cf84d5164338c060d4be49c",
+        "subject": "Rewrite demo as a Geo Todo List exercising REST + Geolocation + History"
+      },
+      {
+        "sha": "0ebfe79719f4b582c2a667b6a667de9c079e73a5",
+        "subject": "Wire demo to local Postgres+PostgREST backend; persist lat/lng in DB"
+      },
+      {
+        "sha": "0f8cf8d23e5689b74b3f56b6d1f566fd6a3fd7c7",
+        "subject": "Add local-dev Docker stack: Postgres + PostgREST for the geo-todo demo"
+      },
+      {
+        "sha": "2a8d44cc8550cce24f277e9036925f8e34a6a78c",
+        "subject": "Merge pull request #6 from cstainton/claude/teavm-phase-2"
+      },
+      {
+        "sha": "08c1bab1e805b2580bded1b75bfcc5663dae795f",
+        "subject": "Address SpotBugs findings"
+      },
+      {
+        "sha": "e7ed739e75b2bbd3d7cb9c1d9d1eba3d11d98e8c",
+        "subject": "Keep generated Domino IDs valid as CSS identifiers on Java compilers"
+      },
+      {
+        "sha": "31404a554cda9a7118c5419b4690e980f67d7d7f",
+        "subject": "Allow explicit browser calendar label locales"
+      }
+    ]
+  }
+}
