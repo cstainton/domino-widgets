@@ -1,3 +1,14 @@
+# Domino Widgets implementation scope
+
+The original plan below records the initial dual-compiler baseline. The current
+maintained distribution is **TeaVM-only**: GWT users and comparison links go to
+DominoKit upstream. General compatibility code has been extracted to the standalone
+`teavm-compat` build, and widget repositories consume its independent BOM and runtime
+artifacts. See [the extraction record](docs/COMPAT-EXTRACTION.md) and
+[current design](docs/DESIGN.md) for the implemented scope.
+
+---
+
 # Domino Widgets: shared-source GWT and TeaVM plan
 
 Status: implementation in progress, 7 September 2026. Current evidence and remaining limitations are linked below.

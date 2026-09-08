@@ -5,10 +5,6 @@ import hashlib,json,tarfile,shutil
 ROOT=Path(__file__).resolve().parents[1]
 def main():
  lock=json.loads((ROOT/'upstream/source-lock.json').read_text())
- for item in json.loads((ROOT/'upstream/bindings-lock.json').read_text()):
-  path=ROOT/'upstream'/item['file']
-  if hashlib.sha256(path.read_bytes()).hexdigest()!=item['sha256']:
-   raise SystemExit('Binding checksum mismatch: '+item['file'])
  archive=ROOT/'upstream'/lock['archive']
  if hashlib.sha256(archive.read_bytes()).hexdigest()!=lock['sha256']:
   raise SystemExit('Source archive checksum mismatch')
@@ -25,7 +21,6 @@ def main():
     if m.name.startswith(prefix): dest=out/'java'/m.name[len(prefix):]
    prefix='domino-ui/src/main/resources/org/dominokit/domino/ui/public/'
    if m.name.startswith(prefix): dest=out/'assets/META-INF/resources/domino-widgets'/m.name[len(prefix):]
-   if m.name=='domino-ui/src/main/module.gwt.xml': dest=out/'resources/org/dominokit/domino/ui/DominoUI.gwt.xml'
    if dest:
     dest.parent.mkdir(parents=True,exist_ok=True)
     if dest.exists(): raise SystemExit('Duplicate source input: '+str(dest))

@@ -13,7 +13,7 @@ for p in build.glob('*/target/surefire-reports/TEST-*.xml'):
  (out/p.name).write_text(p.read_text().replace(str(r),'.'))
 for backend in ['teavm']:
  site=build/f'showcase-{backend}/target/site'
- files=list((site/'showcase').glob('*.cache.js')) if backend=='gwt' else [site/'showcase.js']
+ files=[site/'showcase.js']
  summary['bundleBytes'][backend]=sum(p.stat().st_size for p in files)
 summary['showcase']={'pages':len(json.loads((r/'upstream/showcase-lock.json').read_text())['sources']),'sampleMethods':sum(len(x['methods']) for x in json.loads((r/'upstream/showcase-lock.json').read_text())['sources'])}
 summary['browserProjects']=[p['name'] for p in browser['config']['projects']]

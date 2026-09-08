@@ -11,7 +11,8 @@ archive and selects Domino sources for the separately published
 
 Elemental2, JsInterop base and modular service compatibility implementations now
 live in [teavm-compat](https://github.com/cstainton/teavm-compat), with an independent
-parent, BOM, immutable inputs, tests and publication workflow. The runtime widget
+parent, BOM, immutable inputs, tests and publication workflow. Elemental2 source JARs
+and their lock file are owned there and are no longer bundled in this widget repository. The runtime widget
 JAR depends on compatibility APIs, not JavaParser or the generator.
 
 Published widget artifacts are `domino-widgets-teavm`, `domino-widgets-assets` and

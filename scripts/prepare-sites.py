@@ -10,10 +10,9 @@ for backend in ['teavm']:
  shutil.copy2(r/'upstream/showcase/showcase-image.jpg',site/'showcase-image.jpg')
  if (r/'upstream/showcase/images').exists():shutil.copytree(r/'upstream/showcase/images',site/'images',dirs_exist_ok=True)
  (site/'countries.json').write_text('[{"name":"United Kingdom"},{"name":"Spain"},{"name":"Jordan"},{"name":"France"}]')
- script='<script src="showcase/showcase.nocache.js"></script>' if backend=='gwt' else '<script src="showcase.js"></script><script>main();</script>'
+ script='<script src="showcase.js"></script><script>main();</script>'
  shutil.copy2(r/'showcase-shared/showcase.css', site/'showcase.css')
- peer='gwt' if backend=='teavm' else 'teavm'
- compiler='GWT' if backend=='gwt' else 'TeaVM'
+ compiler='TeaVM'
  (site/'index.html').write_text(f'''<!doctype html>
 <html lang="en">
 <head>
