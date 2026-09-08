@@ -138,6 +138,8 @@ The Java libraries are distributed under Apache-2.0 with the original notices
 preserved. See [NOTICE](NOTICE) and the [asset inventory](docs/ASSETS.md) for source,
 font and icon attribution.
 
-## Support DominoKit
+## Support the projects
 
 Like DominoKit? Please [support the upstream project](https://www.patreon.com/Dominokit).
+
+Want to see more TeaVM libraries maintained and supported? Please support us—our support link is coming soon.
