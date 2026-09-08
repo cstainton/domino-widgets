@@ -3,6 +3,7 @@ package io.instanto.domino.testing;
 import static org.junit.Assert.*;
 import static org.junit.Assume.assumeTrue;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.microsoft.playwright.*;
 import com.sun.net.httpserver.HttpServer;
@@ -143,25 +144,45 @@ public class ShowcaseScrollTest {
     for (String route : List.of("", "buttons", "forms")) {
       open(route);
       CDPSession cdp = context.newCDPSession(page);
-      JsonObject gesture = new JsonObject();
-      gesture.addProperty("x", 370);
-      gesture.addProperty("y", 700);
-      // Keep the whole swipe inside the mobile viewport, as a finger would move.
-      gesture.addProperty("yDistance", -500);
-      gesture.addProperty("speed", 800);
-      gesture.addProperty("gestureSourceType", "touch");
-      cdp.send("Input.synthesizeScrollGesture", gesture);
-      page.waitForCondition(() -> scrollY() > 100);
-      for (int i = 0; i < 30 && !footerInView(); i++)
-        cdp.send("Input.synthesizeScrollGesture", gesture);
-      assertTrue("Touch can reach the footer on " + route, footerInView());
-      gesture.addProperty("y", 200);
-      gesture.addProperty("yDistance", 500);
-      for (int i = 0; i < 30 && scrollY() > 10; i++)
-        cdp.send("Input.synthesizeScrollGesture", gesture);
-      page.waitForCondition(() -> scrollY() < 10);
-      cdp.detach();
+      try {
+        // Wait for rendering and hit testing before injecting the first native input.
+        page.evaluate(
+            "() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))");
+        swipe(cdp, 700, 200);
+        page.waitForCondition(() -> scrollY() > 100);
+        for (int i = 0; i < 30 && !footerInView(); i++) swipe(cdp, 700, 200);
+        assertTrue("Touch can reach the footer on " + route, footerInView());
+        for (int i = 0; i < 30 && scrollY() > 10; i++) swipe(cdp, 200, 700);
+        page.waitForCondition(() -> scrollY() < 10);
+      } finally {
+        cdp.detach();
+      }
     }
+  }
+
+  private void swipe(CDPSession cdp, int fromY, int toY) {
+    // Dispatch native finger input rather than the experimental synthesized gesture command.
+    touch(cdp, "touchStart", fromY);
+    for (int step = 1; step <= 20; step++) {
+      touch(cdp, "touchMove", fromY + (toY - fromY) * step / 20);
+      page.waitForTimeout(16); // Pace the input over browser frames.
+    }
+    page.waitForTimeout(100); // Stop the finger before release to avoid inertial scrolling.
+    touch(cdp, "touchEnd", toY);
+  }
+
+  private void touch(CDPSession cdp, String type, int y) {
+    JsonObject event = new JsonObject();
+    event.addProperty("type", type);
+    JsonArray points = new JsonArray();
+    if (!type.equals("touchEnd")) {
+      JsonObject point = new JsonObject();
+      point.addProperty("x", 370);
+      point.addProperty("y", y);
+      points.add(point);
+    }
+    event.add("touchPoints", points);
+    cdp.send("Input.dispatchTouchEvent", event);
   }
 
   @Test
