@@ -71,6 +71,14 @@
             <exclude>org/gwtproject/**</exclude>
           </excludes>
         </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>io.instanto</groupId>
+            <artifactId>binding-generator</artifactId>
+            <version>${project.version}</version>
+            <type>jar</type>
+          </dependency>
+        </dependencies>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

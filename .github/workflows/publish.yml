@@ -19,24 +19,19 @@ jobs:
           PACKAGES_READ_TOKEN: ${{ secrets.PACKAGES_READ_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
           echo "PACKAGES_READ_TOKEN=$PACKAGES_READ_TOKEN" >> "$GITHUB_ENV"
-          python3 - <<'PYSET'
-          from pathlib import Path
-          p = Path.home() / '.m2/settings.xml'
-          s = p.read_text()
-          s = s.replace('</servers>', '<server><id>github-teavm-compat</id><username>${env.GITHUB_ACTOR}</username><password>${env.PACKAGES_READ_TOKEN}</password></server></servers>')
-          p.write_text(s)
-          PYSET
+          cat > "$HOME/.m2/settings.xml" <<'XML'
+          <settings><servers><server><id>github</id><username>${env.GITHUB_ACTOR}</username><password>${env.GITHUB_TOKEN}</password></server><server><id>github-teavm-compat</id><username>${env.GITHUB_ACTOR}</username><password>${env.PACKAGES_READ_TOKEN}</password></server><server><id>github-cucumber-tea</id><username>${env.GITHUB_ACTOR}</username><password>${env.PACKAGES_READ_TOKEN}</password></server><server><id>github-gherkin-tea</id><username>${env.GITHUB_ACTOR}</username><password>${env.PACKAGES_READ_TOKEN}</password></server><server><id>github-mockatcha</id><username>${env.GITHUB_ACTOR}</username><password>${env.PACKAGES_READ_TOKEN}</password></server></servers></settings>
+          XML
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - run: mvn -B -ntp -Pproduction,release clean verify
-      - run: python3 scripts/check-analysis.py && python3 scripts/check-artifacts.py && python3 scripts/prepare-sites.py
-      - run: npm ci && npx playwright install --with-deps chromium firefox webkit && npm test
-        working-directory: browser-tests
-        env:
-          PLAYWRIGHT_CHANNEL: chromium
-          BROWSERS: chromium,firefox,webkit
+      - run: mvn -B -ntp -Pproduction,release clean install
+      - name: Install browser engines through Java
+        run: mvn -B -ntp -f browser-tests/webkit/pom.xml org.codehaus.mojo:exec-maven-plugin:3.6.3:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.classpathScope=test -Dexec.args="install --with-deps chromium firefox webkit"
+      - name: Run Cucumber scenarios through TeaVM and Chrome
+        run: mvn -B -ntp -f browser-tests/teavm/pom.xml test
+      - name: Run Cucumber scenarios through TeaVM and Firefox
+        run: mvn -B -ntp -f browser-tests/teavm/pom.xml -Dbrowser.engine=firefox -Dteavm.junit.js.runner=browser-firefox test
+      - name: Run the same scenarios through Java Playwright WebKit
+        run: mvn -B -ntp -f browser-tests/webkit/pom.xml test
       - name: Verify native scrolling with Playwright Java
         run: mvn -B -ntp -f browser-tests/platform-checks/pom.xml test
       - run: mvn -B -ntp -Pproduction,release deploy
@@ -48,15 +43,13 @@ jobs:
         run: |
           cp -R examples "$RUNNER_TEMP/domino-external"
           mvn -B -ntp -U -f "$RUNNER_TEMP/domino-external/pom.xml" -Dmaven.repo.local="$RUNNER_TEMP/domino-m2" clean verify
-          python3 "$RUNNER_TEMP/domino-external/prepare.py"
-      - name: Verify external applications in all three browsers
-        working-directory: browser-tests
-        env:
-          EXTERNAL_SAMPLE: ${{ runner.temp }}/domino-external
-          BROWSERS: chromium,firefox,webkit
-        run: npx playwright test -c external.config.js
+      - name: Verify the published consumer in all three browsers
+        run: |
+          mvn -B -ntp -f browser-tests/teavm/pom.xml -Dtest=ExternalStepsTest -Ddomino.external.root="$RUNNER_TEMP/domino-external" test
+          mvn -B -ntp -f browser-tests/teavm/pom.xml -Dtest=ExternalStepsTest -Ddomino.external.root="$RUNNER_TEMP/domino-external" -Dbrowser.engine=firefox -Dteavm.junit.js.runner=browser-firefox test
+          mvn -B -ntp -f browser-tests/webkit/pom.xml -Dtest=ExternalStepsTest -Ddomino.external.root="$RUNNER_TEMP/domino-external" test
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: published-consumer-verification
-          path: browser-tests/test-results/**
+          path: browser-tests/**/target/surefire-reports*/**

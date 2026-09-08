@@ -37,6 +37,8 @@
     <teavm-compat.version>0.1.0-SNAPSHOT</teavm-compat.version>
   </properties>
   <modules>
+    <module>build-tools</module>
+    <module>build-inputs</module>
     <module>domino-widgets-bom</module>
     <module>domino-widgets-assets</module>
     <module>binding-generator</module>
@@ -46,6 +48,7 @@
     <module>domino-widgets-teavm</module>
     <module>showcase-teavm</module>
     <module>compat-reuse-smoke</module>
+    <module>build-verification</module>
   </modules>
   <dependencyManagement>
     <dependencies>
@@ -156,7 +159,8 @@
               <include>*/src/main/java/**/*.java</include>
               <include>*/src/test/java/**/*.java</include>
               <include>examples/*/src/main/java/**/*.java</include>
-              <include>browser-tests/platform-checks/src/test/java/**/*.java</include>
+              <include>browser-tests/*/src/test/java/**/*.java</include>
+              <include>browser-tests/common/src/host/java/**/*.java</include>
             </includes>
             <googleJavaFormat>
               <version>${google-java-format.version}</version>
@@ -171,34 +175,6 @@
             <goals>
               <goal>apply</goal>
             </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <version>3.8.1</version>
-        <inherited>false</inherited>
-        <executions>
-          <execution>
-            <id>showcase-source-formatter</id>
-            <phase>initialize</phase>
-            <goals>
-              <goal>copy</goal>
-            </goals>
-            <configuration>
-              <artifactItems>
-                <artifactItem>
-                  <groupId>com.google.googlejavaformat</groupId>
-                  <artifactId>google-java-format</artifactId>
-                  <version>${google-java-format.version}</version>
-                  <classifier>all-deps</classifier>
-                  <type>jar</type>
-                  <outputDirectory>${project.build.directory}/tools</outputDirectory>
-                  <destFileName>google-java-format.jar</destFileName>
-                </artifactItem>
-              </artifactItems>
-            </configuration>
           </execution>
         </executions>
       </plugin>
@@ -287,27 +263,6 @@
                   <version>[21,22)</version>
                 </requireJavaVersion>
               </rules>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>3.6.3</version>
-        <inherited>false</inherited>
-        <executions>
-          <execution>
-            <id>verify-source-intake</id>
-            <phase>initialize</phase>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <configuration>
-              <executable>python3</executable>
-              <arguments>
-                <argument>${project.basedir}/scripts/intake.py</argument>
-              </arguments>
             </configuration>
           </execution>
         </executions>

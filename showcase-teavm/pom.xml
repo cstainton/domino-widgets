@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
   <parent>
@@ -27,6 +27,12 @@
       <groupId>org.teavm</groupId>
       <artifactId>teavm-jso-apis</artifactId>
       <version>${teavm.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.instanto</groupId>
+      <artifactId>domino-widgets-assets</artifactId>
+      <version>${project.version}</version>
+      <type>jar</type>
     </dependency>
   </dependencies>
   <build>
@@ -124,6 +130,75 @@
             <version>${teavm.version}</version>
           </dependency>
         </dependencies>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.8.1</version>
+        <executions>
+          <execution>
+            <id>showcase-assets</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>io.instanto</groupId>
+                  <artifactId>domino-widgets-assets</artifactId>
+                  <version>${project.version}</version>
+                  <outputDirectory>${project.build.directory}/site</outputDirectory>
+                  <includes>META-INF/resources/**</includes>
+                  <fileMappers>
+                    <org.codehaus.plexus.components.io.filemappers.RegExpFileMapper>
+                      <pattern>^META-INF/resources/(.*)$</pattern>
+                      <replacement>$1</replacement>
+                    </org.codehaus.plexus.components.io.filemappers.RegExpFileMapper>
+                  </fileMappers>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.3.1</version>
+        <executions>
+          <execution>
+            <id>showcase-site</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/site</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>src/site</directory>
+                  <filtering>false</filtering>
+                </resource>
+                <resource>
+                  <directory>../showcase-shared</directory>
+                  <filtering>false</filtering>
+                  <includes>
+                    <include>showcase.css</include>
+                  </includes>
+                </resource>
+                <resource>
+                  <directory>../upstream/showcase</directory>
+                  <filtering>false</filtering>
+                  <includes>
+                    <include>showcase-image.jpg</include>
+                    <include>images/**</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

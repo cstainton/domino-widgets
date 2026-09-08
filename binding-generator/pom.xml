@@ -47,6 +47,19 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.3.1</version>
+        <dependencies>
+          <dependency>
+            <groupId>io.instanto</groupId>
+            <artifactId>domino-build-inputs</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
+          </dependency>
+        </dependencies>
+      </plugin>
     </plugins>
   </build>
   <properties>

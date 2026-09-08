@@ -26,58 +26,44 @@ jobs:
         run: |
           echo "PACKAGES_READ_TOKEN=$PACKAGES_READ_TOKEN" >> "$GITHUB_ENV"
           cat > "$HOME/.m2/settings.xml" <<'XML'
-          <settings><servers><server><id>github-teavm-compat</id><username>${env.GITHUB_ACTOR}</username><password>${env.PACKAGES_READ_TOKEN}</password></server></servers></settings>
+          <settings><servers><server><id>github-teavm-compat</id><username>${env.GITHUB_ACTOR}</username><password>${env.PACKAGES_READ_TOKEN}</password></server><server><id>github-cucumber-tea</id><username>${env.GITHUB_ACTOR}</username><password>${env.PACKAGES_READ_TOKEN}</password></server><server><id>github-gherkin-tea</id><username>${env.GITHUB_ACTOR}</username><password>${env.PACKAGES_READ_TOKEN}</password></server><server><id>github-mockatcha</id><username>${env.GITHUB_ACTOR}</username><password>${env.PACKAGES_READ_TOKEN}</password></server></servers></settings>
           XML
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: npm
-          cache-dependency-path: browser-tests/package-lock.json
       - name: Build TeaVM and analyze bytecode
         run: |
           if [ '${{ matrix.mode }}' = production ]; then
-            mvn -B -ntp -Pproduction clean verify
+            mvn -B -ntp -Pproduction clean install
           else
-            mvn -B -ntp clean verify
+            mvn -B -ntp clean install
           fi
-      - name: Verify packaging and prepare browser fixtures
-        run: |
-          python3 scripts/generate-showcase.py --check
-          python3 scripts/check-analysis.py
-          python3 scripts/check-artifacts.py
-          python3 scripts/member-inventory.py
-          python3 scripts/prepare-sites.py
-      - run: npm ci
-        working-directory: browser-tests
-      - run: npx playwright install --with-deps chromium firefox webkit
-        working-directory: browser-tests
+      - name: Install browser engines through Java
+        run: mvn -B -ntp -f browser-tests/webkit/pom.xml org.codehaus.mojo:exec-maven-plugin:3.6.3:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.classpathScope=test -Dexec.args="install --with-deps chromium firefox webkit"
+      - name: Run Cucumber scenarios through TeaVM and Chrome
+        run: mvn -B -ntp -f browser-tests/teavm/pom.xml test
+      - name: Run Cucumber scenarios through TeaVM and Firefox
+        run: mvn -B -ntp -f browser-tests/teavm/pom.xml -Dbrowser.engine=firefox -Dteavm.junit.js.runner=browser-firefox test
+      - name: Run the same scenarios through Java Playwright WebKit
+        run: mvn -B -ntp -f browser-tests/webkit/pom.xml test
       - name: Verify native scrolling with Playwright Java
         run: mvn -B -ntp -f browser-tests/platform-checks/pom.xml test
-      - run: npm test
-        working-directory: browser-tests
-        env:
-          PLAYWRIGHT_CHANNEL: chromium
-          BROWSERS: chromium,firefox,webkit
       - name: Index analyzer results
         if: always()
-        run: python3 scripts/spotbugs-index.py
+        run: mvn -B -ntp -N io.instanto:domino-build-maven-plugin:0.1.0-SNAPSHOT:analysis -Ddomino.analysis.indexOnly=true
       - name: Record verification metadata
-        run: python3 scripts/record-results.py ${{ matrix.mode }}
+        run: mvn -B -ntp -N io.instanto:domino-build-maven-plugin:0.1.0-SNAPSHOT:record-results -Ddomino.mode=${{ matrix.mode }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: verification-${{ matrix.mode }}
           path: |
             **/target/spotbugs/**
-            **/target/surefire-reports/**
-            browser-tests/test-results/**
+            **/target/surefire-reports*/**
             browser-tests/platform-checks/target/screenshots/**
             reports/**
             target/intake/inventory.json
             upstream/*lock.json
       - name: Assemble verified production showcases
         if: matrix.mode == 'production'
-        run: python3 scripts/assemble-pages.py
+        run: mvn -B -ntp -Ppages -pl build-verification resources:copy-resources@pages
       - uses: actions/upload-artifact@v4
         if: matrix.mode == 'production'
         with:

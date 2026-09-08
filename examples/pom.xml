@@ -56,7 +56,14 @@
                   <groupId>io.instanto</groupId>
                   <artifactId>domino-widgets-assets</artifactId>
                   <version>${domino.version}</version>
-                  <outputDirectory>${project.build.directory}/assets</outputDirectory>
+                  <outputDirectory>${project.build.directory}/site</outputDirectory>
+                  <includes>META-INF/resources/**</includes>
+                  <fileMappers>
+                    <org.codehaus.plexus.components.io.filemappers.RegExpFileMapper>
+                      <pattern>^META-INF/resources/(.*)$</pattern>
+                      <replacement>$1</replacement>
+                    </org.codehaus.plexus.components.io.filemappers.RegExpFileMapper>
+                  </fileMappers>
                 </artifactItem>
               </artifactItems>
             </configuration>

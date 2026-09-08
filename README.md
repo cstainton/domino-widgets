@@ -88,8 +88,7 @@ folder as `domino-widgets/` beside your application's HTML, then add:
 ```
 
 Keep the folder structure intact so the stylesheet can find its fonts and icons.
-The examples [unpack the assets during Maven packaging](examples/pom.xml) and
-[copy them into the site](examples/prepare.py).
+The examples [unpack the assets directly into the site during Maven packaging](examples/pom.xml).
 
 ## Create a widget
 

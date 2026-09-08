@@ -86,7 +86,7 @@
     "scope": "Pinned public CSS and fonts",
     "mechanism": "One deterministic concatenated stylesheet and one assets JAR, excluding redundant cached copies",
     "tests": [
-      "check-artifacts.py",
+      "Maven check-artifacts goal",
       "Browser requests and rendered fixture"
     ]
   },
