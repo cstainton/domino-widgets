@@ -102,3 +102,9 @@ Updating upstream means changing the pinned source deliberately, reviewing the f
 changes, regenerating bindings and assets, and rerunning both compiler suites.
 The [upstream assessment](UPSTREAM.md) records the currently outstanding changes.
 Build commands are in the [development guide](DEVELOPMENT.md).
+
+## Extract shared compatibility libraries
+
+The proposed [independent compatibility build](COMPAT-EXTRACTION.md) moves reusable
+adapters out of widget repositories and gives them API-based `-compat` names. It
+records the source, generator and GWT baseline boundaries to preserve during that move.
