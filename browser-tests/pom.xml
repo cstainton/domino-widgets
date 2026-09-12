@@ -17,6 +17,7 @@
     <maven.compiler.release>21</maven.compiler.release>
     <cucumber-tea.version>0.1.0-SNAPSHOT</cucumber-tea.version>
     <mockatcha.version>0.1.0-SNAPSHOT</mockatcha.version>
+    <webapp-testkit.version>0.1.0-SNAPSHOT</webapp-testkit.version>
     <teavm.junit.js.runner>browser-chrome</teavm.junit.js.runner>
     <browser.engine>chrome</browser.engine>
     <domino.build.root>${project.basedir}/../..</domino.build.root>
@@ -46,8 +47,8 @@
   <dependencies>
     <dependency>
       <groupId>io.instanto</groupId>
-      <artifactId>mockatcha-browser-testkit</artifactId>
-      <version>${mockatcha.version}</version>
+      <artifactId>webapp-testkit-app</artifactId>
+      <version>${webapp-testkit.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>

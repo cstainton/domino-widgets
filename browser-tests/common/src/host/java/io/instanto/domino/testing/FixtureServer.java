@@ -2,7 +2,7 @@ package io.instanto.domino.testing;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpServer;
-import io.instanto.mockatcha.browser.ApplicationFiles;
+import io.instanto.webapp.testkit.app.ApplicationFiles;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.charset.StandardCharsets;

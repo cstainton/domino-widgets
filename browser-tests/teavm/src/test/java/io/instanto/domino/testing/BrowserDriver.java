@@ -1,10 +1,10 @@
 package io.instanto.domino.testing;
 
-import static io.instanto.mockatcha.dom.Expect.expect;
+import static io.instanto.webapp.testkit.dom.Expect.expect;
 import static org.junit.Assert.*;
 
-import io.instanto.mockatcha.dom.Dom;
-import io.instanto.mockatcha.dom.FramedApplication;
+import io.instanto.webapp.testkit.dom.Dom;
+import io.instanto.webapp.testkit.app.FramedApplication;
 import java.util.ArrayList;
 import java.util.List;
 import org.teavm.interop.Async;

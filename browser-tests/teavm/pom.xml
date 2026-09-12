@@ -9,8 +9,8 @@
   <dependencies>
     <dependency>
       <groupId>io.instanto</groupId>
-      <artifactId>mockatcha-dom</artifactId>
-      <version>${mockatcha.version}</version>
+      <artifactId>webapp-testkit-dom</artifactId>
+      <version>${webapp-testkit.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
